@@ -4,21 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Nevena Jeremić — Lab Life Show</title>
-  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor at the Faculty of Medical Sciences, University of Kragujevac. Cardiovascular, metabolic and oxidative-stress research, science mentorship, and the Lab Life Show podcast." />
+  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. Redox biology and cardiometabolic research, science mentorship, and the Lab Life Show podcast." />
 
-  <!-- Favicon (temporary — using logo) -->
   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
 
-  <!-- Tailwind CSS v4 (browser build) -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- DaisyUI 5 -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5/daisyui.css" rel="stylesheet" type="text/css" />
-
-  <!-- Font Awesome 6.5 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <!-- Google Fonts: Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet" />
@@ -41,58 +33,42 @@
     @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .nav-link.active-link { color: #179389; }
     .nav-link.active-link::after { width: 100%; }
-    .nav-link::after {
-      content: ""; display: block; height: 2px; width: 0; background: #179389;
-      transition: width .25s ease; margin-top: 2px;
-    }
+    .nav-link::after { content: ""; display: block; height: 2px; width: 0; background: #179389; transition: width .25s ease; margin-top: 2px; }
     .nav-link:hover::after { width: 100%; }
-    /* Grid / dotted science background */
-    .sci-grid {
-      background-image: radial-gradient(#17938922 1px, transparent 1px);
-      background-size: 22px 22px;
-    }
+    .sci-grid { background-image: radial-gradient(#17938922 1px, transparent 1px); background-size: 22px 22px; }
     ::selection { background: #17938933; }
   </style>
 </head>
 
 <body class="antialiased text-ink">
 
-  <!-- ====================== NAVBAR ====================== -->
+  <!-- NAVBAR -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <!-- Logo -->
       <a href="#" onclick="showPage('home');return false;" class="flex items-center gap-2 shrink-0">
         <img src="Logo.svg" alt="Lab Life Show" class="h-8 w-auto" />
       </a>
-
-      <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-7 text-sm font-medium">
-        <a class="nav-link cursor-pointer transition-colors" data-nav="home"    onclick="showPage('home')"     data-i18n="nav_home">Home</a>
-        <a class="nav-link cursor-pointer transition-colors" data-nav="about"   onclick="showPage('about')"   data-i18n="nav_about">About</a>
+        <a class="nav-link cursor-pointer transition-colors" data-nav="home"     onclick="showPage('home')"     data-i18n="nav_home">Home</a>
+        <a class="nav-link cursor-pointer transition-colors" data-nav="about"    onclick="showPage('about')"    data-i18n="nav_about">About</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="showPage('research')" data-i18n="nav_research">Research</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="podcast"  onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="book"     onclick="showPage('book')"     data-i18n="nav_book">Book</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="contact"  onclick="showPage('contact')"  data-i18n="nav_contact">Contact</a>
       </div>
-
       <div class="flex items-center gap-2">
-        <!-- Language toggle -->
         <button onclick="toggleLang()" class="btn btn-sm btn-ghost border border-gray-200 rounded-full font-medium text-xs px-3">
-          <i class="fa-solid fa-globe text-brand"></i>
-          <span id="langLabel">SR</span>
+          <i class="fa-solid fa-globe text-brand"></i><span id="langLabel">SR</span>
         </button>
-        <!-- Mobile menu button -->
         <button class="md:hidden btn btn-sm btn-ghost px-2" onclick="toggleMenu()" aria-label="Menu">
           <i id="menuIcon" class="fa-solid fa-bars text-lg"></i>
         </button>
       </div>
     </nav>
-
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white">
       <div class="flex flex-col px-4 py-2 text-sm font-medium">
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('home')"    data-i18n="nav_home">Home</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('about')"   data-i18n="nav_about">About</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('home')"     data-i18n="nav_home">Home</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('about')"    data-i18n="nav_about">About</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('research')" data-i18n="nav_research">Research</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('book')"     data-i18n="nav_book">Book</a>
@@ -103,21 +79,16 @@
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <!-- ====================== HOME ====================== -->
+    <!-- HOME -->
     <section id="page-home" class="page active">
       <div class="sci-grid -mx-4 sm:-mx-6 px-4 sm:px-6">
         <div class="py-14 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand bg-brand-light px-3 py-1 rounded-full">
-              <i class="fa-solid fa-microphone-lines"></i>
-              <span data-i18n="hero_badge">New podcast · coming soon</span>
+              <i class="fa-solid fa-microphone-lines"></i><span data-i18n="hero_badge">New podcast · coming soon</span>
             </span>
-            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight">
-              <span data-i18n="hero_title_1">Lab Life Show</span>
-            </h1>
-            <p class="mt-4 text-lg text-gray-600" data-i18n="hero_subtitle">
-              A new science podcast hosted by Dr. Nevena Jeremić — conversations about life in the lab, designing better experiments, and publishing better science.
-            </p>
+            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">Lab Life Show</h1>
+            <p class="mt-4 text-lg text-gray-600" data-i18n="hero_subtitle">A new science podcast hosted by Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry at the University of Kragujevac. Conversations about life in science, redox biology and cardiometabolic research.</p>
             <div class="mt-7 flex flex-wrap gap-3">
               <button onclick="showPage('podcast')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors shadow-sm">
                 <i class="fa-solid fa-podcast mr-2"></i><span data-i18n="hero_cta_podcast">Explore the podcast</span>
@@ -127,14 +98,10 @@
               </button>
             </div>
           </div>
-
-          <!-- Hero card -->
           <div class="relative">
             <div class="rounded-3xl bg-white border border-gray-100 shadow-xl p-7">
               <div class="flex items-center gap-4">
-                <div class="h-16 w-16 rounded-2xl bg-brand-light flex items-center justify-center text-brand text-2xl shrink-0">
-                  <i class="fa-solid fa-dna"></i>
-                </div>
+                <img src="nevena.jpeg" alt="Dr. Nevena Jeremić" class="h-16 w-16 rounded-2xl object-cover shrink-0" />
                 <div>
                   <p class="font-bold text-lg">Dr. Nevena Jeremić</p>
                   <p class="text-sm text-gray-500" data-i18n="hero_role">Associate Professor · Pharmaceutical Chemistry</p>
@@ -142,32 +109,33 @@
               </div>
               <div class="mt-6 grid grid-cols-3 gap-3 text-center">
                 <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">54</p>
-                  <p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">SCI papers</p>
+                  <p class="text-2xl font-black text-brand">81+</p>
+                  <p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">Publications</p>
                 </div>
                 <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">255</p>
+                  <p class="text-2xl font-black text-brand">1749</p>
                   <p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_citations">Citations</p>
                 </div>
                 <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">13</p>
+                  <p class="text-2xl font-black text-brand">22</p>
                   <p class="text-[11px] text-gray-500 uppercase tracking-wide">h-index</p>
                 </div>
               </div>
-              <p class="mt-4 text-xs text-gray-400 text-center" data-i18n="stat_source">Source: Google Scholar / faculty record</p>
+              <p class="mt-4 text-xs text-gray-400 text-center" data-i18n="stat_source">Source: Scopus</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- About teaser -->
-      <div class="py-12 grid md:grid-cols-[260px_1fr] gap-8 items-center border-t border-gray-100">
-        <img src="nevena.jpeg" alt="Dr. Nevena Jeremić" class="w-full max-w-[260px] aspect-square object-cover rounded-3xl shadow-lg mx-auto" />
-        <div>
-          <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="about_eyebrow">About me</p>
-          <h2 class="mt-2 text-2xl sm:text-3xl font-black">Dr. Nevena Jeremić</h2>
-          <p class="mt-3 text-gray-600 leading-relaxed" data-i18n="home_about_teaser">Associate Professor at the Faculty of Medical Sciences, University of Kragujevac, and former postdoctoral fellow at the University of Louisville. She researches cardiovascular and metabolic disease and helps scientists design and publish better research.</p>
-          <button onclick="showPage('about')" class="mt-4 inline-flex items-center gap-1 text-brand font-medium text-sm hover:gap-2 transition-all"><span data-i18n="home_about_link">More about me</span> →</button>
+      <!-- Welcome -->
+      <div class="py-12 border-t border-gray-100 max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="welcome_eyebrow">Welcome</p>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-black" data-i18n="welcome_title">Welcome to my personal webpage</h2>
+        <div class="mt-4 space-y-3 text-gray-700 leading-relaxed">
+          <p data-i18n="welcome_p1">I'm Dr. Nevena Jeremić, University Professor at the Faculty of Medical Sciences, University of Kragujevac and team member of the Center of Excellence for Investigation of Redox Balance in Cardiometabolic Disorders, and the Center for Preclinical and Functional Investigations, Faculty of Medical Sciences, University of Kragujevac, Serbia.</p>
+          <p data-i18n="welcome_p2">Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.</p>
+          <p data-i18n="welcome_p3">Thank you for visiting — I look forward to connecting and collaborating!</p>
+          <p class="text-brand font-semibold">— Nevena Jeremić, PhD</p>
         </div>
       </div>
 
@@ -176,7 +144,7 @@
         <div onclick="showPage('research')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
           <i class="fa-solid fa-flask text-brand text-2xl"></i>
           <h3 class="mt-3 font-bold" data-i18n="ql_research_t">Research</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_research_d">Cardiovascular, metabolic & oxidative-stress science.</p>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_research_d">Pharmaceutical chemistry, redox biology & cardiometabolic science.</p>
           <span class="mt-3 inline-block text-brand text-sm font-medium group-hover:translate-x-1 transition-transform" data-i18n="learn_more">Learn more →</span>
         </div>
         <div onclick="showPage('podcast')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
@@ -220,18 +188,18 @@
         <div class="mt-6 grid sm:grid-cols-3 gap-4">
           <div class="rounded-2xl border border-gray-100 p-5">
             <i class="fa-solid fa-heart-pulse text-brand text-xl"></i>
-            <h3 class="mt-2 font-bold" data-i18n="ra_cardio_t">Cardiovascular disease</h3>
-            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_cardio_d">Cardioprotection and ischemia–reperfusion in the isolated heart.</p>
-          </div>
-          <div class="rounded-2xl border border-gray-100 p-5">
-            <i class="fa-solid fa-weight-scale text-brand text-xl"></i>
-            <h3 class="mt-2 font-bold" data-i18n="ra_metab_t">Metabolic disease</h3>
-            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_metab_d">Metabolic syndrome, diabetes and fat-tissue biology.</p>
+            <h3 class="mt-2 font-bold" data-i18n="ra_cardio_t">Cardiovascular protection</h3>
+            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_cardio_d">Molecular mechanisms of cardioprotection and ischemia–reperfusion.</p>
           </div>
           <div class="rounded-2xl border border-gray-100 p-5">
             <i class="fa-solid fa-atom text-brand text-xl"></i>
-            <h3 class="mt-2 font-bold" data-i18n="ra_ox_t">Oxidative stress</h3>
-            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_ox_d">Redox status as a driver of disease and a therapeutic target.</p>
+            <h3 class="mt-2 font-bold" data-i18n="ra_redox_t">Redox biology</h3>
+            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_redox_d">Redox signaling and oxidative stress in disease.</p>
+          </div>
+          <div class="rounded-2xl border border-gray-100 p-5">
+            <i class="fa-solid fa-flask-vial text-brand text-xl"></i>
+            <h3 class="mt-2 font-bold" data-i18n="ra_pharm_t">Pharmaceutical chemistry</h3>
+            <p class="mt-1 text-sm text-gray-500" data-i18n="ra_pharm_d">Drug–target interactions and novel compounds.</p>
           </div>
         </div>
         <button onclick="showPage('research')" class="mt-5 inline-flex items-center gap-1 text-brand font-medium text-sm hover:gap-2 transition-all"><span data-i18n="home_research_link">View research</span> →</button>
@@ -248,11 +216,10 @@
       </div>
     </section>
 
-    <!-- ====================== ABOUT ====================== -->
+    <!-- ABOUT -->
     <section id="page-about" class="page py-12 sm:py-16">
       <div class="max-w-4xl">
         <div class="grid sm:grid-cols-[220px_1fr] gap-8 items-start">
-          <!-- Photo (file: nevena.jpeg in this folder) -->
           <div>
             <img id="aboutPhoto" src="nevena.jpeg" alt="Dr. Nevena Jeremić"
                  class="hidden w-full aspect-[4/5] object-cover rounded-2xl shadow-md"
@@ -265,71 +232,44 @@
           <div>
             <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="about_eyebrow">About me</p>
             <h2 class="mt-2 text-3xl sm:text-4xl font-black">Dr. Nevena Jeremić</h2>
-            <p class="mt-2 text-lg text-gray-600" data-i18n="about_headline">
-              Education & research consulting · Associate Professor · teaching you how to design and publish better science.
-            </p>
+            <p class="mt-2 text-lg text-gray-600" data-i18n="about_headline">Associate Professor of Pharmaceutical Chemistry · redox biology & cardiometabolic research.</p>
           </div>
         </div>
 
         <div class="mt-8 space-y-4 text-gray-700 leading-relaxed">
-          <p data-i18n="about_p1">
-            Nevena Jeremić is an Associate Professor at the Faculty of Medical Sciences, University of Kragujevac, where she has worked full-time since 2013 in the field of pharmaceutical chemistry.
-          </p>
-          <p data-i18n="about_p2">
-            She earned her degree in Pharmacy in 2012 and completed her doctorate in Clinical and Experimental Pharmacology in 2014, both at the University of Kragujevac. From 2016 to 2018 she was a Postdoctoral Fellow at the Department of Physiology, School of Medicine, University of Louisville, Kentucky, USA.
-          </p>
-          <p data-i18n="about_p3">
-            Her work bridges experimental pharmacology and physiology, with a focus on cardiovascular and metabolic disease, oxidative stress, and natural products. Alongside her research, she mentors scientists on study design, scientific writing, and publishing.
-          </p>
+          <p data-i18n="about_p1">I am Dr. Nevena Jeremić, Associate Professor of Pharmaceutical Chemistry at the Faculty of Medical Sciences, University of Kragujevac (Serbia), and Adjunct Assistant Professor at both the University of Louisville (Kentucky, USA) and Sechenov University (Moscow, Russia).</p>
+          <p data-i18n="about_p2">My scientific and professional work focuses on the interface of pharmaceutical chemistry, redox biology, and cardiometabolic research, with a particular interest in molecular mechanisms of cardiovascular protection and translational therapeutic strategies. I have over 18 years of preclinical research experience in experimental pharmacology, drug mechanism studies, and biochemical characterization of novel compounds.</p>
+          <p data-i18n="about_p3">My international research background stems from my work at the University of Louisville, USA, where I gained extensive experience in cardiovascular physiology, redox signaling, and metabolic disease models. I am always open to new national and international collaborations and enjoy working on diverse, innovative, and interdisciplinary projects.</p>
+          <p data-i18n="about_p4">My research focuses on bridging fundamental science and translational medicine, with a particular emphasis on understanding drug–target interactions, redox signaling, and molecular pathways involved in cardiovascular and metabolic diseases. By integrating chemical, biochemical, and physiological approaches, I aim to uncover mechanisms that can guide the development of innovative and mechanism-driven therapeutic strategies with clear clinical relevance and potential patient impact.</p>
+        </div>
+
+        <!-- Metrics -->
+        <div class="mt-10 grid grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-brand-light py-5 text-center">
+            <p class="text-3xl font-black text-brand">81+</p>
+            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1" data-i18n="stat_papers">Publications</p>
+          </div>
+          <div class="rounded-2xl bg-brand-light py-5 text-center">
+            <p class="text-3xl font-black text-brand">1749</p>
+            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1" data-i18n="stat_citations">Citations</p>
+          </div>
+          <div class="rounded-2xl bg-brand-light py-5 text-center">
+            <p class="text-3xl font-black text-brand">22</p>
+            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1">h-index</p>
+          </div>
         </div>
 
         <!-- Timeline -->
         <h3 class="mt-12 text-xl font-bold" data-i18n="about_path">Academic path</h3>
-        <div class="mt-5 space-y-5">
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center">
-              <div class="h-3 w-3 rounded-full bg-brand mt-1.5"></div>
-              <div class="w-px flex-1 bg-gray-200"></div>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-brand">2022 — present</p>
-              <p class="font-medium" data-i18n="tl_assoc">Associate Professor</p>
-              <p class="text-sm text-gray-500" data-i18n="tl_kg">Faculty of Medical Sciences, University of Kragujevac</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center">
-              <div class="h-3 w-3 rounded-full bg-brand mt-1.5"></div>
-              <div class="w-px flex-1 bg-gray-200"></div>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-brand">2016 — 2018</p>
-              <p class="font-medium" data-i18n="tl_postdoc">Postdoctoral Fellow, Physiology</p>
-              <p class="text-sm text-gray-500">University of Louisville School of Medicine, KY, USA</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center">
-              <div class="h-3 w-3 rounded-full bg-brand mt-1.5"></div>
-              <div class="w-px flex-1 bg-gray-200"></div>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-brand">2014</p>
-              <p class="font-medium" data-i18n="tl_phd">PhD — Clinical and Experimental Pharmacology</p>
-              <p class="text-sm text-gray-500" data-i18n="tl_kg">Faculty of Medical Sciences, University of Kragujevac</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center">
-              <div class="h-3 w-3 rounded-full bg-brand mt-1.5"></div>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-brand">2012</p>
-              <p class="font-medium" data-i18n="tl_diploma">Diploma in Pharmacy</p>
-              <p class="text-sm text-gray-500" data-i18n="tl_kg">Faculty of Medical Sciences, University of Kragujevac</p>
-            </div>
-          </div>
-        </div>
+        <div class="mt-5 space-y-5" id="timelineWrap"></div>
+
+        <!-- Awards -->
+        <h3 class="mt-12 text-xl font-bold" data-i18n="about_awards">Awards & recognition</h3>
+        <ul class="mt-4 space-y-3" id="awardsWrap"></ul>
+
+        <!-- Memberships -->
+        <h3 class="mt-12 text-xl font-bold" data-i18n="about_memberships">Memberships</h3>
+        <ul class="mt-4 space-y-2 text-gray-700" id="membershipsWrap"></ul>
 
         <!-- Expertise -->
         <h3 class="mt-12 text-xl font-bold" data-i18n="about_expertise">Skills & expertise</h3>
@@ -337,52 +277,49 @@
       </div>
     </section>
 
-    <!-- ====================== RESEARCH ====================== -->
+    <!-- RESEARCH -->
     <section id="page-research" class="page py-12 sm:py-16">
       <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="research_eyebrow">Research</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="research_title">Research focus</h2>
-      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="research_intro">
-        Experimental pharmacology and physiology — with recurring themes in cardiovascular protection, metabolic disease, and redox (oxidative-stress) biology.
-      </p>
+      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="research_intro">My work sits at the interface of pharmaceutical chemistry, redox biology and cardiometabolic research — with an emphasis on molecular mechanisms of cardiovascular protection and translational therapeutic strategies.</p>
 
-      <!-- Research areas -->
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="rounded-2xl border border-gray-100 p-5">
           <i class="fa-solid fa-heart-pulse text-brand text-xl"></i>
-          <h3 class="mt-2 font-bold" data-i18n="ra_cardio_t">Cardiovascular disease</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_cardio_d">Cardioprotection and ischemia–reperfusion in the isolated heart.</p>
-        </div>
-        <div class="rounded-2xl border border-gray-100 p-5">
-          <i class="fa-solid fa-weight-scale text-brand text-xl"></i>
-          <h3 class="mt-2 font-bold" data-i18n="ra_metab_t">Metabolic disease</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_metab_d">Metabolic syndrome, diabetes and fat-tissue biology.</p>
+          <h3 class="mt-2 font-bold" data-i18n="ra_cardio_t">Cardiovascular protection</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_cardio_d">Molecular mechanisms of cardioprotection and ischemia–reperfusion in the isolated heart.</p>
         </div>
         <div class="rounded-2xl border border-gray-100 p-5">
           <i class="fa-solid fa-atom text-brand text-xl"></i>
-          <h3 class="mt-2 font-bold" data-i18n="ra_ox_t">Oxidative stress</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_ox_d">Redox status as a driver of disease and a therapeutic target.</p>
+          <h3 class="mt-2 font-bold" data-i18n="ra_redox_t">Redox biology</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_redox_d">Redox signaling and oxidative stress as drivers of disease and therapeutic targets.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <i class="fa-solid fa-flask-vial text-brand text-xl"></i>
+          <h3 class="mt-2 font-bold" data-i18n="ra_pharm_t">Pharmaceutical chemistry</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_pharm_d">Drug–target interactions and biochemical characterization of novel compounds.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <i class="fa-solid fa-weight-scale text-brand text-xl"></i>
+          <h3 class="mt-2 font-bold" data-i18n="ra_metab_t">Cardiometabolic disease</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_metab_d">Metabolic syndrome, diabetes and adipose-tissue browning.</p>
         </div>
         <div class="rounded-2xl border border-gray-100 p-5">
           <i class="fa-solid fa-seedling text-brand text-xl"></i>
           <h3 class="mt-2 font-bold" data-i18n="ra_np_t">Natural products</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_np_d">Plant-derived compounds such as diallyl trisulfide (garlic).</p>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_np_d">Plant-derived compounds such as diallyl trisulfide (garlic) and Galium verum.</p>
         </div>
         <div class="rounded-2xl border border-gray-100 p-5">
           <i class="fa-solid fa-microscope text-brand text-xl"></i>
-          <h3 class="mt-2 font-bold" data-i18n="ra_pre_t">Pre-clinical models</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_pre_d">Animal studies, qPCR and Western blot methodology.</p>
-        </div>
-        <div class="rounded-2xl border border-gray-100 p-5">
-          <i class="fa-solid fa-pen-nib text-brand text-xl"></i>
-          <h3 class="mt-2 font-bold" data-i18n="ra_write_t">Scientific writing</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_write_d">Designing studies and communicating them for publication.</p>
+          <h3 class="mt-2 font-bold" data-i18n="ra_pre_t">Preclinical models</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ra_pre_d">18+ years with rodent models in experimental pharmacology and physiology.</p>
         </div>
       </div>
 
       <!-- Selected publications -->
       <h3 class="mt-12 text-xl font-bold" data-i18n="research_pubs">Selected publications</h3>
-      <p class="text-sm text-gray-500 mt-1" data-i18n="research_pubs_sub">A selection of representative and recent work.</p>
-      <div class="mt-5 space-y-3" id="pubsWrap"></div>
+      <p class="text-sm text-gray-500 mt-1" data-i18n="research_pubs_sub">A selection from 81+ peer-reviewed articles (Scopus: 1749 citations, h-index 22).</p>
+      <div class="mt-6" id="pubsWrap"></div>
 
       <div class="mt-8 flex flex-wrap gap-3 text-sm">
         <a href="https://sciprofiles.com/profile/1298137" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 hover:border-brand hover:text-brand transition-colors">
@@ -392,9 +329,33 @@
           <i class="fa-brands fa-orcid"></i> ORCID 0000-0002-5284-8180
         </a>
       </div>
+
+      <!-- Books -->
+      <h3 class="mt-12 text-xl font-bold" data-i18n="research_books">Books & chapters</h3>
+      <div class="mt-5 grid sm:grid-cols-2 gap-4" id="booksWrap"></div>
+
+      <!-- Academic activity -->
+      <h3 class="mt-12 text-xl font-bold" data-i18n="research_activity">Academic activity</h3>
+      <div class="mt-5 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <i class="fa-solid fa-user-graduate text-brand text-xl"></i>
+          <h4 class="mt-2 font-bold" data-i18n="act_mentor_t">Mentoring</h4>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="act_mentor_d">Supervised 3 completed PhD theses and 9 master theses in pharmaceutical chemistry; PhD mentor since 2018.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <i class="fa-solid fa-pen-fancy text-brand text-xl"></i>
+          <h4 class="mt-2 font-bold" data-i18n="act_editor_t">Guest editor</h4>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="act_editor_d">Pathophysiology and Frontiers in Physiology special issues on cardiovascular physiology.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <i class="fa-solid fa-magnifying-glass text-brand text-xl"></i>
+          <h4 class="mt-2 font-bold" data-i18n="act_review_t">Peer reviewer</h4>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="act_review_d">Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- ====================== PODCAST ====================== -->
+    <!-- PODCAST -->
     <section id="page-podcast" class="page py-12 sm:py-16">
       <div class="rounded-3xl bg-brand text-white p-8 sm:p-12 relative overflow-hidden">
         <div class="absolute -right-10 -top-10 opacity-10 text-[200px]"><i class="fa-solid fa-microphone-lines"></i></div>
@@ -402,9 +363,7 @@
           <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">Coming soon</span>
         </span>
         <h2 class="mt-4 text-3xl sm:text-5xl font-black">Lab Life Show</h2>
-        <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">
-          A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.
-        </p>
+        <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a data-yt-link href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center gap-2">
             <i class="fa-brands fa-youtube text-red-600 text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
@@ -418,7 +377,6 @@
         </div>
       </div>
 
-      <!-- What to expect -->
       <h3 class="mt-12 text-xl font-bold" data-i18n="pod_expect">What to expect</h3>
       <div class="mt-5 grid sm:grid-cols-3 gap-4">
         <div class="rounded-2xl border border-gray-100 p-5">
@@ -438,33 +396,26 @@
         </div>
       </div>
 
-      <!-- Episodes / video placeholders -->
       <div class="mt-12 flex items-center justify-between">
         <h3 class="text-xl font-bold" data-i18n="pod_episodes">Episodes</h3>
         <span id="podPreviewNote" class="text-xs font-medium text-gray-400 uppercase tracking-wide" data-i18n="pod_preview_note">Preview · videos coming soon</span>
       </div>
       <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="episodesWrap"></div>
-      <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">
-        Video episodes will be embedded here from the Lab Life Show YouTube channel once published.
-      </p>
+      <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">Video episodes will be embedded here from the Lab Life Show YouTube channel once published.</p>
     </section>
 
-    <!-- ====================== BOOK ====================== -->
+    <!-- BOOK -->
     <section id="page-book" class="page py-12 sm:py-16">
       <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="book_eyebrow">Book a session</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="book_title">Work with Dr. Nevena Jeremić</h2>
-      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="book_intro">
-        Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.
-      </p>
+      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="book_intro">Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.</p>
 
       <div class="mt-8 grid lg:grid-cols-2 gap-8">
-        <!-- Service options -->
         <div>
           <h3 class="font-bold mb-3" data-i18n="book_choose">1 · Choose a service</h3>
           <div class="space-y-3" id="servicesWrap"></div>
         </div>
 
-        <!-- Booking form -->
         <div class="rounded-2xl border border-gray-100 shadow-sm p-6">
           <h3 class="font-bold mb-4" data-i18n="book_details">2 · Your details</h3>
           <form id="bookingForm" class="space-y-4">
@@ -496,7 +447,6 @@
             </div>
             <div>
               <label class="text-sm font-medium text-gray-600" data-i18n="form_date">Preferred date</label>
-              <!-- Mini calendar -->
               <div class="mt-2 rounded-xl border border-gray-200 p-3">
                 <div class="flex items-center justify-between mb-2">
                   <button type="button" onclick="calMove(-1)" class="h-8 w-8 rounded-lg hover:bg-gray-100 text-gray-500"><i class="fa-solid fa-chevron-left"></i></button>
@@ -517,13 +467,9 @@
               <i class="fa-regular fa-paper-plane mr-2"></i><span data-i18n="form_submit">Send booking request</span>
             </button>
           </form>
-
-          <!-- Confirmation -->
           <div id="bookingDone" class="hidden text-center py-6">
-            <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto">
-              <i class="fa-solid fa-check"></i>
-            </div>
-            <h4 class="mt-4 font-bold text-lg" data-i18n="done_title">Request ready!</h4>
+            <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto"><i class="fa-solid fa-check"></i></div>
+            <h4 class="mt-4 font-bold text-lg" data-i18n="done_title">All set!</h4>
             <p id="bookingSummary" class="mt-2 text-sm text-gray-600"></p>
             <button onclick="resetBooking()" class="mt-5 text-sm text-brand font-medium" data-i18n="done_again">Make another request</button>
           </div>
@@ -531,15 +477,27 @@
       </div>
     </section>
 
-    <!-- ====================== CONTACT ====================== -->
+    <!-- CONTACT -->
     <section id="page-contact" class="page py-12 sm:py-16">
       <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="contact_eyebrow">Contact</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="contact_title">Get in touch</h2>
-      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="contact_intro">
-        For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.
-      </p>
+      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="contact_intro">For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.</p>
 
       <div class="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl">
+        <a href="mailto:nevenajeremic@lablifeshow.com" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
+          <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <p class="font-bold text-sm" data-i18n="contact_email">Email</p>
+            <p class="text-sm text-gray-500 break-all">nevenajeremic@lablifeshow.com</p>
+          </div>
+        </a>
+        <a href="tel:+381647019794" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
+          <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <p class="font-bold text-sm" data-i18n="contact_phone">Phone</p>
+            <p class="text-sm text-gray-500">+381 64 701 97 94</p>
+          </div>
+        </a>
         <a href="https://www.linkedin.com/in/nevena-jeremic-b66b50223/" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
           <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-brands fa-linkedin-in"></i></div>
           <div>
@@ -570,11 +528,9 @@
         </div>
       </div>
 
-      <!-- Contact form -->
       <div class="mt-10 max-w-2xl">
         <h3 class="font-bold text-lg" data-i18n="cf_title">Send a message</h3>
         <p class="text-sm text-gray-500 mt-1" data-i18n="cf_sub">Fill in the form below and your message will reach her directly.</p>
-
         <form id="contactForm" class="mt-5 rounded-2xl border border-gray-100 shadow-sm p-6 space-y-4">
           <div class="grid sm:grid-cols-2 gap-3">
             <div>
@@ -602,11 +558,8 @@
             <i class="fa-regular fa-paper-plane mr-2"></i><span data-i18n="cf_submit">Send message</span>
           </button>
         </form>
-
         <div id="contactDone" class="hidden text-center py-8 rounded-2xl border border-gray-100 shadow-sm mt-5">
-          <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto">
-            <i class="fa-solid fa-check"></i>
-          </div>
+          <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto"><i class="fa-solid fa-check"></i></div>
           <h4 class="mt-4 font-bold text-lg" data-i18n="cf_done_title">Message ready!</h4>
           <p id="contactSummary" class="mt-2 text-sm text-gray-600 px-6"></p>
           <button onclick="resetContact()" class="mt-5 text-sm text-brand font-medium" data-i18n="cf_again">Send another message</button>
@@ -616,7 +569,7 @@
 
   </main>
 
-  <!-- ====================== FOOTER ====================== -->
+  <!-- FOOTER -->
   <footer class="border-t border-gray-100 mt-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 flex justify-center">
       <a data-yt-link href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm">
@@ -635,52 +588,49 @@
   </footer>
 
   <script>
-  /* ============================================================
-     i18n — English (default) + Serbian
-  ============================================================ */
   const I18N = {
     en: {
       nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_book:"Book", nav_contact:"Contact",
-      hero_badge:"New podcast · coming soon",
-      hero_title_1:"Lab Life Show",
-      hero_subtitle:"A new science podcast hosted by Dr. Nevena Jeremić — conversations about life in the lab, designing better experiments, and publishing better science.",
+      hero_badge:"New podcast · coming soon", hero_title_1:"Lab Life Show",
+      hero_subtitle:"A new science podcast hosted by Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry at the University of Kragujevac. Conversations about life in science, redox biology and cardiometabolic research.",
       hero_cta_podcast:"Explore the podcast", hero_cta_book:"Book a session",
       hero_role:"Associate Professor · Pharmaceutical Chemistry",
-      stat_papers:"SCI papers", stat_citations:"Citations", stat_source:"Source: Google Scholar / faculty record",
-      ql_research_t:"Research", ql_research_d:"Cardiovascular, metabolic & oxidative-stress science.",
+      stat_papers:"Publications", stat_citations:"Citations", stat_source:"Source: Scopus",
+      welcome_eyebrow:"Welcome", welcome_title:"Welcome to my personal webpage",
+      welcome_p1:"I'm Dr. Nevena Jeremić, University Professor at the Faculty of Medical Sciences, University of Kragujevac and team member of the Center of Excellence for Investigation of Redox Balance in Cardiometabolic Disorders, and the Center for Preclinical and Functional Investigations, Faculty of Medical Sciences, University of Kragujevac, Serbia.",
+      welcome_p2:"Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.",
+      welcome_p3:"Thank you for visiting — I look forward to connecting and collaborating!",
+      ql_research_t:"Research", ql_research_d:"Pharmaceutical chemistry, redox biology & cardiometabolic science.",
       ql_podcast_t:"Podcast", ql_podcast_d:"The Lab Life Show — launching soon.",
       ql_book_t:"Book a session", ql_book_d:"Podcast guest, lectures or consultations.",
       learn_more:"Learn more →",
-      home_about_teaser:"Associate Professor at the Faculty of Medical Sciences, University of Kragujevac, and former postdoctoral fellow at the University of Louisville. She researches cardiovascular and metabolic disease and helps scientists design and publish better research.",
-      home_about_link:"More about me",
       home_latest:"Latest episodes", home_all_episodes:"All episodes",
       home_research:"Research at a glance", home_research_link:"View research",
-      home_cta_title:"Want to work together?",
-      home_cta_sub:"Book a podcast guest appearance, an online lecture, or a research and writing consultation.",
+      home_cta_title:"Want to work together?", home_cta_sub:"Book a podcast guest appearance, an online lecture, or a research and writing consultation.",
       cta_youtube:"Follow me on YouTube",
       about_eyebrow:"About me", about_photo:"Photo",
-      about_headline:"Education & research consulting · Associate Professor · teaching you how to design and publish better science.",
-      about_p1:"Nevena Jeremić is an Associate Professor at the Faculty of Medical Sciences, University of Kragujevac, where she has worked full-time since 2013 in the field of pharmaceutical chemistry.",
-      about_p2:"She earned her degree in Pharmacy in 2012 and completed her doctorate in Clinical and Experimental Pharmacology in 2014, both at the University of Kragujevac. From 2016 to 2018 she was a Postdoctoral Fellow at the Department of Physiology, School of Medicine, University of Louisville, Kentucky, USA.",
-      about_p3:"Her work bridges experimental pharmacology and physiology, with a focus on cardiovascular and metabolic disease, oxidative stress, and natural products. Alongside her research, she mentors scientists on study design, scientific writing, and publishing.",
-      about_path:"Academic path",
-      tl_assoc:"Associate Professor", tl_kg:"Faculty of Medical Sciences, University of Kragujevac",
-      tl_postdoc:"Postdoctoral Fellow, Physiology", tl_phd:"PhD — Clinical and Experimental Pharmacology",
-      tl_diploma:"Diploma in Pharmacy",
-      about_expertise:"Skills & expertise",
+      about_headline:"Associate Professor of Pharmaceutical Chemistry · redox biology & cardiometabolic research.",
+      about_p1:"I am Dr. Nevena Jeremić, Associate Professor of Pharmaceutical Chemistry at the Faculty of Medical Sciences, University of Kragujevac (Serbia), and Adjunct Assistant Professor at both the University of Louisville (Kentucky, USA) and Sechenov University (Moscow, Russia).",
+      about_p2:"My scientific and professional work focuses on the interface of pharmaceutical chemistry, redox biology, and cardiometabolic research, with a particular interest in molecular mechanisms of cardiovascular protection and translational therapeutic strategies. I have over 18 years of preclinical research experience in experimental pharmacology, drug mechanism studies, and biochemical characterization of novel compounds.",
+      about_p3:"My international research background stems from my work at the University of Louisville, USA, where I gained extensive experience in cardiovascular physiology, redox signaling, and metabolic disease models. I am always open to new national and international collaborations and enjoy working on diverse, innovative, and interdisciplinary projects.",
+      about_p4:"My research focuses on bridging fundamental science and translational medicine, with a particular emphasis on understanding drug–target interactions, redox signaling, and molecular pathways involved in cardiovascular and metabolic diseases. By integrating chemical, biochemical, and physiological approaches, I aim to uncover mechanisms that can guide the development of innovative and mechanism-driven therapeutic strategies with clear clinical relevance and potential patient impact.",
+      about_path:"Academic path", about_awards:"Awards & recognition", about_memberships:"Memberships", about_expertise:"Skills & expertise",
       research_eyebrow:"Research", research_title:"Research focus",
-      research_intro:"Experimental pharmacology and physiology — with recurring themes in cardiovascular protection, metabolic disease, and redox (oxidative-stress) biology.",
-      ra_cardio_t:"Cardiovascular disease", ra_cardio_d:"Cardioprotection and ischemia–reperfusion in the isolated heart.",
-      ra_metab_t:"Metabolic disease", ra_metab_d:"Metabolic syndrome, diabetes and fat-tissue biology.",
-      ra_ox_t:"Oxidative stress", ra_ox_d:"Redox status as a driver of disease and a therapeutic target.",
-      ra_np_t:"Natural products", ra_np_d:"Plant-derived compounds such as diallyl trisulfide (garlic).",
-      ra_pre_t:"Pre-clinical models", ra_pre_d:"Animal studies, qPCR and Western blot methodology.",
-      ra_write_t:"Scientific writing", ra_write_d:"Designing studies and communicating them for publication.",
-      research_pubs:"Selected publications", research_pubs_sub:"A selection of representative and recent work.",
+      research_intro:"My work sits at the interface of pharmaceutical chemistry, redox biology and cardiometabolic research — with an emphasis on molecular mechanisms of cardiovascular protection and translational therapeutic strategies.",
+      ra_cardio_t:"Cardiovascular protection", ra_cardio_d:"Molecular mechanisms of cardioprotection and ischemia–reperfusion in the isolated heart.",
+      ra_redox_t:"Redox biology", ra_redox_d:"Redox signaling and oxidative stress as drivers of disease and therapeutic targets.",
+      ra_pharm_t:"Pharmaceutical chemistry", ra_pharm_d:"Drug–target interactions and biochemical characterization of novel compounds.",
+      ra_metab_t:"Cardiometabolic disease", ra_metab_d:"Metabolic syndrome, diabetes and adipose-tissue browning.",
+      ra_np_t:"Natural products", ra_np_d:"Plant-derived compounds such as diallyl trisulfide (garlic) and Galium verum.",
+      ra_pre_t:"Preclinical models", ra_pre_d:"18+ years with rodent models in experimental pharmacology and physiology.",
+      research_pubs:"Selected publications", research_pubs_sub:"A selection from 81+ peer-reviewed articles (Scopus: 1749 citations, h-index 22).",
+      research_books:"Books & chapters", research_activity:"Academic activity",
+      act_mentor_t:"Mentoring", act_mentor_d:"Supervised 3 completed PhD theses and 9 master theses in pharmaceutical chemistry; PhD mentor since 2018.",
+      act_editor_t:"Guest editor", act_editor_d:"Pathophysiology and Frontiers in Physiology special issues on cardiovascular physiology.",
+      act_review_t:"Peer reviewer", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.",
       pod_badge:"Coming soon",
       pod_intro:"A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.",
-      pod_cta_guest:"Be a guest", pod_cta_notify:"Get notified",
-      pod_expect:"What to expect",
+      pod_cta_guest:"Be a guest", pod_cta_notify:"Get notified", pod_expect:"What to expect",
       pod_e1_t:"Researcher stories", pod_e1_d:"Candid talks with scientists about the real life behind the papers.",
       pod_e2_t:"Better science", pod_e2_d:"Practical tips on study design, writing and publishing.",
       pod_e3_t:"Career & lab life", pod_e3_d:"Navigating academia, mentorship and the path through a PhD.",
@@ -695,14 +645,12 @@
       svc_consult_t:"Research / writing consultation", svc_consult_d:"One-on-one help with study design or preparing a manuscript.",
       svc_mentor_t:"Mentorship session", svc_mentor_d:"Guidance on building a research career and publishing better science.",
       form_service:"Service", form_service_ph:"Select a service…",
-      form_name:"Name", form_email:"Email", form_phone:"Phone", form_date:"Preferred date", form_msg:"Message (optional)",
-      form_submit:"Send booking request",
-      form_note:"This is a demo form — submitting opens a confirmation. Connecting it to email or a scheduling tool can be set up later.",
+      form_name:"Name", form_email:"Email", form_phone:"Phone", form_date:"Preferred date", form_msg:"Message (optional)", form_submit:"Send booking request",
       done_title:"All set!", done_again:"Make another request",
       done_sent:"Your request has been sent to Dr. Jeremić. She'll get back to you to confirm the details.",
       contact_eyebrow:"Contact", contact_title:"Get in touch",
       contact_intro:"For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.",
-      contact_sci:"Publications & profile", contact_faculty:"Faculty",
+      contact_email:"Email", contact_phone:"Phone", contact_sci:"Publications & profile", contact_faculty:"Faculty",
       cf_title:"Send a message", cf_sub:"Fill in the form below and your message will reach her directly.",
       cf_subject:"Subject", cf_message:"Message", cf_submit:"Send message",
       cf_done_title:"Message ready!", cf_again:"Send another message",
@@ -715,46 +663,46 @@
     },
     sr: {
       nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_book:"Zakazivanje", nav_contact:"Kontakt",
-      hero_badge:"Novi podkast · uskoro",
-      hero_title_1:"Lab Life Show",
-      hero_subtitle:"Novi naučni podkast koji vodi dr Nevena Jeremić — razgovori o životu u laboratoriji, boljem dizajnu eksperimenata i boljem objavljivanju nauke.",
+      hero_badge:"Novi podkast · uskoro", hero_title_1:"Lab Life Show",
+      hero_subtitle:"Novi naučni podkast koji vodi dr Nevena Jeremić — vanredni profesor farmaceutske hemije Univerziteta u Kragujevcu. Razgovori o životu u nauci, redoks biologiji i kardiometaboličkim istraživanjima.",
       hero_cta_podcast:"Pogledaj podkast", hero_cta_book:"Zakaži termin",
       hero_role:"Vanredni profesor · Farmaceutska hemija",
-      stat_papers:"SCI radova", stat_citations:"Citata", stat_source:"Izvor: Google Scholar / podaci fakulteta",
-      ql_research_t:"Istraživanje", ql_research_d:"Kardiovaskularna, metabolička i nauka o oksidativnom stresu.",
+      stat_papers:"Publikacija", stat_citations:"Citata", stat_source:"Izvor: Scopus",
+      welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli na moju ličnu stranicu",
+      welcome_p1:"Ja sam dr Nevena Jeremić, profesor na Fakultetu medicinskih nauka Univerziteta u Kragujevcu i član tima Centra izuzetnih vrednosti za istraživanje redoks ravnoteže u kardiometaboličkim poremećajima i Centra za pretkliničke i funkcionalne studije, Fakultet medicinskih nauka, Univerzitet u Kragujevcu, Srbija.",
+      welcome_p2:"Ovde možete saznati više o mojim istraživačkim interesovanjima, pogledati moje publikacije i saradnje i povezati se povodom novih nacionalnih i međunarodnih projekata. Uvek sam otvorena za interdisciplinarna partnerstva koja povezuju osnovnu nauku i kliničku primenu.",
+      welcome_p3:"Hvala što ste posetili — radujem se povezivanju i saradnji!",
+      ql_research_t:"Istraživanje", ql_research_d:"Farmaceutska hemija, redoks biologija i kardiometabolička nauka.",
       ql_podcast_t:"Podkast", ql_podcast_d:"Lab Life Show — uskoro počinje.",
       ql_book_t:"Zakaži termin", ql_book_d:"Gostovanje u podkastu, predavanja ili konsultacije.",
       learn_more:"Saznaj više →",
-      home_about_teaser:"Vanredni profesor na Fakultetu medicinskih nauka Univerziteta u Kragujevcu i bivši postdoktorant na Univerzitetu u Luivilu, USA. Istražuje kardiovaskularne i metaboličke bolesti i pomaže naučnicima da dizajniraju i objavljuju bolja istraživanja.",
-      home_about_link:"Više o meni",
       home_latest:"Poslednje epizode", home_all_episodes:"Sve epizode",
       home_research:"Istraživanje ukratko", home_research_link:"Pogledaj istraživanje",
-      home_cta_title:"Želite da sarađujemo?",
-      home_cta_sub:"Zakažite gostovanje u podkastu, online predavanje ili konsultacije za istraživanje i pisanje.",
+      home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite gostovanje u podkastu, online predavanje ili konsultacije za istraživanje i pisanje.",
       cta_youtube:"Zaprati me na YouTube-u",
       about_eyebrow:"O meni", about_photo:"Fotografija",
-      about_headline:"Edukacija i istraživačke konsultacije · vanredni profesor · učim vas kako da dizajnirate i objavljujete bolju nauku.",
-      about_p1:"Nevena Jeremić je vanredni profesor na Fakultetu medicinskih nauka Univerziteta u Kragujevcu, gde radi sa punim radnim vremenom od 2013. godine u oblasti farmaceutske hemije.",
-      about_p2:"Diplomirala je farmaciju 2012. godine, a doktorat iz kliničke i eksperimentalne farmakologije završila je 2014. godine, oba na Univerzitetu u Kragujevcu. Od 2016. do 2018. bila je postdoktorant na Odeljenju za fiziologiju Medicinskog fakulteta Univerziteta u Luivilu, Kentaki, SAD.",
-      about_p3:"Njen rad povezuje eksperimentalnu farmakologiju i fiziologiju, sa fokusom na kardiovaskularne i metaboličke bolesti, oksidativni stres i prirodne proizvode. Pored istraživanja, mentoriše naučnike u dizajnu studija, naučnom pisanju i objavljivanju.",
-      about_path:"Akademski put",
-      tl_assoc:"Vanredni profesor", tl_kg:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu",
-      tl_postdoc:"Postdoktorant, Fiziologija", tl_phd:"Doktorat — Klinička i eksperimentalna farmakologija",
-      tl_diploma:"Diploma iz farmacije",
-      about_expertise:"Veštine i ekspertiza",
+      about_headline:"Vanredni profesor farmaceutske hemije · redoks biologija i kardiometabolička istraživanja.",
+      about_p1:"Ja sam dr Nevena Jeremić, vanredni profesor farmaceutske hemije na Fakultetu medicinskih nauka Univerziteta u Kragujevcu (Srbija) i gostujući docent na Univerzitetu u Luivilu (Kentaki, SAD) i Univerzitetu Sečenov (Moskva, Rusija).",
+      about_p2:"Moj naučni i stručni rad fokusiran je na preseku farmaceutske hemije, redoks biologije i kardiometaboličkih istraživanja, sa posebnim interesovanjem za molekularne mehanizme kardiovaskularne zaštite i translacione terapijske strategije. Imam preko 18 godina pretkliničkog istraživačkog iskustva u eksperimentalnoj farmakologiji, proučavanju mehanizama lekova i biohemijskoj karakterizaciji novih jedinjenja.",
+      about_p3:"Moje međunarodno istraživačko iskustvo proizilazi iz rada na Univerzitetu u Luivilu, USA, gde sam stekla bogato iskustvo u kardiovaskularnoj fiziologiji, redoks signalizaciji i modelima metaboličkih bolesti. Uvek sam otvorena za nove nacionalne i međunarodne saradnje i uživam u raznovrsnim, inovativnim i interdisciplinarnim projektima.",
+      about_p4:"Moje istraživanje povezuje fundamentalnu nauku i translacionu medicinu, sa posebnim naglaskom na razumevanje interakcija lek–meta, redoks signalizacije i molekularnih puteva uključenih u kardiovaskularne i metaboličke bolesti. Integrišući hemijske, biohemijske i fiziološke pristupe, težim da otkrijem mehanizme koji mogu da usmere razvoj inovativnih, mehanizmom vođenih terapijskih strategija sa jasnim kliničkim značajem.",
+      about_path:"Akademski put", about_awards:"Nagrade i priznanja", about_memberships:"Članstva", about_expertise:"Veštine i ekspertiza",
       research_eyebrow:"Istraživanje", research_title:"Oblasti istraživanja",
-      research_intro:"Eksperimentalna farmakologija i fiziologija — sa ponavljajućim temama kardiovaskularne zaštite, metaboličkih bolesti i redoks (oksidativni stres) biologije.",
-      ra_cardio_t:"Kardiovaskularne bolesti", ra_cardio_d:"Kardioprotekcija i ishemija–reperfuzija na izolovanom srcu.",
-      ra_metab_t:"Metaboličke bolesti", ra_metab_d:"Metabolički sindrom, dijabetes i biologija masnog tkiva.",
-      ra_ox_t:"Oksidativni stres", ra_ox_d:"Redoks status kao pokretač bolesti i terapijska meta.",
-      ra_np_t:"Prirodni proizvodi", ra_np_d:"Jedinjenja biljnog porekla poput dialil trisulfida (beli luk).",
-      ra_pre_t:"Pretklinički modeli", ra_pre_d:"Studije na životinjama, qPCR i Western blot metodologija.",
-      ra_write_t:"Naučno pisanje", ra_write_d:"Dizajn studija i njihova komunikacija za objavljivanje.",
-      research_pubs:"Odabrane publikacije", research_pubs_sub:"Izbor reprezentativnih i najnovijih radova.",
+      research_intro:"Moj rad je na preseku farmaceutske hemije, redoks biologije i kardiometaboličkih istraživanja — sa naglaskom na molekularne mehanizme kardiovaskularne zaštite i translacione terapijske strategije.",
+      ra_cardio_t:"Kardiovaskularna zaštita", ra_cardio_d:"Molekularni mehanizmi kardioprotekcije i ishemije–reperfuzije na izolovanom srcu.",
+      ra_redox_t:"Redoks biologija", ra_redox_d:"Redoks signalizacija i oksidativni stres kao pokretači bolesti i terapijske mete.",
+      ra_pharm_t:"Farmaceutska hemija", ra_pharm_d:"Interakcije lek–meta i biohemijska karakterizacija novih jedinjenja.",
+      ra_metab_t:"Kardiometaboličke bolesti", ra_metab_d:"Metabolički sindrom, dijabetes i posmeđivanje masnog tkiva.",
+      ra_np_t:"Prirodni proizvodi", ra_np_d:"Jedinjenja biljnog porekla poput dialil trisulfida (beli luk) i ivanjske trave (Galium verum).",
+      ra_pre_t:"Pretklinički modeli", ra_pre_d:"Preko 18 godina sa glodarskim modelima u eksperimentalnoj farmakologiji i fiziologiji.",
+      research_pubs:"Odabrane publikacije", research_pubs_sub:"Izbor iz preko 81 recenzirana rada (Scopus: 1749 citata, h-index 22).",
+      research_books:"Knjige i poglavlja", research_activity:"Akademska aktivnost",
+      act_mentor_t:"Mentorstvo", act_mentor_d:"Mentor 3 odbranjene doktorske disertacije i 9 master radova iz farmaceutske hemije; mentor na doktorskim studijama od 2018.",
+      act_editor_t:"Gostujući urednik", act_editor_d:"Specijalna izdanja časopisa Pathophysiology i Frontiers in Physiology o kardiovaskularnoj fiziologiji.",
+      act_review_t:"Recenzent", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers i drugi.",
       pod_badge:"Uskoro",
       pod_intro:"Novi podkast koji vodi dr Nevena Jeremić. Iskreni razgovori o životu u nauci — od laboratorije do dizajna eksperimenata i boljeg objavljivanja istraživanja.",
-      pod_cta_guest:"Budite gost", pod_cta_notify:"Obavesti me",
-      pod_expect:"Šta vas očekuje",
+      pod_cta_guest:"Budite gost", pod_cta_notify:"Obavesti me", pod_expect:"Šta vas očekuje",
       pod_e1_t:"Priče istraživača", pod_e1_d:"Otvoreni razgovori sa naučnicima o stvarnom životu iza radova.",
       pod_e2_t:"Bolja nauka", pod_e2_d:"Praktični saveti o dizajnu studija, pisanju i objavljivanju.",
       pod_e3_t:"Karijera i život u laboratoriji", pod_e3_d:"Snalaženje u akademiji, mentorstvo i put kroz doktorat.",
@@ -769,14 +717,12 @@
       svc_consult_t:"Konsultacije za istraživanje / pisanje", svc_consult_d:"Individualna pomoć oko dizajna studije ili pripreme rukopisa.",
       svc_mentor_t:"Mentorska sesija", svc_mentor_d:"Vođenje kroz izgradnju istraživačke karijere i bolje objavljivanje nauke.",
       form_service:"Usluga", form_service_ph:"Izaberite uslugu…",
-      form_name:"Ime", form_email:"Email", form_phone:"Telefon", form_date:"Željeni datum", form_msg:"Poruka (opciono)",
-      form_submit:"Pošalji zahtev za zakazivanje",
-      form_note:"Ovo je demo forma — slanje otvara potvrdu. Povezivanje sa email-om ili alatom za zakazivanje može se podesiti kasnije.",
+      form_name:"Ime", form_email:"Email", form_phone:"Telefon", form_date:"Željeni datum", form_msg:"Poruka (opciono)", form_submit:"Pošalji zahtev za zakazivanje",
       done_title:"Spremno!", done_again:"Pošalji novi zahtev",
       done_sent:"Vaš zahtev je poslat dr Jeremić. Javiće vam se radi potvrde detalja.",
       contact_eyebrow:"Kontakt", contact_title:"Stupite u kontakt",
       contact_intro:"Za saradnju, predavanja, gostovanja u podkastu ili mentorstvo, javite se putem nekog od kanala ispod.",
-      contact_sci:"Publikacije i profil", contact_faculty:"Fakultet",
+      contact_email:"Email", contact_phone:"Telefon", contact_sci:"Publikacije i profil", contact_faculty:"Fakultet",
       cf_title:"Pošaljite poruku", cf_sub:"Popunite formu ispod i vaša poruka stiže direktno do nje.",
       cf_subject:"Naslov", cf_message:"Poruka", cf_submit:"Pošalji poruku",
       cf_done_title:"Poruka je spremna!", cf_again:"Pošalji novu poruku",
@@ -791,48 +737,109 @@
 
   let lang = "en";
 
-  /* YouTube channel URL — fill this in once the channel exists, e.g. "https://www.youtube.com/@labifeshow" */
+  /* YouTube channel URL — fill in once the channel exists, e.g. "https://www.youtube.com/@labifeshow" */
   const YT_CHANNEL_URL = "";
-
   function wireYouTube(){
     const url = YT_CHANNEL_URL && YT_CHANNEL_URL.trim();
     document.querySelectorAll("[data-yt-link]").forEach(function(a){
-      if(url){ a.href = url; a.onclick = null; }
-      else { a.href = "#"; a.onclick = function(e){ e.preventDefault(); }; }
+      if(url){ a.href = url; a.onclick = null; } else { a.href = "#"; a.onclick = function(e){ e.preventDefault(); }; }
     });
   }
 
-  /* ---------- data lists ---------- */
-  const SKILLS = [
-    "Scientific Writing","Research Skills","Real-Time PCR (qPCR)","Western Blotting",
-    "Pre-clinical Studies","Poster Presentations","Educational Consulting","Experimental Pharmacology"
+  /* ---------- data ---------- */
+  const TIMELINE = [
+    { y:"2022 – present", t:"Associate Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
+    { y:"2022 – present", t:"Full member, Center of Excellence (CePI)", s:"Redox balance in cardiovascular & metabolic disorders, University of Kragujevac" },
+    { y:"2018 – present", t:"Adjunct Assistant Professor, Physiology", s:"University of Louisville, KY, USA" },
+    { y:"2018 – 2024", t:"Vice Dean for Scientific Research & International Collaboration", s:"Faculty of Medical Sciences, University of Kragujevac" },
+    { y:"2017 – 2022", t:"Assistant Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
+    { y:"2016 – 2018", t:"Postdoctoral Associate, Physiology", s:"University of Louisville School of Medicine, KY, USA" },
+    { y:"2012 – 2015", t:"PhD — Clinical & Experimental Pharmacology", s:"Faculty of Medical Sciences, University of Kragujevac" },
+    { y:"2012", t:"Master of Pharmacy", s:"Faculty of Medical Sciences, University of Kragujevac" }
   ];
-
+  const AWARDS = [
+    { y:"2024", t:"Charter of the University of Saint Sava — to the Center of Excellence for redox balance in cardiovascular and metabolic disorders, University of Kragujevac" },
+    { y:"2022", t:"Best female scientist at the Faculty of Medical Sciences, University of Kragujevac" },
+    { y:"2017", t:"Travel Award — 4th European Section Meeting of the IACS, Pécs, Hungary" },
+    { y:"2017", t:"Meritorious Postdoctoral Fellow Poster Presentation Award — Kentucky Chapter, American Physiological Society" },
+    { y:"2016", t:"Travel Award — 3rd European Section Meeting of the IACS, Marseille, France" }
+  ];
+  const MEMBERSHIPS = [
+    "American Heart Association — Hypertension Council (2016–2018)",
+    "Serbian Physiological Society",
+    "American Physiological Society (2016–2018)"
+  ];
+  const SKILLS = [
+    "Pharmaceutical chemistry","Experimental pharmacology","Redox biology","Cardiovascular physiology",
+    "Preclinical rodent models","Real-Time PCR (qPCR)","Western blot","Scientific writing","Mentoring","GLP · ISO 9001 · ISO 14001"
+  ];
   const PUBS = [
+    { t:"Tribological and Rheological Characterization of 3D Printed Polycarbonate", j:"Lubricants", y:"2026", url:"https://doi.org/10.3390/lubricants14010028" },
     { t:"Cardioprotective Role of Captopril: From Basic to Applied Investigations", j:"Int. J. of Molecular Sciences", y:"2025", url:"https://doi.org/10.3390/ijms26157215" },
-    { t:"Safe Meat, Smart Science: Biotechnology's Role in Antibiotic Residue Removal", j:"Antibiotics", y:"2025", url:"https://doi.org/10.3390/antibiotics14121264" },
     { t:"SARS-CoV-2 Infection and Its Association with Maternal and Fetal Redox Status and Outcomes", j:"J. of Clinical Medicine", y:"2025", url:"https://doi.org/10.3390/jcm14051555" },
+    { t:"Galium verum L. extract mitigates cardiovascular events in psoriasis rats", j:"Molecular and Cellular Biochemistry", y:"2025", url:"https://doi.org/10.1007/s11010-025-05215-0" },
+    { t:"Diallyl Trisulfide and Cardiovascular Health: Evidence and Potential Molecular Mechanisms", j:"Int. J. of Molecular Sciences", y:"2024", url:"https://doi.org/10.3390/ijms25189831" },
+    { t:"Sacubitril/valsartan promotes white adipose tissue browning in rats with metabolic syndrome through mTORC1", j:"BioFactors", y:"2024", url:"https://doi.org/10.1002/biof.2040" },
+    { t:"Sacubitril/valsartan reverses cardiac structure and function in hypertension-induced hypertrophic cardiomyopathy", j:"Molecular and Cellular Biochemistry", y:"2023", url:"https://doi.org/10.1007/s11010-023-04690-7" },
     { t:"Garlic Derived Diallyl Trisulfide in Experimental Metabolic Syndrome: Metabolic Effects and Cardioprotective Role", j:"Int. J. of Molecular Sciences", y:"2020", url:"https://doi.org/10.3390/ijms21239100" },
-    { t:"The cardioprotective effects of diallyl trisulfide on diabetic rats with ex vivo induced ischemia/reperfusion injury", j:"Molecular and Cellular Biochemistry", y:"2019", url:"https://doi.org/10.1007/s11010-019-03577-w" },
+    { t:"Cardioprotective effects of high-intensity interval training via microRNA regulation of mitochondrial and oxidative stress pathways", j:"J. of Cellular Physiology", y:"2020", url:"https://doi.org/10.1002/jcp.29409" },
     { t:"Browning of White Fat: Novel Insight into Factors, Mechanisms, and Therapeutics", j:"J. of Cellular Physiology", y:"2017", url:"https://doi.org/10.1002/jcp.25450" },
     { t:"Effects of ischemia and omeprazole preconditioning on functional recovery of isolated rat heart", j:"Braz. J. of Cardiovascular Surgery", y:"2015", url:"" }
   ];
-
+  const BOOKS = [
+    { t:"Modulation of Oxidative Stress in Heart Disease (chapter)", p:"Springer Nature Singapore, 2019", url:"https://doi.org/10.1007/978-981-13-8946-7" },
+    { t:"Biology of Women's Heart Health (chapter)", p:"Springer Nature, 2023", url:"https://doi.org/10.1007/978-3-031-39928-2" },
+    { t:"Pharmaceutical Chemistry 1 — chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
+    { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
+  ];
   const SERVICES = ["svc_guest","svc_lecture","svc_consult","svc_mentor"];
   const SERVICE_ICONS = { svc_guest:"fa-microphone-lines", svc_lecture:"fa-chalkboard-user", svc_consult:"fa-file-pen", svc_mentor:"fa-user-graduate" };
 
-  /* ---------- render dynamic lists ---------- */
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  /* ---------- alternating timeline ---------- */
+  function renderTimeline(){
+    const wrap = document.getElementById("timelineWrap");
+    if(!wrap) return;
+    wrap.className = "relative mt-6";
+    let html = `<span class="hidden sm:block absolute left-1/2 -translate-x-1/2 top-1 bottom-1 w-0.5 bg-brand-light"></span>`;
+    html += `<span class="sm:hidden absolute left-[7px] top-1 bottom-1 w-0.5 bg-brand-light"></span>`;
+    html += TIMELINE.map((it, i) => {
+      const left = i % 2 === 0;
+      const card = `
+        <div class="rounded-2xl border border-gray-100 bg-white p-4 hover:border-brand hover:shadow-md transition-all ${left?'sm:text-right':''}">
+          <span class="inline-block text-[11px] font-bold tracking-wide text-white bg-brand px-2.5 py-0.5 rounded-full">${it.y}</span>
+          <p class="mt-1.5 font-semibold text-gray-800 leading-snug">${it.t}</p>
+          <p class="text-sm text-gray-500 mt-0.5">${it.s}</p>
+        </div>`;
+      return `
+      <div class="relative pl-8 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-10 mb-5">
+        <span class="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 top-2 h-4 w-4 rounded-full bg-brand ring-4 ring-brand-light z-10"></span>
+        ${left ? card + `<div class="hidden sm:block"></div>` : `<div class="hidden sm:block"></div>` + card}
+      </div>`;
+    }).join("");
+    wrap.innerHTML = html;
+  }
+
+  function renderAwards(){
+    const w = document.getElementById("awardsWrap"); if(!w) return;
+    w.innerHTML = AWARDS.map(a=>`
+      <li class="flex gap-3 items-start">
+        <span class="shrink-0 mt-0.5 text-[11px] font-bold text-white bg-brand px-2 py-0.5 rounded-full">${a.y}</span>
+        <span class="text-gray-700 text-sm leading-snug">${a.t}</span>
+      </li>`).join("");
+  }
+  function renderMemberships(){
+    const w = document.getElementById("membershipsWrap"); if(!w) return;
+    w.innerHTML = MEMBERSHIPS.map(m=>`<li class="flex gap-2 items-start text-sm"><i class="fa-solid fa-circle text-[6px] text-brand mt-2"></i><span>${m}</span></li>`).join("");
+  }
   function renderSkills(){
-    document.getElementById("skillsWrap").innerHTML = SKILLS.map(s=>
-      `<span class="px-3 py-1.5 rounded-full bg-brand-light text-brand text-sm font-medium">${s}</span>`).join("");
+    const w = document.getElementById("skillsWrap"); if(!w) return;
+    w.innerHTML = SKILLS.map(s=>`<span class="px-3 py-1.5 rounded-full bg-brand-light text-brand text-sm font-medium">${s}</span>`).join("");
   }
   function renderPubs(){
-    const items = PUBS.map((p, i) => {
-      const doi = p.url
-        ? `<a href="${p.url}" target="_blank" rel="noopener" class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:gap-2.5 transition-all">
-             <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> DOI
-           </a>`
-        : "";
+    const items = PUBS.map(p=>{
+      const doi = p.url ? `<a href="${p.url}" target="_blank" rel="noopener" class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:gap-2.5 transition-all"><i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> DOI</a>` : "";
       return `
       <li class="relative ml-8 sm:ml-10 mb-6 last:mb-0">
         <span class="absolute -left-[2.05rem] sm:-left-[2.55rem] top-1 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-brand-light">
@@ -848,43 +855,43 @@
         </div>
       </li>`;
     }).join("");
-
-    document.getElementById("pubsWrap").innerHTML = `
-      <ol class="relative border-l-2 border-brand-light ml-2 sm:ml-3 pt-1">
-        ${items}
-      </ol>`;
+    document.getElementById("pubsWrap").innerHTML = `<ol class="relative border-l-2 border-brand-light ml-2 sm:ml-3 pt-1">${items}</ol>`;
   }
-  let loadedEpisodes = null; // null = not fetched yet, [] = none, [..] = episodes
-
-  function escapeHtml(s){
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function renderBooks(){
+    const w = document.getElementById("booksWrap"); if(!w) return;
+    w.innerHTML = BOOKS.map(b=>{
+      const inner = `
+        <div class="flex gap-4 items-start rounded-2xl border border-gray-100 p-4 h-full hover:border-brand hover:shadow-md transition-all">
+          <div class="h-10 w-10 rounded-lg bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid fa-book"></i></div>
+          <div>
+            <p class="font-medium leading-snug text-gray-800">${b.t}</p>
+            <p class="text-sm text-gray-500 mt-0.5">${b.p}${b.url?` · <span class="text-brand font-medium">DOI ↗</span>`:""}</p>
+          </div>
+        </div>`;
+      return b.url ? `<a href="${b.url}" target="_blank" rel="noopener" class="block">${inner}</a>` : `<div>${inner}</div>`;
+    }).join("");
   }
 
+  /* ---------- episodes ---------- */
+  let loadedEpisodes = null;
   async function loadEpisodes(){
     try {
       const r = await fetch("/api/episodes");
-      if(!r.ok) throw new Error("bad status");
+      if(!r.ok) throw new Error("bad");
       const data = await r.json();
       loadedEpisodes = Array.isArray(data.episodes) ? data.episodes : [];
-    } catch(_) {
-      loadedEpisodes = []; // offline / local file / not deployed yet -> placeholders
-    }
+    } catch(_) { loadedEpisodes = []; }
     renderEpisodes();
   }
-
   function episodeCard(ep){
-    const dateStr = ep.publishedAt
-      ? new Date(ep.publishedAt).toLocaleDateString(lang==="sr"?"sr-RS":"en-US",{year:"numeric",month:"short",day:"numeric"})
-      : "";
+    const dateStr = ep.publishedAt ? new Date(ep.publishedAt).toLocaleDateString(lang==="sr"?"sr-RS":"en-US",{year:"numeric",month:"short",day:"numeric"}) : "";
     const thumb = ep.thumbnail || `https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`;
     return `
       <div class="rounded-2xl border border-gray-100 overflow-hidden group">
         <div class="aspect-video bg-black relative cursor-pointer" onclick="playEpisode('${ep.id}', this)">
           <img src="${thumb}" alt="" class="w-full h-full object-cover" loading="lazy" />
           <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
-            <div class="h-14 w-14 rounded-full bg-white/90 text-brand flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-play ml-0.5"></i>
-            </div>
+            <div class="h-14 w-14 rounded-full bg-white/90 text-brand flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
           </div>
         </div>
         <div class="p-4">
@@ -893,20 +900,16 @@
         </div>
       </div>`;
   }
-
   function playEpisode(id, el){
     el.outerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" title="Lab Life Show" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
   }
-
   function episodePlaceholder(i){
     const t = I18N[lang];
     return `
       <div class="rounded-2xl border border-gray-100 overflow-hidden group">
         <div class="aspect-video bg-gradient-to-br from-brand to-brand-dark relative flex items-center justify-center">
           <div class="absolute inset-0 sci-grid opacity-30"></div>
-          <div class="h-14 w-14 rounded-full bg-white/90 text-brand flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-play ml-0.5"></i>
-          </div>
+          <div class="h-14 w-14 rounded-full bg-white/90 text-brand flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform"><i class="fa-solid fa-play ml-0.5"></i></div>
           <span class="absolute top-3 left-3 text-[11px] font-bold text-white/90 bg-black/20 px-2 py-0.5 rounded">EP ${String(i).padStart(2,"0")}</span>
         </div>
         <div class="p-4">
@@ -916,281 +919,128 @@
         </div>
       </div>`;
   }
-
   function renderEpisodes(){
     const wrap = document.getElementById("episodesWrap");
     const previewNote = document.getElementById("podPreviewNote");
     const ytNote = document.getElementById("podYtNote");
-    const hasEpisodes = loadedEpisodes && loadedEpisodes.length > 0;
-
-    if(previewNote) previewNote.style.display = hasEpisodes ? "none" : "";
-    if(ytNote) ytNote.style.display = hasEpisodes ? "none" : "";
-
-    if(hasEpisodes){
-      wrap.innerHTML = loadedEpisodes.map(episodeCard).join("");
-    } else {
-      let html = "";
-      for(let i=1;i<=3;i++){ html += episodePlaceholder(i); }
-      wrap.innerHTML = html;
+    const has = loadedEpisodes && loadedEpisodes.length > 0;
+    if(previewNote) previewNote.style.display = has ? "none" : "";
+    if(ytNote) ytNote.style.display = has ? "none" : "";
+    if(wrap){
+      wrap.innerHTML = has ? loadedEpisodes.map(episodeCard).join("") : [1,2,3].map(episodePlaceholder).join("");
     }
     renderHomeEpisodes();
   }
-
   function renderHomeEpisodes(){
     const wrap = document.getElementById("homeEpisodesWrap");
     if(!wrap) return;
-    if(loadedEpisodes && loadedEpisodes.length > 0){
-      wrap.innerHTML = loadedEpisodes.slice(0,3).map(episodeCard).join("");
-    } else {
-      let html = "";
-      for(let i=1;i<=3;i++){ html += episodePlaceholder(i); }
-      wrap.innerHTML = html;
-    }
+    const has = loadedEpisodes && loadedEpisodes.length > 0;
+    wrap.innerHTML = has ? loadedEpisodes.slice(0,3).map(episodeCard).join("") : [1,2,3].map(episodePlaceholder).join("");
   }
+
+  /* ---------- services + dropdown ---------- */
   function renderServices(){
     const t = I18N[lang];
     document.getElementById("servicesWrap").innerHTML = SERVICES.map(s=>`
-      <button type="button" onclick="pickService('${s}')" data-svc="${s}"
-        class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand transition-colors">
-        <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0">
-          <i class="fa-solid ${SERVICE_ICONS[s]}"></i>
-        </div>
-        <div>
-          <p class="font-bold text-sm">${t[s+"_t"]}</p>
-          <p class="text-sm text-gray-500">${t[s+"_d"]}</p>
-        </div>
+      <button type="button" onclick="pickService('${s}')" data-svc="${s}" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand transition-colors">
+        <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS[s]}"></i></div>
+        <div><p class="font-bold text-sm">${t[s+"_t"]}</p><p class="text-sm text-gray-500">${t[s+"_d"]}</p></div>
       </button>`).join("");
   }
   function pickService(s){
     const t = I18N[lang];
-    document.querySelectorAll(".svc-opt").forEach(el=>{
-      el.classList.toggle("border-brand", el.dataset.svc===s);
-      el.classList.toggle("bg-brand-light", el.dataset.svc===s);
-    });
+    document.querySelectorAll(".svc-opt").forEach(el=>{ el.classList.toggle("border-brand", el.dataset.svc===s); el.classList.toggle("bg-brand-light", el.dataset.svc===s); });
     document.getElementById("f_service").value = t[s+"_t"];
-    // sync custom dropdown button
-    const lbl = document.getElementById("serviceBtnLabel");
-    const btn = document.getElementById("serviceBtn");
+    const lbl = document.getElementById("serviceBtnLabel"); const btn = document.getElementById("serviceBtn");
     if(lbl){ lbl.textContent = t[s+"_t"]; lbl.classList.remove("text-gray-400"); lbl.classList.add("text-gray-800","font-medium"); }
     if(btn){ btn.classList.remove("border-red-400"); }
     closeServiceMenu();
   }
-
   function renderServiceMenu(){
-    const t = I18N[lang];
-    const menu = document.getElementById("serviceMenu");
-    if(!menu) return;
+    const t = I18N[lang]; const menu = document.getElementById("serviceMenu"); if(!menu) return;
     menu.innerHTML = SERVICES.map(s=>`
-      <button type="button" onclick="pickService('${s}')"
-        class="w-full text-left flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-brand-light hover:text-brand transition-colors">
-        <i class="fa-solid ${SERVICE_ICONS[s]} text-brand w-4 text-center"></i>
-        <span>${t[s+"_t"]}</span>
+      <button type="button" onclick="pickService('${s}')" class="w-full text-left flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-brand-light hover:text-brand transition-colors">
+        <i class="fa-solid ${SERVICE_ICONS[s]} text-brand w-4 text-center"></i><span>${t[s+"_t"]}</span>
       </button>`).join("");
   }
-  function toggleServiceMenu(e){
-    if(e) e.stopPropagation();
-    const menu = document.getElementById("serviceMenu");
-    const chev = document.getElementById("serviceChevron");
-    const open = menu.classList.contains("hidden");
-    menu.classList.toggle("hidden", !open);
-    if(chev) chev.style.transform = open ? "rotate(180deg)" : "";
-  }
-  function closeServiceMenu(){
-    const menu = document.getElementById("serviceMenu");
-    const chev = document.getElementById("serviceChevron");
-    if(menu) menu.classList.add("hidden");
-    if(chev) chev.style.transform = "";
-  }
-  document.addEventListener("click", function(e){
-    const dd = document.getElementById("serviceMenu");
-    const btn = document.getElementById("serviceBtn");
-    if(dd && !dd.classList.contains("hidden") && !dd.contains(e.target) && e.target!==btn && !btn.contains(e.target)){
-      closeServiceMenu();
-    }
-  });
+  function toggleServiceMenu(e){ if(e) e.stopPropagation(); const menu=document.getElementById("serviceMenu"); const chev=document.getElementById("serviceChevron"); const open=menu.classList.contains("hidden"); menu.classList.toggle("hidden", !open); if(chev) chev.style.transform = open ? "rotate(180deg)" : ""; }
+  function closeServiceMenu(){ const menu=document.getElementById("serviceMenu"); const chev=document.getElementById("serviceChevron"); if(menu) menu.classList.add("hidden"); if(chev) chev.style.transform=""; }
+  document.addEventListener("click", function(e){ const dd=document.getElementById("serviceMenu"); const btn=document.getElementById("serviceBtn"); if(dd && !dd.classList.contains("hidden") && !dd.contains(e.target) && e.target!==btn && !btn.contains(e.target)){ closeServiceMenu(); } });
 
-  /* ---------- i18n apply ---------- */
+  /* ---------- i18n + nav ---------- */
   function applyLang(){
     const t = I18N[lang];
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const k = el.getAttribute("data-i18n");
-      if(t[k]!==undefined && typeof t[k]==="string") el.textContent = t[k];
-    });
+    document.querySelectorAll("[data-i18n]").forEach(el=>{ const k=el.getAttribute("data-i18n"); if(t[k]!==undefined && typeof t[k]==="string") el.textContent = t[k]; });
     document.getElementById("langLabel").textContent = lang==="en" ? "SR" : "EN";
-    renderEpisodes();
-    renderServices();
-    renderServiceMenu();
-    buildCalendar();
-    updateDateLabel();
+    renderEpisodes(); renderServices(); renderServiceMenu(); buildCalendar(); updateDateLabel();
   }
-  function toggleLang(){
-    lang = lang==="en" ? "sr" : "en";
-    applyLang();
-  }
-
-  /* ---------- page navigation ---------- */
+  function toggleLang(){ lang = lang==="en" ? "sr" : "en"; applyLang(); }
   function showPage(name){
     document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-    const el = document.getElementById("page-"+name);
-    if(el) el.classList.add("active");
-    document.querySelectorAll("[data-nav]").forEach(n=>{
-      n.classList.toggle("active-link", n.dataset.nav===name);
-    });
+    const el = document.getElementById("page-"+name); if(el) el.classList.add("active");
+    document.querySelectorAll("[data-nav]").forEach(n=>n.classList.toggle("active-link", n.dataset.nav===name));
     document.getElementById("mobileMenu").classList.add("hidden");
     document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg";
     window.scrollTo({top:0, behavior:"smooth"});
   }
-  function toggleMenu(){
-    const m = document.getElementById("mobileMenu");
-    const open = m.classList.contains("hidden");
-    m.classList.toggle("hidden");
-    document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg";
-  }
+  function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
 
   /* ---------- calendar ---------- */
-  let calDate = new Date();
-  calDate.setDate(1);
+  let calDate = new Date(); calDate.setDate(1);
   let selectedDate = null;
-
-  function calMove(delta){
-    calDate.setMonth(calDate.getMonth()+delta);
-    buildCalendar();
-  }
+  function calMove(d){ calDate.setMonth(calDate.getMonth()+d); buildCalendar(); }
   function buildCalendar(){
-    const t = I18N[lang];
-    document.getElementById("calLabel").textContent = `${t.months[calDate.getMonth()]} ${calDate.getFullYear()}`;
+    const t = I18N[lang]; const lblEl=document.getElementById("calLabel"); if(!lblEl) return;
+    lblEl.textContent = `${t.months[calDate.getMonth()]} ${calDate.getFullYear()}`;
     document.getElementById("calDows").innerHTML = t.dows.map(d=>`<div>${d}</div>`).join("");
-
-    const year = calDate.getFullYear(), month = calDate.getMonth();
-    const first = new Date(year, month, 1);
-    let startDow = (first.getDay()+6)%7; // Monday-first
-    const daysInMonth = new Date(year, month+1, 0).getDate();
-    const today = new Date(); today.setHours(0,0,0,0);
-
-    let html = "";
-    for(let i=0;i<startDow;i++) html += `<div></div>`;
-    for(let d=1; d<=daysInMonth; d++){
-      const cur = new Date(year, month, d);
-      const past = cur < today;
-      const isSel = selectedDate && cur.toDateString()===selectedDate.toDateString();
-      const base = "h-9 rounded-lg flex items-center justify-center cursor-pointer transition-colors";
-      let cls;
-      if(past){ cls = "text-gray-300 cursor-not-allowed"; }
-      else if(isSel){ cls = "bg-brand text-white font-bold"; }
-      else { cls = "hover:bg-brand-light text-gray-700"; }
-      html += `<div class="${base} ${cls}" ${past?"":`onclick="selectDate(${year},${month},${d})"`}>${d}</div>`;
+    const year=calDate.getFullYear(), month=calDate.getMonth();
+    const first=new Date(year,month,1); let startDow=(first.getDay()+6)%7;
+    const days=new Date(year,month+1,0).getDate(); const today=new Date(); today.setHours(0,0,0,0);
+    let html=""; for(let i=0;i<startDow;i++) html+=`<div></div>`;
+    for(let d=1; d<=days; d++){
+      const cur=new Date(year,month,d); const past=cur<today;
+      const isSel=selectedDate && cur.toDateString()===selectedDate.toDateString();
+      const base="h-9 rounded-lg flex items-center justify-center cursor-pointer transition-colors";
+      let cls = past ? "text-gray-300 cursor-not-allowed" : isSel ? "bg-brand text-white font-bold" : "hover:bg-brand-light text-gray-700";
+      html+=`<div class="${base} ${cls}" ${past?"":`onclick="selectDate(${year},${month},${d})"`}>${d}</div>`;
     }
     document.getElementById("calDays").innerHTML = html;
   }
-  function selectDate(y,m,d){
-    selectedDate = new Date(y,m,d);
-    document.getElementById("f_date").value = selectedDate.toISOString().slice(0,10);
-    buildCalendar();
-    updateDateLabel();
-  }
-  function updateDateLabel(){
-    const t = I18N[lang];
-    const lbl = document.getElementById("f_date_label");
-    if(!lbl) return;
-    if(selectedDate){
-      lbl.innerHTML = `<i class="fa-regular fa-calendar-check mr-1"></i>${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
-    } else {
-      lbl.textContent = "";
-    }
-  }
+  function selectDate(y,m,d){ selectedDate=new Date(y,m,d); document.getElementById("f_date").value=selectedDate.toISOString().slice(0,10); buildCalendar(); updateDateLabel(); }
+  function updateDateLabel(){ const t=I18N[lang]; const lbl=document.getElementById("f_date_label"); if(!lbl) return; lbl.innerHTML = selectedDate ? `<i class="fa-regular fa-calendar-check mr-1"></i>${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}` : ""; }
 
-  /* ---------- booking form (demo) ---------- */
+  /* ---------- booking ---------- */
   document.getElementById("bookingForm").addEventListener("submit", async function(e){
     e.preventDefault();
     const t = I18N[lang];
     const svc = document.getElementById("f_service").value;
-    if(!svc){
-      const btn = document.getElementById("serviceBtn");
-      if(btn){ btn.classList.add("border-red-400"); btn.focus(); }
-      return;
-    }
-    let dStr = "";
-    if(selectedDate){ dStr = `${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`; }
-
-    const payload = {
-      service: svc,
-      name: document.getElementById("f_name").value,
-      email: document.getElementById("f_email").value,
-      phone: document.getElementById("f_phone").value,
-      date: document.getElementById("f_date").value,
-      message: document.getElementById("f_msg").value
-    };
-
-    let sent = false;
-    try {
-      const r = await fetch("/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if(r.ok){
-        const data = await r.json().catch(()=>({}));
-        sent = data.ok === true && data.configured === true;
-      }
-    } catch(_) { /* offline / local file -> fall back to local confirmation */ }
-
+    if(!svc){ const btn=document.getElementById("serviceBtn"); if(btn){ btn.classList.add("border-red-400"); btn.focus(); } return; }
+    let dStr = selectedDate ? `${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}` : "";
+    const payload = { service:svc, name:document.getElementById("f_name").value, email:document.getElementById("f_email").value, phone:document.getElementById("f_phone").value, date:document.getElementById("f_date").value, message:document.getElementById("f_msg").value };
+    let sent=false;
+    try { const r=await fetch("/api/book",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
     document.getElementById("bookingSummary").innerHTML = sent ? t.done_sent : t.summary(svc, dStr);
-    this.classList.add("hidden");
-    document.getElementById("bookingDone").classList.remove("hidden");
+    this.classList.add("hidden"); document.getElementById("bookingDone").classList.remove("hidden");
   });
-  function resetBooking(){
-    const f = document.getElementById("bookingForm");
-    f.reset(); selectedDate = null;
-    document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("border-brand","bg-brand-light"));
-    buildCalendar(); updateDateLabel();
-    document.getElementById("bookingDone").classList.add("hidden");
-    f.classList.remove("hidden");
-  }
+  function resetBooking(){ const f=document.getElementById("bookingForm"); f.reset(); selectedDate=null; document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("border-brand","bg-brand-light")); const lbl=document.getElementById("serviceBtnLabel"); if(lbl){ lbl.textContent=I18N[lang].form_service_ph; lbl.classList.add("text-gray-400"); lbl.classList.remove("text-gray-800","font-medium"); } document.getElementById("f_service").value=""; buildCalendar(); updateDateLabel(); document.getElementById("bookingDone").classList.add("hidden"); f.classList.remove("hidden"); }
 
-  /* ---------- contact form ---------- */
+  /* ---------- contact ---------- */
   document.getElementById("contactForm").addEventListener("submit", async function(e){
     e.preventDefault();
     const t = I18N[lang];
-    const payload = {
-      name: document.getElementById("c_name").value,
-      email: document.getElementById("c_email").value,
-      phone: document.getElementById("c_phone").value,
-      subject: document.getElementById("c_subject").value,
-      message: document.getElementById("c_msg").value
-    };
-    let sent = false;
-    try {
-      const r = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if(r.ok){
-        const data = await r.json().catch(()=>({}));
-        sent = data.ok === true && data.configured === true;
-      }
-    } catch(_) { /* offline / local file -> local confirmation */ }
-
+    const payload = { name:document.getElementById("c_name").value, email:document.getElementById("c_email").value, phone:document.getElementById("c_phone").value, subject:document.getElementById("c_subject").value, message:document.getElementById("c_msg").value };
+    let sent=false;
+    try { const r=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
     document.getElementById("contactSummary").innerHTML = sent ? t.cf_sent : t.cf_summary;
-    this.classList.add("hidden");
-    document.getElementById("contactDone").classList.remove("hidden");
+    this.classList.add("hidden"); document.getElementById("contactDone").classList.remove("hidden");
   });
-  function resetContact(){
-    const f = document.getElementById("contactForm");
-    f.reset();
-    document.getElementById("contactDone").classList.add("hidden");
-    f.classList.remove("hidden");
-  }
+  function resetContact(){ const f=document.getElementById("contactForm"); f.reset(); document.getElementById("contactDone").classList.add("hidden"); f.classList.remove("hidden"); }
 
   /* ---------- init ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
-  renderSkills();
-  renderPubs();
-  applyLang();
-  wireYouTube();
-  loadEpisodes();
-  showPage("home");
+  renderTimeline(); renderAwards(); renderMemberships(); renderSkills(); renderPubs(); renderBooks();
+  applyLang(); wireYouTube(); loadEpisodes(); showPage("home");
   </script>
 </body>
 </html>
