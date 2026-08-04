@@ -110,7 +110,7 @@
 <body class="antialiased text-ink">
 
   <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 relative">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="#" onclick="showPage('home');return false;" class="flex items-center gap-2 shrink-0" aria-label="LabLifeHub home">
         <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white font-black text-sm">LH</span>
@@ -135,16 +135,16 @@
         </button>
       </div>
     </nav>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white">
-      <div class="flex flex-col px-4 py-2 text-sm font-medium">
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('home')"     data-i18n="nav_home">Home</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('about')"    data-i18n="nav_about">About</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('research')" data-i18n="nav_research">Research</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('academy')"  data-i18n="nav_academy">Academy</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('book')"     data-i18n="nav_book">Book</a>
-        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('reviews')"  data-i18n="nav_reviews">Reviews</a>
-        <a class="py-3 cursor-pointer" onclick="showPage('contact')" data-i18n="nav_contact">Contact</a>
+    <div id="mobileMenu" class="md:hidden hidden absolute right-4 top-16 w-[58vw] max-w-72 min-w-48 rounded-2xl border border-gray-100 bg-white shadow-2xl overflow-hidden">
+      <div class="flex flex-col px-4 py-2 text-sm font-medium text-right">
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('home')"     data-i18n="nav_home">Home</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('about')"    data-i18n="nav_about">About</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('research')" data-i18n="nav_research">Research</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('academy')"  data-i18n="nav_academy">Academy</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('book')"     data-i18n="nav_book">Book</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="showPage('reviews')"  data-i18n="nav_reviews">Reviews</a>
+        <a class="py-3 cursor-pointer hover:text-brand transition-colors" onclick="showPage('contact')" data-i18n="nav_contact">Contact</a>
       </div>
     </div>
   </header>
