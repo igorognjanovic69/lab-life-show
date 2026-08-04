@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Nevena Jeremić — Lab Life Show</title>
-  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. Redox biology and cardiometabolic research, science mentorship, and the Lab Life Show podcast." />
+  <title>LabLifeHub — Dr. Nevena Jeremić</title>
+  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. Redox biology and cardiometabolic research, science mentorship, and LabLifePodcast and LabLifeAcademy." />
 
   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
 
@@ -41,7 +41,7 @@
     .nav-link:hover::after { width: 100%; }
     .sci-grid { background-image: radial-gradient(#17938922 1px, transparent 1px); background-size: 22px 22px; }
     .lime-grid { background-image: radial-gradient(#78940f20 1px, transparent 1px); background-size: 24px 24px; }
-    #page-about, #page-research, #page-podcast, #page-book, #page-reviews, #page-contact {
+    #page-about, #page-research, #page-podcast, #page-academy, #page-book, #page-reviews, #page-contact {
       margin-inline: -1rem;
       padding-inline: 1rem;
       border-radius: 1.75rem;
@@ -49,6 +49,7 @@
     #page-about { background: linear-gradient(145deg, #f3f5f4 0, #ffffff 38%); }
     #page-research { background: linear-gradient(145deg, #f3f8df 0, #ffffff 34%); }
     #page-podcast { background: linear-gradient(145deg, #e6f4f3 0, #ffffff 34%); }
+    #page-academy { background: linear-gradient(145deg, #f3f8df 0, #ffffff 36%); }
     #page-book { background: linear-gradient(145deg, #f3f5f4 0, #ffffff 34%); }
     #page-reviews { background: linear-gradient(145deg, #f3f8df 0, #ffffff 42%); }
     #page-contact { background: linear-gradient(145deg, #e6f4f3 0, #ffffff 38%); }
@@ -71,11 +72,21 @@
       background: #b7d63d;
     }
     i[class^="fa-"], i[class*=" fa-"] { color: #b7d63d !important; }
-    .lime-pop i[class^="fa-"], .lime-pop i[class*=" fa-"] { color: #26302e !important; }
+    i[class^="fa-"]:not(.fa-circle):not(.fa-chevron-left):not(.fa-chevron-right):not(.fa-chevron-down),
+    i[class*=" fa-"]:not(.fa-circle):not(.fa-chevron-left):not(.fa-chevron-right):not(.fa-chevron-down) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: .35em;
+      box-shadow: 0 6px 18px rgba(38,48,46,.08);
+    }
+    .lime-pop i[class^="fa-"], .lime-pop i[class*=" fa-"] { color: #26302e !important; background: #ffffff; }
     .lime-accent { color: #78940f; }
     .review-stars { color: #78940f; letter-spacing: .15rem; }
     @media (min-width: 640px) {
-      #page-about, #page-research, #page-podcast, #page-book, #page-reviews, #page-contact {
+      #page-about, #page-research, #page-podcast, #page-academy, #page-book, #page-reviews, #page-contact {
         margin-inline: -1.5rem;
         padding-inline: 1.5rem;
       }
@@ -89,14 +100,16 @@
   <!-- NAVBAR -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" onclick="showPage('home');return false;" class="flex items-center gap-2 shrink-0">
-        <img src="Logo.svg" alt="Lab Life Show" class="h-8 w-auto" />
+      <a href="#" onclick="showPage('home');return false;" class="flex items-center gap-2 shrink-0" aria-label="LabLifeHub home">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white font-black text-sm">LH</span>
+        <span class="font-black tracking-tight text-lg">LabLife<span class="text-brand">Hub</span></span>
       </a>
       <div class="hidden md:flex items-center gap-5 text-sm font-medium">
         <a class="nav-link cursor-pointer transition-colors" data-nav="home"     onclick="showPage('home')"     data-i18n="nav_home">Home</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="about"    onclick="showPage('about')"    data-i18n="nav_about">About</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="showPage('research')" data-i18n="nav_research">Research</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="podcast"  onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
+        <a class="nav-link cursor-pointer transition-colors" data-nav="academy"  onclick="showPage('academy')"  data-i18n="nav_academy">Academy</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="book"     onclick="showPage('book')"     data-i18n="nav_book">Book</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="reviews"  onclick="showPage('reviews')"  data-i18n="nav_reviews">Reviews</a>
         <a class="nav-link cursor-pointer transition-colors" data-nav="contact"  onclick="showPage('contact')"  data-i18n="nav_contact">Contact</a>
@@ -116,6 +129,7 @@
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('about')"    data-i18n="nav_about">About</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('research')" data-i18n="nav_research">Research</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('podcast')"  data-i18n="nav_podcast">Podcast</a>
+        <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('academy')"  data-i18n="nav_academy">Academy</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('book')"     data-i18n="nav_book">Book</a>
         <a class="py-3 border-b border-gray-50 cursor-pointer" onclick="showPage('reviews')"  data-i18n="nav_reviews">Reviews</a>
         <a class="py-3 cursor-pointer" onclick="showPage('contact')" data-i18n="nav_contact">Contact</a>
@@ -131,43 +145,37 @@
         <div class="py-14 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <span class="lime-pop inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-              <i class="fa-solid fa-microphone-lines"></i><span data-i18n="hero_badge">New podcast · coming soon</span>
+              <i class="fa-solid fa-microphone-lines"></i><span data-i18n="hero_badge">Podcast + Academy</span>
             </span>
-            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">Lab Life Show</h1>
+            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">LabLifeHub</h1>
             <p class="mt-4 text-lg text-gray-600" data-i18n="hero_subtitle">A new science podcast hosted by Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry at the University of Kragujevac. Conversations about life in science, redox biology and cardiometabolic research.</p>
             <div class="mt-7 flex flex-wrap gap-3">
               <button onclick="showPage('podcast')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors shadow-sm">
-                <i class="fa-solid fa-podcast mr-2"></i><span data-i18n="hero_cta_podcast">Explore the podcast</span>
+                <i class="fa-solid fa-podcast mr-2"></i><span data-i18n="hero_cta_podcast">Explore Podcast</span>
               </button>
-              <button onclick="showPage('book')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
-                <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="hero_cta_book">Book a session</span>
+              <button onclick="showPage('academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+                <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="hero_cta_academy">Explore Academy</span>
               </button>
             </div>
           </div>
-          <div class="relative">
-            <div class="rounded-3xl bg-white border border-gray-100 shadow-xl p-7">
-              <div class="flex items-center gap-4">
-                <img src="nevena-main.jpg" alt="Dr. Nevena Jeremić" class="h-16 w-16 rounded-2xl object-cover shrink-0" />
+          <div class="relative md:scale-105 md:origin-center">
+            <div class="rounded-[2rem] bg-white border border-gray-100 shadow-2xl p-3 sm:p-4">
+              <img src="nevena-main.jpg" alt="Dr. Nevena Jeremić" class="w-full aspect-[4/5] max-h-[620px] object-cover object-[center_38%] rounded-[1.6rem]" />
+              <div class="mt-4 flex items-center justify-between gap-4 px-1">
                 <div>
                   <p class="font-bold text-lg">Dr. Nevena Jeremić</p>
                   <p class="text-sm text-gray-500" data-i18n="hero_role">Associate Professor · Pharmaceutical Chemistry</p>
                 </div>
+                <span class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-light text-brand px-3 py-1 text-xs font-bold">
+                  <i class="fa-solid fa-flask"></i> LabLifeHub
+                </span>
               </div>
-              <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-                <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">81+</p>
-                  <p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">Publications</p>
-                </div>
-                <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">1749</p>
-                  <p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_citations">Citations</p>
-                </div>
-                <div class="rounded-xl bg-gray-50 py-3">
-                  <p class="text-2xl font-black text-brand">22</p>
-                  <p class="text-[11px] text-gray-500 uppercase tracking-wide">h-index</p>
-                </div>
+              <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">81+</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">Publications</p></div>
+                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">1749</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_citations">Citations</p></div>
+                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">22</p><p class="text-[11px] text-gray-500 uppercase tracking-wide">h-index</p></div>
               </div>
-              <p class="mt-4 text-xs text-gray-400 text-center" data-i18n="stat_source">Source: Scopus</p>
+              <p class="mt-3 text-xs text-gray-400 text-center" data-i18n="stat_source">Source: Scopus</p>
             </div>
           </div>
         </div>
@@ -185,8 +193,8 @@
         </div>
       </div>
 
-      <!-- Quick links -->
-      <div class="py-12 grid sm:grid-cols-3 gap-5 border-t border-gray-100">
+      <!-- LabLifeHub pillars -->
+      <div class="py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 border-t border-gray-100">
         <div onclick="showPage('research')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
           <i class="fa-solid fa-flask text-brand text-2xl"></i>
           <h3 class="mt-3 font-bold" data-i18n="ql_research_t">Research</h3>
@@ -196,13 +204,19 @@
         <div onclick="showPage('podcast')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
           <i class="fa-solid fa-microphone-lines text-brand text-2xl"></i>
           <h3 class="mt-3 font-bold" data-i18n="ql_podcast_t">Podcast</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_podcast_d">The Lab Life Show — launching soon.</p>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_podcast_d">LabLifePodcast — launching soon.</p>
+          <span class="mt-3 inline-block text-brand text-sm font-medium group-hover:translate-x-1 transition-transform" data-i18n="learn_more">Learn more →</span>
+        </div>
+        <div onclick="showPage('academy')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
+          <i class="fa-solid fa-chalkboard-user text-brand text-2xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="ql_academy_t">Academy</h3>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_academy_d">Workshops, research design and scientific writing.</p>
           <span class="mt-3 inline-block text-brand text-sm font-medium group-hover:translate-x-1 transition-transform" data-i18n="learn_more">Learn more →</span>
         </div>
         <div onclick="showPage('book')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
           <i class="fa-regular fa-calendar-check text-brand text-2xl"></i>
           <h3 class="mt-3 font-bold" data-i18n="ql_book_t">Book a session</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_book_d">Podcast guest, lectures or consultations.</p>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_book_d">Podcast guest, workshops, lectures or consultations.</p>
           <span class="mt-3 inline-block text-brand text-sm font-medium group-hover:translate-x-1 transition-transform" data-i18n="learn_more">Learn more →</span>
         </div>
       </div>
@@ -251,6 +265,25 @@
         <button onclick="showPage('research')" class="mt-5 inline-flex items-center gap-1 text-brand font-medium text-sm hover:gap-2 transition-all"><span data-i18n="home_research_link">View research</span> →</button>
       </div>
 
+
+      <!-- LabLife moments -->
+      <div class="py-12 border-t border-gray-100">
+        <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="gallery_eyebrow">LabLife moments</p>
+        <h2 class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="gallery_title">Science, teaching and the lab</h2>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <img src="/media/nevena-lab-work.jpg" alt="Dr. Nevena Jeremić in the laboratory" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-reading.jpg" alt="Dr. Nevena Jeremić reading" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-portrait-book.jpg" alt="Dr. Nevena Jeremić with a book" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-corridor.jpg" alt="Dr. Nevena Jeremić in an academic corridor" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-academic-badges.jpg" alt="Dr. Nevena Jeremić with conference badges" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-lab-01.jpg" alt="Laboratory portrait" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-lab-02.jpg" alt="Laboratory research work" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-lab-03.jpg" alt="Laboratory environment" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <img src="/media/nevena-main.jpg" alt="Dr. Nevena Jeremić" loading="lazy" class="rounded-2xl aspect-square object-cover w-full" />
+          <div class="rounded-2xl aspect-square bg-brand-light text-brand flex flex-col items-center justify-center p-4 text-center"><i class="fa-solid fa-flask text-2xl"></i><span class="mt-2 text-sm font-bold">LabLifeHub</span></div>
+        </div>
+      </div>
+
       <!-- Booking CTA -->
       <div class="my-12 rounded-3xl bg-brand text-white p-8 sm:p-12 text-center relative overflow-hidden">
         <div class="absolute -right-8 -bottom-8 opacity-10 text-[160px]"><i class="fa-regular fa-calendar-check"></i></div>
@@ -267,7 +300,7 @@
       <div class="max-w-4xl">
         <div class="grid sm:grid-cols-[220px_1fr] gap-8 items-start">
           <div>
-            <img id="aboutPhoto" src="nevena-main.jpg" alt="Dr. Nevena Jeremić"
+            <img id="aboutPhoto" src="/media/nevena-portrait-book.jpg" alt="Dr. Nevena Jeremić"
                  class="hidden w-full aspect-[4/5] object-cover rounded-2xl shadow-md"
                  onload="this.classList.remove('hidden'); var ph=document.getElementById('aboutPhotoPh'); if(ph) ph.style.display='none';" />
             <div id="aboutPhotoPh" class="w-full aspect-[4/5] rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 flex flex-col items-center justify-center text-gray-300">
@@ -292,15 +325,15 @@
         <!-- Visual story -->
         <div class="mt-10 grid sm:grid-cols-2 gap-4">
           <figure class="sm:row-span-2 rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100">
-            <img src="/media/international-harvard.webp" alt="Dr. Nevena Jeremić at Harvard University" loading="lazy" width="1200" height="900" class="w-full h-full min-h-72 object-cover" />
+            <img src="/media/nevena-portrait-book.jpg" alt="Dr. Nevena Jeremić with a book" loading="lazy" width="1200" height="900" class="w-full h-full min-h-72 object-cover" />
             <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_harvard">International academic experience and collaboration.</figcaption>
           </figure>
           <figure class="rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100">
-            <img src="/media/recognition-university.webp" alt="University recognition ceremony" loading="lazy" width="1600" height="721" class="w-full aspect-[16/8] object-cover" />
+            <img src="/media/nevena-academic-badges.jpg" alt="University recognition ceremony" loading="lazy" width="1600" height="721" class="w-full aspect-[16/8] object-cover" />
             <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_award">Recognition of women scientists at the University of Kragujevac.</figcaption>
           </figure>
           <figure class="rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100">
-            <img src="/media/conference-collaboration.webp" alt="Dr. Nevena Jeremić with a research collaborator" loading="lazy" width="900" height="1200" class="w-full aspect-[16/8] object-cover object-[center_35%]" />
+            <img src="/media/nevena-reading.jpg" alt="Dr. Nevena Jeremić with a research collaborator" loading="lazy" width="900" height="1200" class="w-full aspect-[16/8] object-cover object-[center_35%]" />
             <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_collaboration">Research collaboration and knowledge exchange.</figcaption>
           </figure>
         </div>
@@ -383,15 +416,15 @@
 
       <div class="mt-8 grid sm:grid-cols-[1.35fr_.65fr] gap-4">
         <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
-          <img src="/media/research-lecture.webp" alt="Dr. Nevena Jeremić presenting cardiovascular research" loading="lazy" width="1600" height="1200" class="w-full aspect-[16/10] object-cover" />
+          <img src="/media/nevena-lab-work.jpg" alt="Dr. Nevena Jeremić presenting cardiovascular research" loading="lazy" width="1600" height="1200" class="w-full aspect-[16/10] object-cover" />
           <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_lecture">Presenting current cardiometabolic research.</figcaption>
         </figure>
         <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
-          <img src="/media/conference-iacs.webp" alt="Dr. Nevena Jeremić at the IACS scientific meeting" loading="lazy" width="900" height="1200" class="w-full aspect-[16/10] sm:h-full object-cover object-[center_35%]" />
+          <img src="/media/nevena-lab-01.jpg" alt="Dr. Nevena Jeremić in the laboratory" loading="lazy" width="900" height="1200" class="w-full aspect-[16/10] sm:h-full object-cover object-[center_35%]" />
           <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_conference">International Academy of Cardiovascular Sciences meeting.</figcaption>
         </figure>
         <figure class="sm:col-span-2 rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
-          <img src="/media/research-presentation.webp" alt="Scientific presentation by Dr. Nevena Jeremić" loading="lazy" width="1600" height="720" class="w-full aspect-[16/6] object-cover" />
+          <img src="/media/nevena-lab-03.jpg" alt="Scientific presentation by Dr. Nevena Jeremić" loading="lazy" width="1600" height="720" class="w-full aspect-[16/6] object-cover" />
           <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_presentation">Sharing research results with the international scientific community.</figcaption>
         </figure>
       </div>
@@ -475,7 +508,7 @@
         <span class="lime-pop inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
           <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">Coming soon</span>
         </span>
-        <h2 class="mt-4 text-3xl sm:text-5xl font-black">Lab Life Show</h2>
+        <h2 class="mt-4 text-3xl sm:text-5xl font-black">LabLifePodcast</h2>
         <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a data-yt-link href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center gap-2">
@@ -514,7 +547,45 @@
         <span id="podPreviewNote" class="lime-pop text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full" data-i18n="pod_preview_note">Preview · videos coming soon</span>
       </div>
       <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="episodesWrap"></div>
-      <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">Video episodes will be embedded here from the Lab Life Show YouTube channel once published.</p>
+      <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.</p>
+    </section>
+
+    <!-- ACADEMY -->
+    <section id="page-academy" class="page py-12 sm:py-16">
+      <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-center">
+        <div>
+          <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="academy_eyebrow">LabLifeAcademy</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="academy_title">Workshops for better science</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed" data-i18n="academy_intro">LabLifeAcademy brings workshops, online lectures and consultations for researchers who want to design stronger studies, write clearer manuscripts and publish better science.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button onclick="showPage('book')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+              <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="academy_cta_book">Book a workshop</span>
+            </button>
+            <button onclick="showPage('research')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+              <i class="fa-solid fa-flask mr-2"></i><span data-i18n="academy_cta_research">View research background</span>
+            </button>
+          </div>
+        </div>
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-corridor.jpg" alt="Dr. Nevena Jeremić in an academic corridor" loading="lazy" class="w-full aspect-[4/5] object-cover object-[center_42%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="academy_photo">Academic training grounded in real research practice.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-pen-nib text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_writing_t">Scientific writing</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_writing_d">Workshops and consultations for manuscripts, structure, clarity and publication strategy.</p></div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-diagram-project text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_design_t">Research design</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_design_d">Support for designing stronger, clearer and more publishable experimental studies.</p></div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-chalkboard-user text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_lecture_t">Online lectures</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_lecture_d">Lectures and training sessions for students, researchers, groups and events.</p></div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-user-graduate text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_mentor_t">Mentorship</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_mentor_d">Guidance for PhD candidates, young researchers and academic career development.</p></div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-microscope text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_methods_t">Preclinical methods</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_methods_d">Training rooted in 18+ years of preclinical pharmacology and physiology experience.</p></div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5"><i class="fa-solid fa-globe text-brand text-xl"></i><h3 class="mt-2 font-bold" data-i18n="academy_collab_t">International collaboration</h3><p class="mt-1 text-sm text-gray-500" data-i18n="academy_collab_d">Support for national and international scientific projects and partnerships.</p></div>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-3 gap-4">
+        <img src="/media/nevena-reading.jpg" alt="Dr. Nevena Jeremić reading" loading="lazy" class="rounded-2xl aspect-[4/5] w-full object-cover" />
+        <img src="/media/nevena-academic-badges.jpg" alt="Dr. Nevena Jeremić with academic badges" loading="lazy" class="rounded-2xl aspect-[4/5] w-full object-cover" />
+        <img src="/media/nevena-lab-02.jpg" alt="Dr. Nevena Jeremić in the laboratory" loading="lazy" class="rounded-2xl aspect-[4/5] w-full object-cover" />
+      </div>
     </section>
 
     <!-- BOOK -->
@@ -757,8 +828,11 @@
       </a>
     </div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <img src="Logo.svg" alt="Lab Life Show" class="h-7 w-auto" />
-      <p class="text-xs text-gray-400 text-center">© <span id="year"></span> Dr. Nevena Jeremić · Lab Life Show</p>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand text-white font-black text-xs">LH</span>
+        <span class="font-black tracking-tight">LabLife<span class="text-brand">Hub</span></span>
+      </div>
+      <p class="text-xs text-gray-400 text-center">© <span id="year"></span> Dr. Nevena Jeremić · LabLifeHub</p>
       <div class="flex gap-4 text-gray-400">
         <a href="https://www.linkedin.com/in/nevena-jeremic-b66b50223/" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://orcid.org/0000-0002-5284-8180" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-orcid"></i></a>
@@ -770,10 +844,10 @@
   <script>
   const I18N = {
     en: {
-      nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_book:"Book", nav_reviews:"Reviews", nav_contact:"Contact",
-      hero_badge:"New podcast · coming soon", hero_title_1:"Lab Life Show",
-      hero_subtitle:"A new science podcast hosted by Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry at the University of Kragujevac. Conversations about life in science, redox biology and cardiometabolic research.",
-      hero_cta_podcast:"Explore the podcast", hero_cta_book:"Book a session",
+      nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_contact:"Contact",
+      hero_badge:"Podcast + Academy", hero_title_1:"LabLifeHub",
+      hero_subtitle:"A platform by Dr. Nevena Jeremić connecting science communication, research education, workshops and academic mentorship — grounded in pharmaceutical chemistry, redox biology and cardiometabolic research.",
+      hero_cta_podcast:"Explore Podcast", hero_cta_academy:"Explore Academy", hero_cta_book:"Book a session",
       hero_role:"Associate Professor · Pharmaceutical Chemistry",
       stat_papers:"Publications", stat_citations:"Citations", stat_source:"Source: Scopus",
       welcome_eyebrow:"Welcome", welcome_title:"Welcome to my personal webpage",
@@ -781,12 +855,14 @@
       welcome_p2:"Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.",
       welcome_p3:"Thank you for visiting — I look forward to connecting and collaborating!",
       ql_research_t:"Research", ql_research_d:"Pharmaceutical chemistry, redox biology & cardiometabolic science.",
-      ql_podcast_t:"Podcast", ql_podcast_d:"The Lab Life Show — launching soon.",
-      ql_book_t:"Book a session", ql_book_d:"Podcast guest, lectures or consultations.",
+      ql_podcast_t:"Podcast", ql_podcast_d:"LabLifePodcast — launching soon.",
+      ql_academy_t:"Academy", ql_academy_d:"Workshops, research design and scientific writing.",
+      ql_book_t:"Book a session", ql_book_d:"Podcast guest, workshops, lectures or consultations.",
       learn_more:"Learn more →",
       home_latest:"Latest episodes", home_all_episodes:"All episodes",
       home_research:"Research at a glance", home_research_link:"View research",
-      home_cta_title:"Want to work together?", home_cta_sub:"Book a podcast guest appearance, an online lecture, or a research and writing consultation.",
+      home_cta_title:"Want to work together?", home_cta_sub:"Book a podcast guest appearance, an Academy workshop, an online lecture, or a research and writing consultation.",
+      gallery_eyebrow:"LabLife moments", gallery_title:"Science, teaching and the lab",
       cta_youtube:"Follow me on YouTube",
       about_eyebrow:"About me", about_photo:"Photo",
       about_headline:"Associate Professor of Pharmaceutical Chemistry · redox biology & cardiometabolic research.",
@@ -795,12 +871,12 @@
       about_p3:"My international research background stems from my work at the University of Louisville, USA, where I gained extensive experience in cardiovascular physiology, redox signaling, and metabolic disease models. I am always open to new national and international collaborations and enjoy working on diverse, innovative, and interdisciplinary projects.",
       about_p4:"My research focuses on bridging fundamental science and translational medicine, with a particular emphasis on understanding drug–target interactions, redox signaling, and molecular pathways involved in cardiovascular and metabolic diseases. By integrating chemical, biochemical, and physiological approaches, I aim to uncover mechanisms that can guide the development of innovative and mechanism-driven therapeutic strategies with clear clinical relevance and potential patient impact.",
       about_path:"Academic path", about_awards:"Awards & recognition", about_memberships:"Memberships", about_expertise:"Skills & expertise",
-      photo_harvard:"International academic experience and collaboration.",
-      photo_award:"Recognition of women scientists at the University of Kragujevac.",
-      photo_collaboration:"Research collaboration and knowledge exchange.",
-      photo_lecture:"Presenting current cardiometabolic research.",
-      photo_conference:"International Academy of Cardiovascular Sciences meeting.",
-      photo_presentation:"Sharing research results with the international scientific community.",
+      photo_harvard:"Academic profile and scientific publishing.",
+      photo_award:"Conferences, recognition and academic path.",
+      photo_collaboration:"Reading, writing and knowledge exchange.",
+      photo_lecture:"A real laboratory context behind the research.",
+      photo_conference:"Preclinical and functional research environment.",
+      photo_presentation:"Daily lab life and experimental science.",
       media_title:"In the media", media_intro:"Selected stories about research, international collaboration and academic recognition.",
       media_global:"A story about international scientific collaboration", media_three:"Teaching and research across three universities",
       media_water:"A new chapter in scientific research of mineral waters", media_award:"Recognition for leading women scientists",
@@ -818,21 +894,24 @@
       act_mentor_t:"Mentoring", act_mentor_d:"Supervised 3 completed PhD theses and 9 master theses in pharmaceutical chemistry; PhD mentor since 2018.",
       act_editor_t:"Guest editor", act_editor_d:"Pathophysiology and Frontiers in Physiology special issues on cardiovascular physiology.",
       act_review_t:"Peer reviewer", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.",
+      academy_eyebrow:"LabLifeAcademy", academy_title:"Workshops for better science", academy_intro:"LabLifeAcademy brings workshops, online lectures and consultations for researchers who want to design stronger studies, write clearer manuscripts and publish better science.", academy_cta_book:"Book a workshop", academy_cta_research:"View research background", academy_photo:"Academic training grounded in real research practice.", academy_writing_t:"Scientific writing", academy_writing_d:"Workshops and consultations for manuscripts, structure, clarity and publication strategy.", academy_design_t:"Research design", academy_design_d:"Support for designing stronger, clearer and more publishable experimental studies.", academy_lecture_t:"Online lectures", academy_lecture_d:"Lectures and training sessions for students, researchers, groups and events.", academy_mentor_t:"Mentorship", academy_mentor_d:"Guidance for PhD candidates, young researchers and academic career development.", academy_methods_t:"Preclinical methods", academy_methods_d:"Training rooted in 18+ years of preclinical pharmacology and physiology experience.", academy_collab_t:"International collaboration", academy_collab_d:"Support for national and international scientific projects and partnerships.",
       pod_badge:"Coming soon",
-      pod_intro:"A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.",
+      pod_intro:"LabLifePodcast is hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.",
       pod_cta_guest:"Be a guest", pod_cta_notify:"Get notified", pod_expect:"What to expect",
       pod_e1_t:"Researcher stories", pod_e1_d:"Candid talks with scientists about the real life behind the papers.",
       pod_e2_t:"Better science", pod_e2_d:"Practical tips on study design, writing and publishing.",
       pod_e3_t:"Career & lab life", pod_e3_d:"Navigating academia, mentorship and the path through a PhD.",
       pod_episodes:"Episodes", pod_preview_note:"Preview · videos coming soon",
-      pod_yt_note:"Video episodes will be embedded here from the Lab Life Show YouTube channel once published.",
+      pod_yt_note:"Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.",
       ep_soon:"Coming soon",
       book_eyebrow:"Book a session", book_title:"Work with Dr. Nevena Jeremić",
       book_intro:"Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose a service", book_details:"2 · Your details",
-      svc_guest_t:"Podcast guest appearance", svc_guest_d:"Join an episode of the Lab Life Show to share your research story.",
+      svc_guest_t:"Podcast guest appearance", svc_guest_d:"Join an episode of LabLifePodcast to share your research story.",
+      svc_workshop_t:"Academy workshop", svc_workshop_d:"A LabLifeAcademy workshop for scientific writing, research design or publishing strategy.",
       svc_lecture_t:"Online lecture", svc_lecture_d:"A talk for your group, course or event — design, methods or writing.",
-      svc_consult_t:"Research / writing consultation", svc_consult_d:"One-on-one help with study design or preparing a manuscript.",
+      svc_design_t:"Research design consultation", svc_design_d:"One-on-one support for stronger, clearer and more publishable experimental studies.",
+      svc_writing_t:"Scientific writing consultation", svc_writing_d:"Help with manuscript structure, clarity and publication strategy.",
       svc_mentor_t:"Mentorship session", svc_mentor_d:"Guidance on building a research career and publishing better science.",
       form_service:"Service", form_service_ph:"Select a service…",
       form_name:"Name", form_email:"Email", form_phone:"Phone", form_date:"Preferred date", form_msg:"Message (optional)", form_submit:"Send booking request",
@@ -864,10 +943,10 @@
       summary:(s,d)=>`We've prepared your <b>${s}</b> request${d?` for <b>${d}</b>`:""}. Confirm by sending it to Dr. Jeremić.`
     },
     sr: {
-      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
-      hero_badge:"Novi podkast · uskoro", hero_title_1:"Lab Life Show",
-      hero_subtitle:"Novi naučni podkast koji vodi dr Nevena Jeremić — vanredni profesor farmaceutske hemije Univerziteta u Kragujevcu. Razgovori o životu u nauci, redoks biologiji i kardiometaboličkim istraživanjima.",
-      hero_cta_podcast:"Pogledaj podkast", hero_cta_book:"Zakaži termin",
+      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Academy", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
+      hero_badge:"Podkast + Academy", hero_title_1:"LabLifeHub",
+      hero_subtitle:"Platforma dr Nevene Jeremić koja povezuje naučnu komunikaciju, istraživačku edukaciju, radionice i akademsko mentorstvo — zasnovana na farmaceutskoj hemiji, redoks biologiji i kardiometaboličkim istraživanjima.",
+      hero_cta_podcast:"Pogledaj podkast", hero_cta_academy:"Pogledaj Academy", hero_cta_book:"Zakaži termin",
       hero_role:"Vanredni profesor · Farmaceutska hemija",
       stat_papers:"Publikacija", stat_citations:"Citata", stat_source:"Izvor: Scopus",
       welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli na moju ličnu stranicu",
@@ -875,12 +954,14 @@
       welcome_p2:"Ovde možete saznati više o mojim istraživačkim interesovanjima, pogledati moje publikacije i saradnje i povezati se povodom novih nacionalnih i međunarodnih projekata. Uvek sam otvorena za interdisciplinarna partnerstva koja povezuju osnovnu nauku i kliničku primenu.",
       welcome_p3:"Hvala što ste posetili — radujem se povezivanju i saradnji!",
       ql_research_t:"Istraživanje", ql_research_d:"Farmaceutska hemija, redoks biologija i kardiometabolička nauka.",
-      ql_podcast_t:"Podkast", ql_podcast_d:"Lab Life Show — uskoro počinje.",
-      ql_book_t:"Zakaži termin", ql_book_d:"Gostovanje u podkastu, predavanja ili konsultacije.",
+      ql_podcast_t:"Podkast", ql_podcast_d:"LabLifePodcast — uskoro počinje.",
+      ql_academy_t:"Academy", ql_academy_d:"Radionice, dizajn istraživanja i naučno pisanje.",
+      ql_book_t:"Zakaži termin", ql_book_d:"Gostovanje u podkastu, radionice, predavanja ili konsultacije.",
       learn_more:"Saznaj više →",
       home_latest:"Poslednje epizode", home_all_episodes:"Sve epizode",
       home_research:"Istraživanje ukratko", home_research_link:"Pogledaj istraživanje",
-      home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite gostovanje u podkastu, online predavanje ili konsultacije za istraživanje i pisanje.",
+      home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite gostovanje u podkastu, Academy radionicu, online predavanje ili konsultacije za istraživanje i pisanje.",
+      gallery_eyebrow:"LabLife momenti", gallery_title:"Nauka, nastava i laboratorija",
       cta_youtube:"Zaprati me na YouTube-u",
       about_eyebrow:"O meni", about_photo:"Fotografija",
       about_headline:"Vanredni profesor farmaceutske hemije · redoks biologija i kardiometabolička istraživanja.",
@@ -889,12 +970,12 @@
       about_p3:"Moje međunarodno istraživačko iskustvo proizilazi iz rada na Univerzitetu u Luivilu, USA, gde sam stekla bogato iskustvo u kardiovaskularnoj fiziologiji, redoks signalizaciji i modelima metaboličkih bolesti. Uvek sam otvorena za nove nacionalne i međunarodne saradnje i uživam u raznovrsnim, inovativnim i interdisciplinarnim projektima.",
       about_p4:"Moje istraživanje povezuje fundamentalnu nauku i translacionu medicinu, sa posebnim naglaskom na razumevanje interakcija lek–meta, redoks signalizacije i molekularnih puteva uključenih u kardiovaskularne i metaboličke bolesti. Integrišući hemijske, biohemijske i fiziološke pristupe, težim da otkrijem mehanizme koji mogu da usmere razvoj inovativnih, mehanizmom vođenih terapijskih strategija sa jasnim kliničkim značajem.",
       about_path:"Akademski put", about_awards:"Nagrade i priznanja", about_memberships:"Članstva", about_expertise:"Veštine i ekspertiza",
-      photo_harvard:"Međunarodno akademsko iskustvo i saradnja.",
-      photo_award:"Priznanje naučnicama Univerziteta u Kragujevcu.",
-      photo_collaboration:"Istraživačka saradnja i razmena znanja.",
-      photo_lecture:"Predstavljanje aktuelnih kardiometaboličkih istraživanja.",
-      photo_conference:"Skup Međunarodne akademije kardiovaskularnih nauka.",
-      photo_presentation:"Predstavljanje rezultata međunarodnoj naučnoj zajednici.",
+      photo_harvard:"Akademski profil i naučno izdavaštvo.",
+      photo_award:"Konferencije, priznanja i akademski put.",
+      photo_collaboration:"Čitanje, pisanje i razmena znanja.",
+      photo_lecture:"Stvarni laboratorijski kontekst iza istraživanja.",
+      photo_conference:"Pretkliničko i funkcionalno istraživačko okruženje.",
+      photo_presentation:"Svakodnevni život u laboratoriji i eksperimentalna nauka.",
       media_title:"U medijima", media_intro:"Odabrane priče o istraživanjima, međunarodnoj saradnji i akademskim priznanjima.",
       media_global:"Priča o međunarodnoj naučnoj saradnji", media_three:"Nastava i istraživanje na tri univerziteta",
       media_water:"Novo poglavlje u naučnom istraživanju mineralnih voda", media_award:"Priznanje najboljim naučnicama",
@@ -912,21 +993,24 @@
       act_mentor_t:"Mentorstvo", act_mentor_d:"Mentor 3 odbranjene doktorske disertacije i 9 master radova iz farmaceutske hemije; mentor na doktorskim studijama od 2018.",
       act_editor_t:"Gostujući urednik", act_editor_d:"Specijalna izdanja časopisa Pathophysiology i Frontiers in Physiology o kardiovaskularnoj fiziologiji.",
       act_review_t:"Recenzent", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers i drugi.",
+      academy_eyebrow:"LabLifeAcademy", academy_title:"Radionice za bolju nauku", academy_intro:"LabLifeAcademy objedinjuje radionice, online predavanja i konsultacije za istraživače koji žele da dizajniraju snažnije studije, pišu jasnije rukopise i objavljuju bolju nauku.", academy_cta_book:"Zakaži radionicu", academy_cta_research:"Pogledaj istraživačku osnovu", academy_photo:"Akademska edukacija zasnovana na stvarnoj istraživačkoj praksi.", academy_writing_t:"Naučno pisanje", academy_writing_d:"Radionice i konsultacije za rukopise, strukturu, jasnoću i strategiju objavljivanja.", academy_design_t:"Dizajn istraživanja", academy_design_d:"Podrška za dizajniranje snažnijih, jasnijih i objavljivijih eksperimentalnih studija.", academy_lecture_t:"Online predavanja", academy_lecture_d:"Predavanja i edukativne sesije za studente, istraživače, grupe i događaje.", academy_mentor_t:"Mentorstvo", academy_mentor_d:"Podrška doktorandima, mladim istraživačima i razvoju akademske karijere.", academy_methods_t:"Pretkliničke metode", academy_methods_d:"Edukacija zasnovana na preko 18 godina iskustva u pretkliničkoj farmakologiji i fiziologiji.", academy_collab_t:"Međunarodna saradnja", academy_collab_d:"Podrška za nacionalne i međunarodne naučne projekte i partnerstva.",
       pod_badge:"Uskoro",
-      pod_intro:"Novi podkast koji vodi dr Nevena Jeremić. Iskreni razgovori o životu u nauci — od laboratorije do dizajna eksperimenata i boljeg objavljivanja istraživanja.",
+      pod_intro:"LabLifePodcast vodi dr Nevena Jeremić. Iskreni razgovori o životu u nauci — od laboratorije do dizajna eksperimenata i boljeg objavljivanja istraživanja.",
       pod_cta_guest:"Budite gost", pod_cta_notify:"Obavesti me", pod_expect:"Šta vas očekuje",
       pod_e1_t:"Priče istraživača", pod_e1_d:"Otvoreni razgovori sa naučnicima o stvarnom životu iza radova.",
       pod_e2_t:"Bolja nauka", pod_e2_d:"Praktični saveti o dizajnu studija, pisanju i objavljivanju.",
       pod_e3_t:"Karijera i život u laboratoriji", pod_e3_d:"Snalaženje u akademiji, mentorstvo i put kroz doktorat.",
       pod_episodes:"Epizode", pod_preview_note:"Pregled · video uskoro",
-      pod_yt_note:"Video epizode će biti prikazane ovde sa YouTube kanala Lab Life Show kada budu objavljene.",
+      pod_yt_note:"Video epizode će biti prikazane ovde sa YouTube kanala LabLifePodcast kada budu objavljene.",
       ep_soon:"Uskoro",
       book_eyebrow:"Zakazivanje", book_title:"Sarađujte sa dr Nevenom Jeremić",
       book_intro:"Izaberite šta želite da zakažete, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite uslugu", book_details:"2 · Vaši podaci",
-      svc_guest_t:"Gostovanje u podkastu", svc_guest_d:"Pridružite se epizodi Lab Life Show i podelite svoju istraživačku priču.",
+      svc_guest_t:"Gostovanje u podkastu", svc_guest_d:"Pridružite se epizodi LabLifePodcast i podelite svoju istraživačku priču.",
+      svc_workshop_t:"Academy radionica", svc_workshop_d:"LabLifeAcademy radionica za naučno pisanje, dizajn istraživanja ili strategiju objavljivanja.",
       svc_lecture_t:"Online predavanje", svc_lecture_d:"Predavanje za vašu grupu, kurs ili događaj — dizajn, metode ili pisanje.",
-      svc_consult_t:"Konsultacije za istraživanje / pisanje", svc_consult_d:"Individualna pomoć oko dizajna studije ili pripreme rukopisa.",
+      svc_design_t:"Konsultacije za dizajn istraživanja", svc_design_d:"Individualna podrška za snažnije, jasnije i objavljivije eksperimentalne studije.",
+      svc_writing_t:"Konsultacije za naučno pisanje", svc_writing_d:"Pomoć oko strukture rukopisa, jasnoće i strategije objavljivanja.",
       svc_mentor_t:"Mentorska sesija", svc_mentor_d:"Vođenje kroz izgradnju istraživačke karijere i bolje objavljivanje nauke.",
       form_service:"Usluga", form_service_ph:"Izaberite uslugu…",
       form_name:"Ime", form_email:"Email", form_phone:"Telefon", form_date:"Željeni datum", form_msg:"Poruka (opciono)", form_submit:"Pošalji zahtev za zakazivanje",
@@ -1016,8 +1100,8 @@
     { t:"Pharmaceutical Chemistry 1 — chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
     { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
   ];
-  const SERVICES = ["svc_guest","svc_lecture","svc_consult","svc_mentor"];
-  const SERVICE_ICONS = { svc_guest:"fa-microphone-lines", svc_lecture:"fa-chalkboard-user", svc_consult:"fa-file-pen", svc_mentor:"fa-user-graduate" };
+  const SERVICES = ["svc_guest","svc_workshop","svc_lecture","svc_design","svc_writing","svc_mentor"];
+  const SERVICE_ICONS = { svc_guest:"fa-microphone-lines", svc_workshop:"fa-chalkboard-user", svc_lecture:"fa-chalkboard-user", svc_design:"fa-diagram-project", svc_writing:"fa-pen-nib", svc_mentor:"fa-user-graduate" };
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
@@ -1131,7 +1215,7 @@
       </div>`;
   }
   function playEpisode(id, el){
-    el.outerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" title="Lab Life Show" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
+    el.outerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" title="LabLifePodcast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
   }
   function episodePlaceholder(i){
     const t = I18N[lang];
