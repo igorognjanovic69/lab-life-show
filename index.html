@@ -137,9 +137,9 @@
     <!-- HOME -->
     <section id="page-home" class="page active">
       <div class="sci-grid -mx-4 sm:-mx-6 px-4 sm:px-6">
-        <div class="py-14 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
+        <div class="py-14 sm:py-24 grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-10 items-center">
           <div>
-            <span class="lime-pop inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            <span class="section-marker lime-pop text-sm font-bold uppercase tracking-wider">
               <i class="fa-solid fa-microphone-lines"></i><span data-i18n="hero_badge">Podcast + Academy</span>
             </span>
             <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">LabLifeHub</h1>
@@ -153,24 +153,28 @@
               </button>
             </div>
           </div>
-          <div class="relative md:scale-105 md:origin-center">
-            <div class="rounded-[2rem] bg-white border border-gray-100 shadow-2xl p-3 sm:p-4">
-              <img src="nevena-main.jpg" alt="Dr. Nevena Jeremić" class="w-full aspect-[4/5] max-h-[640px] object-cover object-[center_34%] rounded-[1.6rem]" />
-              <div class="mt-4 flex items-center justify-between gap-4 px-1">
-                <div>
-                  <p class="font-bold text-lg">Dr. Nevena Jeremić</p>
-                  <p class="text-sm text-gray-500" data-i18n="hero_role">Associate Professor · Pharmaceutical Chemistry</p>
+          <div class="relative lg:justify-self-end w-full max-w-[560px] mx-auto lg:mx-0">
+            <div class="rounded-[2rem] bg-white border border-gray-100 shadow-2xl p-3 sm:p-4 lg:p-3">
+              <div class="grid sm:grid-cols-[minmax(0,230px)_1fr] lg:grid-cols-[minmax(0,220px)_1fr] gap-4 items-center">
+                <img src="nevena-main.jpg" alt="Dr. Nevena Jeremić" class="w-full aspect-[4/5] max-h-[460px] sm:max-h-[360px] lg:max-h-[340px] object-cover object-[center_34%] rounded-[1.6rem]" />
+                <div class="px-1 sm:px-0">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="font-bold text-lg">Dr. Nevena Jeremić</p>
+                      <p class="text-sm text-gray-500" data-i18n="hero_role">Associate Professor · Pharmaceutical Chemistry</p>
+                    </div>
+                    <span class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-light text-brand px-3 py-1 text-xs font-bold whitespace-nowrap">
+                      <i class="fa-solid fa-flask"></i> LabLifeHub
+                    </span>
+                  </div>
+                  <div class="mt-4 grid grid-cols-3 sm:grid-cols-1 gap-3 text-center sm:text-left">
+                    <div class="rounded-xl bg-gray-50 py-3 px-3"><p class="text-2xl font-black text-brand">81+</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">Publications</p></div>
+                    <div class="rounded-xl bg-gray-50 py-3 px-3"><p class="text-2xl font-black text-brand">1749</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_citations">Citations</p></div>
+                    <div class="rounded-xl bg-gray-50 py-3 px-3"><p class="text-2xl font-black text-brand">22</p><p class="text-[11px] text-gray-500 uppercase tracking-wide">h-index</p></div>
+                  </div>
+                  <p class="mt-3 text-xs text-gray-400 sm:text-left text-center" data-i18n="stat_source">Source: Scopus</p>
                 </div>
-                <span class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-light text-brand px-3 py-1 text-xs font-bold">
-                  <i class="fa-solid fa-flask"></i> LabLifeHub
-                </span>
               </div>
-              <div class="mt-4 grid grid-cols-3 gap-3 text-center">
-                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">81+</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_papers">Publications</p></div>
-                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">1749</p><p class="text-[11px] text-gray-500 uppercase tracking-wide" data-i18n="stat_citations">Citations</p></div>
-                <div class="rounded-xl bg-gray-50 py-3"><p class="text-2xl font-black text-brand">22</p><p class="text-[11px] text-gray-500 uppercase tracking-wide">h-index</p></div>
-              </div>
-              <p class="mt-3 text-xs text-gray-400 text-center" data-i18n="stat_source">Source: Scopus</p>
             </div>
           </div>
         </div>
@@ -178,8 +182,8 @@
 
       <!-- Welcome -->
       <div class="py-12 border-t border-gray-100 max-w-3xl">
-        <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="welcome_eyebrow">Welcome</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-black" data-i18n="welcome_title">Welcome to my personal webpage</h2>
+        <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="welcome_eyebrow">Welcome</p>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-black" data-i18n="welcome_title">Welcome to LabLifeHub</h2>
         <div class="mt-4 space-y-3 text-gray-700 leading-relaxed">
           <p data-i18n="welcome_p1">I'm Dr. Nevena Jeremić, University Professor at the Faculty of Medical Sciences, University of Kragujevac and team member of the Center of Excellence for Investigation of Redox Balance in Cardiometabolic Disorders, and the Center for Preclinical and Functional Investigations, Faculty of Medical Sciences, University of Kragujevac, Serbia.</p>
           <p data-i18n="welcome_p2">Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.</p>
@@ -220,7 +224,7 @@
       <div class="py-12 border-t border-gray-100">
         <div class="flex items-end justify-between gap-4">
           <div>
-            <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="ql_podcast_t">Podcast</p>
+            <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="ql_podcast_t">Podcast</p>
             <h2 class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="home_latest">Latest episodes</h2>
           </div>
           <div class="flex items-center gap-3 shrink-0">
@@ -238,7 +242,7 @@
 
       <!-- Research at a glance -->
       <div class="py-12 border-t border-gray-100">
-        <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="research_eyebrow">Research</p>
+        <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="research_eyebrow">Research</p>
         <h2 class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="home_research">Research at a glance</h2>
         <div class="mt-6 grid sm:grid-cols-3 gap-4">
           <div class="rounded-2xl border border-gray-100 p-5">
@@ -263,7 +267,7 @@
 
       <!-- LabLife moments -->
       <div class="py-12 border-t border-gray-100">
-        <p class="text-sm font-bold uppercase tracking-wider text-brand" data-i18n="gallery_eyebrow">LabLife moments</p>
+        <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="gallery_eyebrow">LabLife moments</p>
         <h2 class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="gallery_title">Science, teaching and the lab</h2>
         <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           <img src="/media/nevena-lab-work.jpg" alt="Dr. Nevena Jeremić in the laboratory" loading="lazy" class="rounded-2xl aspect-[4/5] object-cover object-[center_24%] w-full" />
@@ -304,7 +308,7 @@
             </div>
           </div>
           <div>
-            <p class="section-marker text-sm font-bold uppercase tracking-wider text-brand" data-i18n="about_eyebrow">About me</p>
+            <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="about_eyebrow">About me</p>
             <h2 class="mt-2 text-3xl sm:text-4xl font-black">Dr. Nevena Jeremić</h2>
             <p class="mt-2 text-lg text-gray-600" data-i18n="about_headline">Associate Professor of Pharmaceutical Chemistry · redox biology & cardiometabolic research.</p>
           </div>
@@ -370,32 +374,32 @@
         <p class="mt-1 text-sm text-gray-500" data-i18n="media_intro">Selected stories about research, international collaboration and academic recognition.</p>
         <div class="mt-5 grid sm:grid-cols-2 gap-3">
           <a href="https://www.glassumadije.rs/prica-o-kragujevackim-sangajcima/" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wide text-brand">Glas Šumadije · 2023</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">Glas Šumadije · 2023</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_global">A story about international scientific collaboration</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
           <a href="https://www.republika.rs/vesti/drustvo/381681/nevena-jeremic-profesorka-na-3-fakulteta" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wide text-brand">Republika · 2022</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">Republika · 2022</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_three">Teaching and research across three universities</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
           <a href="https://www.temnic.info/specijalna-bolnica-merkur-otvorila-novo-poglavlje-u-naucnom-istrazivanju-mineralnih-voda/" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="lime-source text-[11px] font-bold uppercase tracking-wide">Temnić Info</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">Temnić Info</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_water">A new chapter in scientific research of mineral waters</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
           <a href="https://www.infokg.rs/info/urucena-priznanja-najboljim-naucnicama-univerziteta-u-kragujevcu.html" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="lime-source text-[11px] font-bold uppercase tracking-wide">InfoKG</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">InfoKG</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_award">Recognition for leading women scientists</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
           <a href="https://www.vrnjcispa.rs/sr_cir/aktivnosti-sr_cir/vrnjacka-banja-ima-sneznik-izvor-od-cijeg-imena-ozdravis-2/" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="lime-source text-[11px] font-bold uppercase tracking-wide">Vrnjačka Banja</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">Vrnjačka Banja</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_sneznik">Scientific work on the Snežnik mineral spring</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
           <a href="https://ikragujevac.com/vesti/34355-kragujevcanka-ima-34-godine-a-predaje-na-tri-fakulteta-evo-kakav-je-put-presla-do-uspeha.html" target="_blank" rel="noopener" class="group rounded-2xl bg-white border border-gray-100 p-4 hover:border-brand hover:shadow-md transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wide text-brand">iKragujevac</span>
+            <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">iKragujevac</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_path">The academic path from Kragujevac to international universities</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
@@ -500,7 +504,7 @@
     <section id="page-podcast" class="page py-12 sm:py-16">
       <div class="rounded-3xl bg-brand text-white p-8 sm:p-12 relative overflow-hidden">
         <div class="absolute -right-10 -top-10 opacity-10 text-[200px]"><i class="fa-solid fa-microphone-lines"></i></div>
-        <span class="lime-pop inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+        <span class="section-marker lime-pop text-sm font-bold uppercase tracking-wider">
           <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">Coming soon</span>
         </span>
         <h2 class="mt-4 text-3xl sm:text-5xl font-black">LabLifePodcast</h2>
@@ -539,7 +543,7 @@
 
       <div class="mt-12 flex items-center justify-between">
         <h3 class="text-xl font-bold" data-i18n="pod_episodes">Episodes</h3>
-        <span id="podPreviewNote" class="lime-pop text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full" data-i18n="pod_preview_note">Preview · videos coming soon</span>
+        <span id="podPreviewNote" class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="pod_preview_note">Preview · videos coming soon</span>
       </div>
       <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="episodesWrap"></div>
       <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.</p>
@@ -585,7 +589,7 @@
 
     <!-- BOOK -->
     <section id="page-book" class="page py-12 sm:py-16">
-      <p class="section-marker text-sm font-bold uppercase tracking-wider text-brand" data-i18n="book_eyebrow">Book a session</p>
+      <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="book_eyebrow">Book a session</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="book_title">Work with Dr. Nevena Jeremić</h2>
       <p class="mt-3 max-w-2xl text-gray-600" data-i18n="book_intro">Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.</p>
 
@@ -725,7 +729,7 @@
 
     <!-- CONTACT -->
     <section id="page-contact" class="page py-12 sm:py-16">
-      <p class="section-marker text-sm font-bold uppercase tracking-wider text-brand" data-i18n="contact_eyebrow">Contact</p>
+      <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="contact_eyebrow">Contact</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="contact_title">Get in touch</h2>
       <p class="mt-3 max-w-2xl text-gray-600" data-i18n="contact_intro">For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.</p>
 
@@ -845,7 +849,7 @@
       hero_cta_podcast:"Explore Podcast", hero_cta_academy:"Explore Academy", hero_cta_book:"Book a session",
       hero_role:"Associate Professor · Pharmaceutical Chemistry",
       stat_papers:"Publications", stat_citations:"Citations", stat_source:"Source: Scopus",
-      welcome_eyebrow:"Welcome", welcome_title:"Welcome to my personal webpage",
+      welcome_eyebrow:"Welcome", welcome_title:"Welcome to LabLifeHub",
       welcome_p1:"I'm Dr. Nevena Jeremić, University Professor at the Faculty of Medical Sciences, University of Kragujevac and team member of the Center of Excellence for Investigation of Redox Balance in Cardiometabolic Disorders, and the Center for Preclinical and Functional Investigations, Faculty of Medical Sciences, University of Kragujevac, Serbia.",
       welcome_p2:"Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.",
       welcome_p3:"Thank you for visiting — I look forward to connecting and collaborating!",
@@ -944,7 +948,7 @@
       hero_cta_podcast:"Pogledaj podkast", hero_cta_academy:"Pogledaj Academy", hero_cta_book:"Zakaži termin",
       hero_role:"Vanredni profesor · Farmaceutska hemija",
       stat_papers:"Publikacija", stat_citations:"Citata", stat_source:"Izvor: Scopus",
-      welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli na moju ličnu stranicu",
+      welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli u LabLifeHub",
       welcome_p1:"Ja sam dr Nevena Jeremić, profesor na Fakultetu medicinskih nauka Univerziteta u Kragujevcu i član tima Centra izuzetnih vrednosti za istraživanje redoks ravnoteže u kardiometaboličkim poremećajima i Centra za pretkliničke i funkcionalne studije, Fakultet medicinskih nauka, Univerzitet u Kragujevcu, Srbija.",
       welcome_p2:"Ovde možete saznati više o mojim istraživačkim interesovanjima, pogledati moje publikacije i saradnje i povezati se povodom novih nacionalnih i međunarodnih projekata. Uvek sam otvorena za interdisciplinarna partnerstva koja povezuju osnovnu nauku i kliničku primenu.",
       welcome_p3:"Hvala što ste posetili — radujem se povezivanju i saradnji!",
