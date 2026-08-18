@@ -6,6 +6,8 @@
 
 const USERNAME = "lablife.hub";
 const IG_APP_ID = "936619743392459";
+const PROFILE_URL = "https://www.instagram.com/" + USERNAME + "/";
+const API_HOSTS = ["https://www.instagram.com", "https://i.instagram.com"];
 
 function cleanCaption(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
@@ -40,34 +42,58 @@ function mapNode(node) {
   };
 }
 
+async function fetchProfile(host) {
+  const url =
+    host + "/api/v1/users/web_profile_info/?username=" + encodeURIComponent(USERNAME);
+
+  const r = await fetch(url, {
+    headers: {
+      Accept: "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      Referer: PROFILE_URL,
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
+      "x-asbd-id": "129477",
+      "x-ig-app-id": IG_APP_ID,
+    },
+  });
+
+  if (!r.ok) {
+    return {
+      ok: false,
+      upstreamStatus: r.status,
+      upstreamHost: host,
+      detail: (await r.text()).slice(0, 500),
+    };
+  }
+
+  return { ok: true, upstreamHost: host, data: await r.json() };
+}
+
 module.exports = async (req, res) => {
   const limit = Math.min(Math.max(parseInt(req.query.limit || "6", 10) || 6, 1), 6);
-  const url =
-    "https://www.instagram.com/api/v1/users/web_profile_info/?username=" +
-    encodeURIComponent(USERNAME);
 
   try {
-    const r = await fetch(url, {
-      headers: {
-        Accept: "application/json",
-        "Accept-Language": "en-US,en;q=0.9",
-        Referer: "https://www.instagram.com/" + USERNAME + "/",
-        "Sec-Fetch-Dest": "empty",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Site": "same-origin",
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
-        "x-asbd-id": "129477",
-        "x-ig-app-id": IG_APP_ID,
-      },
-    });
-
-    if (!r.ok) {
-      const detail = await r.text();
-      return res.status(502).json({ ok: false, configured: false, detail, posts: [] });
+    let result = null;
+    for (const host of API_HOSTS) {
+      result = await fetchProfile(host);
+      if (result.ok) break;
     }
 
-    const data = await r.json();
+    if (!result || !result.ok) {
+      res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
+      return res.status(200).json({
+        ok: false,
+        configured: false,
+        upstream: result || null,
+        posts: [],
+      });
+    }
+
+    const data = result.data;
     const user = data && data.data && data.data.user;
     const edges =
       user &&
@@ -82,10 +108,12 @@ module.exports = async (req, res) => {
       ok: true,
       configured: true,
       username: USERNAME,
-      profileUrl: "https://www.instagram.com/" + USERNAME + "/",
+      profileUrl: PROFILE_URL,
+      upstreamHost: result.upstreamHost,
       posts,
     });
   } catch (e) {
-    return res.status(500).json({ ok: false, configured: false, error: String(e), posts: [] });
+    res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
+    return res.status(200).json({ ok: false, configured: false, error: String(e), posts: [] });
   }
 };
