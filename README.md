@@ -12,3 +12,17 @@ Functions and Resend. Configure these environment variables in Vercel:
 - `BOOKING_FROM_EMAIL`
 
 Testimonials are sent for manual approval and are never published automatically.
+
+## Instagram feed
+
+The Instagram section loads recent posts through `/api/instagram`.
+
+For a reliable automatic feed, set one of these Vercel environment variables to
+an official Meta/Instagram access token:
+
+- `IG_ACCESS_TOKEN`
+- `INSTAGRAM_ACCESS_TOKEN`
+
+Without a token, the endpoint tries Instagram's public web profile endpoint as a
+best-effort fallback. If Instagram rate-limits Vercel, the site still shows the
+local curated fallback images from the first LabLifeHub post.

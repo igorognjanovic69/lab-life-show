@@ -8,6 +8,7 @@ const USERNAME = "lablife.hub";
 const IG_APP_ID = "936619743392459";
 const PROFILE_URL = "https://www.instagram.com/" + USERNAME + "/";
 const API_HOSTS = ["https://www.instagram.com", "https://i.instagram.com"];
+const GRAPH_TOKEN = process.env.IG_ACCESS_TOKEN || process.env.INSTAGRAM_ACCESS_TOKEN;
 
 function cleanCaption(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
@@ -39,6 +40,52 @@ function mapNode(node) {
     isVideo: Boolean(node.is_video),
     caption: cleanCaption(caption),
     children,
+  };
+}
+
+function shortcodeFromPermalink(permalink) {
+  const match = String(permalink || "").match(/instagram\.com\/(?:p|reel)\/([^/]+)/);
+  return match ? match[1] : "";
+}
+
+function mapGraphMedia(item) {
+  const mediaType = item.media_type || "";
+  const image = mediaType === "VIDEO" ? item.thumbnail_url || item.media_url || "" : item.media_url || "";
+  return {
+    shortcode: shortcodeFromPermalink(item.permalink) || item.id,
+    url: item.permalink || PROFILE_URL,
+    image,
+    isVideo: mediaType === "VIDEO",
+    caption: cleanCaption(item.caption),
+    timestamp: item.timestamp || "",
+    children: [],
+  };
+}
+
+async function fetchGraphPosts(limit) {
+  const url =
+    "https://graph.instagram.com/me/media" +
+    "?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp" +
+    "&limit=" +
+    encodeURIComponent(String(limit)) +
+    "&access_token=" +
+    encodeURIComponent(GRAPH_TOKEN);
+
+  const r = await fetch(url, { headers: { Accept: "application/json" } });
+  if (!r.ok) {
+    return {
+      ok: false,
+      source: "graph",
+      upstreamStatus: r.status,
+      detail: (await r.text()).slice(0, 500),
+    };
+  }
+
+  const data = await r.json();
+  return {
+    ok: true,
+    source: "graph",
+    posts: Array.isArray(data.data) ? data.data.map(mapGraphMedia).filter((post) => post.image) : [],
   };
 }
 
@@ -77,6 +124,30 @@ module.exports = async (req, res) => {
   const limit = Math.min(Math.max(parseInt(req.query.limit || "6", 10) || 6, 1), 6);
 
   try {
+    if (GRAPH_TOKEN) {
+      const graph = await fetchGraphPosts(limit);
+      if (graph.ok) {
+        res.setHeader("Cache-Control", "s-maxage=1800, stale-while-revalidate=86400");
+        return res.status(200).json({
+          ok: true,
+          configured: true,
+          source: "graph",
+          username: USERNAME,
+          profileUrl: PROFILE_URL,
+          posts: graph.posts,
+        });
+      }
+
+      res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
+      return res.status(200).json({
+        ok: false,
+        configured: true,
+        source: "graph",
+        upstream: graph,
+        posts: [],
+      });
+    }
+
     let result = null;
     for (const host of API_HOSTS) {
       result = await fetchProfile(host);
