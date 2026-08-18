@@ -306,6 +306,30 @@
         </div>
       </div>
 
+      <!-- Instagram -->
+      <div class="py-12 border-t border-gray-100">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="ig_eyebrow">Instagram</p>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="ig_title">LabLifeHub on Instagram</h2>
+            <p class="mt-2 text-gray-600 max-w-2xl" data-i18n="ig_intro">Short reflections on science, lab life and the stories behind research.</p>
+          </div>
+          <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm self-start sm:self-auto">
+            <i class="fa-brands fa-instagram"></i><span data-i18n="cta_instagram">Follow on Instagram</span>
+          </a>
+        </div>
+        <div id="instagramWrap" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"></div>
+        <div class="mt-6 rounded-3xl bg-[#26302e] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 lime-grid relative overflow-hidden">
+          <div class="relative">
+            <h3 class="text-2xl font-black" data-i18n="ig_first_post_title">Quiet the noise. Listen to science.</h3>
+            <p class="mt-2 text-sm text-white/75 max-w-2xl" data-i18n="ig_first_post_text">Welcome to LabLifeHub - where science is not a textbook heading, but a way of thinking.</p>
+          </div>
+          <a data-ig-post-link href="https://www.instagram.com/p/Db7n5a3jXkd/" target="_blank" rel="noopener" class="relative inline-flex items-center gap-2 px-5 py-3 rounded-full bg-lime text-ink text-sm font-bold hover:bg-lime-dark transition-colors shrink-0">
+            <i class="fa-brands fa-instagram"></i><span data-i18n="ig_view_post">View post</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Booking CTA -->
       <div class="my-12 rounded-3xl bg-brand text-white p-8 sm:p-12 text-center relative overflow-hidden">
         <div class="absolute -right-8 -bottom-8 opacity-10 text-[160px]"><i class="fa-regular fa-calendar-check"></i></div>
@@ -558,6 +582,9 @@
         <div class="mt-6 flex flex-wrap gap-3">
           <a data-yt-link href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center gap-2">
             <i class="fa-brands fa-youtube text-red-600 text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
+          </a>
+          <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-lime text-ink font-bold text-sm hover:bg-lime-dark transition-colors inline-flex items-center gap-2">
+            <i class="fa-brands fa-instagram text-base"></i><span data-i18n="cta_instagram">Follow on Instagram</span>
           </a>
           <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
             <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
@@ -924,6 +951,20 @@
             <p class="text-sm text-gray-500">nevena-jeremic</p>
           </div>
         </a>
+        <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
+          <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-brands fa-instagram"></i></div>
+          <div>
+            <p class="font-bold text-sm">Instagram</p>
+            <p class="text-sm text-gray-500">@lablife.hub</p>
+          </div>
+        </a>
+        <a data-yt-link href="https://www.youtube.com/@lablifepodcast" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
+          <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-brands fa-youtube"></i></div>
+          <div>
+            <p class="font-bold text-sm">YouTube</p>
+            <p class="text-sm text-gray-500">@lablifepodcast</p>
+          </div>
+        </a>
         <a href="https://orcid.org/0000-0002-5284-8180" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
           <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-brands fa-orcid"></i></div>
           <div>
@@ -988,9 +1029,12 @@
 
   </main>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 flex justify-center">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 flex flex-wrap justify-center gap-3">
     <a data-yt-link href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm">
       <i class="fa-brands fa-youtube text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
+    </a>
+    <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-lime text-ink text-sm font-bold hover:bg-lime-dark transition-colors shadow-sm">
+      <i class="fa-brands fa-instagram text-base"></i><span data-i18n="cta_instagram">Follow on Instagram</span>
     </a>
   </div>
 
@@ -1004,6 +1048,8 @@
       <p class="text-xs text-gray-400 text-center">© <span id="year"></span> Dr. Nevena Jeremić · LabLifeHub</p>
       <div class="flex gap-4 text-gray-400">
         <a href="https://www.linkedin.com/in/nevena-jeremic-b66b50223/" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
+        <a data-yt-link href="https://www.youtube.com/@lablifepodcast" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://orcid.org/0000-0002-5284-8180" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-brands fa-orcid"></i></a>
         <a href="https://sciprofiles.com/profile/1298137" target="_blank" rel="noopener" class="hover:text-brand"><i class="fa-solid fa-flask-vial"></i></a>
       </div>
@@ -1033,7 +1079,12 @@
       home_research:"Research at a glance", home_research_link:"View research",
       home_cta_title:"Want to work together?", home_cta_sub:"Book a 1:1 research retreat, advanced workshop, or scientific mentoring session.",
       gallery_eyebrow:"LabLife moments", gallery_title:"Science, teaching and the lab",
-      cta_youtube:"Follow me on YouTube",
+      cta_youtube:"Follow me on YouTube", cta_instagram:"Follow on Instagram",
+      ig_eyebrow:"Instagram", ig_title:"LabLifeHub on Instagram",
+      ig_intro:"Short reflections on science, lab life and the stories behind research.",
+      ig_first_post_title:"Quiet the noise. Listen to science.",
+      ig_first_post_text:"Welcome to LabLifeHub - where science is not a textbook heading, but a way of thinking.",
+      ig_view_post:"View post",
       about_eyebrow:"About me", about_photo:"Photo",
       about_headline:"Associate Professor of Pharmaceutical Chemistry · redox biology & cardiometabolic research.",
       about_p1:"I'm Dr. Nevena Jeremić, University Professor at the Faculty of Medical Sciences, University of Kragujevac and team member of the Center of Excellence for Investigation of Redox Balance in Cardiometabolic Disorders, and the Center for Preclinical and Functional Investigations, Faculty of Medical Sciences, University of Kragujevac, Serbia.",
@@ -1172,7 +1223,12 @@
       home_research:"Istraživanje ukratko", home_research_link:"Pogledaj istraživanje",
       home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite 1:1 intenzivni istraživački program, naprednu radionicu ili naučno mentorstvo.",
       gallery_eyebrow:"LabLife momenti", gallery_title:"Nauka, nastava i laboratorija",
-      cta_youtube:"Zaprati me na YouTube-u",
+      cta_youtube:"Zaprati me na YouTube-u", cta_instagram:"Prati na Instagramu",
+      ig_eyebrow:"Instagram", ig_title:"LabLifeHub na Instagramu",
+      ig_intro:"Kratke misli o nauci, laboratorijskom životu i pričama koje stoje iza istraživanja.",
+      ig_first_post_title:"Utišaj buku. Slušaj nauku.",
+      ig_first_post_text:"Dobro došli u LabLifeHub - svet u kome nauka nije naslov u udžbeniku, već način razmišljanja.",
+      ig_view_post:"Pogledaj objavu",
       about_eyebrow:"O meni", about_photo:"Fotografija",
       about_headline:"Vanredni profesor farmaceutske hemije · redoks biologija i kardiometabolička istraživanja.",
       about_p1:"Ja sam dr Nevena Jeremić, profesor na Fakultetu medicinskih nauka Univerziteta u Kragujevcu i član tima Centra izuzetnih vrednosti za istraživanje redoks ravnoteže u kardiometaboličkim poremećajima i Centra za pretkliničke i funkcionalne studije, Fakultet medicinskih nauka, Univerzitet u Kragujevcu, Srbija.",
@@ -1294,13 +1350,18 @@
 
   let lang = "en";
 
-  /* YouTube channel URL - fill in once the channel exists, e.g. "https://www.youtube.com/@labifeshow" */
-  const YT_CHANNEL_URL = "";
+  const YT_CHANNEL_URL = "https://www.youtube.com/@lablifepodcast";
+  const IG_PROFILE_URL = "https://www.instagram.com/lablife.hub/";
+  const IG_FIRST_POST_URL = "https://www.instagram.com/p/Db7n5a3jXkd/";
   function wireYouTube(){
     const url = YT_CHANNEL_URL && YT_CHANNEL_URL.trim();
     document.querySelectorAll("[data-yt-link]").forEach(function(a){
       if(url){ a.href = url; a.onclick = null; } else { a.href = "#"; a.onclick = function(e){ e.preventDefault(); }; }
     });
+  }
+  function wireInstagram(){
+    document.querySelectorAll("[data-ig-link]").forEach(function(a){ a.href = IG_PROFILE_URL; });
+    document.querySelectorAll("[data-ig-post-link]").forEach(function(a){ a.href = IG_FIRST_POST_URL; });
   }
 
   /* ---------- data ---------- */
@@ -1353,6 +1414,16 @@
   const SERVICE_ICONS = { svc_retreat_a:"fa-user-graduate", svc_retreat_b:"fa-user-graduate", svc_retreat_c:"fa-user-graduate", svc_workshop:"fa-chalkboard-user" };
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  const IG_FALLBACK_ITEMS = [1,2,3,4,5,6].map(function(i){
+    return {
+      image: `/media/instagram-lablifehub-${String(i).padStart(2,"0")}.jpg`,
+      url: IG_FIRST_POST_URL,
+      caption: "Utišaj buku i počni da slušaš nauku.",
+      isVideo: false
+    };
+  });
+  let loadedInstagram = IG_FALLBACK_ITEMS;
 
   /* ---------- alternating timeline ---------- */
   function renderTimeline(){
@@ -1493,6 +1564,51 @@
     if(!wrap) return;
     const has = loadedEpisodes && loadedEpisodes.length > 0;
     wrap.innerHTML = has ? loadedEpisodes.slice(0,3).map(episodeCard).join("") : [1,2,3].map(episodePlaceholder).join("");
+  }
+
+  /* ---------- Instagram ---------- */
+  function instagramItemsFromPosts(posts){
+    const clean = (Array.isArray(posts) ? posts : []).filter(p => p && p.url && (p.image || (p.children && p.children.length)));
+    if(clean.length === 1 && Array.isArray(clean[0].children) && clean[0].children.length > 1){
+      return clean[0].children
+        .filter(c => c && c.image)
+        .slice(0, 6)
+        .map(c => ({ image:c.image, url:clean[0].url, caption:clean[0].caption || "", isVideo:Boolean(c.isVideo) }));
+    }
+    return clean.slice(0, 6).map(p => ({ image:p.image, url:p.url, caption:p.caption || "", isVideo:Boolean(p.isVideo) }));
+  }
+  function instagramCard(item){
+    return `
+      <a href="${escapeHtml(item.url || IG_PROFILE_URL)}" target="_blank" rel="noopener" class="group block">
+        <div class="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 aspect-square hover:border-brand hover:shadow-md transition-all">
+          <img src="${escapeHtml(item.image)}" alt="LabLifeHub Instagram" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+            <span class="opacity-0 group-hover:opacity-100 h-10 w-10 rounded-full bg-white/90 text-brand flex items-center justify-center transition-opacity">
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+          </div>
+          ${item.isVideo ? `<span class="absolute top-2 right-2 h-7 w-7 rounded-full bg-black/40 text-white flex items-center justify-center text-xs"><i class="fa-solid fa-play"></i></span>` : ""}
+        </div>
+      </a>`;
+  }
+  function renderInstagram(){
+    const wrap = document.getElementById("instagramWrap");
+    if(!wrap) return;
+    const items = loadedInstagram && loadedInstagram.length ? loadedInstagram : IG_FALLBACK_ITEMS;
+    wrap.innerHTML = items.slice(0,6).map(instagramCard).join("");
+  }
+  async function loadInstagram(){
+    renderInstagram();
+    try {
+      const r = await fetch("/api/instagram?limit=6");
+      if(!r.ok) throw new Error("bad");
+      const data = await r.json();
+      const items = instagramItemsFromPosts(data.posts);
+      loadedInstagram = items.length ? items : IG_FALLBACK_ITEMS;
+    } catch(_) {
+      loadedInstagram = IG_FALLBACK_ITEMS;
+    }
+    renderInstagram();
   }
 
   /* ---------- services + dropdown ---------- */
@@ -1682,7 +1798,7 @@
   /* ---------- init ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
   renderTimeline(); renderAwards(); renderMemberships(); renderSkills(); renderPubs(); renderBooks();
-  applyLang(); wireYouTube(); loadEpisodes(); showPage(pageFromLocation(), { replaceUrl:true, scroll:false });
+  applyLang(); wireYouTube(); wireInstagram(); loadEpisodes(); loadInstagram(); showPage(pageFromLocation(), { replaceUrl:true, scroll:false });
   </script>
 </body>
 </html>
