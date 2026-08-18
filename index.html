@@ -1446,11 +1446,32 @@
   /* ---------- services + dropdown ---------- */
   function renderServices(){
     const t = I18N[lang];
-    document.getElementById("servicesWrap").innerHTML = SERVICES.map(s=>`
-      <button type="button" onclick="pickService('${s}')" data-svc="${s}" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand transition-colors">
-        <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS[s]}"></i></div>
-        <div><p class="font-bold text-sm">${t[s+"_t"]}</p><p class="text-sm text-gray-500">${t[s+"_d"]}</p></div>
-      </button>`).join("");
+    const retreatCards = ["svc_retreat_a","svc_retreat_b","svc_retreat_c"].map(s=>{
+      const option = s.slice(-1);
+      return `
+        <button type="button" onclick="pickService('${s}')" data-svc="${s}" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light transition-colors">
+          <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS[s]}"></i></div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-wide text-brand">${t["retreat_option_"+option+"_label"]}</p>
+            <p class="mt-1 font-bold text-sm">${t["retreat_option_"+option+"_name"]}</p>
+            <p class="mt-1 text-sm text-gray-500">${t[s+"_d"]}</p>
+          </div>
+        </button>`;
+    }).join("");
+    const workshopCard = `
+      <button type="button" onclick="pickService('svc_workshop')" data-svc="svc_workshop" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light transition-colors">
+        <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS.svc_workshop}"></i></div>
+        <div>
+          <p class="font-bold text-sm">${t.svc_workshop_t}</p>
+          <p class="mt-1 text-sm text-gray-500">${t.svc_workshop_d}</p>
+        </div>
+      </button>`;
+    document.getElementById("servicesWrap").innerHTML = `
+      <div>
+        <h4 class="mb-3 text-sm font-black text-ink" data-i18n="retreat_pricing_title">${t.retreat_pricing_title}</h4>
+        <div class="space-y-3">${retreatCards}</div>
+      </div>
+      <div class="pt-2">${workshopCard}</div>`;
   }
   function pickService(s){
     const t = I18N[lang];
