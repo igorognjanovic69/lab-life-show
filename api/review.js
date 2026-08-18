@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
   }
 
   const html =
-    "<h2>New testimonial for approval — Lab Life Show</h2>" +
+    "<h2>New testimonial for approval — LabLifeHub</h2>" +
     "<p><strong>Name:</strong> " + esc(name) + "</p>" +
     "<p><strong>Email (private):</strong> " + esc(email) + "</p>" +
     "<p><strong>Role / institution:</strong> " + esc(role) + "</p>" +

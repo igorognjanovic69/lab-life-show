@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LabLifeHub — Dr. Nevena Jeremić</title>
-  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. Redox biology and cardiometabolic research, science mentorship, and LabLifePodcast and LabLifeAcademy." />
+  <meta name="description" content="Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. LabLifeHub, LabLifePodcast and LabLifeAcademy connect research, mentoring, reproducibility and scientific communication." />
 
   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
 
@@ -159,7 +159,7 @@
             <span class="section-marker lime-pop text-sm font-bold uppercase tracking-wider">
               <i class="fa-solid fa-microphone-lines"></i><span data-i18n="hero_badge">Podcast + Academy</span>
             </span>
-            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">LabLifeHub</h1>
+            <h1 class="mt-5 text-4xl sm:text-5xl font-black leading-tight" data-i18n="hero_title_1">Where Researchers Grow, Teams Improve, and Science Gets Stronger</h1>
             <p class="mt-4 text-lg text-gray-600" data-i18n="hero_subtitle">A new science podcast hosted by Dr. Nevena Jeremić — Associate Professor of Pharmaceutical Chemistry at the University of Kragujevac. Conversations about life in science, redox biology and cardiometabolic research.</p>
             <div class="mt-7 flex flex-wrap gap-3">
               <button onclick="showPage('podcast')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors shadow-sm">
@@ -432,7 +432,7 @@
         </figure>
         <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
           <img src="/media/nevena-lab-01.jpg" alt="Dr. Nevena Jeremić in the laboratory" loading="lazy" width="1200" height="1800" class="w-full aspect-[4/5] object-cover object-[center_24%]" />
-          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_conference">International Academy of Cardiovascular Sciences meeting.</figcaption>
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="photo_conference">Not just attending conferences — building a life in science.</figcaption>
         </figure>
         <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
           <img src="/media/nevena-lab-03.jpg" alt="Scientific presentation by Dr. Nevena Jeremić" loading="lazy" width="1800" height="1200" class="w-full aspect-[4/5] object-cover object-[center_30%]" />
@@ -519,13 +519,13 @@
         <span class="section-marker lime-pop text-sm font-bold uppercase tracking-wider">
           <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">Coming soon</span>
         </span>
-        <h2 class="mt-4 text-3xl sm:text-5xl font-black">LabLifePodcast</h2>
-        <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">A new podcast hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.</p>
+        <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="pod_title">The Scientific Voice Above the Noise.</h2>
+        <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">LabLifePodcast brings clarity to complex research topics — and showcases how companies, innovators, and founders use science to build stronger products, better decisions, and successful businesses.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a data-yt-link href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center gap-2">
             <i class="fa-brands fa-youtube text-red-600 text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
           </a>
-          <button onclick="showPage('book')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
+          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
             <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
           </button>
           <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
@@ -566,14 +566,14 @@
       <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-center">
         <div>
           <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="academy_eyebrow">LabLifeAcademy</p>
-          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="academy_title">Workshops for better science</h2>
-          <p class="mt-4 text-gray-600 leading-relaxed" data-i18n="academy_intro">LabLifeAcademy brings workshops, online lectures and consultations for researchers who want to design stronger studies, write clearer manuscripts and publish better science.</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="academy_title">Empowering Scientists to Build Better Research</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed" data-i18n="academy_intro">Individual mentoring and advanced workshops that strengthen study design, experimental strategy, reproducibility, and publication success.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <button onclick="showPage('book')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
-              <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="academy_cta_book">Book a workshop</span>
+            <button onclick="showPage('book');pickService('svc_retreat');" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+              <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="academy_cta_book">Book a 1:1 Session</span>
             </button>
-            <button onclick="showPage('research')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
-              <i class="fa-solid fa-flask mr-2"></i><span data-i18n="academy_cta_research">View research background</span>
+            <button onclick="document.getElementById('workshopOffer').scrollIntoView({behavior:'smooth',block:'start'});" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+              <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="academy_cta_workshops">Explore Workshops</span>
             </button>
           </div>
         </div>
@@ -581,6 +581,87 @@
           <img src="/media/nevena-corridor.jpg" alt="Dr. Nevena Jeremić in an academic corridor" loading="lazy" class="w-full aspect-[4/5] object-cover object-[center_34%]" />
           <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="academy_photo">Academic training grounded in real research practice.</figcaption>
         </figure>
+      </div>
+
+      <div id="academyOffers" class="mt-10 grid lg:grid-cols-2 gap-5">
+        <article class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+          <span class="lime-source text-[11px] font-bold uppercase tracking-wide" data-i18n="retreat_kicker">Premium individual retreat</span>
+          <h3 class="mt-3 text-2xl font-black" data-i18n="retreat_title">1:1 Research Retreat</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed" data-i18n="retreat_intro">A fully personalized, intensive scientific mentoring experience for Master, PhD, Postdoc and early-career researchers — built to strengthen your study design, reproducibility and 6-month research plan.</p>
+          <h4 class="mt-6 font-bold" data-i18n="retreat_gain_title">What You Will Gain</h4>
+          <div class="mt-4 grid sm:grid-cols-2 gap-3">
+            <div class="rounded-2xl bg-gray-50 p-4">
+              <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+              <h5 class="mt-2 font-bold text-sm" data-i18n="retreat_gain_a_t">Full Scientific Project Audit</h5>
+              <p class="mt-1 text-xs text-gray-500 leading-relaxed" data-i18n="retreat_gain_a_d">Hypothesis, aims, methodology, weaknesses, redesign recommendations and risk assessment.</p>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-4">
+              <i class="fa-solid fa-diagram-project text-xl"></i>
+              <h5 class="mt-2 font-bold text-sm" data-i18n="retreat_gain_b_t">Complete Study Design Development</h5>
+              <p class="mt-1 text-xs text-gray-500 leading-relaxed" data-i18n="retreat_gain_b_d">Model selection, controls, randomization, blinding, statistical plan and bias prevention.</p>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-4">
+              <i class="fa-solid fa-repeat text-xl"></i>
+              <h5 class="mt-2 font-bold text-sm" data-i18n="retreat_gain_c_t">Reproducibility & Workflow Optimization</h5>
+              <p class="mt-1 text-xs text-gray-500 leading-relaxed" data-i18n="retreat_gain_c_d">Protocols, lab notebooks, reagent tracking, error prevention and negative result analysis.</p>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-4">
+              <i class="fa-solid fa-pen-nib text-xl"></i>
+              <h5 class="mt-2 font-bold text-sm" data-i18n="retreat_gain_d_t">Scientific Writing & Publication Strategy</h5>
+              <p class="mt-1 text-xs text-gray-500 leading-relaxed" data-i18n="retreat_gain_d_d">Manuscript structure, figure storytelling, journal strategy and turning projects into papers.</p>
+            </div>
+          </div>
+          <h4 class="mt-6 font-bold" data-i18n="retreat_pricing_title">Retreat Formats & Pricing</h4>
+          <div class="mt-3 space-y-2 text-sm">
+            <div class="rounded-2xl border border-gray-100 p-4">
+              <p class="font-bold" data-i18n="retreat_option_a_t">Option A — One-Day Intensive Retreat</p>
+              <p class="mt-1 text-gray-500" data-i18n="retreat_option_a_d">4–5 hours · perfect for fast, focused guidance · $350</p>
+            </div>
+            <div class="rounded-2xl border border-gray-100 p-4">
+              <p class="font-bold" data-i18n="retreat_option_b_t">Option B — Two-Day Premium Retreat</p>
+              <p class="mt-1 text-gray-500" data-i18n="retreat_option_b_d">2 × 3 hours · deep project transformation · $600</p>
+            </div>
+            <div class="rounded-2xl border border-gray-100 p-4">
+              <p class="font-bold" data-i18n="retreat_option_c_t">Option C — Retreat + 30-Day Follow-Up Mentoring</p>
+              <p class="mt-1 text-gray-500" data-i18n="retreat_option_c_d">Structured support, feedback and implementation guidance · $850</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="workshopOffer" class="rounded-3xl bg-[#26302e] text-white shadow-sm p-6 sm:p-7 lime-grid relative overflow-hidden">
+          <div class="absolute -right-8 -top-8 text-[140px] text-white/5"><i class="fa-solid fa-flask-vial"></i></div>
+          <span class="lime-pop inline-flex text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full" data-i18n="workshop_kicker">Advanced group workshop</span>
+          <h3 class="mt-3 text-2xl font-black" data-i18n="workshop_title">Failure in Science: “Why Experiments Fail” Workshop</h3>
+          <p class="mt-2 text-sm text-white/75 leading-relaxed" data-i18n="workshop_intro">Failure is not a setback — it is data. This workshop helps research teams analyze failed experiments, identify true causes behind negative or inconsistent results, and transform failure into strategic improvement.</p>
+          <h4 class="mt-6 font-bold" data-i18n="workshop_topics_title">Workshop topics</h4>
+          <div class="mt-4 space-y-3 text-sm">
+            <div class="rounded-2xl bg-white/10 p-4">
+              <p class="font-bold" data-i18n="workshop_topic_a_t">Why Experiments Fail</p>
+              <p class="mt-1 text-white/70 text-xs leading-relaxed" data-i18n="workshop_topic_a_d">Bias, randomization errors, lack of blinding, underpowered statistics, flawed design, reagent variability and model limitations.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4">
+              <p class="font-bold" data-i18n="workshop_topic_b_t">How to Analyze a Failed Experiment</p>
+              <p class="mt-1 text-white/70 text-xs leading-relaxed" data-i18n="workshop_topic_b_d">Reconstructing the workflow, identifying confounders, reading negative results and distinguishing true negatives from technical failure.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4">
+              <p class="font-bold" data-i18n="workshop_topic_c_t">Laboratory Errors & Documentation</p>
+              <p class="mt-1 text-white/70 text-xs leading-relaxed" data-i18n="workshop_topic_c_d">Reagent tracking, batch variability, lab notebook structure and documentation systems that prevent data loss.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4">
+              <p class="font-bold" data-i18n="workshop_topic_d_t">Translational Impact of Failure</p>
+              <p class="mt-1 text-white/70 text-xs leading-relaxed" data-i18n="workshop_topic_d_d">Using failed experiments to refine hypotheses, improve design and strengthen bench-to-bedside logic.</p>
+            </div>
+          </div>
+          <h4 class="mt-6 font-bold" data-i18n="workshop_pricing_title">Format & Premium Pricing</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><i class="fa-regular fa-clock mt-1"></i><span data-i18n="workshop_format">90-minute Zoom workshop</span></li>
+            <li class="flex gap-2"><i class="fa-solid fa-users mt-1"></i><span data-i18n="workshop_group">Up to 100 participants, minimum 10 participants</span></li>
+            <li class="flex gap-2"><i class="fa-solid fa-tag mt-1"></i><span data-i18n="workshop_price">$25 per workshop topic per person</span></li>
+          </ul>
+          <a href="mailto:nevenajeremic@lablifehub.com" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-4 py-2 text-sm font-medium hover:bg-brand-light transition-colors">
+            <i class="fa-regular fa-envelope"></i><span data-i18n="workshop_contact">Contact: nevenajeremic@lablifehub.com</span>
+          </a>
+        </article>
       </div>
 
       <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -601,13 +682,13 @@
 
     <!-- BOOK -->
     <section id="page-book" class="page py-12 sm:py-16">
-      <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="book_eyebrow">Book a session</p>
-      <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="book_title">Work with Dr. Nevena Jeremić</h2>
-      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="book_intro">Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.</p>
+      <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="book_eyebrow">LabLifeAcademy booking</p>
+      <h2 class="mt-2 text-3xl sm:text-4xl font-black" data-i18n="book_title">Book a LabLifeAcademy offer</h2>
+      <p class="mt-3 max-w-2xl text-gray-600" data-i18n="book_intro">Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.</p>
 
       <div class="mt-8 grid lg:grid-cols-2 gap-8">
         <div>
-          <h3 class="font-bold mb-3" data-i18n="book_choose">1 · Choose a service</h3>
+          <h3 class="font-bold mb-3" data-i18n="book_choose">1 · Choose an offer</h3>
           <div class="space-y-3" id="servicesWrap"></div>
         </div>
 
@@ -746,11 +827,11 @@
       <p class="mt-3 max-w-2xl text-gray-600" data-i18n="contact_intro">For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.</p>
 
       <div class="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl">
-        <a href="mailto:nevenajeremic@lablifeshow.com" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
+        <a href="mailto:nevenajeremic@lablifehub.com" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
           <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-solid fa-envelope"></i></div>
           <div>
             <p class="font-bold text-sm" data-i18n="contact_email">Email</p>
-            <p class="text-sm text-gray-500 break-all">nevenajeremic@lablifeshow.com</p>
+            <p class="text-sm text-gray-500 break-all">nevenajeremic@lablifehub.com</p>
           </div>
         </a>
         <a href="tel:+381647019794" class="flex items-center gap-4 rounded-2xl border border-gray-100 p-5 hover:border-brand hover:shadow-md transition-all">
@@ -856,9 +937,9 @@
   const I18N = {
     en: {
       nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_contact:"Contact",
-      hero_badge:"Podcast + Academy", hero_title_1:"LabLifeHub",
+      hero_badge:"Podcast + Academy", hero_title_1:"Where Researchers Grow, Teams Improve, and Science Gets Stronger",
       hero_subtitle:"A platform by Dr. Nevena Jeremić connecting science communication, research education, workshops and academic mentorship — grounded in pharmaceutical chemistry, redox biology and cardiometabolic research.",
-      hero_cta_podcast:"Explore Podcast", hero_cta_academy:"Explore Academy", hero_cta_book:"Book a session",
+      hero_cta_podcast:"Explore Podcast", hero_cta_academy:"Explore Academy", hero_cta_book:"Book a 1:1 Session",
       hero_role:"Associate Professor · Pharmaceutical Chemistry",
       stat_papers:"Publications", stat_citations:"Citations", stat_source:"Source: Scopus",
       welcome_eyebrow:"Welcome", welcome_title:"Welcome to LabLifeHub",
@@ -872,7 +953,7 @@
       learn_more:"Learn more →",
       home_latest:"Latest episodes", home_all_episodes:"All episodes",
       home_research:"Research at a glance", home_research_link:"View research",
-      home_cta_title:"Want to work together?", home_cta_sub:"Book a podcast guest appearance, an Academy workshop, an online lecture, or a research and writing consultation.",
+      home_cta_title:"Want to work together?", home_cta_sub:"Book a 1:1 research retreat, advanced workshop, or scientific mentoring session.",
       gallery_eyebrow:"LabLife moments", gallery_title:"Science, teaching and the lab",
       cta_youtube:"Follow me on YouTube",
       about_eyebrow:"About me", about_photo:"Photo",
@@ -886,7 +967,7 @@
       photo_award:"Conferences, recognition and academic path.",
       photo_collaboration:"Reading, writing and knowledge exchange.",
       photo_lecture:"A real laboratory context behind the research.",
-      photo_conference:"Preclinical and functional research environment.",
+      photo_conference:"Not just attending conferences — building a life in science.",
       photo_presentation:"Daily lab life and experimental science.",
       media_title:"In the media", media_intro:"Selected stories about research, international collaboration and academic recognition.",
       media_global:"A story about international scientific collaboration", media_three:"Teaching and research across three universities",
@@ -905,9 +986,30 @@
       act_mentor_t:"Mentoring", act_mentor_d:"Supervised 3 completed PhD theses and 9 master theses in pharmaceutical chemistry; PhD mentor since 2018.",
       act_editor_t:"Guest editor", act_editor_d:"Pathophysiology and Frontiers in Physiology special issues on cardiovascular physiology.",
       act_review_t:"Peer reviewer", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.",
-      academy_eyebrow:"LabLifeAcademy", academy_title:"Workshops for better science", academy_intro:"LabLifeAcademy brings workshops, online lectures and consultations for researchers who want to design stronger studies, write clearer manuscripts and publish better science.", academy_cta_book:"Book a workshop", academy_cta_research:"View research background", academy_photo:"Academic training grounded in real research practice.", academy_writing_t:"Scientific writing", academy_writing_d:"Workshops and consultations for manuscripts, structure, clarity and publication strategy.", academy_design_t:"Research design", academy_design_d:"Support for designing stronger, clearer and more publishable experimental studies.", academy_lecture_t:"Online lectures", academy_lecture_d:"Lectures and training sessions for students, researchers, groups and events.", academy_mentor_t:"Mentorship", academy_mentor_d:"Guidance for PhD candidates, young researchers and academic career development.", academy_methods_t:"Preclinical methods", academy_methods_d:"Training rooted in 18+ years of preclinical pharmacology and physiology experience.", academy_collab_t:"International collaboration", academy_collab_d:"Support for national and international scientific projects and partnerships.",
-      pod_badge:"Coming soon",
-      pod_intro:"LabLifePodcast is hosted by Dr. Nevena Jeremić. Honest conversations about life in science — from the bench and the lab to designing experiments and publishing better research.",
+      academy_eyebrow:"LabLifeAcademy", academy_title:"Empowering Scientists to Build Better Research", academy_intro:"Individual mentoring and advanced workshops that strengthen study design, experimental strategy, reproducibility, and publication success.", academy_cta_book:"Book a 1:1 Session", academy_cta_workshops:"Explore Workshops", academy_cta_research:"View research background", academy_photo:"Academic training grounded in real research practice.", academy_writing_t:"Scientific writing", academy_writing_d:"Workshops and consultations for manuscripts, structure, clarity and publication strategy.", academy_design_t:"Research design", academy_design_d:"Support for designing stronger, clearer and more publishable experimental studies.", academy_lecture_t:"Online lectures", academy_lecture_d:"Lectures and training sessions for students, researchers, groups and events.", academy_mentor_t:"Mentorship", academy_mentor_d:"Guidance for PhD candidates, young researchers and academic career development.", academy_methods_t:"Preclinical methods", academy_methods_d:"Training rooted in 18+ years of preclinical pharmacology and physiology experience.", academy_collab_t:"International collaboration", academy_collab_d:"Support for national and international scientific projects and partnerships.",
+      retreat_kicker:"Premium individual retreat", retreat_title:"1:1 Research Retreat",
+      retreat_intro:"A fully personalized, intensive scientific mentoring experience for Master, PhD, Postdoc and early-career researchers — built to strengthen your study design, reproducibility and 6-month research plan.",
+      retreat_gain_title:"What You Will Gain",
+      retreat_gain_a_t:"Full Scientific Project Audit", retreat_gain_a_d:"Hypothesis, aims, methodology, weaknesses, redesign recommendations and risk assessment.",
+      retreat_gain_b_t:"Complete Study Design Development", retreat_gain_b_d:"Model selection, controls, randomization, blinding, statistical plan and bias prevention.",
+      retreat_gain_c_t:"Reproducibility & Workflow Optimization", retreat_gain_c_d:"Protocols, lab notebooks, reagent tracking, error prevention and negative result analysis.",
+      retreat_gain_d_t:"Scientific Writing & Publication Strategy", retreat_gain_d_d:"Manuscript structure, figure storytelling, journal strategy and turning projects into papers.",
+      retreat_pricing_title:"Retreat Formats & Pricing",
+      retreat_option_a_t:"Option A — One-Day Intensive Retreat", retreat_option_a_d:"4–5 hours · perfect for fast, focused guidance · $350",
+      retreat_option_b_t:"Option B — Two-Day Premium Retreat", retreat_option_b_d:"2 × 3 hours · deep project transformation · $600",
+      retreat_option_c_t:"Option C — Retreat + 30-Day Follow-Up Mentoring", retreat_option_c_d:"Structured support, feedback and implementation guidance · $850",
+      workshop_kicker:"Advanced group workshop", workshop_title:"Failure in Science: “Why Experiments Fail” Workshop",
+      workshop_intro:"Failure is not a setback — it is data. This workshop helps research teams analyze failed experiments, identify true causes behind negative or inconsistent results, and transform failure into strategic improvement.",
+      workshop_topics_title:"Workshop topics",
+      workshop_topic_a_t:"Why Experiments Fail", workshop_topic_a_d:"Bias, randomization errors, lack of blinding, underpowered statistics, flawed design, reagent variability and model limitations.",
+      workshop_topic_b_t:"How to Analyze a Failed Experiment", workshop_topic_b_d:"Reconstructing the workflow, identifying confounders, reading negative results and distinguishing true negatives from technical failure.",
+      workshop_topic_c_t:"Laboratory Errors & Documentation", workshop_topic_c_d:"Reagent tracking, batch variability, lab notebook structure and documentation systems that prevent data loss.",
+      workshop_topic_d_t:"Translational Impact of Failure", workshop_topic_d_d:"Using failed experiments to refine hypotheses, improve design and strengthen bench-to-bedside logic.",
+      workshop_pricing_title:"Format & Premium Pricing", workshop_format:"90-minute Zoom workshop",
+      workshop_group:"Up to 100 participants, minimum 10 participants", workshop_price:"$25 per workshop topic per person",
+      workshop_contact:"Contact: nevenajeremic@lablifehub.com",
+      pod_badge:"Coming soon", pod_title:"The Scientific Voice Above the Noise.",
+      pod_intro:"LabLifePodcast brings clarity to complex research topics — and showcases how companies, innovators, and founders use science to build stronger products, better decisions, and successful businesses.",
       pod_cta_guest:"Be a guest", pod_cta_notify:"Get notified", pod_expect:"What to expect",
       pod_e1_t:"Researcher stories", pod_e1_d:"Candid talks with scientists about the real life behind the papers.",
       pod_e2_t:"Better science", pod_e2_d:"Practical tips on study design, writing and publishing.",
@@ -915,11 +1017,11 @@
       pod_episodes:"Episodes", pod_preview_note:"Preview · videos coming soon",
       pod_yt_note:"Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.",
       ep_soon:"Coming soon",
-      book_eyebrow:"Book a session", book_title:"Work with Dr. Nevena Jeremić",
-      book_intro:"Choose what you'd like to book, pick a date, and send your request. You'll receive a reply to confirm the details.",
-      book_choose:"1 · Choose a service", book_details:"2 · Your details",
-      svc_guest_t:"Podcast guest appearance", svc_guest_d:"Join an episode of LabLifePodcast to share your research story.",
-      svc_workshop_t:"Academy workshop", svc_workshop_d:"A LabLifeAcademy workshop for scientific writing, research design or publishing strategy.",
+      book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
+      book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
+      book_choose:"1 · Choose an offer", book_details:"2 · Your details",
+      svc_retreat_t:"1:1 Research Retreat", svc_retreat_d:"Premium individual mentoring for Master, PhD, Postdoc and early-career researchers.",
+      svc_workshop_t:"Failure in Science Workshop", svc_workshop_d:"Advanced group workshop on failed experiments, reproducibility and better research design.",
       svc_lecture_t:"Online lecture", svc_lecture_d:"A talk for your group, course or event — design, methods or writing.",
       svc_design_t:"Research design consultation", svc_design_d:"One-on-one support for stronger, clearer and more publishable experimental studies.",
       svc_writing_t:"Scientific writing consultation", svc_writing_d:"Help with manuscript structure, clarity and publication strategy.",
@@ -955,9 +1057,9 @@
     },
     sr: {
       nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Academy", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
-      hero_badge:"Podkast + Academy", hero_title_1:"LabLifeHub",
+      hero_badge:"Podkast + Academy", hero_title_1:"Where Researchers Grow, Teams Improve, and Science Gets Stronger",
       hero_subtitle:"Platforma dr Nevene Jeremić koja povezuje naučnu komunikaciju, istraživačku edukaciju, radionice i akademsko mentorstvo — zasnovana na farmaceutskoj hemiji, redoks biologiji i kardiometaboličkim istraživanjima.",
-      hero_cta_podcast:"Pogledaj podkast", hero_cta_academy:"Pogledaj Academy", hero_cta_book:"Zakaži termin",
+      hero_cta_podcast:"Pogledaj podkast", hero_cta_academy:"Pogledaj Academy", hero_cta_book:"Zakaži 1:1 sesiju",
       hero_role:"Vanredni profesor · Farmaceutska hemija",
       stat_papers:"Publikacija", stat_citations:"Citata", stat_source:"Izvor: Scopus",
       welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli u LabLifeHub",
@@ -971,7 +1073,7 @@
       learn_more:"Saznaj više →",
       home_latest:"Poslednje epizode", home_all_episodes:"Sve epizode",
       home_research:"Istraživanje ukratko", home_research_link:"Pogledaj istraživanje",
-      home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite gostovanje u podkastu, Academy radionicu, online predavanje ili konsultacije za istraživanje i pisanje.",
+      home_cta_title:"Želite da sarađujemo?", home_cta_sub:"Zakažite 1:1 research retreat, naprednu radionicu ili naučno mentorstvo.",
       gallery_eyebrow:"LabLife momenti", gallery_title:"Nauka, nastava i laboratorija",
       cta_youtube:"Zaprati me na YouTube-u",
       about_eyebrow:"O meni", about_photo:"Fotografija",
@@ -985,7 +1087,7 @@
       photo_award:"Konferencije, priznanja i akademski put.",
       photo_collaboration:"Čitanje, pisanje i razmena znanja.",
       photo_lecture:"Stvarni laboratorijski kontekst iza istraživanja.",
-      photo_conference:"Pretkliničko i funkcionalno istraživačko okruženje.",
+      photo_conference:"Ne samo prisustvo konferencijama — već izgradnja života u nauci.",
       photo_presentation:"Svakodnevni život u laboratoriji i eksperimentalna nauka.",
       media_title:"U medijima", media_intro:"Odabrane priče o istraživanjima, međunarodnoj saradnji i akademskim priznanjima.",
       media_global:"Priča o međunarodnoj naučnoj saradnji", media_three:"Nastava i istraživanje na tri univerziteta",
@@ -1004,9 +1106,30 @@
       act_mentor_t:"Mentorstvo", act_mentor_d:"Mentor 3 odbranjene doktorske disertacije i 9 master radova iz farmaceutske hemije; mentor na doktorskim studijama od 2018.",
       act_editor_t:"Gostujući urednik", act_editor_d:"Specijalna izdanja časopisa Pathophysiology i Frontiers in Physiology o kardiovaskularnoj fiziologiji.",
       act_review_t:"Recenzent", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers i drugi.",
-      academy_eyebrow:"LabLifeAcademy", academy_title:"Radionice za bolju nauku", academy_intro:"LabLifeAcademy objedinjuje radionice, online predavanja i konsultacije za istraživače koji žele da dizajniraju snažnije studije, pišu jasnije rukopise i objavljuju bolju nauku.", academy_cta_book:"Zakaži radionicu", academy_cta_research:"Pogledaj istraživačku osnovu", academy_photo:"Akademska edukacija zasnovana na stvarnoj istraživačkoj praksi.", academy_writing_t:"Naučno pisanje", academy_writing_d:"Radionice i konsultacije za rukopise, strukturu, jasnoću i strategiju objavljivanja.", academy_design_t:"Dizajn istraživanja", academy_design_d:"Podrška za dizajniranje snažnijih, jasnijih i objavljivijih eksperimentalnih studija.", academy_lecture_t:"Online predavanja", academy_lecture_d:"Predavanja i edukativne sesije za studente, istraživače, grupe i događaje.", academy_mentor_t:"Mentorstvo", academy_mentor_d:"Podrška doktorandima, mladim istraživačima i razvoju akademske karijere.", academy_methods_t:"Pretkliničke metode", academy_methods_d:"Edukacija zasnovana na preko 18 godina iskustva u pretkliničkoj farmakologiji i fiziologiji.", academy_collab_t:"Međunarodna saradnja", academy_collab_d:"Podrška za nacionalne i međunarodne naučne projekte i partnerstva.",
-      pod_badge:"Uskoro",
-      pod_intro:"LabLifePodcast vodi dr Nevena Jeremić. Iskreni razgovori o životu u nauci — od laboratorije do dizajna eksperimenata i boljeg objavljivanja istraživanja.",
+      academy_eyebrow:"LabLifeAcademy", academy_title:"Osnaživanje naučnika za bolje istraživanje", academy_intro:"Individualno mentorstvo i napredne radionice koje jačaju dizajn studije, eksperimentalnu strategiju, reproduktivnost i uspešnije publikovanje.", academy_cta_book:"Zakaži 1:1 sesiju", academy_cta_workshops:"Pogledaj radionice", academy_cta_research:"Pogledaj istraživačku osnovu", academy_photo:"Akademska edukacija zasnovana na stvarnoj istraživačkoj praksi.", academy_writing_t:"Naučno pisanje", academy_writing_d:"Radionice i konsultacije za rukopise, strukturu, jasnoću i strategiju objavljivanja.", academy_design_t:"Dizajn istraživanja", academy_design_d:"Podrška za dizajniranje snažnijih, jasnijih i objavljivijih eksperimentalnih studija.", academy_lecture_t:"Online predavanja", academy_lecture_d:"Predavanja i edukativne sesije za studente, istraživače, grupe i događaje.", academy_mentor_t:"Mentorstvo", academy_mentor_d:"Podrška doktorandima, mladim istraživačima i razvoju akademske karijere.", academy_methods_t:"Pretkliničke metode", academy_methods_d:"Edukacija zasnovana na preko 18 godina iskustva u pretkliničkoj farmakologiji i fiziologiji.", academy_collab_t:"Međunarodna saradnja", academy_collab_d:"Podrška za nacionalne i međunarodne naučne projekte i partnerstva.",
+      retreat_kicker:"Premium individualni retreat", retreat_title:"1:1 Research Retreat",
+      retreat_intro:"Potpuno personalizovano, intenzivno naučno mentorstvo za master, PhD, postdoc i early-career istraživače — osmišljeno da ojača dizajn studije, reproduktivnost i šestomesečni plan istraživanja.",
+      retreat_gain_title:"Šta dobijate",
+      retreat_gain_a_t:"Detaljan audit naučnog projekta", retreat_gain_a_d:"Hipoteza, ciljevi, metodologija, slabe tačke, preporuke za redizajn i procena rizika.",
+      retreat_gain_b_t:"Razvoj kompletnog dizajna studije", retreat_gain_b_d:"Izbor modela, kontrole, randomizacija, blinding, statistički plan i prevencija biasa.",
+      retreat_gain_c_t:"Reproduktivnost i optimizacija laboratorijskog toka", retreat_gain_c_d:"Protokoli, laboratorijski dnevnik, praćenje reagenasa, prevencija grešaka i analiza negativnih rezultata.",
+      retreat_gain_d_t:"Naučno pisanje i strategija publikovanja", retreat_gain_d_d:"Struktura rukopisa, storytelling kroz figure, izbor časopisa i pretvaranje projekta u radove.",
+      retreat_pricing_title:"Retreat formati i cene",
+      retreat_option_a_t:"Opcija A — One-Day Intensive Retreat", retreat_option_a_d:"4–5 sati · brzo i fokusirano vođenje · $350",
+      retreat_option_b_t:"Opcija B — Two-Day Premium Retreat", retreat_option_b_d:"2 × 3 sata · dubinska transformacija projekta · $600",
+      retreat_option_c_t:"Opcija C — Retreat + 30-Day Follow-Up Mentoring", retreat_option_c_d:"Strukturisana podrška, feedback i vođenje kroz implementaciju · $850",
+      workshop_kicker:"Napredna grupna radionica", workshop_title:"Failure in Science: “Why Experiments Fail” radionica",
+      workshop_intro:"Neuspeh nije poraz — on je podatak. Ova radionica pomaže istraživačkim timovima da analiziraju neuspele eksperimente, pronađu stvarne uzroke negativnih ili nedoslednih rezultata i pretvore failure u strateško poboljšanje.",
+      workshop_topics_title:"Teme radionice",
+      workshop_topic_a_t:"Zašto eksperimenti ne uspevaju", workshop_topic_a_d:"Bias, greške randomizacije, nedostatak blindinga, statistička underpowering, loš dizajn, varijabilnost reagenasa i ograničenja modela.",
+      workshop_topic_b_t:"Kako analizirati neuspeo eksperiment", workshop_topic_b_d:"Rekonstrukcija toka rada, prepoznavanje confoundera, tumačenje negativnih rezultata i razlika između stvarno negativnog nalaza i tehničke greške.",
+      workshop_topic_c_t:"Laboratorijske greške i dokumentacija", workshop_topic_c_d:"Praćenje reagenasa, batch varijabilnost, struktura laboratorijskog dnevnika i sistemi dokumentacije koji sprečavaju gubitak podataka.",
+      workshop_topic_d_t:"Translacioni značaj neuspeha", workshop_topic_d_d:"Korišćenje neuspelih eksperimenata za preciziranje hipoteza, bolji dizajn i jačanje bench-to-bedside logike.",
+      workshop_pricing_title:"Format i premium cena", workshop_format:"90-minutna Zoom radionica",
+      workshop_group:"Do 100 učesnika, minimum 10 učesnika", workshop_price:"$25 po temi radionice po osobi",
+      workshop_contact:"Kontakt: nevenajeremic@lablifehub.com",
+      pod_badge:"Uskoro", pod_title:"Naučni glas iznad buke.",
+      pod_intro:"LabLifePodcast donosi jasnoću u kompleksne istraživačke teme — i pokazuje kako kompanije, inovatori i osnivači koriste nauku da grade jače proizvode, bolje odluke i uspešnije biznise.",
       pod_cta_guest:"Budite gost", pod_cta_notify:"Obavesti me", pod_expect:"Šta vas očekuje",
       pod_e1_t:"Priče istraživača", pod_e1_d:"Otvoreni razgovori sa naučnicima o stvarnom životu iza radova.",
       pod_e2_t:"Bolja nauka", pod_e2_d:"Praktični saveti o dizajnu studija, pisanju i objavljivanju.",
@@ -1014,11 +1137,11 @@
       pod_episodes:"Epizode", pod_preview_note:"Pregled · video uskoro",
       pod_yt_note:"Video epizode će biti prikazane ovde sa YouTube kanala LabLifePodcast kada budu objavljene.",
       ep_soon:"Uskoro",
-      book_eyebrow:"Zakazivanje", book_title:"Sarađujte sa dr Nevenom Jeremić",
-      book_intro:"Izaberite šta želite da zakažete, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
-      book_choose:"1 · Izaberite uslugu", book_details:"2 · Vaši podaci",
-      svc_guest_t:"Gostovanje u podkastu", svc_guest_d:"Pridružite se epizodi LabLifePodcast i podelite svoju istraživačku priču.",
-      svc_workshop_t:"Academy radionica", svc_workshop_d:"LabLifeAcademy radionica za naučno pisanje, dizajn istraživanja ili strategiju objavljivanja.",
+      book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
+      book_intro:"Izaberite premium retreat ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
+      book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
+      svc_retreat_t:"1:1 Research Retreat", svc_retreat_d:"Premium individualno mentorstvo za master, PhD, postdoc i early-career istraživače.",
+      svc_workshop_t:"Failure in Science radionica", svc_workshop_d:"Napredna grupna radionica o neuspelim eksperimentima, reproduktivnosti i boljem dizajnu istraživanja.",
       svc_lecture_t:"Online predavanje", svc_lecture_d:"Predavanje za vašu grupu, kurs ili događaj — dizajn, metode ili pisanje.",
       svc_design_t:"Konsultacije za dizajn istraživanja", svc_design_d:"Individualna podrška za snažnije, jasnije i objavljivije eksperimentalne studije.",
       svc_writing_t:"Konsultacije za naučno pisanje", svc_writing_d:"Pomoć oko strukture rukopisa, jasnoće i strategije objavljivanja.",
@@ -1111,8 +1234,8 @@
     { t:"Pharmaceutical Chemistry 1 — chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
     { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
   ];
-  const SERVICES = ["svc_guest","svc_workshop","svc_lecture","svc_design","svc_writing","svc_mentor"];
-  const SERVICE_ICONS = { svc_guest:"fa-microphone-lines", svc_workshop:"fa-chalkboard-user", svc_lecture:"fa-chalkboard-user", svc_design:"fa-diagram-project", svc_writing:"fa-pen-nib", svc_mentor:"fa-user-graduate" };
+  const SERVICES = ["svc_retreat","svc_workshop"];
+  const SERVICE_ICONS = { svc_retreat:"fa-user-graduate", svc_workshop:"fa-chalkboard-user" };
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 

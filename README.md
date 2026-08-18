@@ -1,4 +1,4 @@
-# Lab Life Show
+# LabLifeHub
 
 Website for Dr. Nevena Jeremic — static site (HTML, Tailwind, DaisyUI) deployed on Vercel.
 

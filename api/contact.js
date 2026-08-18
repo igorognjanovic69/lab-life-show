@@ -4,7 +4,7 @@
 // Uses the same environment variables as /api/book.js:
 //   RESEND_API_KEY     = your Resend API key
 //   BOOKING_TO_EMAIL   = where messages are delivered (her inbox)
-//   BOOKING_FROM_EMAIL = a verified sender, e.g. "Lab Life Show <hello@yourdomain.com>"
+//   BOOKING_FROM_EMAIL = a verified sender, e.g. "LabLifeHub <hello@yourdomain.com>"
 //
 // Until these are set, the function returns { ok:true, configured:false }
 // and the site shows a local confirmation instead.
@@ -33,9 +33,9 @@ module.exports = async (req, res) => {
     return res.status(200).json({ ok: true, configured: false });
   }
 
-  const mailSubject = subject ? "Contact: " + subject : "New contact message — Lab Life Show";
+  const mailSubject = subject ? "Contact: " + subject : "New contact message — LabLifeHub";
   const html =
-    "<h2>New message — Lab Life Show</h2>" +
+    "<h2>New message — LabLifeHub</h2>" +
     "<p><strong>Name:</strong> " + esc(name) + "</p>" +
     "<p><strong>Email:</strong> " + esc(email) + "</p>" +
     "<p><strong>Phone:</strong> " + (esc(phone) || "—") + "</p>" +
