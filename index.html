@@ -1061,6 +1061,7 @@
       book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
       book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose an offer", book_details:"2 · Your details",
+      book_workshop_heading:"Failure in Science Workshop",
       svc_retreat_a_t:"Option A - One-Day Intensive Retreat", svc_retreat_a_d:"4-5 hours · fast, focused 1:1 guidance · $350.",
       svc_retreat_b_t:"Option B - Two-Day Premium Retreat", svc_retreat_b_d:"2 × 3 hours · deep project transformation · $600.",
       svc_retreat_c_t:"Option C - Retreat + 30-Day Follow-Up Mentoring", svc_retreat_c_d:"Retreat plus structured support, feedback and implementation guidance · $850.",
@@ -1195,6 +1196,7 @@
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premium retreat ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
+      book_workshop_heading:"Failure in Science Workshop",
       svc_retreat_a_t:"Opcija A - One-Day Intensive Retreat", svc_retreat_a_d:"4-5 sati · brzo i fokusirano 1:1 vođenje · $350.",
       svc_retreat_b_t:"Opcija B - Two-Day Premium Retreat", svc_retreat_b_d:"2 × 3 sata · dubinska transformacija projekta · $600.",
       svc_retreat_c_t:"Opcija C - Retreat + 30-Day Follow-Up Mentoring", svc_retreat_c_d:"Retreat plus strukturisana podrška, feedback i vođenje kroz implementaciju · $850.",
@@ -1471,7 +1473,10 @@
         <h4 class="mb-3 text-sm font-black text-ink" data-i18n="retreat_pricing_title">${t.retreat_pricing_title}</h4>
         <div class="space-y-3">${retreatCards}</div>
       </div>
-      <div class="pt-2">${workshopCard}</div>`;
+      <div class="pt-2">
+        <h4 class="mb-3 text-sm font-black text-ink" data-i18n="book_workshop_heading">${t.book_workshop_heading}</h4>
+        ${workshopCard}
+      </div>`;
   }
   function pickService(s){
     const t = I18N[lang];
