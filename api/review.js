@@ -1,4 +1,4 @@
-// Vercel Serverless Function — receives a testimonial for moderation.
+// Vercel Serverless Function - receives a testimonial for moderation.
 // It uses the same Resend environment variables as the booking/contact forms.
 // Reviews are emailed to Dr. Jeremić and are never published automatically.
 
@@ -33,13 +33,13 @@ module.exports = async (req, res) => {
   }
 
   const html =
-    "<h2>New testimonial for approval — LabLifeHub</h2>" +
+    "<h2>New testimonial for approval - LabLifeHub</h2>" +
     "<p><strong>Name:</strong> " + esc(name) + "</p>" +
     "<p><strong>Email (private):</strong> " + esc(email) + "</p>" +
     "<p><strong>Role / institution:</strong> " + esc(role) + "</p>" +
-    "<p><strong>Collaboration context:</strong> " + (esc(relationship) || "—") + "</p>" +
+    "<p><strong>Collaboration context:</strong> " + (esc(relationship) || "-") + "</p>" +
     "<p><strong>Review:</strong><br/>" + esc(review).replace(/\n/g, "<br/>") + "</p>" +
-    "<p><strong>Publishing consent:</strong> Yes — after editorial approval.</p>";
+    "<p><strong>Publishing consent:</strong> Yes - after editorial approval.</p>";
 
   try {
     const r = await fetch("https://api.resend.com/emails", {
@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
         from,
         to: [to],
         reply_to: email,
-        subject: "New testimonial for approval — " + name,
+        subject: "New testimonial for approval - " + name,
         html,
       }),
     });

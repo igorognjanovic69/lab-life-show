@@ -1,4 +1,4 @@
-// Vercel Serverless Function — receives a general contact message and emails
+// Vercel Serverless Function - receives a general contact message and emails
 // it to Dr. Jeremić via Resend (https://resend.com, free tier is enough).
 //
 // Uses the same environment variables as /api/book.js:
@@ -33,15 +33,15 @@ module.exports = async (req, res) => {
     return res.status(200).json({ ok: true, configured: false });
   }
 
-  const mailSubject = subject ? "Contact: " + subject : "New contact message — LabLifeHub";
+  const mailSubject = subject ? "Contact: " + subject : "New contact message - LabLifeHub";
   const html =
-    "<h2>New message — LabLifeHub</h2>" +
+    "<h2>New message - LabLifeHub</h2>" +
     "<p><strong>Name:</strong> " + esc(name) + "</p>" +
     "<p><strong>Email:</strong> " + esc(email) + "</p>" +
-    "<p><strong>Phone:</strong> " + (esc(phone) || "—") + "</p>" +
-    "<p><strong>Subject:</strong> " + (esc(subject) || "—") + "</p>" +
+    "<p><strong>Phone:</strong> " + (esc(phone) || "-") + "</p>" +
+    "<p><strong>Subject:</strong> " + (esc(subject) || "-") + "</p>" +
     "<p><strong>Message:</strong><br/>" +
-    (esc(message).replace(/\n/g, "<br/>") || "—") + "</p>";
+    (esc(message).replace(/\n/g, "<br/>") || "-") + "</p>";
 
   try {
     const r = await fetch("https://api.resend.com/emails", {

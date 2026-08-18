@@ -1,6 +1,6 @@
 # LabLifeHub
 
-Website for Dr. Nevena Jeremic — static site (HTML, Tailwind, DaisyUI) deployed on Vercel.
+Website for Dr. Nevena Jeremic - static site (HTML, Tailwind, DaisyUI) deployed on Vercel.
 
 ## Forms
 

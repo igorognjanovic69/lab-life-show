@@ -1,4 +1,4 @@
-// Vercel Serverless Function — receives a booking request and emails it
+// Vercel Serverless Function - receives a booking request and emails it
 // to Dr. Jeremić via Resend (https://resend.com, free tier is enough).
 //
 // Set these in Vercel → Project → Settings → Environment Variables:
@@ -30,21 +30,21 @@ module.exports = async (req, res) => {
     return res.status(400).json({ ok: false, error: "Missing required fields" });
   }
 
-  // Not configured yet — let the front-end show its local confirmation.
+  // Not configured yet - let the front-end show its local confirmation.
   if (!key || !to || !from) {
     return res.status(200).json({ ok: true, configured: false });
   }
 
   const subject = "New booking request: " + service;
   const html =
-    "<h2>New booking request — LabLifeAcademy</h2>" +
+    "<h2>New booking request - LabLifeAcademy</h2>" +
     "<p><strong>Service:</strong> " + esc(service) + "</p>" +
     "<p><strong>Name:</strong> " + esc(name) + "</p>" +
     "<p><strong>Email:</strong> " + esc(email) + "</p>" +
-    "<p><strong>Phone:</strong> " + (esc(phone) || "—") + "</p>" +
-    "<p><strong>Preferred date:</strong> " + (esc(date) || "—") + "</p>" +
+    "<p><strong>Phone:</strong> " + (esc(phone) || "-") + "</p>" +
+    "<p><strong>Preferred date:</strong> " + (esc(date) || "-") + "</p>" +
     "<p><strong>Message:</strong><br/>" +
-    (esc(message).replace(/\n/g, "<br/>") || "—") + "</p>";
+    (esc(message).replace(/\n/g, "<br/>") || "-") + "</p>";
 
   try {
     const r = await fetch("https://api.resend.com/emails", {

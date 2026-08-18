@@ -1,4 +1,4 @@
-// Vercel Serverless Function — returns LabLifePodcast YouTube episodes as JSON.
+// Vercel Serverless Function - returns LabLifePodcast YouTube episodes as JSON.
 //
 // Set these in Vercel → Project → Settings → Environment Variables:
 //   YT_API_KEY     = YouTube Data API v3 key (Google Cloud Console, free)
