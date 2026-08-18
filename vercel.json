@@ -1,11 +1,18 @@
 {
   "rewrites": [
-    { "source": "/about/:path*", "destination": "/index.html" },
-    { "source": "/research/:path*", "destination": "/index.html" },
-    { "source": "/podcast/:path*", "destination": "/index.html" },
-    { "source": "/academy/:path*", "destination": "/index.html" },
-    { "source": "/book/:path*", "destination": "/index.html" },
-    { "source": "/reviews/:path*", "destination": "/index.html" },
-    { "source": "/contact/:path*", "destination": "/index.html" }
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/about/(.*)", "destination": "/index.html" },
+    { "source": "/research", "destination": "/index.html" },
+    { "source": "/research/(.*)", "destination": "/index.html" },
+    { "source": "/podcast", "destination": "/index.html" },
+    { "source": "/podcast/(.*)", "destination": "/index.html" },
+    { "source": "/academy", "destination": "/index.html" },
+    { "source": "/academy/(.*)", "destination": "/index.html" },
+    { "source": "/book", "destination": "/index.html" },
+    { "source": "/book/(.*)", "destination": "/index.html" },
+    { "source": "/reviews", "destination": "/index.html" },
+    { "source": "/reviews/(.*)", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/contact/(.*)", "destination": "/index.html" }
   ]
 }

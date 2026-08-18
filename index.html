@@ -361,7 +361,7 @@
             <i class="fa-brands fa-instagram"></i><span data-i18n="cta_instagram">Follow on Instagram</span>
           </a>
         </div>
-        <div id="instagramWrap" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"></div>
+        <div id="instagramWrap" class="mt-6 grid sm:grid-cols-3 gap-4 sm:gap-5"></div>
         <div class="mt-6 rounded-3xl bg-[#26302e] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 lime-grid relative overflow-hidden">
           <div class="relative">
             <h3 class="text-2xl font-black" data-i18n="ig_first_post_title">Quiet the noise. Listen to science.</h3>
@@ -1775,7 +1775,7 @@
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-  const IG_FALLBACK_ITEMS = [1,2,3,4,5,6].map(function(i){
+  const IG_FALLBACK_ITEMS = [1,2,3].map(function(i){
     return {
       image: `/media/instagram-lablifehub-${String(i).padStart(2,"0")}.jpg`,
       url: IG_FIRST_POST_URL,
@@ -1932,21 +1932,16 @@
     if(clean.length === 1 && Array.isArray(clean[0].children) && clean[0].children.length > 1){
       return clean[0].children
         .filter(c => c && c.image)
-        .slice(0, 6)
+        .slice(0, 3)
         .map(c => ({ image:c.image, url:clean[0].url, caption:clean[0].caption || "", isVideo:Boolean(c.isVideo) }));
     }
-    return clean.slice(0, 6).map(p => ({ image:p.image, url:p.url, caption:p.caption || "", isVideo:Boolean(p.isVideo) }));
+    return clean.slice(0, 3).map(p => ({ image:p.image, url:p.url, caption:p.caption || "", isVideo:Boolean(p.isVideo) }));
   }
   function instagramCard(item){
     return `
       <a href="${escapeHtml(item.url || IG_PROFILE_URL)}" target="_blank" rel="noopener" class="group block">
         <div class="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 aspect-square hover:border-brand hover:shadow-md transition-all">
           <img src="${escapeHtml(item.image)}" alt="LabLifeHub Instagram" loading="lazy" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-            <span class="opacity-0 group-hover:opacity-100 h-10 w-10 rounded-full bg-white/90 text-brand flex items-center justify-center transition-opacity">
-              <i class="fa-brands fa-instagram"></i>
-            </span>
-          </div>
           ${item.isVideo ? `<span class="absolute top-2 right-2 h-7 w-7 rounded-full bg-black/40 text-white flex items-center justify-center text-xs"><i class="fa-solid fa-play"></i></span>` : ""}
         </div>
       </a>`;
@@ -1955,12 +1950,12 @@
     const wrap = document.getElementById("instagramWrap");
     if(!wrap) return;
     const items = loadedInstagram && loadedInstagram.length ? loadedInstagram : IG_FALLBACK_ITEMS;
-    wrap.innerHTML = items.slice(0,6).map(instagramCard).join("");
+    wrap.innerHTML = items.slice(0,3).map(instagramCard).join("");
   }
   async function loadInstagram(){
     renderInstagram();
     try {
-      const r = await fetch("/api/instagram?limit=6");
+      const r = await fetch("/api/instagram?limit=3");
       if(!r.ok) throw new Error("bad");
       const data = await r.json();
       const items = instagramItemsFromPosts(data.posts);
