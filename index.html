@@ -168,6 +168,9 @@
               <button onclick="showPage('academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
                 <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="hero_cta_academy">Explore Academy</span>
               </button>
+              <button onclick="openBooking()" class="px-5 py-3 rounded-full bg-lime text-ink font-bold text-sm hover:bg-lime-dark transition-colors shadow-sm">
+                <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="hero_cta_book">Book a 1:1 Session</span>
+              </button>
             </div>
           </div>
           <div class="relative w-full max-w-[430px] md:max-w-[400px] lg:max-w-[440px] mx-auto md:mr-0">
@@ -199,8 +202,16 @@
         <h2 class="mt-2 text-2xl sm:text-3xl font-black" data-i18n="welcome_title">Welcome to LabLifeHub</h2>
         <div class="mt-4 space-y-3 text-gray-700 leading-relaxed">
           <p data-i18n="welcome_p1">LabLifeHub is a science communication and education platform built around real research life - from laboratory work and academic development to conversations with scientists, clinicians and innovators.</p>
-          <p data-i18n="welcome_p2">Here you will find LabLifePodcast episodes, YouTube videos, research-focused resources, LabLifeAcademy workshops, online lectures, consultations and opportunities to book podcast guest appearances or scientific education sessions.</p>
+          <p data-i18n="welcome_p2">The platform brings together LabLifePodcast episodes, YouTube videos, research-focused resources, LabLifeAcademy workshops, online lectures, consultations and opportunities to book podcast guest appearances or scientific education sessions.</p>
           <p data-i18n="welcome_p3">The goal is to make science more visible, useful and connected - while keeping the content grounded in Dr. Nevena Jeremić’s research, teaching and international collaboration.</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button onclick="showPage('academy')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="welcome_cta_academy">Explore mentoring and workshops</span>
+          </button>
+          <button onclick="showPage('reviews')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+            <i class="fa-solid fa-star mr-2"></i><span data-i18n="welcome_cta_review">Leave a review</span>
+          </button>
         </div>
       </div>
 
@@ -215,7 +226,7 @@
         <div onclick="showPage('podcast')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
           <i class="fa-solid fa-microphone-lines text-brand text-2xl"></i>
           <h3 class="mt-3 font-bold" data-i18n="ql_podcast_t">Podcast</h3>
-          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_podcast_d">LabLifePodcast - launching soon.</p>
+          <p class="mt-1 text-sm text-gray-500" data-i18n="ql_podcast_d">Conversations about science, careers and the real life behind research.</p>
           <span class="mt-3 inline-block text-brand text-sm font-medium group-hover:translate-x-1 transition-transform" data-i18n="learn_more">Learn more →</span>
         </div>
         <div onclick="showPage('academy')" class="cursor-pointer group rounded-2xl border border-gray-100 p-6 hover:border-brand hover:shadow-md transition-all">
@@ -331,6 +342,14 @@
           <p data-i18n="about_p2">Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.</p>
           <p data-i18n="about_p3">Thank you for visiting - I look forward to connecting and collaborating!</p>
           <p data-i18n="about_p4" class="text-brand font-semibold">- Nevena Jeremić, PhD</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button onclick="showPage('research')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <i class="fa-solid fa-flask-vial mr-2"></i><span data-i18n="about_cta_research">View research background</span>
+          </button>
+          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+            <i class="fa-regular fa-handshake mr-2"></i><span data-i18n="about_cta_contact">Discuss collaboration</span>
+          </button>
         </div>
 
         <!-- Visual story -->
@@ -510,6 +529,21 @@
           <p class="mt-1 text-sm text-gray-500" data-i18n="act_review_d">Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.</p>
         </div>
       </div>
+
+      <div class="mt-10 rounded-3xl bg-brand-light p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+        <div>
+          <h3 class="text-2xl font-black" data-i18n="research_cta_title">Turn strong research into stronger study design</h3>
+          <p class="mt-2 text-sm text-gray-600 max-w-2xl" data-i18n="research_cta_text">Use this research background as a starting point for mentoring, workshops or a focused LabLifeAcademy session.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 shrink-0">
+          <button onclick="showPage('academy')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="research_cta_academy">Explore Academy</span>
+          </button>
+          <button onclick="openBooking()" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-white transition-colors">
+            <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="research_cta_book">Book research support</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- PODCAST -->
@@ -517,7 +551,7 @@
       <div class="rounded-3xl bg-brand text-white p-8 sm:p-12 relative overflow-hidden">
         <div class="absolute -right-10 -top-10 opacity-10 text-[200px]"><i class="fa-solid fa-microphone-lines"></i></div>
         <span class="section-marker lime-pop text-sm font-bold uppercase tracking-wider">
-          <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">Coming soon</span>
+          <i class="fa-solid fa-circle text-[8px] animate-pulse"></i><span data-i18n="pod_badge">LabLifePodcast</span>
         </span>
         <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="pod_title">The Scientific Voice Above the Noise.</h2>
         <p class="mt-3 max-w-xl text-white/90" data-i18n="pod_intro">LabLifePodcast is hosted by Dr. Nevena Jeremić. Honest conversations about life in science - from the bench and the lab to designing experiments and publishing better research. It brings clarity to complex research topics and showcases how companies, innovators, and founders use science to build stronger products, better decisions, and successful businesses.</p>
@@ -553,12 +587,25 @@
         </div>
       </div>
 
-      <div class="mt-12 flex items-center justify-between">
+      <div class="mt-12">
         <h3 class="text-xl font-bold" data-i18n="pod_episodes">Episodes</h3>
-        <span id="podPreviewNote" class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="pod_preview_note">Preview · videos coming soon</span>
       </div>
       <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="episodesWrap"></div>
-      <p id="podYtNote" class="mt-6 text-sm text-gray-400" data-i18n="pod_yt_note">Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.</p>
+
+      <div class="mt-8 rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+        <div>
+          <h3 class="text-2xl font-black" data-i18n="podcast_cta_title">Have a scientific story worth sharing?</h3>
+          <p class="mt-2 text-sm text-gray-600 max-w-xl" data-i18n="podcast_cta_text">Suggest a guest, propose a topic, or join LabLifePodcast as a researcher, clinician, innovator or founder.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 shrink-0">
+          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
+          </button>
+          <button onclick="showPage('academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+            <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="podcast_cta_academy">Explore LabLifeAcademy</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ACADEMY -->
@@ -932,7 +979,7 @@
         </form>
         <div id="contactDone" class="hidden text-center py-8 rounded-2xl border border-gray-100 shadow-sm mt-5">
           <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto"><i class="fa-solid fa-check"></i></div>
-          <h4 class="mt-4 font-bold text-lg" data-i18n="cf_done_title">Message ready!</h4>
+          <h4 class="mt-4 font-bold text-lg" data-i18n="cf_done_title">Thank you!</h4>
           <p id="contactSummary" class="mt-2 text-sm text-gray-600 px-6"></p>
           <button onclick="resetContact()" class="mt-5 text-sm text-brand font-medium" data-i18n="cf_again">Send another message</button>
         </div>
@@ -941,13 +988,14 @@
 
   </main>
 
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 flex justify-center">
+    <a data-yt-link href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm">
+      <i class="fa-brands fa-youtube text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
+    </a>
+  </div>
+
   <!-- FOOTER -->
-  <footer class="border-t border-gray-100 mt-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 flex justify-center">
-      <a data-yt-link href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm">
-        <i class="fa-brands fa-youtube text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
-      </a>
-    </div>
+  <footer class="border-t border-gray-100 mt-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand text-white font-black text-xs">LH</span>
@@ -973,10 +1021,11 @@
       stat_papers:"Publications", stat_citations:"Citations", stat_source:"Source: Scopus",
       welcome_eyebrow:"Welcome", welcome_title:"Welcome to LabLifeHub",
       welcome_p1:"LabLifeHub is a science communication and education platform built around real research life - from laboratory work and academic development to conversations with scientists, clinicians and innovators.",
-      welcome_p2:"Here you will find LabLifePodcast episodes, YouTube videos, research-focused resources, LabLifeAcademy workshops, online lectures, consultations and opportunities to book podcast guest appearances or scientific education sessions.",
+      welcome_p2:"The platform brings together LabLifePodcast episodes, YouTube videos, research-focused resources, LabLifeAcademy workshops, online lectures, consultations and opportunities to book podcast guest appearances or scientific education sessions.",
       welcome_p3:"The goal is to make science more visible, useful and connected - while keeping the content grounded in Dr. Nevena Jeremić’s research, teaching and international collaboration.",
+      welcome_cta_academy:"Explore mentoring and workshops", welcome_cta_review:"Leave a review",
       ql_research_t:"Research", ql_research_d:"Pharmaceutical chemistry, redox biology & cardiometabolic science.",
-      ql_podcast_t:"Podcast", ql_podcast_d:"LabLifePodcast - launching soon.",
+      ql_podcast_t:"Podcast", ql_podcast_d:"Conversations about science, careers and the real life behind research.",
       ql_academy_t:"Academy", ql_academy_d:"Workshops, research design and scientific writing.",
       ql_book_t:"Book a session", ql_book_d:"Podcast guest, workshops, lectures or consultations.",
       learn_more:"Learn more →",
@@ -991,6 +1040,7 @@
       about_p2:"Here you can learn more about my research interests, explore my publications and collaborations, and connect regarding new national and international projects. I'm always open to interdisciplinary partnerships that bridge basic science and clinical application.",
       about_p3:"Thank you for visiting - I look forward to connecting and collaborating!",
       about_p4:"- Nevena Jeremić, PhD",
+      about_cta_research:"View research background", about_cta_contact:"Discuss collaboration",
       about_path:"Academic path", about_awards:"Awards & recognition", about_memberships:"Memberships", about_expertise:"Skills & expertise",
       photo_harvard:"Academic profile and scientific publishing.",
       photo_award:"Conferences, recognition and academic path.",
@@ -1015,6 +1065,8 @@
       act_mentor_t:"Mentoring", act_mentor_d:"Supervised 3 completed PhD theses and 9 master theses in pharmaceutical chemistry; PhD mentor since 2018.",
       act_editor_t:"Guest editor", act_editor_d:"Pathophysiology and Frontiers in Physiology special issues on cardiovascular physiology.",
       act_review_t:"Peer reviewer", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers, and more.",
+      research_cta_title:"Turn strong research into stronger study design", research_cta_text:"Use this research background as a starting point for mentoring, workshops or a focused LabLifeAcademy session.",
+      research_cta_academy:"Explore Academy", research_cta_book:"Book research support",
       academy_eyebrow:"LabLifeAcademy", academy_title:"Empowering Scientists to Build Better Research", academy_intro:"Individual mentoring and advanced workshops that strengthen study design, experimental strategy, reproducibility, and publication success.", academy_cta_book:"Book a 1:1 Session", academy_cta_workshops:"Explore Workshops", academy_cta_research:"View research background", academy_photo:"Academic training grounded in real research practice.", academy_writing_t:"Scientific writing", academy_writing_d:"Workshops and consultations for manuscripts, structure, clarity and publication strategy.", academy_design_t:"Research design", academy_design_d:"Support for designing stronger, clearer and more publishable experimental studies.", academy_lecture_t:"Online lectures", academy_lecture_d:"Lectures and training sessions for students, researchers, groups and events.", academy_mentor_t:"Mentorship", academy_mentor_d:"Guidance for PhD candidates, young researchers and academic career development.", academy_methods_t:"Preclinical methods", academy_methods_d:"Training rooted in 18+ years of preclinical pharmacology and physiology experience.", academy_collab_t:"International collaboration", academy_collab_d:"Support for national and international scientific projects and partnerships.",
       retreat_kicker:"Premium individual retreat", retreat_title:"1:1 Research Retreat",
       retreat_intro:"A fully personalized, intensive scientific mentoring experience for Master, PhD, Postdoc and early-career researchers - built to strengthen your study design, reproducibility and 6-month research plan.",
@@ -1049,15 +1101,15 @@
       workshop_booking_msg:"Interested in Failure in Science: Why Experiments Fail Workshop.",
       academy_final_cta_title:"Ready to strengthen your research?", academy_final_cta_text:"Choose a retreat or workshop and send a request in one click.",
       academy_final_cta_retreat:"Book a retreat", academy_final_cta_workshop:"Book workshop",
-      pod_badge:"Coming soon", pod_title:"The Scientific Voice Above the Noise.",
+      pod_badge:"LabLifePodcast", pod_title:"The Scientific Voice Above the Noise.",
       pod_intro:"LabLifePodcast is hosted by Dr. Nevena Jeremić. Honest conversations about life in science - from the bench and the lab to designing experiments and publishing better research. It brings clarity to complex research topics and showcases how companies, innovators, and founders use science to build stronger products, better decisions, and successful businesses.",
       pod_cta_guest:"Be a guest", pod_cta_notify:"Get notified", pod_expect:"What to expect",
       pod_e1_t:"Researcher stories", pod_e1_d:"Candid talks with scientists about the real life behind the papers.",
       pod_e2_t:"Better science", pod_e2_d:"Practical tips on study design, writing and publishing.",
       pod_e3_t:"Career & lab life", pod_e3_d:"Navigating academia, mentorship and the path through a PhD.",
-      pod_episodes:"Episodes", pod_preview_note:"Preview · videos coming soon",
-      pod_yt_note:"Video episodes will be embedded here from the LabLifePodcast YouTube channel once published.",
-      ep_soon:"Coming soon",
+      pod_episodes:"Episodes",
+      podcast_cta_title:"Have a scientific story worth sharing?", podcast_cta_text:"Suggest a guest, propose a topic, or join LabLifePodcast as a researcher, clinician, innovator or founder.",
+      podcast_cta_academy:"Explore LabLifeAcademy",
       book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
       book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose an offer", book_details:"2 · Your details",
@@ -1084,20 +1136,20 @@
       reviews_consent:"I confirm this is my honest experience and allow the approved review, my name, and professional role to be published.",
       reviews_submit:"Send for approval", reviews_done_title:"Thank you!",
       reviews_done:"Your review has been submitted for approval. It will not be published automatically.",
-      reviews_local:"Your review is ready for moderation. Email delivery will be activated when the site mailbox is connected.",
+      reviews_local:"Your review has been submitted for approval. It will not be published automatically.",
       reviews_again:"Leave another review",
       contact_eyebrow:"Contact", contact_title:"Get in touch",
       contact_intro:"For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.",
       contact_email:"Email", contact_phone:"Phone", contact_sci:"Publications & profile", contact_faculty:"Faculty",
       cf_title:"Send a message", cf_sub:"Fill in the form below and your message will reach her directly.",
       cf_subject:"Subject", cf_message:"Message", cf_submit:"Send message",
-      cf_done_title:"Message ready!", cf_again:"Send another message",
+      cf_done_title:"Thank you!", cf_again:"Send another message",
       cf_sent:"Thank you - your message has been sent to Dr. Jeremić. She'll reply soon.",
-      cf_summary:"We've prepared your message. Confirm by sending it to Dr. Jeremić.",
+      cf_summary:"Thank you - your message has been submitted. Dr. Jeremić will reply soon.",
       date_none:"No date selected yet.",
       months:["January","February","March","April","May","June","July","August","September","October","November","December"],
       dows:["Mo","Tu","We","Th","Fr","Sa","Su"],
-      summary:(s,d)=>`We've prepared your <b>${s}</b> request${d?` for <b>${d}</b>`:""}. Confirm by sending it to Dr. Jeremić.`
+      summary:(s,d)=>`Thank you - your <b>${s}</b> request${d?` for <b>${d}</b>`:""} has been submitted. Dr. Jeremić will reply to confirm the details.`
     },
     sr: {
       nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Academy", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
@@ -1108,10 +1160,11 @@
       stat_papers:"Publikacija", stat_citations:"Citata", stat_source:"Izvor: Scopus",
       welcome_eyebrow:"Dobrodošli", welcome_title:"Dobrodošli u LabLifeHub",
       welcome_p1:"LabLifeHub je platforma za naučnu komunikaciju i edukaciju zasnovana na stvarnom istraživačkom životu - od rada u laboratoriji i akademskog razvoja do razgovora sa naučnicima, kliničarima i inovatorima.",
-      welcome_p2:"Ovde će biti LabLifePodcast epizode, YouTube video sadržaji, istraživački resursi, LabLifeAcademy radionice, online predavanja, konsultacije i mogućnost zakazivanja gostovanja u podkastu ili naučno-edukativnih sesija.",
+      welcome_p2:"Platforma objedinjuje LabLifePodcast epizode, YouTube video sadržaje, istraživačke resurse, LabLifeAcademy radionice, online predavanja, konsultacije i mogućnost zakazivanja gostovanja u podkastu ili naučno-edukativnih sesija.",
       welcome_p3:"Cilj je da nauka bude vidljivija, korisnija i povezanija - uz sadržaj zasnovan na istraživanju, nastavi i međunarodnoj saradnji dr Nevene Jeremić.",
+      welcome_cta_academy:"Pogledajte mentorstvo i radionice", welcome_cta_review:"Ostavite recenziju",
       ql_research_t:"Istraživanje", ql_research_d:"Farmaceutska hemija, redoks biologija i kardiometabolička nauka.",
-      ql_podcast_t:"Podkast", ql_podcast_d:"LabLifePodcast - uskoro počinje.",
+      ql_podcast_t:"Podkast", ql_podcast_d:"Razgovori o nauci, karijeri i stvarnom životu iza istraživanja.",
       ql_academy_t:"Academy", ql_academy_d:"Radionice, dizajn istraživanja i naučno pisanje.",
       ql_book_t:"Zakaži termin", ql_book_d:"Gostovanje u podkastu, radionice, predavanja ili konsultacije.",
       learn_more:"Saznaj više →",
@@ -1126,6 +1179,7 @@
       about_p2:"Ovde možete saznati više o mojim istraživačkim interesovanjima, pogledati moje publikacije i saradnje i povezati se povodom novih nacionalnih i međunarodnih projekata. Uvek sam otvorena za interdisciplinarna partnerstva koja povezuju osnovnu nauku i kliničku primenu.",
       about_p3:"Hvala što ste posetili - radujem se povezivanju i saradnji!",
       about_p4:"- Nevena Jeremić, PhD",
+      about_cta_research:"Pogledajte istraživačku osnovu", about_cta_contact:"Predložite saradnju",
       about_path:"Akademski put", about_awards:"Nagrade i priznanja", about_memberships:"Članstva", about_expertise:"Veštine i ekspertiza",
       photo_harvard:"Akademski profil i naučno izdavaštvo.",
       photo_award:"Konferencije, priznanja i akademski put.",
@@ -1150,6 +1204,8 @@
       act_mentor_t:"Mentorstvo", act_mentor_d:"Mentor 3 odbranjene doktorske disertacije i 9 master radova iz farmaceutske hemije; mentor na doktorskim studijama od 2018.",
       act_editor_t:"Gostujući urednik", act_editor_d:"Specijalna izdanja časopisa Pathophysiology i Frontiers in Physiology o kardiovaskularnoj fiziologiji.",
       act_review_t:"Recenzent", act_review_d:"Scientific Reports, Aging, Molecular and Cellular Biochemistry, Frontiers i drugi.",
+      research_cta_title:"Pretvorite snažno istraživanje u bolji dizajn studije", research_cta_text:"Ova istraživačka osnova vodi ka mentorstvu, radionicama i fokusiranim LabLifeAcademy sesijama.",
+      research_cta_academy:"Pogledaj Academy", research_cta_book:"Zakaži istraživačku podršku",
       academy_eyebrow:"LabLifeAcademy", academy_title:"Osnaživanje naučnika za bolje istraživanje", academy_intro:"Individualno mentorstvo i napredne radionice koje jačaju dizajn studije, eksperimentalnu strategiju, reproduktivnost i uspešnije publikovanje.", academy_cta_book:"Zakaži 1:1 sesiju", academy_cta_workshops:"Pogledaj radionice", academy_cta_research:"Pogledaj istraživačku osnovu", academy_photo:"Akademska edukacija zasnovana na stvarnoj istraživačkoj praksi.", academy_writing_t:"Naučno pisanje", academy_writing_d:"Radionice i konsultacije za rukopise, strukturu, jasnoću i strategiju objavljivanja.", academy_design_t:"Dizajn istraživanja", academy_design_d:"Podrška za dizajniranje snažnijih, jasnijih i objavljivijih eksperimentalnih studija.", academy_lecture_t:"Online predavanja", academy_lecture_d:"Predavanja i edukativne sesije za studente, istraživače, grupe i događaje.", academy_mentor_t:"Mentorstvo", academy_mentor_d:"Podrška doktorandima, mladim istraživačima i razvoju akademske karijere.", academy_methods_t:"Pretkliničke metode", academy_methods_d:"Edukacija zasnovana na preko 18 godina iskustva u pretkliničkoj farmakologiji i fiziologiji.", academy_collab_t:"Međunarodna saradnja", academy_collab_d:"Podrška za nacionalne i međunarodne naučne projekte i partnerstva.",
       retreat_kicker:"Premium individualni retreat", retreat_title:"1:1 Research Retreat",
       retreat_intro:"Potpuno personalizovano, intenzivno naučno mentorstvo za master, PhD, postdoc i early-career istraživače - osmišljeno da ojača dizajn studije, reproduktivnost i šestomesečni plan istraživanja.",
@@ -1184,15 +1240,15 @@
       workshop_booking_msg:"Zainteresovan/a sam za Failure in Science: Why Experiments Fail radionicu.",
       academy_final_cta_title:"Spremni da ojačate istraživanje?", academy_final_cta_text:"Izaberite retreat ili radionicu i pošaljite zahtev jednim klikom.",
       academy_final_cta_retreat:"Zakaži retreat", academy_final_cta_workshop:"Zakaži radionicu",
-      pod_badge:"Uskoro", pod_title:"Naučni glas iznad buke.",
+      pod_badge:"LabLifePodcast", pod_title:"Naučni glas iznad buke.",
       pod_intro:"LabLifePodcast vodi dr Nevena Jeremić. Iskreni razgovori o životu u nauci - od laboratorije do dizajna eksperimenata i boljeg objavljivanja istraživanja. Donosi jasnoću u kompleksne istraživačke teme i pokazuje kako kompanije, inovatori i osnivači koriste nauku da grade jače proizvode, bolje odluke i uspešnije biznise.",
       pod_cta_guest:"Budite gost", pod_cta_notify:"Obavesti me", pod_expect:"Šta vas očekuje",
       pod_e1_t:"Priče istraživača", pod_e1_d:"Otvoreni razgovori sa naučnicima o stvarnom životu iza radova.",
       pod_e2_t:"Bolja nauka", pod_e2_d:"Praktični saveti o dizajnu studija, pisanju i objavljivanju.",
       pod_e3_t:"Karijera i život u laboratoriji", pod_e3_d:"Snalaženje u akademiji, mentorstvo i put kroz doktorat.",
-      pod_episodes:"Epizode", pod_preview_note:"Pregled · video uskoro",
-      pod_yt_note:"Video epizode će biti prikazane ovde sa YouTube kanala LabLifePodcast kada budu objavljene.",
-      ep_soon:"Uskoro",
+      pod_episodes:"Epizode",
+      podcast_cta_title:"Imate naučnu priču vrednu deljenja?", podcast_cta_text:"Predložite gosta, temu ili se uključite u LabLifePodcast kao istraživač, kliničar, inovator ili osnivač.",
+      podcast_cta_academy:"Pogledaj LabLifeAcademy",
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premium retreat ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
@@ -1219,20 +1275,20 @@
       reviews_consent:"Potvrđujem da je ovo moje iskreno iskustvo i dozvoljavam objavljivanje odobrene recenzije, imena i profesionalne uloge.",
       reviews_submit:"Pošalji na odobrenje", reviews_done_title:"Hvala!",
       reviews_done:"Vaša recenzija je poslata na odobrenje. Neće biti automatski objavljena.",
-      reviews_local:"Recenzija je spremna za moderaciju. Dostava emailom biće aktivirana kada se poveže službeno sanduče sajta.",
+      reviews_local:"Vaša recenzija je poslata na odobrenje. Neće biti automatski objavljena.",
       reviews_again:"Ostavite još jednu recenziju",
       contact_eyebrow:"Kontakt", contact_title:"Stupite u kontakt",
       contact_intro:"Za saradnju, predavanja, gostovanja u podkastu ili mentorstvo, javite se putem nekog od kanala ispod.",
       contact_email:"Email", contact_phone:"Telefon", contact_sci:"Publikacije i profil", contact_faculty:"Fakultet",
       cf_title:"Pošaljite poruku", cf_sub:"Popunite formu ispod i vaša poruka stiže direktno do nje.",
       cf_subject:"Naslov", cf_message:"Poruka", cf_submit:"Pošalji poruku",
-      cf_done_title:"Poruka je spremna!", cf_again:"Pošalji novu poruku",
+      cf_done_title:"Hvala!", cf_again:"Pošalji novu poruku",
       cf_sent:"Hvala - vaša poruka je poslata dr Jeremić. Uskoro će vam odgovoriti.",
-      cf_summary:"Pripremili smo vašu poruku. Potvrdite slanjem dr Jeremić.",
+      cf_summary:"Hvala - vaša poruka je poslata. Dr Jeremić će vam uskoro odgovoriti.",
       date_none:"Datum još nije izabran.",
       months:["Januar","Februar","Mart","April","Maj","Jun","Jul","Avgust","Septembar","Oktobar","Novembar","Decembar"],
       dows:["Po","Ut","Sr","Če","Pe","Su","Ne"],
-      summary:(s,d)=>`Pripremili smo vaš zahtev za <b>${s}</b>${d?` za <b>${d}</b>`:""}. Potvrdite slanjem dr Jeremić.`
+      summary:(s,d)=>`Hvala - vaš zahtev za <b>${s}</b>${d?` za <b>${d}</b>`:""} je poslat. Dr Jeremić će vam se javiti radi potvrde detalja.`
     }
   };
 
@@ -1411,7 +1467,6 @@
     el.outerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" title="LabLifePodcast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
   }
   function episodePlaceholder(i){
-    const t = I18N[lang];
     return `
       <div class="rounded-2xl border border-gray-100 overflow-hidden group">
         <div class="aspect-video bg-gradient-to-br from-brand to-brand-dark relative flex items-center justify-center">
@@ -1422,17 +1477,12 @@
         <div class="p-4">
           <div class="h-3 w-3/4 rounded bg-gray-100 mb-2"></div>
           <div class="h-3 w-1/2 rounded bg-gray-100"></div>
-          <span class="mt-3 inline-block text-xs font-medium text-gray-400 uppercase tracking-wide">${t.ep_soon}</span>
         </div>
       </div>`;
   }
   function renderEpisodes(){
     const wrap = document.getElementById("episodesWrap");
-    const previewNote = document.getElementById("podPreviewNote");
-    const ytNote = document.getElementById("podYtNote");
     const has = loadedEpisodes && loadedEpisodes.length > 0;
-    if(previewNote) previewNote.style.display = has ? "none" : "";
-    if(ytNote) ytNote.style.display = has ? "none" : "";
     if(wrap){
       wrap.innerHTML = has ? loadedEpisodes.map(episodeCard).join("") : [1,2,3].map(episodePlaceholder).join("");
     }
