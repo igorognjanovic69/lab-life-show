@@ -122,7 +122,7 @@
         <a href="/about/" class="nav-link cursor-pointer transition-colors" data-nav="about" onclick="goToPage(event,'about')" data-i18n="nav_about">About</a>
         <a href="/research/" class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="goToPage(event,'research')" data-i18n="nav_research">Research</a>
         <a href="/podcast/" class="nav-link cursor-pointer transition-colors" data-nav="podcast" onclick="goToPage(event,'podcast')" data-i18n="nav_podcast">Podcast</a>
-        <div id="academyNavWrap" class="relative">
+        <div id="academyNavWrap" class="relative" onmouseenter="setAcademyMenu(true)" onmouseleave="closeAcademyMenu()">
           <button type="button" id="academyNavBtn" class="nav-link cursor-pointer transition-colors inline-flex items-center gap-1 bg-transparent border-0 p-0 font-medium" data-nav="academy" onclick="toggleAcademyMenu(event)" aria-expanded="false" aria-controls="academyDropdown">
             <span data-i18n="nav_academy">Academy</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
           </button>
