@@ -569,7 +569,7 @@
           <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="academy_title">Empowering Scientists to Build Better Research</h2>
           <p class="mt-4 text-gray-600 leading-relaxed" data-i18n="academy_intro">Individual mentoring and advanced workshops that strengthen study design, experimental strategy, reproducibility, and publication success.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <button onclick="showPage('book');pickService('svc_retreat');" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <button onclick="openBooking()" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
               <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="academy_cta_book">Book a 1:1 Session</span>
             </button>
             <button onclick="document.getElementById('workshopOffer').scrollIntoView({behavior:'smooth',block:'start'});" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
@@ -613,26 +613,26 @@
           </div>
           <h4 class="mt-6 font-bold" data-i18n="retreat_pricing_title">Retreat Formats & Pricing</h4>
           <div class="mt-3 space-y-2 text-sm">
-            <button type="button" onclick="bookRetreatOption('retreat_option_a_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_a','retreat_option_a_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="text-[11px] font-bold uppercase tracking-wide text-brand" data-i18n="retreat_option_a_label">Option A</p>
               <p class="mt-1 font-bold" data-i18n="retreat_option_a_name">One-Day Intensive Retreat</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_a_d">4-5 hours · perfect for fast, focused guidance · $350</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
             </button>
-            <button type="button" onclick="bookRetreatOption('retreat_option_b_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_b','retreat_option_b_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="text-[11px] font-bold uppercase tracking-wide text-brand" data-i18n="retreat_option_b_label">Option B</p>
               <p class="mt-1 font-bold" data-i18n="retreat_option_b_name">Two-Day Premium Retreat</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_b_d">2 × 3 hours · deep project transformation · $600</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
             </button>
-            <button type="button" onclick="bookRetreatOption('retreat_option_c_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_c','retreat_option_c_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="text-[11px] font-bold uppercase tracking-wide text-brand" data-i18n="retreat_option_c_label">Option C</p>
               <p class="mt-1 font-bold" data-i18n="retreat_option_c_name">Retreat + 30-Day Follow-Up Mentoring</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_c_d">Structured support, feedback and implementation guidance · $850</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
             </button>
           </div>
-          <button type="button" onclick="bookRetreatOption('retreat_general_msg')" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand text-white px-5 py-3 text-sm font-medium hover:bg-brand-dark transition-colors">
+          <button type="button" onclick="openBooking()" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand text-white px-5 py-3 text-sm font-medium hover:bg-brand-dark transition-colors">
             <i class="fa-regular fa-calendar-check"></i><span data-i18n="retreat_cta">Book a 1:1 Session</span>
           </button>
         </article>
@@ -699,7 +699,7 @@
         <h3 class="relative text-2xl sm:text-3xl font-black" data-i18n="academy_final_cta_title">Ready to strengthen your research?</h3>
         <p class="relative mt-2 max-w-xl mx-auto text-white/85" data-i18n="academy_final_cta_text">Choose a retreat or workshop and send a request in one click.</p>
         <div class="relative mt-6 flex flex-wrap justify-center gap-3">
-          <button type="button" onclick="bookRetreatOption('retreat_general_msg')" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors">
+          <button type="button" onclick="openBooking()" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors">
             <i class="fa-solid fa-user-graduate mr-2"></i><span data-i18n="academy_final_cta_retreat">Book a retreat</span>
           </button>
           <button type="button" onclick="bookWorkshop()" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
@@ -1061,7 +1061,9 @@
       book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
       book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose an offer", book_details:"2 · Your details",
-      svc_retreat_t:"1:1 Research Retreat", svc_retreat_d:"Premium individual mentoring for Master, PhD, Postdoc and early-career researchers.",
+      svc_retreat_a_t:"Option A - One-Day Intensive Retreat", svc_retreat_a_d:"4-5 hours · fast, focused 1:1 guidance · $350.",
+      svc_retreat_b_t:"Option B - Two-Day Premium Retreat", svc_retreat_b_d:"2 × 3 hours · deep project transformation · $600.",
+      svc_retreat_c_t:"Option C - Retreat + 30-Day Follow-Up Mentoring", svc_retreat_c_d:"Retreat plus structured support, feedback and implementation guidance · $850.",
       svc_workshop_t:"Failure in Science Workshop", svc_workshop_d:"Advanced group workshop on failed experiments, reproducibility and better research design.",
       svc_lecture_t:"Online lecture", svc_lecture_d:"A talk for your group, course or event - design, methods or writing.",
       svc_design_t:"Research design consultation", svc_design_d:"One-on-one support for stronger, clearer and more publishable experimental studies.",
@@ -1193,7 +1195,9 @@
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premium retreat ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
-      svc_retreat_t:"1:1 Research Retreat", svc_retreat_d:"Premium individualno mentorstvo za master, PhD, postdoc i early-career istraživače.",
+      svc_retreat_a_t:"Opcija A - One-Day Intensive Retreat", svc_retreat_a_d:"4-5 sati · brzo i fokusirano 1:1 vođenje · $350.",
+      svc_retreat_b_t:"Opcija B - Two-Day Premium Retreat", svc_retreat_b_d:"2 × 3 sata · dubinska transformacija projekta · $600.",
+      svc_retreat_c_t:"Opcija C - Retreat + 30-Day Follow-Up Mentoring", svc_retreat_c_d:"Retreat plus strukturisana podrška, feedback i vođenje kroz implementaciju · $850.",
       svc_workshop_t:"Failure in Science radionica", svc_workshop_d:"Napredna grupna radionica o neuspelim eksperimentima, reproduktivnosti i boljem dizajnu istraživanja.",
       svc_lecture_t:"Online predavanje", svc_lecture_d:"Predavanje za vašu grupu, kurs ili događaj - dizajn, metode ili pisanje.",
       svc_design_t:"Konsultacije za dizajn istraživanja", svc_design_d:"Individualna podrška za snažnije, jasnije i objavljivije eksperimentalne studije.",
@@ -1287,8 +1291,8 @@
     { t:"Pharmaceutical Chemistry 1 - chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
     { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
   ];
-  const SERVICES = ["svc_retreat","svc_workshop"];
-  const SERVICE_ICONS = { svc_retreat:"fa-user-graduate", svc_workshop:"fa-chalkboard-user" };
+  const SERVICES = ["svc_retreat_a","svc_retreat_b","svc_retreat_c","svc_workshop"];
+  const SERVICE_ICONS = { svc_retreat_a:"fa-user-graduate", svc_retreat_b:"fa-user-graduate", svc_retreat_c:"fa-user-graduate", svc_workshop:"fa-chalkboard-user" };
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
@@ -1477,14 +1481,32 @@
     renderEpisodes(); renderServices(); renderServiceMenu(); buildCalendar(); updateDateLabel();
   }
   function toggleLang(){ lang = lang==="en" ? "sr" : "en"; applyLang(); }
-  function showPage(name){
+  const VALID_PAGES = ["home","about","research","podcast","academy","book","reviews","contact"];
+  function normalizePageName(name){ return VALID_PAGES.includes(name) ? name : "home"; }
+  function pageFromLocation(){
+    const hash = decodeURIComponent((window.location.hash || "").replace(/^#\/?/, "")).trim();
+    return normalizePageName(hash || "home");
+  }
+  function updatePageUrl(name, replace){
+    const target = name === "home" ? window.location.pathname + window.location.search : "#" + name;
+    const current = window.location.hash || "";
+    if((name === "home" && !current) || current === "#" + name) return;
+    if(replace) window.history.replaceState({ page:name }, "", target);
+    else window.history.pushState({ page:name }, "", target);
+  }
+  function showPage(name, opts){
+    opts = opts || {};
+    name = normalizePageName(name);
     document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
     const el = document.getElementById("page-"+name); if(el) el.classList.add("active");
     document.querySelectorAll("[data-nav]").forEach(n=>n.classList.toggle("active-link", n.dataset.nav===name));
     document.getElementById("mobileMenu").classList.add("hidden");
     document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg";
-    window.scrollTo({top:0, behavior:"smooth"});
+    if(opts.updateUrl !== false) updatePageUrl(name, opts.replaceUrl === true);
+    if(opts.scroll !== false) window.scrollTo({top:0, behavior:"smooth"});
   }
+  window.addEventListener("popstate", function(){ showPage(pageFromLocation(), { updateUrl:false }); });
+  window.addEventListener("hashchange", function(){ showPage(pageFromLocation(), { updateUrl:false }); });
   function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
 
   /* ---------- calendar ---------- */
@@ -1516,13 +1538,14 @@
     const t = I18N[lang];
     showPage("book");
     setTimeout(function(){
-      pickService(serviceKey);
+      if(serviceKey) pickService(serviceKey);
       const msg = document.getElementById("f_msg");
       if(msg && messageKey){ msg.value = t[messageKey] || messageKey; }
-      document.getElementById("bookingForm")?.scrollIntoView({ behavior:"smooth", block:"start" });
+      document.getElementById("page-book")?.scrollIntoView({ behavior:"smooth", block:"start" });
     }, 120);
   }
-  function bookRetreatOption(messageKey){ jumpToBooking(messageKey, "svc_retreat"); }
+  function openBooking(){ jumpToBooking("", ""); }
+  function bookRetreatOption(serviceKey, messageKey){ jumpToBooking(messageKey, serviceKey); }
   function bookWorkshop(){ jumpToBooking("workshop_booking_msg", "svc_workshop"); }
 
   document.getElementById("bookingForm").addEventListener("submit", async function(e){
@@ -1583,7 +1606,7 @@
   /* ---------- init ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
   renderTimeline(); renderAwards(); renderMemberships(); renderSkills(); renderPubs(); renderBooks();
-  applyLang(); wireYouTube(); loadEpisodes(); showPage("home");
+  applyLang(); wireYouTube(); loadEpisodes(); showPage(pageFromLocation(), { replaceUrl:true, scroll:false });
   </script>
 </body>
 </html>
