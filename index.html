@@ -122,26 +122,26 @@
         <a href="/about/" class="nav-link cursor-pointer transition-colors" data-nav="about" onclick="goToPage(event,'about')" data-i18n="nav_about">About</a>
         <a href="/research/" class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="goToPage(event,'research')" data-i18n="nav_research">Research</a>
         <a href="/podcast/" class="nav-link cursor-pointer transition-colors" data-nav="podcast" onclick="goToPage(event,'podcast')" data-i18n="nav_podcast">Podcast</a>
-        <div class="relative group">
-          <a href="/academy/" class="nav-link cursor-pointer transition-colors inline-flex items-center gap-1" data-nav="academy" onclick="goToPage(event,'academy')">
+        <div id="academyNavWrap" class="relative">
+          <button type="button" id="academyNavBtn" class="nav-link cursor-pointer transition-colors inline-flex items-center gap-1 bg-transparent border-0 p-0 font-medium" data-nav="academy" onclick="toggleAcademyMenu(event)" aria-expanded="false" aria-controls="academyDropdown">
             <span data-i18n="nav_academy">Academy</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
-          </a>
-          <div class="absolute left-0 top-full hidden pt-3 group-hover:block group-focus-within:block z-50">
+          </button>
+          <div id="academyDropdown" class="absolute left-0 top-full hidden pt-3 z-50">
             <div class="w-72 rounded-2xl border border-gray-100 bg-white p-2 shadow-2xl">
-              <a href="/academy/" onclick="goToPage(event,'academy')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+              <a href="/academy/" onclick="goToPageFromAcademy(event,'academy')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
                 <i class="fa-solid fa-graduation-cap w-4 text-center"></i><span data-i18n="academy_menu_about">About the Academy</span>
               </a>
               <div class="my-1 border-t border-gray-100"></div>
-              <a href="/academy/one-day-intensive-retreat/" onclick="goToPage(event,'academy-one-day')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+              <a href="/academy/one-day-intensive-retreat/" onclick="goToPageFromAcademy(event,'academy-one-day')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
                 <i class="fa-solid fa-user-graduate w-4 text-center"></i><span data-i18n="svc_retreat_a_t">One-Day Intensive Retreat</span>
               </a>
-              <a href="/academy/two-day-premium-retreat/" onclick="goToPage(event,'academy-two-day')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+              <a href="/academy/two-day-premium-retreat/" onclick="goToPageFromAcademy(event,'academy-two-day')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
                 <i class="fa-solid fa-user-graduate w-4 text-center"></i><span data-i18n="svc_retreat_b_t">Two-Day Premium Retreat</span>
               </a>
-              <a href="/academy/follow-up-mentoring/" onclick="goToPage(event,'academy-follow-up')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+              <a href="/academy/follow-up-mentoring/" onclick="goToPageFromAcademy(event,'academy-follow-up')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
                 <i class="fa-solid fa-user-graduate w-4 text-center"></i><span data-i18n="svc_retreat_c_t">Retreat + 30-Day Follow-Up Mentoring</span>
               </a>
-              <a href="/academy/failure-in-science-workshop/" onclick="goToPage(event,'academy-workshop')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+              <a href="/academy/failure-in-science-workshop/" onclick="goToPageFromAcademy(event,'academy-workshop')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
                 <i class="fa-solid fa-chalkboard-user w-4 text-center"></i><span data-i18n="svc_workshop_t">Failure in Science Workshop</span>
               </a>
             </div>
@@ -2223,6 +2223,27 @@
   }
   function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name; }
   function goToPage(e, name){ if(e) e.preventDefault(); showPage(name); }
+  function setAcademyMenu(open){
+    const menu = document.getElementById("academyDropdown");
+    const btn = document.getElementById("academyNavBtn");
+    if(!menu) return;
+    menu.classList.toggle("hidden", !open);
+    if(btn){
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      const icon = btn.querySelector(".fa-chevron-down");
+      if(icon) icon.style.transform = open ? "rotate(180deg)" : "";
+    }
+  }
+  function toggleAcademyMenu(e){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    const menu = document.getElementById("academyDropdown");
+    setAcademyMenu(menu ? menu.classList.contains("hidden") : false);
+  }
+  function closeAcademyMenu(){ setAcademyMenu(false); }
+  function goToPageFromAcademy(e, name){
+    closeAcademyMenu();
+    goToPage(e, name);
+  }
   function updatePageMeta(name){
     const meta = PAGE_META[name] && (PAGE_META[name][lang] || PAGE_META[name].en);
     if(!meta) return;
@@ -2246,12 +2267,18 @@
     document.querySelectorAll("[data-nav]").forEach(n=>n.classList.toggle("active-link", n.dataset.nav===activeNav));
     document.getElementById("mobileMenu").classList.add("hidden");
     document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg";
+    closeAcademyMenu();
     updatePageMeta(name);
     if(opts.updateUrl !== false) updatePageUrl(name, opts.replaceUrl === true);
     if(opts.scroll !== false) window.scrollTo({top:0, behavior:"smooth"});
   }
   window.addEventListener("popstate", function(){ showPage(pageFromLocation(), { updateUrl:false }); });
   window.addEventListener("hashchange", function(){ showPage(pageFromLocation(), { replaceUrl:true }); });
+  document.addEventListener("click", function(e){
+    const wrap = document.getElementById("academyNavWrap");
+    if(wrap && !wrap.contains(e.target)) closeAcademyMenu();
+  });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeAcademyMenu(); });
   function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
 
   /* ---------- calendar ---------- */
