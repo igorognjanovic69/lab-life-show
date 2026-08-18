@@ -3,11 +3,15 @@
 //
 // Uses the same environment variables as /api/book.js:
 //   RESEND_API_KEY     = your Resend API key
-//   BOOKING_TO_EMAIL   = where messages are delivered (her inbox)
-//   BOOKING_FROM_EMAIL = a verified sender, e.g. "LabLifeHub <hello@yourdomain.com>"
+//   BOOKING_FROM_EMAIL = optional verified sender, defaults to LabLifeHub <nevenajeremic@lablifehub.com>
 //
-// Until these are set, the function returns { ok:true, configured:false }
+// Until RESEND_API_KEY is set, the function returns { ok:true, configured:false }
 // and the site shows a local confirmation instead.
+//
+// Contact messages are always delivered to nevenajeremic@lablifehub.com.
+
+const SITE_EMAIL = "nevenajeremic@lablifehub.com";
+const DEFAULT_FROM_EMAIL = "LabLifeHub <nevenajeremic@lablifehub.com>";
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
@@ -15,8 +19,8 @@ module.exports = async (req, res) => {
   }
 
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.BOOKING_TO_EMAIL;
-  const from = process.env.BOOKING_FROM_EMAIL;
+  const to = SITE_EMAIL;
+  const from = (process.env.BOOKING_FROM_EMAIL || DEFAULT_FROM_EMAIL).trim();
 
   const body = req.body && typeof req.body === "object" ? req.body : {};
   const name = (body.name || "").toString().slice(0, 200);
@@ -29,7 +33,7 @@ module.exports = async (req, res) => {
     return res.status(400).json({ ok: false, error: "Missing required fields" });
   }
 
-  if (!key || !to || !from) {
+  if (!key) {
     return res.status(200).json({ ok: true, configured: false });
   }
 

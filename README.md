@@ -5,11 +5,14 @@ Website for Dr. Nevena Jeremic - static site (HTML, Tailwind, DaisyUI) deployed 
 ## Forms
 
 The booking, contact, and testimonial moderation forms use Vercel Serverless
-Functions and Resend. Configure these environment variables in Vercel:
+Functions and Resend. They always send to `nevenajeremic@lablifehub.com`.
+Configure this environment variable in Vercel:
 
 - `RESEND_API_KEY`
-- `BOOKING_TO_EMAIL`
-- `BOOKING_FROM_EMAIL`
+
+Optional overrides:
+
+- `BOOKING_FROM_EMAIL` - defaults to `LabLifeHub <nevenajeremic@lablifehub.com>` and must be a verified sender/domain in Resend
 
 Testimonials are sent for manual approval and are never published automatically.
 

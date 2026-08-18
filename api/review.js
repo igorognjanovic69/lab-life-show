@@ -2,19 +2,22 @@
 // It uses the same Resend environment variables as the booking/contact forms.
 // Reviews are emailed to Dr. Jeremić and are never published automatically.
 
+const SITE_EMAIL = "nevenajeremic@lablifehub.com";
+const DEFAULT_FROM_EMAIL = "LabLifeHub <nevenajeremic@lablifehub.com>";
+
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
 
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.BOOKING_TO_EMAIL;
-  const from = process.env.BOOKING_FROM_EMAIL;
+  const to = SITE_EMAIL;
+  const from = (process.env.BOOKING_FROM_EMAIL || DEFAULT_FROM_EMAIL).trim();
   const body = req.body && typeof req.body === "object" ? req.body : {};
 
   // Honeypot: bots often complete hidden fields.
   if ((body.website || "").toString()) {
-    return res.status(200).json({ ok: true, configured: Boolean(key && to && from) });
+    return res.status(200).json({ ok: true, configured: Boolean(key) });
   }
 
   const name = clean(body.name, 200);
@@ -28,7 +31,7 @@ module.exports = async (req, res) => {
     return res.status(400).json({ ok: false, error: "Missing required fields" });
   }
 
-  if (!key || !to || !from) {
+  if (!key) {
     return res.status(200).json({ ok: true, configured: false });
   }
 
