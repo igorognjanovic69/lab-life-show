@@ -1,5 +1,5 @@
-const { createSignedState, isAuthenticated } = require("./admin-utils");
-const { getBaseUrl, esc } = require("./booking-utils");
+const { createSignedState, isAuthenticated } = require("../lib/admin-utils.cjs");
+const { getBaseUrl, esc } = require("../lib/booking-utils.cjs");
 
 const CALENDAR_SCOPE = "https://www.googleapis.com/auth/calendar";
 

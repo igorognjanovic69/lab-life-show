@@ -19,7 +19,7 @@ const {
   esc,
   sendEmail,
   signBooking,
-} = require("./booking-utils");
+} = require("../lib/booking-utils.cjs");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {

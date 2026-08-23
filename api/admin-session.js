@@ -1,4 +1,4 @@
-const { adminStatus } = require("./admin-utils");
+const { adminStatus } = require("../lib/admin-utils.cjs");
 
 module.exports = async (req, res) => {
   if (req.method !== "GET") {

@@ -4,7 +4,7 @@ const {
   isAdminConfigured,
   passwordMatches,
   setSessionCookie,
-} = require("./admin-utils");
+} = require("../lib/admin-utils.cjs");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {

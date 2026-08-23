@@ -9,7 +9,7 @@ const {
   getBaseUrl,
   sendEmail,
   verifyBookingToken,
-} = require("./booking-utils");
+} = require("../lib/booking-utils.cjs");
 
 module.exports = async (req, res) => {
   try {

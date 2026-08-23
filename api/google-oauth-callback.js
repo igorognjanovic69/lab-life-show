@@ -1,5 +1,5 @@
-const { isAuthenticated, verifySignedState } = require("./admin-utils");
-const { esc } = require("./booking-utils");
+const { isAuthenticated, verifySignedState } = require("../lib/admin-utils.cjs");
+const { esc } = require("../lib/booking-utils.cjs");
 
 module.exports = async (req, res) => {
   if (req.method !== "GET") {

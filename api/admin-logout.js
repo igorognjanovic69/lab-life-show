@@ -1,4 +1,4 @@
-const { clearSessionCookie } = require("./admin-utils");
+const { clearSessionCookie } = require("../lib/admin-utils.cjs");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
