@@ -43,6 +43,11 @@
       "permanent": true
     },
     {
+      "source": "/be-guest",
+      "destination": "/be-guest/",
+      "permanent": true
+    },
+    {
       "source": "/academy",
       "destination": "/academy/",
       "permanent": true

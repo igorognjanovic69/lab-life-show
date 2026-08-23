@@ -167,7 +167,7 @@
     .nav-link:hover::after { width: 100%; }
     .sci-grid { background-image: radial-gradient(#17938922 1px, transparent 1px); background-size: 22px 22px; }
     .lime-grid { background-image: radial-gradient(#78940f20 1px, transparent 1px); background-size: 24px 24px; }
-    #page-about, #page-research, #page-podcast, #page-academy, #page-academy-one-day, #page-academy-two-day, #page-academy-follow-up, #page-academy-workshop, #page-book, #page-reviews, #page-contact {
+    #page-about, #page-research, #page-podcast, #page-guest, #page-academy, #page-academy-one-day, #page-academy-two-day, #page-academy-follow-up, #page-academy-workshop, #page-book, #page-reviews, #page-contact {
       margin-inline: -1rem;
       padding-inline: 1rem;
       border-radius: 1.75rem;
@@ -175,6 +175,7 @@
     #page-about { background: linear-gradient(145deg, #f3f5f4 0, #ffffff 38%); }
     #page-research { background: linear-gradient(145deg, #f3f8df 0, #ffffff 34%); }
     #page-podcast { background: linear-gradient(145deg, #e6f4f3 0, #ffffff 34%); }
+    #page-guest { background: linear-gradient(145deg, #f3f8df 0, #ffffff 38%); }
     #page-academy { background: linear-gradient(145deg, #f3f8df 0, #ffffff 36%); }
     #page-academy-one-day, #page-academy-two-day, #page-academy-follow-up, #page-academy-workshop { background: linear-gradient(145deg, #f3f8df 0, #ffffff 34%); }
     #page-book { background: linear-gradient(145deg, #f3f5f4 0, #ffffff 34%); }
@@ -225,7 +226,7 @@
       box-shadow: 0 18px 45px rgba(183, 214, 61, .28), 0 0 0 1px rgba(183, 214, 61, .22) !important;
     }
     @media (min-width: 640px) {
-      #page-about, #page-research, #page-podcast, #page-academy, #page-academy-one-day, #page-academy-two-day, #page-academy-follow-up, #page-academy-workshop, #page-book, #page-reviews, #page-contact {
+      #page-about, #page-research, #page-podcast, #page-guest, #page-academy, #page-academy-one-day, #page-academy-two-day, #page-academy-follow-up, #page-academy-workshop, #page-book, #page-reviews, #page-contact {
         margin-inline: -1.5rem;
         padding-inline: 1.5rem;
       }
@@ -755,9 +756,9 @@
           <a data-ig-link href="https://www.instagram.com/lablife.hub/" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-white text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center gap-2">
             <i class="fa-brands fa-instagram text-base"></i><span data-i18n="cta_instagram">Follow on Instagram</span>
           </a>
-          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
+          <a href="/be-guest/" onclick="goToPage(event,'guest')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors inline-flex items-center">
             <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
-          </button>
+          </a>
           <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
             <i class="fa-regular fa-bell mr-2"></i><span data-i18n="pod_cta_notify">Get notified</span>
           </button>
@@ -794,9 +795,9 @@
           <p class="mt-2 text-sm text-gray-600 max-w-xl" data-i18n="podcast_cta_text">Suggest a guest, propose a topic, or join LabLifePodcast as a researcher, clinician, innovator or founder.</p>
         </div>
         <div class="flex flex-wrap gap-3 shrink-0">
-          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+          <a href="/be-guest/" onclick="goToPage(event,'guest')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
             <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
-          </button>
+          </a>
           <button onclick="showPage('academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
             <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="podcast_cta_academy">Explore LabLifeAcademy</span>
           </button>
@@ -1392,6 +1393,127 @@
       </div>
     </section>
 
+    <!-- BE A GUEST -->
+    <section id="page-guest" class="page py-12 sm:py-16">
+      <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-8 items-start">
+        <div>
+          <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="guest_eyebrow">LabLifePodcast guest application</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="guest_title">Be a guest on LabLifePodcast</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed" data-i18n="guest_intro">Share your scientific story, research path, professional experience, or innovation journey. This form helps Dr. Nevena Jeremić understand who you are, what you work on, and why your perspective would be valuable for the podcast audience.</p>
+          <div class="mt-6 rounded-3xl bg-brand text-white p-6 relative overflow-hidden">
+            <div class="absolute -right-8 -bottom-8 opacity-10 text-[150px]"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3 class="text-xl font-black relative z-10" data-i18n="guest_what_title">What to include</h3>
+            <ul class="mt-4 space-y-3 text-sm text-white/80 relative z-10">
+              <li class="flex gap-3"><i class="fa-solid fa-check text-lime mt-0.5"></i><span data-i18n="guest_tip_1">Your current title, institution, company, laboratory, or professional role.</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check text-lime mt-0.5"></i><span data-i18n="guest_tip_2">Where you studied, worked, researched, taught, built, founded, or collaborated.</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check text-lime mt-0.5"></i><span data-i18n="guest_tip_3">Why you want to participate and what story, topic, or expertise you can bring.</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check text-lime mt-0.5"></i><span data-i18n="guest_tip_4">Optional papers, profiles, websites, projects, or social links that help introduce your work.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <form id="guestForm" class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7 space-y-4">
+            <div>
+              <h3 class="text-2xl font-black" data-i18n="guest_form_title">Podcast guest details</h3>
+              <p class="mt-1 text-sm text-gray-500" data-i18n="guest_form_sub">Please write enough detail for a thoughtful first review. Publications and links are optional, but useful.</p>
+            </div>
+
+            <input id="g_website" type="text" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_name" data-i18n="form_name">Name</label>
+                <input id="g_name" required type="text" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_email" data-i18n="form_email">Email</label>
+                <input id="g_email" required type="email" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_phone" data-i18n="form_phone">Phone</label>
+                <input id="g_phone" required type="tel" placeholder="+381 ..." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_location" data-i18n="guest_location">City / country</label>
+                <input id="g_location" type="text" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_title" data-i18n="guest_role">Title / professional role</label>
+                <input id="g_title" required type="text" data-i18n-placeholder="guest_role_ph" placeholder="Professor, PhD student, founder..." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+              <div>
+                <label class="text-sm font-medium text-gray-600" for="g_affiliation" data-i18n="guest_affiliation">Current institution / company</label>
+                <input id="g_affiliation" required type="text" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_previous" data-i18n="guest_previous">Previous institutions, labs, companies or relevant work</label>
+              <textarea id="g_previous" rows="3" data-i18n-placeholder="guest_previous_ph" placeholder="Where have you studied, worked, researched, taught or collaborated?" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_expertise" data-i18n="guest_expertise">Field of expertise</label>
+              <textarea id="g_expertise" required rows="3" data-i18n-placeholder="guest_expertise_ph" placeholder="Research field, clinical area, technology, startup focus, methods, or scientific interest." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_topic" data-i18n="guest_topic">Proposed podcast topic or story</label>
+              <textarea id="g_topic" required rows="3" data-i18n-placeholder="guest_topic_ph" placeholder="What would you like to talk about?" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_why" data-i18n="guest_why">Why would you like to participate?</label>
+              <textarea id="g_why" required rows="4" data-i18n-placeholder="guest_why_ph" placeholder="Explain why LabLifePodcast feels like the right place for your story, topic or expertise." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_bio" data-i18n="guest_bio">Short professional biography</label>
+              <textarea id="g_bio" required rows="4" data-i18n-placeholder="guest_bio_ph" placeholder="Introduce yourself: education, career path, current work, major projects, awards or collaborations." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_publications" data-i18n="guest_publications">Selected papers / publications / projects (optional)</label>
+              <textarea id="g_publications" rows="3" data-i18n-placeholder="guest_publications_ph" placeholder="Paste DOI links, titles, project links or a short list." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_links" data-i18n="guest_links">Useful links (optional)</label>
+              <textarea id="g_links" rows="3" data-i18n-placeholder="guest_links_ph" placeholder="LinkedIn, ORCID, Google Scholar, website, lab page, company page, Instagram, YouTube..." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="text-sm font-medium text-gray-600" for="g_message" data-i18n="guest_notes">Anything else? (optional)</label>
+              <textarea id="g_message" rows="3" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none"></textarea>
+            </div>
+
+            <label class="flex gap-3 text-sm text-gray-600 leading-relaxed">
+              <input id="g_consent" required type="checkbox" class="mt-1 rounded text-brand focus:ring-brand" />
+              <span data-i18n="guest_consent">I agree that LabLifeHub may contact me about this podcast guest application.</span>
+            </label>
+
+            <button type="submit" class="w-full px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+              <i class="fa-regular fa-paper-plane mr-2"></i><span data-i18n="guest_submit">Send guest application</span>
+            </button>
+          </form>
+
+          <div id="guestDone" class="hidden text-center py-8 rounded-2xl border border-gray-100 shadow-sm bg-white">
+            <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto"><i class="fa-solid fa-check"></i></div>
+            <h4 class="mt-4 font-bold text-lg" data-i18n="guest_done_title">Thank you!</h4>
+            <p id="guestSummary" class="mt-2 text-sm text-gray-600 px-6"></p>
+            <button onclick="resetGuest()" class="mt-5 text-sm text-brand font-medium" data-i18n="guest_again">Send another application</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="page-contact" class="page active py-12 sm:py-16">
       <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="contact_eyebrow">Contact</p>
@@ -1525,6 +1647,7 @@
           <a href="/about/" onclick="goToPage(event,'about')" class="hover:text-brand transition-colors" data-i18n="nav_about">About</a>
           <a href="/research/" onclick="goToPage(event,'research')" class="hover:text-brand transition-colors" data-i18n="nav_research">Research</a>
           <a href="/podcast/" onclick="goToPage(event,'podcast')" class="hover:text-brand transition-colors" data-i18n="nav_podcast">Podcast</a>
+          <a href="/be-guest/" onclick="goToPage(event,'guest')" class="hover:text-brand transition-colors" data-i18n="footer_be_guest">Be a guest</a>
           <a href="/book/" onclick="goToPage(event,'book')" class="hover:text-brand transition-colors" data-i18n="nav_book">Book</a>
           <a href="/reviews/" onclick="goToPage(event,'reviews')" class="hover:text-brand transition-colors" data-i18n="nav_reviews">Reviews</a>
           <a href="/contact/" onclick="goToPage(event,'contact')" class="hover:text-brand transition-colors" data-i18n="nav_contact">Contact</a>
@@ -1564,7 +1687,7 @@
       nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_contact:"Contact",
       academy_menu_about:"About the Academy",
       footer_about:"Science communication, research education, mentoring and advanced workshops by Dr. Nevena Jeremić.",
-      footer_site:"Site", footer_academy:"LabLifeAcademy", footer_follow:"Follow", footer_privacy:"Privacy Policy", footer_terms:"Terms of Service",
+      footer_site:"Site", footer_academy:"LabLifeAcademy", footer_follow:"Follow", footer_privacy:"Privacy Policy", footer_terms:"Terms of Service", footer_be_guest:"Be a guest",
       hero_badge:"Podcast + Academy", hero_title_1:"Where Researchers Grow, Teams Improve, and Science Gets Stronger",
       hero_subtitle:"A platform by Dr. Nevena Jeremić connecting science communication, research education, workshops and academic mentorship - grounded in pharmaceutical chemistry, redox biology and cardiometabolic research.",
       hero_cta_podcast:"Explore Podcast", hero_cta_academy:"Explore Academy", hero_cta_book:"Book a 1:1 Session",
@@ -1717,6 +1840,41 @@
       pod_episodes:"Episodes",
       podcast_cta_title:"Have a scientific story worth sharing?", podcast_cta_text:"Suggest a guest, propose a topic, or join LabLifePodcast as a researcher, clinician, innovator or founder.",
       podcast_cta_academy:"Explore LabLifeAcademy",
+      guest_eyebrow:"LabLifePodcast guest application",
+      guest_title:"Be a guest on LabLifePodcast",
+      guest_intro:"Share your scientific story, research path, professional experience, or innovation journey. This form helps Dr. Nevena Jeremić understand who you are, what you work on, and why your perspective would be valuable for the podcast audience.",
+      guest_what_title:"What to include",
+      guest_tip_1:"Your current title, institution, company, laboratory, or professional role.",
+      guest_tip_2:"Where you studied, worked, researched, taught, built, founded, or collaborated.",
+      guest_tip_3:"Why you want to participate and what story, topic, or expertise you can bring.",
+      guest_tip_4:"Optional papers, profiles, websites, projects, or social links that help introduce your work.",
+      guest_form_title:"Podcast guest details",
+      guest_form_sub:"Please write enough detail for a thoughtful first review. Publications and links are optional, but useful.",
+      guest_location:"City / country",
+      guest_role:"Title / professional role",
+      guest_role_ph:"Professor, PhD student, founder...",
+      guest_affiliation:"Current institution / company",
+      guest_previous:"Previous institutions, labs, companies or relevant work",
+      guest_previous_ph:"Where have you studied, worked, researched, taught or collaborated?",
+      guest_expertise:"Field of expertise",
+      guest_expertise_ph:"Research field, clinical area, technology, startup focus, methods, or scientific interest.",
+      guest_topic:"Proposed podcast topic or story",
+      guest_topic_ph:"What would you like to talk about?",
+      guest_why:"Why would you like to participate?",
+      guest_why_ph:"Explain why LabLifePodcast feels like the right place for your story, topic or expertise.",
+      guest_bio:"Short professional biography",
+      guest_bio_ph:"Introduce yourself: education, career path, current work, major projects, awards or collaborations.",
+      guest_publications:"Selected papers / publications / projects (optional)",
+      guest_publications_ph:"Paste DOI links, titles, project links or a short list.",
+      guest_links:"Useful links (optional)",
+      guest_links_ph:"LinkedIn, ORCID, Google Scholar, website, lab page, company page, Instagram, YouTube...",
+      guest_notes:"Anything else? (optional)",
+      guest_consent:"I agree that LabLifeHub may contact me about this podcast guest application.",
+      guest_submit:"Send guest application",
+      guest_done_title:"Thank you!",
+      guest_again:"Send another application",
+      guest_sent:"Thank you - your podcast guest application has been sent to Dr. Jeremić.",
+      guest_summary:"Thank you - your podcast guest application has been submitted. Dr. Jeremić will review it and reply soon.",
       book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
       book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose an offer", book_details:"2 · Your details",
@@ -1765,7 +1923,7 @@
       nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
       academy_menu_about:"O akademiji",
       footer_about:"Naučna komunikacija, istraživačka edukacija, mentorstvo i napredne radionice dr Nevene Jeremić.",
-      footer_site:"Sajt", footer_academy:"LabLifeAcademy", footer_follow:"Mreže", footer_privacy:"Politika privatnosti", footer_terms:"Uslovi korišćenja",
+      footer_site:"Sajt", footer_academy:"LabLifeAcademy", footer_follow:"Mreže", footer_privacy:"Politika privatnosti", footer_terms:"Uslovi korišćenja", footer_be_guest:"Budite gost",
       hero_badge:"Podkast + Akademija", hero_title_1:"Mesto gde istraživači rastu, timovi napreduju, a nauka postaje snažnija",
       hero_subtitle:"Platforma dr Nevene Jeremić koja povezuje naučnu komunikaciju, istraživačku edukaciju, radionice i akademsko mentorstvo - zasnovana na farmaceutskoj hemiji, redoks biologiji i kardiometaboličkim istraživanjima.",
       hero_cta_podcast:"Pogledaj podkast", hero_cta_academy:"Pogledaj Akademiju", hero_cta_book:"Zakaži 1:1 sesiju",
@@ -1918,6 +2076,41 @@
       pod_episodes:"Epizode",
       podcast_cta_title:"Imate naučnu priču vrednu deljenja?", podcast_cta_text:"Predložite gosta, temu ili se uključite u LabLifePodcast kao istraživač, kliničar, inovator ili osnivač.",
       podcast_cta_academy:"Pogledaj LabLifeAcademy",
+      guest_eyebrow:"Prijava za gosta LabLifePodcasta",
+      guest_title:"Budite gost u LabLifePodcastu",
+      guest_intro:"Podelite svoju naučnu priču, istraživački put, profesionalno iskustvo ili inovacioni rad. Ova forma pomaže dr Neveni Jeremić da razume ko ste, čime se bavite i zašto bi vaša perspektiva bila vredna za publiku podkasta.",
+      guest_what_title:"Šta treba uključiti",
+      guest_tip_1:"Vaše trenutno zvanje, instituciju, kompaniju, laboratoriju ili profesionalnu ulogu.",
+      guest_tip_2:"Gde ste studirali, radili, istraživali, predavali, gradili projekte, osnovali nešto ili sarađivali.",
+      guest_tip_3:"Zašto želite da učestvujete i koju priču, temu ili ekspertizu možete da donesete.",
+      guest_tip_4:"Opcione radove, profile, sajtove, projekte ili linkove koji pomažu da se predstavi vaš rad.",
+      guest_form_title:"Podaci za podcast gosta",
+      guest_form_sub:"Napišite dovoljno detalja za ozbiljan prvi pregled. Publikacije i linkovi nisu obavezni, ali su korisni.",
+      guest_location:"Grad / država",
+      guest_role:"Zvanje / profesionalna uloga",
+      guest_role_ph:"Profesor, doktorand, osnivač...",
+      guest_affiliation:"Trenutna institucija / kompanija",
+      guest_previous:"Prethodne institucije, laboratorije, kompanije ili relevantan rad",
+      guest_previous_ph:"Gde ste studirali, radili, istraživali, predavali ili sarađivali?",
+      guest_expertise:"Oblast ekspertize",
+      guest_expertise_ph:"Istraživačka oblast, klinička oblast, tehnologija, startup fokus, metode ili naučni interes.",
+      guest_topic:"Predložena tema ili priča za podkast",
+      guest_topic_ph:"O čemu biste želeli da razgovarate?",
+      guest_why:"Zašto želite da učestvujete?",
+      guest_why_ph:"Objasnite zašto je LabLifePodcast pravo mesto za vašu priču, temu ili ekspertizu.",
+      guest_bio:"Kratka profesionalna biografija",
+      guest_bio_ph:"Predstavite se: obrazovanje, karijerni put, trenutni rad, važni projekti, priznanja ili saradnje.",
+      guest_publications:"Odabrani radovi / publikacije / projekti (opciono)",
+      guest_publications_ph:"Nalepite DOI linkove, naslove, linkove ka projektima ili kratak spisak.",
+      guest_links:"Korisni linkovi (opciono)",
+      guest_links_ph:"LinkedIn, ORCID, Google Scholar, sajt, stranica laboratorije, kompanija, Instagram, YouTube...",
+      guest_notes:"Još nešto? (opciono)",
+      guest_consent:"Saglasan/na sam da me LabLifeHub kontaktira povodom ove prijave za podcast gosta.",
+      guest_submit:"Pošalji prijavu za gosta",
+      guest_done_title:"Hvala!",
+      guest_again:"Pošalji novu prijavu",
+      guest_sent:"Hvala - vaša prijava za podcast gosta je poslata dr Jeremić.",
+      guest_summary:"Hvala - vaša prijava za podcast gosta je poslata. Dr Jeremić će je pregledati i javiti se uskoro.",
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premijum program ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
@@ -2290,6 +2483,7 @@
     const t = I18N[lang];
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach(el=>{ const k=el.getAttribute("data-i18n"); if(t[k]!==undefined && typeof t[k]==="string") el.textContent = t[k]; });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{ const k=el.getAttribute("data-i18n-placeholder"); if(t[k]!==undefined && typeof t[k]==="string") el.setAttribute("placeholder", t[k]); });
     document.getElementById("langLabel").textContent = lang==="en" ? "SR" : "EN";
     renderEpisodes(); renderServices(); renderServiceMenu(); buildCalendar(); updateDateLabel();
     if(selectedServiceKey) pickService(selectedServiceKey);
@@ -2304,6 +2498,7 @@
     about:"/about/",
     research:"/research/",
     podcast:"/podcast/",
+    guest:"/be-guest/",
     academy:"/academy/",
     "academy-one-day":"/academy/one-day-intensive-retreat/",
     "academy-two-day":"/academy/two-day-premium-retreat/",
@@ -2329,6 +2524,10 @@
     podcast:{
       en:["LabLifePodcast - LabLifeHub","Scientific conversations that bring clarity to research, careers, innovation and the real life behind science."],
       sr:["LabLifePodcast - LabLifeHub","Naučni razgovori koji donose jasnoću u istraživanje, karijeru, inovacije i stvarni život iza nauke."]
+    },
+    guest:{
+      en:["Be a guest on LabLifePodcast - LabLifeHub","Apply to be a LabLifePodcast guest by sharing your background, expertise, proposed topic, publications and professional links."],
+      sr:["Budite gost u LabLifePodcastu - LabLifeHub","Prijavite se za gosta LabLifePodcasta kroz predstavljanje biografije, ekspertize, predložene teme, publikacija i profesionalnih linkova."]
     },
     academy:{
       en:["LabLifeAcademy - Research Mentoring and Workshops","LabLifeAcademy offers individual research retreats, mentoring and workshops for stronger study design, reproducibility and publishing."],
@@ -2385,7 +2584,7 @@
     if(replace) window.history.replaceState({ page:name }, "", target);
     else window.history.pushState({ page:name }, "", target);
   }
-  function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name; }
+  function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name === "guest" ? "podcast" : name; }
   function goToPage(e, name){ if(e) e.preventDefault(); showPage(name); }
   function setAcademyMenu(open){
     const menu = document.getElementById("academyDropdown");
@@ -2546,6 +2745,46 @@
     document.getElementById("reviewDone").classList.add("hidden");
     f.classList.remove("hidden");
   }
+
+  /* ---------- podcast guest ---------- */
+  document.getElementById("guestForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    const t = I18N[lang];
+    const val = id => document.getElementById(id)?.value || "";
+    const payload = {
+      type:"podcastGuest",
+      name:val("g_name"),
+      email:val("g_email"),
+      phone:val("g_phone"),
+      subject:"LabLifePodcast guest application",
+      website:val("g_website"),
+      guest:{
+        title:val("g_title"),
+        affiliation:val("g_affiliation"),
+        location:val("g_location"),
+        previous:val("g_previous"),
+        expertise:val("g_expertise"),
+        topic:val("g_topic"),
+        why:val("g_why"),
+        bio:val("g_bio"),
+        publications:val("g_publications"),
+        links:val("g_links"),
+        notes:val("g_message"),
+        consent:document.getElementById("g_consent").checked
+      },
+      message:[
+        "Podcast guest application",
+        val("g_topic"),
+        val("g_why"),
+        val("g_bio")
+      ].filter(Boolean).join("\n\n")
+    };
+    let sent=false;
+    try { const r=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
+    document.getElementById("guestSummary").innerHTML = sent ? t.guest_sent : t.guest_summary;
+    this.classList.add("hidden"); document.getElementById("guestDone").classList.remove("hidden");
+  });
+  function resetGuest(){ const f=document.getElementById("guestForm"); f.reset(); document.getElementById("guestDone").classList.add("hidden"); f.classList.remove("hidden"); }
 
   /* ---------- contact ---------- */
   document.getElementById("contactForm").addEventListener("submit", async function(e){

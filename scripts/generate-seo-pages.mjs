@@ -30,6 +30,13 @@ const pages = [
       "Scientific conversations that bring clarity to research, careers, innovation and the real life behind science.",
   },
   {
+    id: "guest",
+    path: "/be-guest/",
+    title: "Be a guest on LabLifePodcast - LabLifeHub",
+    description:
+      "Apply to be a LabLifePodcast guest by sharing your background, expertise, proposed topic, publications and professional links.",
+  },
+  {
     id: "academy",
     path: "/academy/",
     title: "LabLifeAcademy - Research Mentoring and Workshops",
