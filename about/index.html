@@ -1574,7 +1574,7 @@
           <div class="h-11 w-11 rounded-xl bg-brand-light text-brand flex items-center justify-center text-xl"><i class="fa-solid fa-building-columns"></i></div>
           <div>
             <p class="font-bold text-sm" data-i18n="contact_faculty">Faculty</p>
-            <p class="text-sm text-gray-500">Faculty of Medical Sciences, University of Kragujevac</p>
+            <p class="text-sm text-gray-500" data-i18n="contact_faculty_value">Faculty of Medical Sciences, University of Kragujevac</p>
           </div>
         </div>
       </div>
@@ -1957,7 +1957,7 @@
       reviews_again:"Leave another review",
       contact_eyebrow:"Contact", contact_title:"Get in touch",
       contact_intro:"For collaborations, lectures, podcast guesting or mentorship, reach out through any of the channels below.",
-      contact_email:"Email", contact_phone:"Phone", contact_sci:"Publications & profile", contact_faculty:"Faculty",
+      contact_email:"Email", contact_phone:"Phone", contact_sci:"Publications & profile", contact_faculty:"Faculty", contact_faculty_value:"Faculty of Medical Sciences, University of Kragujevac",
       cf_title:"Send a message", cf_sub:"Fill in the form below and your message will reach her directly.",
       cf_subject:"Subject", cf_message:"Message", cf_submit:"Send message",
       cf_done_title:"Thank you!", cf_again:"Send another message",
@@ -1969,7 +1969,7 @@
       summary:(s,d)=>`Thank you - your <b>${s}</b> request${d?` for <b>${d}</b>`:""} has been submitted. Dr. Jeremić will reply to confirm the details.`
     },
     sr: {
-      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_be_guest:"Be Guest", nav_contact:"Kontakt",
+      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_be_guest:"Budite gost", nav_contact:"Kontakt",
       academy_menu_about:"O akademiji",
       footer_about:"Naučna komunikacija, istraživačka edukacija, mentorstvo i napredne radionice dr Nevene Jeremić.",
       footer_site:"Sajt", footer_academy:"LabLifeAcademy", footer_follow:"Mreže", footer_privacy:"Politika privatnosti", footer_terms:"Uslovi korišćenja", footer_be_guest:"Budite gost",
@@ -2126,12 +2126,12 @@
       podcast_cta_title:"Imate naučnu priču vrednu deljenja?", podcast_cta_text:"Predložite gosta, temu ili se uključite u LabLifePodcast kao istraživač, kliničar, inovator ili osnivač.",
       podcast_cta_academy:"Pogledaj LabLifeAcademy",
       notify_title:"Obaveštenja za LabLifePodcast",
-      notify_intro:"Ostavite email i dr Nevena Jeremić će dobiti vaš zahtev za obaveštenja o LabLifePodcast sadržaju.",
+      notify_intro:"Ostavite e-mail i dr Nevena Jeremić će dobiti vaš zahtev za obaveštenja o LabLifePodcast sadržaju.",
       notify_name:"Ime i prezime (opciono)",
       notify_email:"E-mail",
       notify_submit:"Prijavi se za obaveštenja",
       notify_done_title:"Hvala!",
-      notify_again:"Dodaj drugi email",
+      notify_again:"Dodaj drugi e-mail",
       notify_sent:"Hvala - vaš zahtev za obaveštenja je poslat.",
       notify_summary:"Hvala - vaš zahtev za obaveštenja je primljen.",
       guest_eyebrow:"Prijava za gosta LabLifePodcasta",
@@ -2142,7 +2142,7 @@
       guest_tip_2:"Gde ste studirali, radili, istraživali, predavali, gradili projekte, osnovali nešto ili sarađivali.",
       guest_tip_3:"Zašto želite da učestvujete i koju priču, temu ili ekspertizu možete da donesete.",
       guest_tip_4:"Opcione radove, profile, sajtove, projekte ili linkove koji pomažu da se predstavi vaš rad.",
-      guest_form_title:"Podaci za podcast gosta",
+      guest_form_title:"Podaci za gosta u podkastu",
       guest_form_sub:"Napišite dovoljno detalja za ozbiljan prvi pregled. Publikacije i linkovi nisu obavezni, ali su korisni.",
       guest_location:"Grad / država",
       guest_role:"Zvanje / profesionalna uloga",
@@ -2151,7 +2151,7 @@
       guest_previous:"Prethodne institucije, laboratorije, kompanije ili relevantan rad",
       guest_previous_ph:"Gde ste studirali, radili, istraživali, predavali ili sarađivali?",
       guest_expertise:"Oblast ekspertize",
-      guest_expertise_ph:"Istraživačka oblast, klinička oblast, tehnologija, startup fokus, metode ili naučni interes.",
+      guest_expertise_ph:"Istraživačka oblast, klinička oblast, tehnologija, startap fokus, metode ili naučni interes.",
       guest_topic:"Predložena tema ili priča za podkast",
       guest_topic_ph:"O čemu biste želeli da razgovarate?",
       guest_why:"Zašto želite da učestvujete?",
@@ -2163,17 +2163,17 @@
       guest_links:"Korisni linkovi (opciono)",
       guest_links_ph:"LinkedIn, ORCID, Google Scholar, sajt, stranica laboratorije, kompanija, Instagram, YouTube...",
       guest_notes:"Još nešto? (opciono)",
-      guest_consent:"Saglasan/na sam da me LabLifeHub kontaktira povodom ove prijave za podcast gosta.",
+      guest_consent:"Saglasan/na sam da me LabLifeHub kontaktira povodom ove prijave za gosta u podkastu.",
       guest_submit:"Pošalji prijavu za gosta",
       guest_done_title:"Hvala!",
       guest_again:"Pošalji novu prijavu",
-      guest_sent:"Hvala - vaša prijava za podcast gosta je poslata dr Jeremić.",
-      guest_summary:"Hvala - vaša prijava za podcast gosta je poslata. Dr Jeremić će je pregledati i javiti se uskoro.",
+      guest_sent:"Hvala - vaša prijava za gosta u podkastu je poslata dr Jeremić.",
+      guest_summary:"Hvala - vaša prijava za gosta u podkastu je poslata. Dr Jeremić će je pregledati i javiti se uskoro.",
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premijum program ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
       book_guest_title:"Budite gost u LabLifePodcastu",
-      book_guest_desc:"Prijavite se za podcast razgovor i predstavite svoju ekspertizu, rad, ideju za temu i korisne linkove.",
+      book_guest_desc:"Prijavite se za podkast razgovor i predstavite svoju ekspertizu, rad, ideju za temu i korisne linkove.",
       book_workshop_heading:"Naučna radionica",
       svc_retreat_a_t:"Jednodnevni intenzivni program", svc_retreat_a_d:"4-5 sati · brzo i fokusirano 1:1 vođenje · $350.",
       svc_retreat_b_t:"Dvodnevni premijum program", svc_retreat_b_d:"2 × 3 sata · dubinska transformacija projekta · $600.",
@@ -2204,7 +2204,7 @@
       reviews_again:"Ostavite još jednu recenziju",
       contact_eyebrow:"Kontakt", contact_title:"Budimo u kontaktu",
       contact_intro:"Za saradnju, predavanja, gostovanja u podkastu ili mentorstvo, javite se putem nekog od kanala ispod.",
-      contact_email:"E-mail", contact_phone:"Telefon", contact_sci:"Publikacije i profil", contact_faculty:"Fakultet",
+      contact_email:"E-mail", contact_phone:"Telefon", contact_sci:"Publikacije i profil", contact_faculty:"Fakultet", contact_faculty_value:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu",
       cf_title:"Pošaljite poruku", cf_sub:"Popunite formu ispod i vaša poruka stiže direktno do nje.",
       cf_subject:"Naslov", cf_message:"Poruka", cf_submit:"Pošalji poruku",
       cf_done_title:"Hvala!", cf_again:"Pošalji novu poruku",
@@ -2234,32 +2234,66 @@
   }
 
   /* ---------- data ---------- */
-  const TIMELINE = [
-    { y:"2022 - present", t:"Associate Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
-    { y:"2022 - present", t:"Full member, Center of Excellence (CePI)", s:"Redox balance in cardiovascular & metabolic disorders, University of Kragujevac" },
-    { y:"2018 - present", t:"Adjunct Assistant Professor, Physiology", s:"University of Louisville, KY, USA" },
-    { y:"2018 - 2024", t:"Vice Dean for Scientific Research & International Collaboration", s:"Faculty of Medical Sciences, University of Kragujevac" },
-    { y:"2017 - 2022", t:"Assistant Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
-    { y:"2016 - 2018", t:"Postdoctoral Associate, Physiology", s:"University of Louisville School of Medicine, KY, USA" },
-    { y:"2012 - 2015", t:"PhD - Clinical & Experimental Pharmacology", s:"Faculty of Medical Sciences, University of Kragujevac" },
-    { y:"2012", t:"Master of Pharmacy", s:"Faculty of Medical Sciences, University of Kragujevac" }
-  ];
-  const AWARDS = [
-    { y:"2024", t:"Charter of the University of Saint Sava - to the Center of Excellence for redox balance in cardiovascular and metabolic disorders, University of Kragujevac" },
-    { y:"2022", t:"Best female scientist at the Faculty of Medical Sciences, University of Kragujevac" },
-    { y:"2017", t:"Travel Award - 4th European Section Meeting of the IACS, Pécs, Hungary" },
-    { y:"2017", t:"Meritorious Postdoctoral Fellow Poster Presentation Award - Kentucky Chapter, American Physiological Society" },
-    { y:"2016", t:"Travel Award - 3rd European Section Meeting of the IACS, Marseille, France" }
-  ];
-  const MEMBERSHIPS = [
-    "American Heart Association - Hypertension Council (2016-2018)",
-    "Serbian Physiological Society",
-    "American Physiological Society (2016-2018)"
-  ];
-  const SKILLS = [
-    "Pharmaceutical chemistry","Experimental pharmacology","Redox biology","Cardiovascular physiology",
-    "Preclinical rodent models","Real-Time PCR (qPCR)","Western blot","Scientific writing","Mentoring","GLP · ISO 9001 · ISO 14001"
-  ];
+  const TIMELINE = {
+    en: [
+      { y:"2022 - present", t:"Associate Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
+      { y:"2022 - present", t:"Full member, Center of Excellence (CePI)", s:"Redox balance in cardiovascular & metabolic disorders, University of Kragujevac" },
+      { y:"2018 - present", t:"Adjunct Assistant Professor, Physiology", s:"University of Louisville, KY, USA" },
+      { y:"2018 - 2024", t:"Vice Dean for Scientific Research & International Collaboration", s:"Faculty of Medical Sciences, University of Kragujevac" },
+      { y:"2017 - 2022", t:"Assistant Professor, Pharmaceutical Chemistry", s:"Faculty of Medical Sciences, University of Kragujevac" },
+      { y:"2016 - 2018", t:"Postdoctoral Associate, Physiology", s:"University of Louisville School of Medicine, KY, USA" },
+      { y:"2012 - 2015", t:"PhD - Clinical & Experimental Pharmacology", s:"Faculty of Medical Sciences, University of Kragujevac" },
+      { y:"2012", t:"Master of Pharmacy", s:"Faculty of Medical Sciences, University of Kragujevac" }
+    ],
+    sr: [
+      { y:"2022 - danas", t:"Vanredni profesor, Farmaceutska hemija", s:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu" },
+      { y:"2022 - danas", t:"Punopravni član, Centar izuzetnih vrednosti (CePI)", s:"Redoks ravnoteža u kardiovaskularnim i metaboličkim poremećajima, Univerzitet u Kragujevcu" },
+      { y:"2018 - danas", t:"Gostujući docent, Fiziologija", s:"Univerzitet u Luisvilu, Kentaki, SAD" },
+      { y:"2018 - 2024", t:"Prodekan za naučnoistraživački rad i međunarodnu saradnju", s:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu" },
+      { y:"2017 - 2022", t:"Docent, Farmaceutska hemija", s:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu" },
+      { y:"2016 - 2018", t:"Postdoktorski istraživač, Fiziologija", s:"Medicinski fakultet Univerziteta u Luisvilu, Kentaki, SAD" },
+      { y:"2012 - 2015", t:"Doktorat - Klinička i eksperimentalna farmakologija", s:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu" },
+      { y:"2012", t:"Magistar farmacije", s:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu" }
+    ]
+  };
+  const AWARDS = {
+    en: [
+      { y:"2024", t:"Charter of the University of Saint Sava - to the Center of Excellence for redox balance in cardiovascular and metabolic disorders, University of Kragujevac" },
+      { y:"2022", t:"Best female scientist at the Faculty of Medical Sciences, University of Kragujevac" },
+      { y:"2017", t:"Travel Award - 4th European Section Meeting of the IACS, Pécs, Hungary" },
+      { y:"2017", t:"Meritorious Postdoctoral Fellow Poster Presentation Award - Kentucky Chapter, American Physiological Society" },
+      { y:"2016", t:"Travel Award - 3rd European Section Meeting of the IACS, Marseille, France" }
+    ],
+    sr: [
+      { y:"2024", t:"Povelja Univerziteta Sveti Sava - Centru izuzetnih vrednosti za redoks ravnotežu u kardiovaskularnim i metaboličkim poremećajima, Univerzitet u Kragujevcu" },
+      { y:"2022", t:"Najbolja naučnica na Fakultetu medicinskih nauka Univerziteta u Kragujevcu" },
+      { y:"2017", t:"Nagrada za putovanje - 4. evropski sastanak IACS, Peč, Mađarska" },
+      { y:"2017", t:"Nagrada za postdoktorsko poster izlaganje - Kentaki ogranak Američkog fiziološkog društva" },
+      { y:"2016", t:"Nagrada za putovanje - 3. evropski sastanak IACS, Marsej, Francuska" }
+    ]
+  };
+  const MEMBERSHIPS = {
+    en: [
+      "American Heart Association - Hypertension Council (2016-2018)",
+      "Serbian Physiological Society",
+      "American Physiological Society (2016-2018)"
+    ],
+    sr: [
+      "Američko udruženje za srce - Savet za hipertenziju (2016-2018)",
+      "Srpsko fiziološko društvo",
+      "Američko fiziološko društvo (2016-2018)"
+    ]
+  };
+  const SKILLS = {
+    en: [
+      "Pharmaceutical chemistry","Experimental pharmacology","Redox biology","Cardiovascular physiology",
+      "Preclinical rodent models","Real-Time PCR (qPCR)","Western blot","Scientific writing","Mentoring","GLP · ISO 9001 · ISO 14001"
+    ],
+    sr: [
+      "Farmaceutska hemija","Eksperimentalna farmakologija","Redoks biologija","Kardiovaskularna fiziologija",
+      "Pretklinički modeli na glodarima","Real-Time PCR (qPCR)","Western blot","Naučno pisanje","Mentorstvo","GLP · ISO 9001 · ISO 14001"
+    ]
+  };
   const PUBS = [
     { t:"Tribological and Rheological Characterization of 3D Printed Polycarbonate", j:"Lubricants", y:"2026", url:"https://doi.org/10.3390/lubricants14010028" },
     { t:"Cardioprotective Role of Captopril: From Basic to Applied Investigations", j:"Int. J. of Molecular Sciences", y:"2025", url:"https://doi.org/10.3390/ijms26157215" },
@@ -2273,12 +2307,20 @@
     { t:"Browning of White Fat: Novel Insight into Factors, Mechanisms, and Therapeutics", j:"J. of Cellular Physiology", y:"2017", url:"https://doi.org/10.1002/jcp.25450" },
     { t:"Effects of ischemia and omeprazole preconditioning on functional recovery of isolated rat heart", j:"Braz. J. of Cardiovascular Surgery", y:"2015", url:"" }
   ];
-  const BOOKS = [
-    { t:"Modulation of Oxidative Stress in Heart Disease (chapter)", p:"Springer Nature Singapore, 2019", url:"https://doi.org/10.1007/978-981-13-8946-7" },
-    { t:"Biology of Women's Heart Health (chapter)", p:"Springer Nature, 2023", url:"https://doi.org/10.1007/978-3-031-39928-2" },
-    { t:"Pharmaceutical Chemistry 1 - chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
-    { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
-  ];
+  const BOOKS = {
+    en: [
+      { t:"Modulation of Oxidative Stress in Heart Disease (chapter)", p:"Springer Nature Singapore, 2019", url:"https://doi.org/10.1007/978-981-13-8946-7" },
+      { t:"Biology of Women's Heart Health (chapter)", p:"Springer Nature, 2023", url:"https://doi.org/10.1007/978-3-031-39928-2" },
+      { t:"Pharmaceutical Chemistry 1 - chosen chapters", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" },
+      { t:"Biopharmacy for students (chapter)", p:"Faculty of Medical Sciences, University of Kragujevac, 2021 · in Serbian", url:"" }
+    ],
+    sr: [
+      { t:"Modulacija oksidativnog stresa u bolestima srca (poglavlje)", p:"Springer Nature Singapore, 2019", url:"https://doi.org/10.1007/978-981-13-8946-7" },
+      { t:"Biologija ženskog kardiovaskularnog zdravlja (poglavlje)", p:"Springer Nature, 2023", url:"https://doi.org/10.1007/978-3-031-39928-2" },
+      { t:"Farmaceutska hemija 1 - izabrana poglavlja", p:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu, 2021 · na srpskom", url:"" },
+      { t:"Biofarmacija za studente (poglavlje)", p:"Fakultet medicinskih nauka, Univerzitet u Kragujevcu, 2021 · na srpskom", url:"" }
+    ]
+  };
   const SERVICES = ["svc_retreat_a","svc_retreat_b","svc_retreat_c","svc_workshop"];
   const SERVICE_ICONS = { svc_retreat_a:"fa-user-graduate", svc_retreat_b:"fa-user-graduate", svc_retreat_c:"fa-user-graduate", svc_workshop:"fa-chalkboard-user" };
   let selectedServiceKey = "";
@@ -2299,10 +2341,11 @@
   function renderTimeline(){
     const wrap = document.getElementById("timelineWrap");
     if(!wrap) return;
+    const items = TIMELINE[lang] || TIMELINE.en;
     wrap.className = "relative mt-6";
     let html = `<span class="hidden sm:block absolute left-1/2 -translate-x-1/2 top-1 bottom-1 w-0.5 bg-brand-light"></span>`;
     html += `<span class="sm:hidden absolute left-[7px] top-1 bottom-1 w-0.5 bg-brand-light"></span>`;
-    html += TIMELINE.map((it, i) => {
+    html += items.map((it, i) => {
       const left = i % 2 === 0;
       const card = `
         <div class="rounded-2xl border border-gray-100 bg-white p-4 hover:border-brand hover:shadow-md transition-all ${left?'sm:text-right':''}">
@@ -2321,7 +2364,8 @@
 
   function renderAwards(){
     const w = document.getElementById("awardsWrap"); if(!w) return;
-    w.innerHTML = AWARDS.map(a=>`
+    const items = AWARDS[lang] || AWARDS.en;
+    w.innerHTML = items.map(a=>`
       <li class="flex gap-3 items-start">
         <span class="shrink-0 mt-0.5 text-[11px] font-bold text-white bg-brand px-2 py-0.5 rounded-full">${a.y}</span>
         <span class="text-gray-700 text-sm leading-snug">${a.t}</span>
@@ -2329,11 +2373,13 @@
   }
   function renderMemberships(){
     const w = document.getElementById("membershipsWrap"); if(!w) return;
-    w.innerHTML = MEMBERSHIPS.map(m=>`<li class="flex gap-2 items-start text-sm"><i class="fa-solid fa-circle text-[6px] text-brand mt-2"></i><span>${m}</span></li>`).join("");
+    const items = MEMBERSHIPS[lang] || MEMBERSHIPS.en;
+    w.innerHTML = items.map(m=>`<li class="flex gap-2 items-start text-sm"><i class="fa-solid fa-circle text-[6px] text-brand mt-2"></i><span>${m}</span></li>`).join("");
   }
   function renderSkills(){
     const w = document.getElementById("skillsWrap"); if(!w) return;
-    w.innerHTML = SKILLS.map(s=>`<span class="px-3 py-1.5 rounded-full bg-brand-light text-brand text-sm font-medium">${s}</span>`).join("");
+    const items = SKILLS[lang] || SKILLS.en;
+    w.innerHTML = items.map(s=>`<span class="px-3 py-1.5 rounded-full bg-brand-light text-brand text-sm font-medium">${s}</span>`).join("");
   }
   function renderPubs(){
     const wrap = document.getElementById("pubsWrap"); if(!wrap) return;
@@ -2363,7 +2409,8 @@
 
   function renderBooks(){
     const w = document.getElementById("booksWrap"); if(!w) return;
-    w.innerHTML = BOOKS.map(b=>{
+    const items = BOOKS[lang] || BOOKS.en;
+    w.innerHTML = items.map(b=>{
       const inner = `
         <div class="flex gap-4 items-start rounded-2xl border border-gray-100 p-4 h-full hover:border-brand hover:shadow-md transition-all">
           <div class="h-10 w-10 rounded-lg bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid fa-book"></i></div>
@@ -2556,6 +2603,7 @@
     document.querySelectorAll("[data-i18n]").forEach(el=>{ const k=el.getAttribute("data-i18n"); if(t[k]!==undefined && typeof t[k]==="string") el.textContent = t[k]; });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{ const k=el.getAttribute("data-i18n-placeholder"); if(t[k]!==undefined && typeof t[k]==="string") el.setAttribute("placeholder", t[k]); });
     document.getElementById("langLabel").textContent = lang==="en" ? "SR" : "EN";
+    renderTimeline(); renderAwards(); renderMemberships(); renderSkills(); renderBooks();
     renderEpisodes(); renderServices(); renderServiceMenu(); buildCalendar(); updateDateLabel();
     if(selectedServiceKey) pickService(selectedServiceKey);
     else updateBookingLanguageHelp("");
