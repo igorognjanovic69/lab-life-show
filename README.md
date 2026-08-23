@@ -40,3 +40,16 @@ Optional Vercel environment variables:
 
 - `YOUTUBE_CHANNEL_ID` or `YT_CHANNEL_ID`
 - `YOUTUBE_HANDLE` or `YT_HANDLE`
+
+## SEO and AI discovery
+
+The final canonical domain is `https://lablifehub.com`.
+
+Prepared discovery files:
+
+- `/robots.txt`
+- `/sitemap.xml`
+- `/llms.txt`
+
+After the domain is connected in Vercel and DNS is propagated, submit
+`https://lablifehub.com/sitemap.xml` in Google Search Console.

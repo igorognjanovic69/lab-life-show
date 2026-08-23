@@ -5,8 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LabLifeHub - Dr. Nevena Jeremić</title>
   <meta name="description" content="Dr. Nevena Jeremić - Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. LabLifeHub, LabLifePodcast and LabLifeAcademy connect research, mentoring, reproducibility and scientific communication." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://lablifehub.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LabLifeHub" />
+  <meta property="og:title" content="LabLifeHub - Dr. Nevena Jeremić" />
+  <meta property="og:description" content="Science communication, research education, LabLifePodcast and LabLifeAcademy mentoring by Dr. Nevena Jeremić." />
+  <meta property="og:url" content="https://lablifehub.com/" />
+  <meta property="og:image" content="https://lablifehub.com/media/nevena-main.jpg" />
+  <meta property="og:image:alt" content="Dr. Nevena Jeremić and LabLifeHub" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LabLifeHub - Dr. Nevena Jeremić" />
+  <meta name="twitter:description" content="Science communication, research education, LabLifePodcast and LabLifeAcademy mentoring by Dr. Nevena Jeremić." />
+  <meta name="twitter:image" content="https://lablifehub.com/media/nevena-main.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lablifehub.com/#organization",
+        "name": "LabLifeHub",
+        "url": "https://lablifehub.com/",
+        "logo": "https://lablifehub.com/Logo.svg",
+        "email": "nevenajeremic@lablifehub.com",
+        "sameAs": [
+          "https://www.instagram.com/lablife.hub/",
+          "https://www.youtube.com/@lablifepodcast",
+          "https://www.linkedin.com/in/nevena-jeremic-b66b50223/",
+          "https://orcid.org/0000-0002-5284-8180",
+          "https://sciprofiles.com/profile/1298137"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lablifehub.com/#person",
+        "name": "Dr. Nevena Jeremić",
+        "givenName": "Nevena",
+        "familyName": "Jeremić",
+        "jobTitle": "Associate Professor of Pharmaceutical Chemistry",
+        "url": "https://lablifehub.com/about/",
+        "image": "https://lablifehub.com/media/nevena-main.jpg",
+        "email": "nevenajeremic@lablifehub.com",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Faculty of Medical Sciences, University of Kragujevac"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/nevena-jeremic-b66b50223/",
+          "https://orcid.org/0000-0002-5284-8180",
+          "https://sciprofiles.com/profile/1298137"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lablifehub.com/#website",
+        "name": "LabLifeHub",
+        "url": "https://lablifehub.com/",
+        "inLanguage": ["en", "sr"],
+        "publisher": { "@id": "https://lablifehub.com/#organization" }
+      },
+      {
+        "@type": "PodcastSeries",
+        "@id": "https://lablifehub.com/podcast/#podcast",
+        "name": "LabLifePodcast",
+        "url": "https://lablifehub.com/podcast/",
+        "sameAs": "https://www.youtube.com/@lablifepodcast",
+        "publisher": { "@id": "https://lablifehub.com/#organization" }
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://lablifehub.com/academy/#offers",
+        "name": "LabLifeAcademy services",
+        "url": "https://lablifehub.com/academy/",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "One-Day Intensive Retreat",
+            "price": "350",
+            "priceCurrency": "USD",
+            "url": "https://lablifehub.com/academy/one-day-intensive-retreat/",
+            "itemOffered": { "@type": "Service", "name": "One-Day Intensive Retreat", "provider": { "@id": "https://lablifehub.com/#person" } }
+          },
+          {
+            "@type": "Offer",
+            "name": "Two-Day Premium Retreat",
+            "price": "600",
+            "priceCurrency": "USD",
+            "url": "https://lablifehub.com/academy/two-day-premium-retreat/",
+            "itemOffered": { "@type": "Service", "name": "Two-Day Premium Retreat", "provider": { "@id": "https://lablifehub.com/#person" } }
+          },
+          {
+            "@type": "Offer",
+            "name": "Retreat + 30-Day Follow-Up Mentoring",
+            "price": "850",
+            "priceCurrency": "USD",
+            "url": "https://lablifehub.com/academy/follow-up-mentoring/",
+            "itemOffered": { "@type": "Service", "name": "Retreat + 30-Day Follow-Up Mentoring", "provider": { "@id": "https://lablifehub.com/#person" } }
+          },
+          {
+            "@type": "Offer",
+            "name": "Failure in Science Workshop",
+            "price": "25",
+            "priceCurrency": "USD",
+            "url": "https://lablifehub.com/academy/failure-in-science-workshop/",
+            "itemOffered": { "@type": "Service", "name": "Failure in Science Workshop", "provider": { "@id": "https://lablifehub.com/#person" } }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5/daisyui.css" rel="stylesheet" type="text/css" />
@@ -2135,6 +2247,8 @@
     updatePageMeta(pageFromLocation());
   }
   function toggleLang(){ lang = lang==="en" ? "sr" : "en"; applyLang(); }
+  const SITE_ORIGIN = "https://lablifehub.com";
+  const DEFAULT_SOCIAL_IMAGE = SITE_ORIGIN + "/media/nevena-main.jpg";
   const PAGE_PATHS = {
     home:"/",
     about:"/about/",
@@ -2244,9 +2358,19 @@
     closeAcademyMenu();
     goToPage(e, name);
   }
+  function setHeadMeta(selector, attrName, attrValue, content){
+    let el = document.querySelector(selector);
+    if(!el){
+      el = document.createElement("meta");
+      el.setAttribute(attrName, attrValue);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", content);
+  }
   function updatePageMeta(name){
     const meta = PAGE_META[name] && (PAGE_META[name][lang] || PAGE_META[name].en);
     if(!meta) return;
+    const pageUrl = new URL(PAGE_PATHS[name] || "/", SITE_ORIGIN).href;
     document.title = meta[0];
     const desc = document.querySelector('meta[name="description"]');
     if(desc) desc.setAttribute("content", meta[1]);
@@ -2256,7 +2380,14 @@
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", new URL(PAGE_PATHS[name] || "/", window.location.origin).href);
+    canonical.setAttribute("href", pageUrl);
+    setHeadMeta('meta[property="og:title"]', "property", "og:title", meta[0]);
+    setHeadMeta('meta[property="og:description"]', "property", "og:description", meta[1]);
+    setHeadMeta('meta[property="og:url"]', "property", "og:url", pageUrl);
+    setHeadMeta('meta[property="og:image"]', "property", "og:image", DEFAULT_SOCIAL_IMAGE);
+    setHeadMeta('meta[name="twitter:title"]', "name", "twitter:title", meta[0]);
+    setHeadMeta('meta[name="twitter:description"]', "name", "twitter:description", meta[1]);
+    setHeadMeta('meta[name="twitter:image"]', "name", "twitter:image", DEFAULT_SOCIAL_IMAGE);
   }
   function showPage(name, opts){
     opts = opts || {};

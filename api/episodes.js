@@ -48,7 +48,7 @@ async function fetchText(url) {
   const response = await fetch(url, {
     headers: {
       "Accept": "application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
-      "User-Agent": "LabLifeHub/1.0 (+https://lab-life-show.vercel.app)",
+      "User-Agent": "LabLifeHub/1.0 (+https://lablifehub.com)",
     },
   });
 

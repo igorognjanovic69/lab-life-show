@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.lablifehub.com" }],
+      "destination": "https://lablifehub.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/about", "destination": "/index.html" },
     { "source": "/about/(.*)", "destination": "/index.html" },
