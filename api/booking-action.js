@@ -95,7 +95,7 @@ async function acceptBooking(req, res, booking, form) {
     esc(booking.name) +
     ",</p>" +
     "<p>Thank you for your booking request. Your session has been confirmed.</p>" +
-    bookingDetailsHtml({ ...booking, date: humanSlot(slot) }) +
+    bookingDetailsHtml(publicBooking({ ...booking, date: humanSlot(slot) })) +
     (note ? "<p><strong>Note from Dr. Nevena Jeremić:</strong><br/>" + esc(note).replace(/\n/g, "<br/>") + "</p>" : "") +
     (calendar.ok && calendar.htmlLink
       ? '<p><a href="' + esc(calendar.htmlLink) + '">Open calendar event</a></p>'
@@ -105,7 +105,6 @@ async function acceptBooking(req, res, booking, form) {
   const ics = buildIcs({ booking, slot, note, eventId });
   await sendEmail({
     to: booking.email,
-    bcc: SITE_EMAIL,
     replyTo: SITE_EMAIL,
     subject: "Booking confirmed: " + booking.service,
     html,
@@ -127,7 +126,7 @@ async function acceptBooking(req, res, booking, form) {
       successBox("Confirmation email has been sent to " + esc(booking.email) + ".") +
         (calendar.ok
           ? successBox("Google Calendar event created." + (calendar.htmlLink ? ' <a href="' + esc(calendar.htmlLink) + '">Open event</a>' : ""))
-          : infoBox("Google Calendar is not connected yet. The candidate received an .ics invite, and Nevena received a copy by email."))
+          : infoBox("Google Calendar is not connected yet. The requester received an .ics invite."))
     )
   );
 }
@@ -164,7 +163,6 @@ async function proposeTime(req, res, booking, form) {
 
   await sendEmail({
     to: booking.email,
-    bcc: SITE_EMAIL,
     replyTo: SITE_EMAIL,
     subject: "Alternative date/time: " + booking.service,
     html,
@@ -206,7 +204,7 @@ async function acceptProposedTime(req, res, proposal, form) {
     esc(booking.name) +
     ",</p>" +
     "<p>Thank you for confirming the proposed date and time. Your session has been confirmed.</p>" +
-    bookingDetailsHtml({ ...booking, date: humanSlot(slot) }) +
+    bookingDetailsHtml(publicBooking({ ...booking, date: humanSlot(slot) })) +
     (proposal.note ? "<p><strong>Note from Dr. Nevena Jeremić:</strong><br/>" + esc(proposal.note).replace(/\n/g, "<br/>") + "</p>" : "") +
     (requesterNote ? "<p><strong>Your note:</strong><br/>" + esc(requesterNote).replace(/\n/g, "<br/>") + "</p>" : "") +
     (calendar.ok && calendar.htmlLink
@@ -217,7 +215,6 @@ async function acceptProposedTime(req, res, proposal, form) {
   const ics = buildIcs({ booking, slot, note, eventId });
   await sendEmail({
     to: booking.email,
-    bcc: SITE_EMAIL,
     replyTo: SITE_EMAIL,
     subject: "Booking confirmed: " + booking.service,
     html,
@@ -230,6 +227,20 @@ async function acceptProposedTime(req, res, proposal, form) {
     ],
     idempotencyKey: "booking-proposal-accept-" + eventId,
   });
+  await sendEmail({
+    to: SITE_EMAIL,
+    replyTo: booking.email,
+    subject: "Client accepted proposed time: " + booking.service,
+    html:
+      "<h2>Client accepted the proposed time</h2>" +
+      bookingDetailsHtml(publicBooking({ ...booking, date: humanSlot(slot) })) +
+      (proposal.note ? "<p><strong>Your proposal note:</strong><br/>" + esc(proposal.note).replace(/\n/g, "<br/>") + "</p>" : "") +
+      (requesterNote ? "<p><strong>Client note:</strong><br/>" + esc(requesterNote).replace(/\n/g, "<br/>") + "</p>" : "") +
+      (calendar.ok && calendar.htmlLink
+        ? '<p><a href="' + esc(calendar.htmlLink) + '">Open calendar event</a></p>'
+        : ""),
+    idempotencyKey: "booking-proposal-accepted-admin-" + eventId,
+  });
 
   return sendHtml(
     res,
@@ -240,7 +251,7 @@ async function acceptProposedTime(req, res, proposal, form) {
         successBox("Confirmation email has been sent to " + esc(booking.email) + ".") +
         (calendar.ok
           ? successBox("Google Calendar event created." + (calendar.htmlLink ? ' <a href="' + esc(calendar.htmlLink) + '">Open event</a>' : ""))
-          : infoBox("Google Calendar is not connected yet. You received an .ics invite, and Nevena received a copy by email."))
+          : infoBox("Google Calendar is not connected yet. You received an .ics invite, and Dr. Nevena Jeremić has been notified by email."))
     )
   );
 }
@@ -254,13 +265,7 @@ async function requestDifferentTime(req, res, proposal, form) {
   const followUpBooking = {
     ...booking,
     date: slot.date,
-    message: [
-      booking.message,
-      "Requester asked for another date/time after the proposed slot: " + humanSlot(proposal.slot) + ".",
-      note ? "Requester note: " + note : "",
-    ]
-      .filter(Boolean)
-      .join("\n\n"),
+    message: publicMessage(booking.message),
     submittedAt: new Date().toISOString(),
   };
   const adminToken = signBooking(followUpBooking);
@@ -274,7 +279,7 @@ async function requestDifferentTime(req, res, proposal, form) {
     "</strong> responded to the alternative time proposal for <strong>" +
     esc(booking.service) +
     "</strong>.</p>" +
-    bookingDetailsHtml(booking) +
+    bookingDetailsHtml(publicBooking(booking)) +
     "<p><strong>Previously proposed time:</strong><br/>" +
     esc(humanSlot(proposal.slot)) +
     "</p>" +
@@ -324,7 +329,6 @@ async function declineBooking(req, res, booking, form) {
 
   await sendEmail({
     to: booking.email,
-    bcc: SITE_EMAIL,
     replyTo: SITE_EMAIL,
     subject: "Booking request update: " + booking.service,
     html,
@@ -656,6 +660,31 @@ function foldLine(line) {
 
 function footer() {
   return '<p style="margin-top:24px;">Best regards,<br/>Dr. Nevena Jeremić<br/>LabLifeHub</p>';
+}
+
+function publicBooking(booking) {
+  return { ...booking, message: publicMessage(booking && booking.message) };
+}
+
+function publicMessage(value) {
+  let message = clean(value, 4000);
+  const markers = [
+    "\n\nRequester asked for another date/time after the proposed slot:",
+    "\nRequester asked for another date/time after the proposed slot:",
+    "\n\nPreviously proposed time:",
+    "\nPreviously proposed time:",
+    "\n\nRequester suggested:",
+    "\nRequester suggested:",
+    "\n\nRequester note:",
+    "\nRequester note:",
+  ];
+
+  for (const marker of markers) {
+    const index = message.indexOf(marker);
+    if (index >= 0) message = message.slice(0, index);
+  }
+
+  return message.trim();
 }
 
 function signProposal(booking, slot, note) {
