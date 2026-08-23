@@ -275,7 +275,7 @@
           </div>
         </div>
         <a href="/book/" class="nav-link cursor-pointer transition-colors" data-nav="book" onclick="goToPage(event,'book')" data-i18n="nav_book">Book</a>
-        <a href="/reviews/" class="nav-link cursor-pointer transition-colors" data-nav="reviews" onclick="goToPage(event,'reviews')" data-i18n="nav_reviews">Reviews</a>
+        <a href="/be-guest/" class="nav-link cursor-pointer transition-colors" data-nav="guest" onclick="goToPage(event,'guest')" data-i18n="nav_be_guest">Be Guest</a>
         <a href="/contact/" class="nav-link cursor-pointer transition-colors" data-nav="contact" onclick="goToPage(event,'contact')" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="flex items-center gap-2">
@@ -310,7 +310,7 @@
           </div>
         </div>
         <a href="/book/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'book')" data-i18n="nav_book">Book</a>
-        <a href="/reviews/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'reviews')" data-i18n="nav_reviews">Reviews</a>
+        <a href="/be-guest/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'guest')" data-i18n="nav_be_guest">Be Guest</a>
         <a href="/contact/" class="py-3 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'contact')" data-i18n="nav_contact">Contact</a>
       </div>
     </div>
@@ -759,7 +759,7 @@
           <a href="/be-guest/" onclick="goToPage(event,'guest')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors inline-flex items-center">
             <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
           </a>
-          <button onclick="showPage('contact')" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
+          <button onclick="openNotifyModal()" class="px-5 py-3 rounded-full border border-white/60 text-white font-medium text-sm hover:bg-white/10 transition-colors">
             <i class="fa-regular fa-bell mr-2"></i><span data-i18n="pod_cta_notify">Get notified</span>
           </button>
         </div>
@@ -1620,6 +1620,44 @@
 
   </main>
 
+  <div id="notifyModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/50 px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="notifyTitle" onclick="if(event.target===this) closeNotifyModal()">
+    <div class="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl relative">
+      <button type="button" onclick="closeNotifyModal()" class="absolute right-4 top-4 h-9 w-9 rounded-full bg-gray-50 text-gray-500 hover:bg-brand-light hover:text-brand transition-colors" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="notifyFormWrap">
+        <div class="h-12 w-12 rounded-2xl bg-brand-light text-brand flex items-center justify-center text-xl">
+          <i class="fa-regular fa-bell"></i>
+        </div>
+        <h2 id="notifyTitle" class="mt-4 text-2xl font-black pr-10" data-i18n="notify_title">Get LabLifePodcast updates</h2>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed" data-i18n="notify_intro">Leave your email and Dr. Nevena Jeremić will receive your subscription request for LabLifePodcast updates.</p>
+
+        <form id="notifyForm" class="mt-5 space-y-4">
+          <input id="n_website" type="text" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+          <div>
+            <label class="text-sm font-medium text-gray-600" for="n_name" data-i18n="notify_name">Name and surname (optional)</label>
+            <input id="n_name" type="text" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+          </div>
+          <div>
+            <label class="text-sm font-medium text-gray-600" for="n_email" data-i18n="notify_email">Email</label>
+            <input id="n_email" required type="email" class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+          </div>
+          <button type="submit" class="w-full px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
+            <i class="fa-regular fa-paper-plane mr-2"></i><span data-i18n="notify_submit">Subscribe for updates</span>
+          </button>
+        </form>
+      </div>
+
+      <div id="notifyDone" class="hidden text-center py-5">
+        <div class="h-14 w-14 rounded-full bg-brand-light text-brand text-2xl flex items-center justify-center mx-auto"><i class="fa-solid fa-check"></i></div>
+        <h3 class="mt-4 font-bold text-lg" data-i18n="notify_done_title">Thank you!</h3>
+        <p id="notifySummary" class="mt-2 text-sm text-gray-600 px-4"></p>
+        <button onclick="resetNotify()" class="mt-5 text-sm text-brand font-medium" data-i18n="notify_again">Add another email</button>
+      </div>
+    </div>
+  </div>
+
   <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 flex flex-wrap justify-center gap-3">
     <a data-yt-link href="https://www.youtube.com/@lablifepodcast" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors shadow-sm">
       <i class="fa-brands fa-youtube text-base"></i><span data-i18n="cta_youtube">Follow me on YouTube</span>
@@ -1684,7 +1722,7 @@
   <script>
   const I18N = {
     en: {
-      nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_contact:"Contact",
+      nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_be_guest:"Be Guest", nav_contact:"Contact",
       academy_menu_about:"About the Academy",
       footer_about:"Science communication, research education, mentoring and advanced workshops by Dr. Nevena Jeremić.",
       footer_site:"Site", footer_academy:"LabLifeAcademy", footer_follow:"Follow", footer_privacy:"Privacy Policy", footer_terms:"Terms of Service", footer_be_guest:"Be a guest",
@@ -1840,6 +1878,15 @@
       pod_episodes:"Episodes",
       podcast_cta_title:"Have a scientific story worth sharing?", podcast_cta_text:"Suggest a guest, propose a topic, or join LabLifePodcast as a researcher, clinician, innovator or founder.",
       podcast_cta_academy:"Explore LabLifeAcademy",
+      notify_title:"Get LabLifePodcast updates",
+      notify_intro:"Leave your email and Dr. Nevena Jeremić will receive your subscription request for LabLifePodcast updates.",
+      notify_name:"Name and surname (optional)",
+      notify_email:"Email",
+      notify_submit:"Subscribe for updates",
+      notify_done_title:"Thank you!",
+      notify_again:"Add another email",
+      notify_sent:"Thank you - your subscription request has been sent.",
+      notify_summary:"Thank you - your subscription request has been submitted.",
       guest_eyebrow:"LabLifePodcast guest application",
       guest_title:"Be a guest on LabLifePodcast",
       guest_intro:"Share your scientific story, research path, professional experience, or innovation journey. This form helps Dr. Nevena Jeremić understand who you are, what you work on, and why your perspective would be valuable for the podcast audience.",
@@ -1878,6 +1925,8 @@
       book_eyebrow:"LabLifeAcademy booking", book_title:"Book a LabLifeAcademy offer",
       book_intro:"Choose a premium retreat or workshop, pick a date, and send your request. You'll receive a reply to confirm the details.",
       book_choose:"1 · Choose an offer", book_details:"2 · Your details",
+      book_guest_title:"Be a guest on LabLifePodcast",
+      book_guest_desc:"Apply for a podcast conversation and introduce your expertise, work, topic idea and useful links.",
       book_workshop_heading:"Science Workshop",
       svc_retreat_a_t:"One-Day Intensive Retreat", svc_retreat_a_d:"4-5 hours · fast, focused 1:1 guidance · $350.",
       svc_retreat_b_t:"Two-Day Premium Retreat", svc_retreat_b_d:"2 × 3 hours · deep project transformation · $600.",
@@ -1920,7 +1969,7 @@
       summary:(s,d)=>`Thank you - your <b>${s}</b> request${d?` for <b>${d}</b>`:""} has been submitted. Dr. Jeremić will reply to confirm the details.`
     },
     sr: {
-      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_contact:"Kontakt",
+      nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_be_guest:"Be Guest", nav_contact:"Kontakt",
       academy_menu_about:"O akademiji",
       footer_about:"Naučna komunikacija, istraživačka edukacija, mentorstvo i napredne radionice dr Nevene Jeremić.",
       footer_site:"Sajt", footer_academy:"LabLifeAcademy", footer_follow:"Mreže", footer_privacy:"Politika privatnosti", footer_terms:"Uslovi korišćenja", footer_be_guest:"Budite gost",
@@ -2076,6 +2125,15 @@
       pod_episodes:"Epizode",
       podcast_cta_title:"Imate naučnu priču vrednu deljenja?", podcast_cta_text:"Predložite gosta, temu ili se uključite u LabLifePodcast kao istraživač, kliničar, inovator ili osnivač.",
       podcast_cta_academy:"Pogledaj LabLifeAcademy",
+      notify_title:"Obaveštenja za LabLifePodcast",
+      notify_intro:"Ostavite email i dr Nevena Jeremić će dobiti vaš zahtev za obaveštenja o LabLifePodcast sadržaju.",
+      notify_name:"Ime i prezime (opciono)",
+      notify_email:"E-mail",
+      notify_submit:"Prijavi se za obaveštenja",
+      notify_done_title:"Hvala!",
+      notify_again:"Dodaj drugi email",
+      notify_sent:"Hvala - vaš zahtev za obaveštenja je poslat.",
+      notify_summary:"Hvala - vaš zahtev za obaveštenja je primljen.",
       guest_eyebrow:"Prijava za gosta LabLifePodcasta",
       guest_title:"Budite gost u LabLifePodcastu",
       guest_intro:"Podelite svoju naučnu priču, istraživački put, profesionalno iskustvo ili inovacioni rad. Ova forma pomaže dr Neveni Jeremić da razume ko ste, čime se bavite i zašto bi vaša perspektiva bila vredna za publiku podkasta.",
@@ -2114,6 +2172,8 @@
       book_eyebrow:"LabLifeAcademy zakazivanje", book_title:"Zakažite LabLifeAcademy ponudu",
       book_intro:"Izaberite premijum program ili radionicu, odaberite datum i pošaljite zahtev. Dobićete odgovor radi potvrde detalja.",
       book_choose:"1 · Izaberite ponudu", book_details:"2 · Vaši podaci",
+      book_guest_title:"Budite gost u LabLifePodcastu",
+      book_guest_desc:"Prijavite se za podcast razgovor i predstavite svoju ekspertizu, rad, ideju za temu i korisne linkove.",
       book_workshop_heading:"Naučna radionica",
       svc_retreat_a_t:"Jednodnevni intenzivni program", svc_retreat_a_d:"4-5 sati · brzo i fokusirano 1:1 vođenje · $350.",
       svc_retreat_b_t:"Dvodnevni premijum program", svc_retreat_b_d:"2 × 3 sata · dubinska transformacija projekta · $600.",
@@ -2419,6 +2479,16 @@
   /* ---------- services + dropdown ---------- */
   function renderServices(){
     const t = I18N[lang];
+    const guestCard = `
+      <a href="/be-guest/" onclick="goToPage(event,'guest')" class="block rounded-2xl border border-brand bg-brand text-white p-4 hover:bg-brand-dark hover:shadow-md transition-all">
+        <div class="flex gap-4 items-start">
+          <div class="h-10 w-10 rounded-xl bg-white/15 text-lime flex items-center justify-center shrink-0"><i class="fa-solid fa-microphone-lines"></i></div>
+          <div>
+            <p class="font-bold text-sm">${t.book_guest_title}</p>
+            <p class="mt-1 text-sm text-white/80">${t.book_guest_desc}</p>
+          </div>
+        </div>
+      </a>`;
     const retreatCards = ["svc_retreat_a","svc_retreat_b","svc_retreat_c"].map(s=>{
       return `
         <button type="button" onclick="pickService('${s}')" data-svc="${s}" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light transition-colors">
@@ -2438,6 +2508,7 @@
         </div>
       </button>`;
     document.getElementById("servicesWrap").innerHTML = `
+      ${guestCard}
       <div>
         <h4 class="mb-3 text-sm font-black text-ink" data-i18n="retreat_pricing_title">${t.retreat_pricing_title}</h4>
         <div class="space-y-3">${retreatCards}</div>
@@ -2584,7 +2655,7 @@
     if(replace) window.history.replaceState({ page:name }, "", target);
     else window.history.pushState({ page:name }, "", target);
   }
-  function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name === "guest" ? "podcast" : name; }
+  function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name; }
   function goToPage(e, name){ if(e) e.preventDefault(); showPage(name); }
   function setAcademyMenu(open){
     const menu = document.getElementById("academyDropdown");
@@ -2658,7 +2729,7 @@
     const wrap = document.getElementById("academyNavWrap");
     if(wrap && !wrap.contains(e.target)) closeAcademyMenu();
   });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeAcademyMenu(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeAcademyMenu(); closeNotifyModal(); } });
   function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
 
   /* ---------- calendar ---------- */
@@ -2744,6 +2815,46 @@
     f.reset();
     document.getElementById("reviewDone").classList.add("hidden");
     f.classList.remove("hidden");
+  }
+
+  /* ---------- podcast notifications ---------- */
+  function openNotifyModal(){
+    const modal = document.getElementById("notifyModal");
+    if(!modal) return;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    setTimeout(function(){ document.getElementById("n_email")?.focus(); }, 50);
+  }
+  function closeNotifyModal(){
+    const modal = document.getElementById("notifyModal");
+    if(!modal) return;
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+  document.getElementById("notifyForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    const t = I18N[lang];
+    const val = id => document.getElementById(id)?.value || "";
+    const payload = {
+      type:"podcastNotify",
+      name:val("n_name"),
+      email:val("n_email"),
+      subject:"LabLifePodcast notification subscription",
+      website:val("n_website"),
+      message:"Please notify me when LabLifePodcast updates are available."
+    };
+    let sent=false;
+    try { const r=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
+    document.getElementById("notifySummary").textContent = sent ? t.notify_sent : t.notify_summary;
+    document.getElementById("notifyFormWrap").classList.add("hidden");
+    document.getElementById("notifyDone").classList.remove("hidden");
+  });
+  function resetNotify(){
+    const f=document.getElementById("notifyForm");
+    f.reset();
+    document.getElementById("notifyDone").classList.add("hidden");
+    document.getElementById("notifyFormWrap").classList.remove("hidden");
+    setTimeout(function(){ document.getElementById("n_email")?.focus(); }, 50);
   }
 
   /* ---------- podcast guest ---------- */

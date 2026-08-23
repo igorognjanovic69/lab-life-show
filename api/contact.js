@@ -31,6 +31,7 @@ module.exports = async (req, res) => {
   const message = clean(body.message, 6000);
   const website = clean(body.website, 300);
   const isPodcastGuest = type === "podcastGuest";
+  const isPodcastNotify = type === "podcastNotify";
   const guest = body.guest && typeof body.guest === "object" ? body.guest : {};
 
   // Honeypot: bots often complete hidden fields.
@@ -85,6 +86,33 @@ module.exports = async (req, res) => {
       to,
       email,
       subject: "Podcast guest application - " + name,
+      html,
+    });
+  }
+
+  if (isPodcastNotify) {
+    if (!email) {
+      return res.status(400).json({ ok: false, error: "Missing required fields" });
+    }
+
+    if (!key) {
+      return res.status(200).json({ ok: true, configured: false });
+    }
+
+    const subscriberName = name || "Podcast subscriber";
+    const html =
+      "<h2>New LabLifePodcast notification subscription</h2>" +
+      detail("Name", subscriberName) +
+      detail("Email", email) +
+      block("Message", message || "Please notify me when LabLifePodcast updates are available.");
+
+    return sendContactEmail({
+      res,
+      key,
+      from,
+      to,
+      email,
+      subject: "Podcast notification subscription - " + subscriberName,
       html,
     });
   }
