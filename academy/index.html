@@ -1280,12 +1280,17 @@
               <input id="f_phone" required type="tel" placeholder="+381 ..." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
             </div>
             <div>
-              <label class="text-sm font-medium text-gray-600" for="f_language" data-i18n="form_language">Preferred language</label>
-              <select id="f_language" required class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none bg-white">
-                <option value="" data-i18n="form_language_ph">Choose preferred language…</option>
-                <option value="English" data-i18n="lang_english">English</option>
-                <option value="Serbian" data-i18n="lang_serbian">Serbian</option>
-              </select>
+              <label class="text-sm font-medium text-gray-600" data-i18n="form_language">Preferred language</label>
+              <div class="mt-2 grid grid-cols-2 gap-3">
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
+                  <input required type="radio" name="preferredLanguage" value="English" class="text-brand focus:ring-brand" />
+                  <span data-i18n="lang_english">English</span>
+                </label>
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
+                  <input required type="radio" name="preferredLanguage" value="Serbian" class="text-brand focus:ring-brand" />
+                  <span data-i18n="lang_serbian">Serbian</span>
+                </label>
+              </div>
               <p id="f_language_help" class="mt-1 text-xs text-gray-500" data-i18n="form_language_help">Choose the language for this LabLifeAcademy offer.</p>
             </div>
             <div>
@@ -2502,7 +2507,8 @@
     const svc = document.getElementById("f_service").value;
     if(!svc){ const btn=document.getElementById("serviceBtn"); if(btn){ btn.classList.add("border-red-400"); btn.focus(); } return; }
     let dStr = selectedDate ? `${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}` : "";
-    const payload = { service:svc, preferredLanguage:document.getElementById("f_language").value, name:document.getElementById("f_name").value, email:document.getElementById("f_email").value, phone:document.getElementById("f_phone").value, date:document.getElementById("f_date").value, message:document.getElementById("f_msg").value };
+    const languageInput = document.querySelector('input[name="preferredLanguage"]:checked');
+    const payload = { service:svc, preferredLanguage:languageInput ? languageInput.value : "", name:document.getElementById("f_name").value, email:document.getElementById("f_email").value, phone:document.getElementById("f_phone").value, date:document.getElementById("f_date").value, message:document.getElementById("f_msg").value };
     let sent=false;
     try { const r=await fetch("/api/book",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
     document.getElementById("bookingSummary").innerHTML = sent ? t.done_sent : t.summary(svc, dStr);
