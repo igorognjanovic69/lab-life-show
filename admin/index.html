@@ -71,6 +71,7 @@
           <strong>Google Calendar</strong>
           <span id="calendarStatus" class="status off">Checking...</span>
           <p id="calendarHelp">Accept will create calendar events after Google OAuth is connected for lablifehub@gmail.com.</p>
+          <p id="calendarAction" class="hidden" style="margin-top:14px"></p>
         </div>
         <div class="tile">
           <strong>Booking actions</strong>
@@ -107,8 +108,16 @@
       dashboard.classList.remove("hidden");
       setStatus("emailStatus", Boolean(status.features?.email), status.features?.email ? "Connected" : "Missing RESEND_API_KEY");
       setStatus("calendarStatus", Boolean(status.features?.calendar), status.features?.calendar ? "Connected" : "Not connected yet");
+      document.getElementById("calendarAction").classList.add("hidden");
       if(status.features?.calendar){
         document.getElementById("calendarHelp").textContent = "Accept creates events in " + (status.features.calendarAccount || "the connected Google Calendar") + ".";
+      } else if(status.features?.calendarOAuthClient){
+        document.getElementById("calendarHelp").textContent = "Google OAuth client is ready. Connect the calendar account to generate the refresh token.";
+        const action = document.getElementById("calendarAction");
+        action.innerHTML = '<a class="button" href="/api/google-oauth-start">Connect Google Calendar</a>';
+        action.classList.remove("hidden");
+      } else {
+        document.getElementById("calendarHelp").textContent = "Add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in Vercel, redeploy, then connect lablifehub@gmail.com here.";
       }
     }
     async function refreshSession(){

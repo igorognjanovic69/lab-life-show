@@ -32,6 +32,13 @@ account and configure:
 - `GOOGLE_CALENDAR_ID` - optional, defaults to `primary`
 - `GOOGLE_CALENDAR_EMAIL` - optional dashboard label, defaults to `lablifehub@gmail.com`
 
+OAuth callback URL for the Google Cloud OAuth client:
+
+- `https://lablifehub.com/api/google-oauth-callback`
+
+After `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are deployed, log in to
+`/admin/` and use **Connect Google Calendar** to generate `GOOGLE_REFRESH_TOKEN`.
+
 ## Admin
 
 The private admin page is available at `/admin/`, is not linked publicly, and is
