@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
+      "has": [{ "type": "host", "value": "lab-life-show.vercel.app" }],
+      "destination": "https://lablifehub.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.lablifehub.com" }],
       "destination": "https://lablifehub.com/:path*",
       "permanent": true
