@@ -11,22 +11,61 @@
       "has": [{ "type": "host", "value": "www.lablifehub.com" }],
       "destination": "https://lablifehub.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/research",
+      "destination": "/research/",
+      "permanent": true
+    },
+    {
+      "source": "/podcast",
+      "destination": "/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/academy",
+      "destination": "/academy/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/one-day-intensive-retreat",
+      "destination": "/academy/one-day-intensive-retreat/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/two-day-premium-retreat",
+      "destination": "/academy/two-day-premium-retreat/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/follow-up-mentoring",
+      "destination": "/academy/follow-up-mentoring/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/failure-in-science-workshop",
+      "destination": "/academy/failure-in-science-workshop/",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/reviews/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "permanent": true
     }
-  ],
-  "rewrites": [
-    { "source": "/about", "destination": "/index.html" },
-    { "source": "/about/(.*)", "destination": "/index.html" },
-    { "source": "/research", "destination": "/index.html" },
-    { "source": "/research/(.*)", "destination": "/index.html" },
-    { "source": "/podcast", "destination": "/index.html" },
-    { "source": "/podcast/(.*)", "destination": "/index.html" },
-    { "source": "/academy", "destination": "/index.html" },
-    { "source": "/academy/(.*)", "destination": "/index.html" },
-    { "source": "/book", "destination": "/index.html" },
-    { "source": "/book/(.*)", "destination": "/index.html" },
-    { "source": "/reviews", "destination": "/index.html" },
-    { "source": "/reviews/(.*)", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" },
-    { "source": "/contact/(.*)", "destination": "/index.html" }
   ]
 }
