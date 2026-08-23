@@ -1,16 +1,21 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://lablifehub.com/sitemap.xml

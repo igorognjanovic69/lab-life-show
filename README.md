@@ -13,6 +13,32 @@ Configure this environment variable in Vercel:
 Optional overrides:
 
 - `BOOKING_FROM_EMAIL` - defaults to `LabLifeHub <nevenajeremic@lablifehub.com>` and must be a verified sender/domain in Resend
+- `BOOKING_ACTION_SECRET` - optional HMAC secret for secure Accept / Propose / Decline booking links
+- `BOOKING_TIME_ZONE` - defaults to `Europe/Belgrade`
+- `BOOKING_DEFAULT_TIME` - defaults to `10:00`
+
+Booking notification emails include secure action links:
+
+- Accept - sends a confirmation email with an `.ics` invite and creates a Google Calendar event when Google Calendar is connected
+- Propose new date & time - sends an alternative slot to the requester
+- Decline - sends a polite decline/update email
+
+To enable direct Google Calendar insertion, connect OAuth for the calendar
+account and configure:
+
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
+- `GOOGLE_REFRESH_TOKEN`
+- `GOOGLE_CALENDAR_ID` - optional, defaults to `primary`
+- `GOOGLE_CALENDAR_EMAIL` - optional dashboard label, defaults to `lablifehub@gmail.com`
+
+## Admin
+
+The private admin page is available at `/admin/`, is not linked publicly, and is
+excluded from indexing. Configure these Vercel environment variables:
+
+- `ADMIN_PASSWORD`
+- `ADMIN_SESSION_SECRET` - optional; otherwise the app reuses `BOOKING_ACTION_SECRET` or `RESEND_API_KEY`
 
 Testimonials are sent for manual approval and are never published automatically.
 

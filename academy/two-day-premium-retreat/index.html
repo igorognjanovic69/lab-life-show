@@ -154,9 +154,16 @@
     .page { display: none; animation: fade .35s ease; }
     .page.active { display: block; }
     @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 2.25rem;
+      line-height: 1;
+    }
     .nav-link.active-link { color: #179389; }
     .nav-link.active-link::after { width: 100%; }
-    .nav-link::after { content: ""; display: block; height: 2px; width: 0; background: #179389; transition: width .25s ease; margin-top: 2px; }
+    .nav-link::after { content: ""; display: block; position: absolute; left: 0; bottom: .25rem; height: 2px; width: 0; background: #179389; transition: width .25s ease; margin-top: 0; }
     .nav-link:hover::after { width: 100%; }
     .sci-grid { background-image: radial-gradient(#17938922 1px, transparent 1px); background-size: 22px 22px; }
     .lime-grid { background-image: radial-gradient(#78940f20 1px, transparent 1px); background-size: 24px 24px; }
@@ -241,7 +248,7 @@
         <a href="/about/" class="nav-link cursor-pointer transition-colors" data-nav="about" onclick="goToPage(event,'about')" data-i18n="nav_about">About</a>
         <a href="/research/" class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="goToPage(event,'research')" data-i18n="nav_research">Research</a>
         <a href="/podcast/" class="nav-link cursor-pointer transition-colors" data-nav="podcast" onclick="goToPage(event,'podcast')" data-i18n="nav_podcast">Podcast</a>
-        <div id="academyNavWrap" class="relative" onmouseenter="setAcademyMenu(true)" onmouseleave="closeAcademyMenu()">
+        <div id="academyNavWrap" class="relative flex items-center" onmouseenter="setAcademyMenu(true)" onmouseleave="closeAcademyMenu()">
           <button type="button" id="academyNavBtn" class="nav-link cursor-pointer transition-colors inline-flex items-center gap-1 bg-transparent border-0 p-0 font-medium" data-nav="academy" onclick="toggleAcademyMenu(event)" aria-expanded="false" aria-controls="academyDropdown">
             <span data-i18n="nav_academy">Academy</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
           </button>

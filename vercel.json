@@ -13,6 +13,11 @@
       "permanent": true
     },
     {
+      "source": "/admin",
+      "destination": "/admin/",
+      "permanent": true
+    },
+    {
       "source": "/about",
       "destination": "/about/",
       "permanent": true
