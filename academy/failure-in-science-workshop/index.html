@@ -1280,14 +1280,14 @@
               <input id="f_phone" required type="tel" placeholder="+381 ..." class="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
             </div>
             <div>
-              <label class="text-sm font-medium text-gray-600" data-i18n="form_language">Preferred language</label>
+              <label class="text-sm font-medium text-gray-600" data-i18n="form_language">Preferred language(s)</label>
               <div class="mt-2 grid grid-cols-2 gap-3">
-                <label class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
-                  <input required type="radio" name="preferredLanguage" value="English" class="text-brand focus:ring-brand" />
+                <label data-language-option class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
+                  <input type="checkbox" name="preferredLanguage" value="English" class="rounded text-brand focus:ring-brand" />
                   <span data-i18n="lang_english">English</span>
                 </label>
-                <label class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
-                  <input required type="radio" name="preferredLanguage" value="Serbian" class="text-brand focus:ring-brand" />
+                <label data-language-option class="flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2.5 text-sm cursor-pointer hover:border-brand transition-colors">
+                  <input type="checkbox" name="preferredLanguage" value="Serbian" class="rounded text-brand focus:ring-brand" />
                   <span data-i18n="lang_serbian">Serbian</span>
                 </label>
               </div>
@@ -1731,8 +1731,8 @@
       svc_mentor_t:"Mentorship session", svc_mentor_d:"Guidance on building a research career and publishing better science.",
       form_service:"Service", form_service_ph:"Select a service…",
       form_name:"Name", form_email:"Email", form_phone:"Phone",
-      form_language:"Preferred language", form_language_ph:"Choose preferred language…", lang_english:"English", lang_serbian:"Serbian",
-      form_language_help:"Choose the language for this LabLifeAcademy offer.", form_language_help_mentoring:"Choose the language for your mentoring.", form_language_help_workshop:"Choose the language for your workshop.",
+      form_language:"Preferred language(s)", form_language_ph:"Choose preferred language…", lang_english:"English", lang_serbian:"Serbian",
+      form_language_help:"Choose one or both languages for this LabLifeAcademy offer.", form_language_help_mentoring:"Choose one or both languages for your mentoring.", form_language_help_workshop:"Choose one or both languages for your workshop.",
       form_date:"Preferred date", form_msg:"Message (optional)", form_submit:"Send booking request",
       done_title:"All set!", done_again:"Make another request",
       done_sent:"Your request has been sent to Dr. Jeremić. She'll get back to you to confirm the details.",
@@ -1932,8 +1932,8 @@
       svc_mentor_t:"Mentorska sesija", svc_mentor_d:"Vođenje kroz izgradnju istraživačke karijere i bolje objavljivanje nauke.",
       form_service:"Usluga", form_service_ph:"Izaberite uslugu…",
       form_name:"Ime", form_email:"E-mail", form_phone:"Telefon",
-      form_language:"Željeni jezik", form_language_ph:"Izaberite jezik…", lang_english:"Engleski", lang_serbian:"Srpski",
-      form_language_help:"Izaberite jezik na kome želite uslugu.", form_language_help_mentoring:"Izaberite jezik na kome želite mentorstvo.", form_language_help_workshop:"Izaberite jezik na kome želite radionicu.",
+      form_language:"Željeni jezik/jezici", form_language_ph:"Izaberite jezik…", lang_english:"Engleski", lang_serbian:"Srpski",
+      form_language_help:"Izaberite jedan ili oba jezika na kojima želite uslugu.", form_language_help_mentoring:"Izaberite jedan ili oba jezika na kojima želite mentorstvo.", form_language_help_workshop:"Izaberite jedan ili oba jezika na kojima želite radionicu.",
       form_date:"Željeni datum", form_msg:"Poruka (opciono)", form_submit:"Pošalji zahtev za zakazivanje",
       done_title:"Spremno!", done_again:"Pošalji novi zahtev",
       done_sent:"Vaš zahtev je poslat dr Jeremić. Javiće vam se radi potvrde detalja.",
@@ -2507,14 +2507,16 @@
     const svc = document.getElementById("f_service").value;
     if(!svc){ const btn=document.getElementById("serviceBtn"); if(btn){ btn.classList.add("border-red-400"); btn.focus(); } return; }
     let dStr = selectedDate ? `${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}` : "";
-    const languageInput = document.querySelector('input[name="preferredLanguage"]:checked');
-    const payload = { service:svc, preferredLanguage:languageInput ? languageInput.value : "", name:document.getElementById("f_name").value, email:document.getElementById("f_email").value, phone:document.getElementById("f_phone").value, date:document.getElementById("f_date").value, message:document.getElementById("f_msg").value };
+    const languageInputs = Array.from(document.querySelectorAll('input[name="preferredLanguage"]:checked'));
+    document.querySelectorAll("[data-language-option]").forEach(el=>el.classList.remove("border-red-400"));
+    if(!languageInputs.length){ document.querySelectorAll("[data-language-option]").forEach(el=>el.classList.add("border-red-400")); const first=document.querySelector('input[name="preferredLanguage"]'); if(first){ first.focus(); } return; }
+    const payload = { service:svc, preferredLanguage:languageInputs.map(input=>input.value).join(", "), name:document.getElementById("f_name").value, email:document.getElementById("f_email").value, phone:document.getElementById("f_phone").value, date:document.getElementById("f_date").value, message:document.getElementById("f_msg").value };
     let sent=false;
     try { const r=await fetch("/api/book",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}); if(r.ok){ const d=await r.json().catch(()=>({})); sent = d.ok===true && d.configured===true; } } catch(_){}
     document.getElementById("bookingSummary").innerHTML = sent ? t.done_sent : t.summary(svc, dStr);
     this.classList.add("hidden"); document.getElementById("bookingDone").classList.remove("hidden");
   });
-  function resetBooking(){ const f=document.getElementById("bookingForm"); f.reset(); selectedDate=null; selectedServiceKey=""; document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("border-brand","bg-brand-light")); const lbl=document.getElementById("serviceBtnLabel"); if(lbl){ lbl.textContent=I18N[lang].form_service_ph; lbl.classList.add("text-gray-400"); lbl.classList.remove("text-gray-800","font-medium"); } document.getElementById("f_service").value=""; updateBookingLanguageHelp(""); buildCalendar(); updateDateLabel(); document.getElementById("bookingDone").classList.add("hidden"); f.classList.remove("hidden"); }
+  function resetBooking(){ const f=document.getElementById("bookingForm"); f.reset(); selectedDate=null; selectedServiceKey=""; document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("border-brand","bg-brand-light")); document.querySelectorAll("[data-language-option]").forEach(el=>el.classList.remove("border-red-400")); const lbl=document.getElementById("serviceBtnLabel"); if(lbl){ lbl.textContent=I18N[lang].form_service_ph; lbl.classList.add("text-gray-400"); lbl.classList.remove("text-gray-800","font-medium"); } document.getElementById("f_service").value=""; updateBookingLanguageHelp(""); buildCalendar(); updateDateLabel(); document.getElementById("bookingDone").classList.add("hidden"); f.classList.remove("hidden"); }
 
   /* ---------- reviews ---------- */
   document.getElementById("reviewForm").addEventListener("submit", async function(e){
