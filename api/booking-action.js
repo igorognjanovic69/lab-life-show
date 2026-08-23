@@ -548,6 +548,8 @@ async function createGoogleCalendarEvent({ booking, slot, note, eventId }) {
         booking.email +
         "\\nPhone: " +
         booking.phone +
+        "\\nPreferred language: " +
+        (booking.preferredLanguage || booking.language || "-") +
         "\\nService: " +
         booking.service +
         (note ? "\\n\\nNote: " + note : ""),
@@ -598,6 +600,8 @@ function buildIcs({ booking, slot, note, eventId }) {
     booking.email +
     "\\nPhone: " +
     booking.phone +
+    "\\nPreferred language: " +
+    (booking.preferredLanguage || booking.language || "-") +
     "\\nService: " +
     booking.service +
     (note ? "\\nNote: " + note : "");

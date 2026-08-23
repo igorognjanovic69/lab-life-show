@@ -31,10 +31,11 @@ module.exports = async (req, res) => {
   const name = clean(body.name, 200);
   const email = clean(body.email, 200);
   const phone = clean(body.phone, 100);
+  const preferredLanguage = clean(body.preferredLanguage || body.language, 100);
   const date = clean(body.date, 100);
   const message = clean(body.message, 4000);
 
-  if (!name || !email || !phone || !service) {
+  if (!name || !email || !phone || !service || !preferredLanguage) {
     return res.status(400).json({ ok: false, error: "Missing required fields" });
   }
 
@@ -43,7 +44,7 @@ module.exports = async (req, res) => {
     return res.status(200).json({ ok: true, configured: false });
   }
 
-  const booking = { service, name, email, phone, date, message, submittedAt: new Date().toISOString() };
+  const booking = { service, name, email, phone, preferredLanguage, date, message, submittedAt: new Date().toISOString() };
   const token = signBooking(booking);
   const acceptLink = actionUrl(req, "accept", token);
   const changeLink = actionUrl(req, "propose", token);
