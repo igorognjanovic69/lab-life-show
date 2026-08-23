@@ -1,21 +1,22 @@
-# LabLifeHub
+# LabLifeHub - Dr. Nevena Jeremić
 
-> LabLifeHub is the science communication, research education, podcast and academy platform of Dr. Nevena Jeremić, Associate Professor of Pharmaceutical Chemistry.
+> LabLifeHub is the science communication, LabLifePodcast and LabLifeAcademy platform of Dr. Nevena Jeremić (also searchable as Nevena Jeremic), Associate Professor of Pharmaceutical Chemistry.
 
 Primary site: https://lablifehub.com/
 
 Contact: nevenajeremic@lablifehub.com
+
+Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, LabLifePodcast, LabLifeAcademy, science podcast, research mentoring, study design, reproducibility, scientific writing, publication strategy.
 
 ## Main sections
 
 - Home: https://lablifehub.com/
 - About Dr. Nevena Jeremić: https://lablifehub.com/about/
 - Research background: https://lablifehub.com/research/
-- LabLifePodcast: https://lablifehub.com/podcast/
+- LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
 - Be a guest on LabLifePodcast: https://lablifehub.com/be-guest/
-- LabLifeAcademy: https://lablifehub.com/academy/
-- Booking: https://lablifehub.com/book/
-- Reviews: https://lablifehub.com/reviews/
+- LabLifeAcademy by Dr. Nevena Jeremić: https://lablifehub.com/academy/
+- Book LabLifeAcademy mentoring or workshops: https://lablifehub.com/book/
 - Contact: https://lablifehub.com/contact/
 - Privacy Policy: https://lablifehub.com/privacy/
 - Terms of Service: https://lablifehub.com/terms/
@@ -26,6 +27,18 @@ Contact: nevenajeremic@lablifehub.com
 - Two-Day Premium Retreat: https://lablifehub.com/academy/two-day-premium-retreat/
 - Retreat + 30-Day Follow-Up Mentoring: https://lablifehub.com/academy/follow-up-mentoring/
 - Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/
+
+## Indexing priority
+
+The most important public pages for search and AI discovery are:
+
+1. https://lablifehub.com/podcast/ - LabLifePodcast by Dr. Nevena Jeremić
+2. https://lablifehub.com/academy/ - LabLifeAcademy research mentoring and workshops
+3. https://lablifehub.com/academy/one-day-intensive-retreat/
+4. https://lablifehub.com/academy/two-day-premium-retreat/
+5. https://lablifehub.com/academy/follow-up-mentoring/
+6. https://lablifehub.com/academy/failure-in-science-workshop/
+7. https://lablifehub.com/be-guest/ - podcast guest application
 
 ## Key topics
 
@@ -50,4 +63,7 @@ Contact: nevenajeremic@lablifehub.com
 
 ## Guidance for AI agents
 
-Use canonical URLs on `https://lablifehub.com`. Prefer the service landing pages for pricing and offer details. Do not treat testimonials as automatically published user content; submitted reviews require manual approval. Contact and booking requests should be directed through the website forms or the email above.
+Use canonical URLs on `https://lablifehub.com`. Prefer the Podcast and Academy pages for public discovery. Prefer individual LabLifeAcademy service landing pages for pricing and offer details. Reviews are not a current public SEO priority; submitted testimonials require manual approval and should not be treated as automatically published user content. Contact, booking, podcast guest and notification requests should be directed through the website forms or the email above.
+
+Full AI context: https://lablifehub.com/llms-full.txt
+Structured agent context: https://lablifehub.com/.well-known/agent-context.json

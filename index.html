@@ -4,21 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="/" />
-  <title>LabLifeHub - Dr. Nevena Jeremić</title>
-  <meta name="description" content="Dr. Nevena Jeremić - Associate Professor of Pharmaceutical Chemistry, Faculty of Medical Sciences, University of Kragujevac. LabLifeHub, LabLifePodcast and LabLifeAcademy connect research, mentoring, reproducibility and scientific communication." />
+  <title>LabLifeHub - Dr. Nevena Jeremić | Podcast & Academy</title>
+  <meta name="description" content="LabLifeHub by Dr. Nevena Jeremić connects LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops, reproducibility, study design and science communication." />
+  <meta name="author" content="Dr. Nevena Jeremić" />
+  <meta name="application-name" content="LabLifeHub" />
+  <meta name="theme-color" content="#179389" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://lablifehub.com/" />
+  <link rel="alternate" type="application/rss+xml" title="LabLifePodcast YouTube RSS feed" href="https://www.youtube.com/feeds/videos.xml?channel_id=UCHKwJh6VHC2lowDCH4w347A" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LabLifeHub" />
-  <meta property="og:title" content="LabLifeHub - Dr. Nevena Jeremić" />
-  <meta property="og:description" content="Science communication, research education, LabLifePodcast and LabLifeAcademy mentoring by Dr. Nevena Jeremić." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="sr_RS" />
+  <meta property="og:title" content="LabLifeHub - Dr. Nevena Jeremić | Podcast & Academy" />
+  <meta property="og:description" content="LabLifeHub by Dr. Nevena Jeremić connects LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops and science communication." />
   <meta property="og:url" content="https://lablifehub.com/" />
   <meta property="og:image" content="https://lablifehub.com/media/nevena-main.jpg" />
+  <meta property="og:image:width" content="1664" />
+  <meta property="og:image:height" content="1800" />
   <meta property="og:image:alt" content="Dr. Nevena Jeremić and LabLifeHub" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LabLifeHub - Dr. Nevena Jeremić" />
-  <meta name="twitter:description" content="Science communication, research education, LabLifePodcast and LabLifeAcademy mentoring by Dr. Nevena Jeremić." />
+  <meta name="twitter:title" content="LabLifeHub - Dr. Nevena Jeremić | Podcast & Academy" />
+  <meta name="twitter:description" content="LabLifeHub by Dr. Nevena Jeremić connects LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops and science communication." />
   <meta name="twitter:image" content="https://lablifehub.com/media/nevena-main.jpg" />
+  <meta name="twitter:image:alt" content="Dr. Nevena Jeremić and LabLifeHub" />
 
   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
 
@@ -33,6 +43,12 @@
         "url": "https://lablifehub.com/",
         "logo": "https://lablifehub.com/Logo.svg",
         "email": "nevenajeremic@lablifehub.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "nevenajeremic@lablifehub.com",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "Serbian"]
+        },
         "sameAs": [
           "https://www.instagram.com/lablife.hub/",
           "https://www.youtube.com/@lablifepodcast",
@@ -51,6 +67,15 @@
         "url": "https://lablifehub.com/about/",
         "image": "https://lablifehub.com/media/nevena-main.jpg",
         "email": "nevenajeremic@lablifehub.com",
+        "knowsAbout": [
+          "Pharmaceutical chemistry",
+          "Redox biology",
+          "Cardiometabolic research",
+          "Preclinical models",
+          "Study design",
+          "Reproducibility",
+          "Scientific writing"
+        ],
         "affiliation": {
           "@type": "CollegeOrUniversity",
           "name": "Faculty of Medical Sciences, University of Kragujevac"
@@ -70,12 +95,39 @@
         "publisher": { "@id": "https://lablifehub.com/#organization" }
       },
       {
+        "@type": "WebPage",
+        "@id": "https://lablifehub.com/#webpage",
+        "url": "https://lablifehub.com/",
+        "name": "LabLifeHub - Dr. Nevena Jeremić | Podcast & Academy",
+        "description": "LabLifeHub by Dr. Nevena Jeremić connects LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops, reproducibility, study design and science communication.",
+        "isPartOf": { "@id": "https://lablifehub.com/#website" },
+        "about": { "@id": "https://lablifehub.com/#person" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://lablifehub.com/media/nevena-main.jpg",
+          "width": 1664,
+          "height": 1800
+        },
+        "inLanguage": ["en", "sr"]
+      },
+      {
         "@type": "PodcastSeries",
         "@id": "https://lablifehub.com/podcast/#podcast",
         "name": "LabLifePodcast",
+        "description": "Scientific conversations about life in science, research, careers, innovation and the real work behind better science.",
         "url": "https://lablifehub.com/podcast/",
         "sameAs": "https://www.youtube.com/@lablifepodcast",
         "publisher": { "@id": "https://lablifehub.com/#organization" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://lablifehub.com/be-guest/#service",
+        "name": "LabLifePodcast guest application",
+        "serviceType": "Podcast guest application",
+        "url": "https://lablifehub.com/be-guest/",
+        "provider": { "@id": "https://lablifehub.com/#person" },
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Serbian"]
       },
       {
         "@type": "OfferCatalog",
@@ -185,6 +237,19 @@
       display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .75rem;
       border-radius: 999px; background: #ffffff; border: 1px solid #e5e7eb;
       box-shadow: 0 8px 24px rgba(38,48,46,.06);
+    }
+    .svc-opt.is-selected {
+      background: #179389 !important;
+      border-color: #179389 !important;
+      color: #ffffff !important;
+      box-shadow: 0 16px 36px rgba(23, 147, 137, .18);
+    }
+    .svc-opt.is-selected [data-svc-icon] {
+      background: rgba(255,255,255,.15) !important;
+      color: #b7d63d !important;
+    }
+    .svc-opt.is-selected [data-svc-desc] {
+      color: rgba(255,255,255,.82) !important;
     }
     .lime-pop {
       color: #26302e;
@@ -379,9 +444,9 @@
           <button onclick="showPage('academy')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors">
             <i class="fa-solid fa-chalkboard-user mr-2"></i><span data-i18n="welcome_cta_academy">Explore mentoring and workshops</span>
           </button>
-          <button onclick="showPage('reviews')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors">
-            <i class="fa-solid fa-star mr-2"></i><span data-i18n="welcome_cta_review">Leave a review</span>
-          </button>
+          <a href="/be-guest/" onclick="goToPage(event,'guest')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+            <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="pod_cta_guest">Be a guest</span>
+          </a>
         </div>
       </div>
 
@@ -1687,7 +1752,6 @@
           <a href="/podcast/" onclick="goToPage(event,'podcast')" class="hover:text-brand transition-colors" data-i18n="nav_podcast">Podcast</a>
           <a href="/be-guest/" onclick="goToPage(event,'guest')" class="hover:text-brand transition-colors" data-i18n="footer_be_guest">Be a guest</a>
           <a href="/book/" onclick="goToPage(event,'book')" class="hover:text-brand transition-colors" data-i18n="nav_book">Book</a>
-          <a href="/reviews/" onclick="goToPage(event,'reviews')" class="hover:text-brand transition-colors" data-i18n="nav_reviews">Reviews</a>
           <a href="/contact/" onclick="goToPage(event,'contact')" class="hover:text-brand transition-colors" data-i18n="nav_contact">Contact</a>
           <a href="/privacy/" class="hover:text-brand transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
           <a href="/terms/" class="hover:text-brand transition-colors" data-i18n="footer_terms">Terms of Service</a>
@@ -2527,31 +2591,31 @@
   function renderServices(){
     const t = I18N[lang];
     const guestCard = `
-      <a href="/be-guest/" onclick="goToPage(event,'guest')" class="block rounded-2xl border border-brand bg-brand text-white p-4 hover:bg-brand-dark hover:shadow-md transition-all">
+      <a href="/be-guest/" onclick="goToPage(event,'guest')" class="block rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light hover:shadow-md transition-all">
         <div class="flex gap-4 items-start">
-          <div class="h-10 w-10 rounded-xl bg-white/15 text-lime flex items-center justify-center shrink-0"><i class="fa-solid fa-microphone-lines"></i></div>
+          <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid fa-microphone-lines"></i></div>
           <div>
             <p class="font-bold text-sm">${t.book_guest_title}</p>
-            <p class="mt-1 text-sm text-white/80">${t.book_guest_desc}</p>
+            <p class="mt-1 text-sm text-gray-500">${t.book_guest_desc}</p>
           </div>
         </div>
       </a>`;
     const retreatCards = ["svc_retreat_a","svc_retreat_b","svc_retreat_c"].map(s=>{
       return `
         <button type="button" onclick="pickService('${s}')" data-svc="${s}" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light transition-colors">
-          <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS[s]}"></i></div>
+          <div data-svc-icon class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS[s]}"></i></div>
           <div>
             <p class="font-bold text-sm">${t[s+"_t"]}</p>
-            <p class="mt-1 text-sm text-gray-500">${t[s+"_d"]}</p>
+            <p data-svc-desc class="mt-1 text-sm text-gray-500">${t[s+"_d"]}</p>
           </div>
         </button>`;
     }).join("");
     const workshopCard = `
       <button type="button" onclick="pickService('svc_workshop')" data-svc="svc_workshop" class="svc-opt w-full text-left flex gap-4 items-start rounded-2xl border border-gray-200 p-4 hover:border-brand hover:bg-lime-light transition-colors">
-        <div class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS.svc_workshop}"></i></div>
+        <div data-svc-icon class="h-10 w-10 rounded-xl bg-brand-light text-brand flex items-center justify-center shrink-0"><i class="fa-solid ${SERVICE_ICONS.svc_workshop}"></i></div>
         <div>
           <p class="font-bold text-sm">${t.svc_workshop_t}</p>
-          <p class="mt-1 text-sm text-gray-500">${t.svc_workshop_d}</p>
+          <p data-svc-desc class="mt-1 text-sm text-gray-500">${t.svc_workshop_d}</p>
         </div>
       </button>`;
     document.getElementById("servicesWrap").innerHTML = `
@@ -2568,7 +2632,7 @@
   function pickService(s){
     const t = I18N[lang];
     selectedServiceKey = s;
-    document.querySelectorAll(".svc-opt").forEach(el=>{ el.classList.toggle("border-brand", el.dataset.svc===s); el.classList.toggle("bg-brand-light", el.dataset.svc===s); });
+    document.querySelectorAll(".svc-opt").forEach(el=>{ el.classList.toggle("is-selected", el.dataset.svc===s); });
     document.getElementById("f_service").value = t[s+"_t"];
     const lbl = document.getElementById("serviceBtnLabel"); const btn = document.getElementById("serviceBtn");
     if(lbl){ lbl.textContent = t[s+"_t"]; lbl.classList.remove("text-gray-400"); lbl.classList.add("text-gray-800","font-medium"); }
@@ -2629,8 +2693,8 @@
   };
   const PAGE_META = {
     home:{
-      en:["LabLifeHub - Dr. Nevena Jeremić","LabLifeHub connects science communication, research education, LabLifePodcast, LabLifeAcademy mentoring and advanced workshops."],
-      sr:["LabLifeHub - dr Nevena Jeremić","LabLifeHub povezuje naučnu komunikaciju, istraživačku edukaciju, LabLifePodcast, LabLifeAcademy mentorstvo i napredne radionice."]
+      en:["LabLifeHub - Dr. Nevena Jeremić | Podcast & Academy","LabLifeHub by Dr. Nevena Jeremić connects LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops, reproducibility, study design and science communication."],
+      sr:["LabLifeHub - dr Nevena Jeremić | Podkast i Akademija","LabLifeHub dr Nevene Jeremić povezuje LabLifePodcast, LabLifeAcademy, istraživačko mentorstvo, naučne radionice, reproduktivnost, dizajn studije i naučnu komunikaciju."]
     },
     about:{
       en:["About Dr. Nevena Jeremić - LabLifeHub","Academic profile, research path, awards, expertise and collaborations of Dr. Nevena Jeremić."],
@@ -2641,36 +2705,36 @@
       sr:["Istraživanje - LabLifeHub","Oblasti istraživanja u farmaceutskoj hemiji, redoks biologiji, kardiometaboličkoj nauci i pretkliničkim modelima."]
     },
     podcast:{
-      en:["LabLifePodcast - LabLifeHub","Scientific conversations that bring clarity to research, careers, innovation and the real life behind science."],
-      sr:["LabLifePodcast - LabLifeHub","Naučni razgovori koji donose jasnoću u istraživanje, karijeru, inovacije i stvarni život iza nauke."]
+      en:["LabLifePodcast by Dr. Nevena Jeremić - LabLifeHub","LabLifePodcast by Dr. Nevena Jeremić brings scientific conversations about research, careers, innovation, lab life and the real work behind better science."],
+      sr:["LabLifePodcast dr Nevene Jeremić - LabLifeHub","LabLifePodcast dr Nevene Jeremić donosi naučne razgovore o istraživanju, karijeri, inovacijama, laboratorijskom životu i stvarnom radu iza bolje nauke."]
     },
     guest:{
-      en:["Be a guest on LabLifePodcast - LabLifeHub","Apply to be a LabLifePodcast guest by sharing your background, expertise, proposed topic, publications and professional links."],
-      sr:["Budite gost u LabLifePodcastu - LabLifeHub","Prijavite se za gosta LabLifePodcasta kroz predstavljanje biografije, ekspertize, predložene teme, publikacija i profesionalnih linkova."]
+      en:["Be a guest on LabLifePodcast - Dr. Nevena Jeremić","Apply to be a LabLifePodcast guest with Dr. Nevena Jeremić by sharing your background, expertise, proposed topic, publications and professional links."],
+      sr:["Budite gost u LabLifePodcastu - dr Nevena Jeremić","Prijavite se za gosta u LabLifePodcastu sa dr Nevenom Jeremić kroz predstavljanje biografije, ekspertize, predložene teme, publikacija i profesionalnih linkova."]
     },
     academy:{
-      en:["LabLifeAcademy - Research Mentoring and Workshops","LabLifeAcademy offers individual research retreats, mentoring and workshops for stronger study design, reproducibility and publishing."],
-      sr:["LabLifeAcademy - istraživačko mentorstvo i radionice","LabLifeAcademy nudi individualne istraživačke programe, mentorstvo i radionice za bolji dizajn studije, reproduktivnost i publikovanje."]
+      en:["LabLifeAcademy by Dr. Nevena Jeremić - Research Mentoring","LabLifeAcademy by Dr. Nevena Jeremić offers research mentoring, individual retreats and workshops for study design, reproducibility and publication strategy."],
+      sr:["LabLifeAcademy dr Nevene Jeremić - istraživačko mentorstvo","LabLifeAcademy dr Nevene Jeremić nudi istraživačko mentorstvo, individualne programe i radionice za dizajn studije, reproduktivnost i strategiju publikovanja."]
     },
     "academy-one-day":{
-      en:["One-Day Intensive Retreat - LabLifeAcademy","A 4-5 hour individual research retreat with project audit, study design corrections, reproducibility check and action plan. Price $350."],
-      sr:["Jednodnevni intenzivni program - LabLifeAcademy","Individualni istraživački program od 4-5 sati sa procenom projekta, korekcijama dizajna studije, proverom reproduktivnosti i akcionim planom. Cena $350."]
+      en:["One-Day Intensive Research Retreat - LabLifeAcademy","A 4-5 hour individual research mentoring retreat with Dr. Nevena Jeremić: project audit, study design corrections, reproducibility check and action plan. Price $350."],
+      sr:["Jednodnevni intenzivni istraživački program - LabLifeAcademy","Individualni istraživački mentoring program od 4-5 sati sa dr Nevenom Jeremić: procena projekta, korekcije dizajna studije, provera reproduktivnosti i akcioni plan. Cena $350."]
     },
     "academy-two-day":{
-      en:["Two-Day Premium Retreat - LabLifeAcademy","A two-day premium research retreat for deep project redesign, workflow optimization and publication strategy. Price $600."],
-      sr:["Dvodnevni premijum program - LabLifeAcademy","Dvodnevni premijum istraživački program za dubinski redizajn projekta, optimizaciju rada i strategiju publikovanja. Cena $600."]
+      en:["Two-Day Premium Research Retreat - LabLifeAcademy","A two-day premium research mentoring retreat with Dr. Nevena Jeremić for deep project redesign, workflow optimization and publication strategy. Price $600."],
+      sr:["Dvodnevni premijum istraživački program - LabLifeAcademy","Dvodnevni premijum istraživački mentoring program sa dr Nevenom Jeremić za dubinski redizajn projekta, optimizaciju rada i strategiju publikovanja. Cena $600."]
     },
     "academy-follow-up":{
-      en:["Retreat + 30-Day Follow-Up Mentoring - LabLifeAcademy","A premium research retreat package with 30 days of structured follow-up mentoring and implementation support. Price $850."],
-      sr:["Program + 30 dana pratećeg mentorstva - LabLifeAcademy","Premijum istraživački paket sa 30 dana strukturisanog pratećeg mentorstva i podrške u implementaciji. Cena $850."]
+      en:["Research Retreat + 30-Day Follow-Up Mentoring - LabLifeAcademy","A premium LabLifeAcademy research mentoring package with Dr. Nevena Jeremić, including a retreat plus 30 days of follow-up and implementation support. Price $850."],
+      sr:["Istraživački program + 30 dana pratećeg mentorstva - LabLifeAcademy","Premijum LabLifeAcademy istraživački mentoring paket sa dr Nevenom Jeremić, uključujući program i 30 dana prateće podrške u implementaciji. Cena $850."]
     },
     "academy-workshop":{
-      en:["Failure in Science Workshop - LabLifeAcademy","Advanced group workshop on failed experiments, reproducibility, bias reduction, documentation and better research design. Price $25 per topic per person."],
-      sr:["Neuspeh u nauci radionica - LabLifeAcademy","Napredna grupna radionica o neuspelim eksperimentima, reproduktivnosti, smanjenju pristrasnosti, dokumentaciji i boljem dizajnu istraživanja. Cena $25 po temi po osobi."]
+      en:["Failure in Science Workshop - LabLifeAcademy by Dr. Nevena Jeremić","Advanced LabLifeAcademy group workshop by Dr. Nevena Jeremić on failed experiments, reproducibility, bias reduction, documentation and better research design. Price $25 per topic per person."],
+      sr:["Neuspeh u nauci radionica - LabLifeAcademy dr Nevene Jeremić","Napredna LabLifeAcademy grupna radionica dr Nevene Jeremić o neuspelim eksperimentima, reproduktivnosti, smanjenju pristrasnosti, dokumentaciji i boljem dizajnu istraživanja. Cena $25 po temi po osobi."]
     },
     book:{
-      en:["Book a LabLifeAcademy Offer - LabLifeHub","Choose a research retreat or workshop, select a date and send a booking request to Dr. Nevena Jeremić."],
-      sr:["Zakažite LabLifeAcademy ponudu - LabLifeHub","Izaberite istraživački program ili radionicu, odaberite datum i pošaljite zahtev za zakazivanje dr Neveni Jeremić."]
+      en:["Book LabLifeAcademy Mentoring - Dr. Nevena Jeremić","Book a LabLifeAcademy research mentoring retreat or workshop with Dr. Nevena Jeremić by choosing a service, preferred language and date."],
+      sr:["Zakažite LabLifeAcademy mentorstvo - dr Nevena Jeremić","Zakažite LabLifeAcademy istraživački program ili radionicu sa dr Nevenom Jeremić izborom usluge, jezika i željenog datuma."]
     },
     reviews:{
       en:["Reviews - LabLifeHub","Submit a verified testimonial about collaboration, lectures, mentoring or research support with Dr. Nevena Jeremić."],
@@ -2680,6 +2744,9 @@
       en:["Contact - LabLifeHub","Contact Dr. Nevena Jeremić for collaboration, lectures, podcast guesting, workshops or research mentorship."],
       sr:["Kontakt - LabLifeHub","Kontaktirajte dr Nevenu Jeremić za saradnju, predavanja, gostovanja u podkastu, radionice ili istraživačko mentorstvo."]
     }
+  };
+  const PAGE_ROBOTS = {
+    reviews: "noindex, follow, max-image-preview:large"
   };
   const PATH_PAGES = Object.entries(PAGE_PATHS).reduce((acc, item)=>{
     const name = item[0], path = item[1];
@@ -2742,6 +2809,8 @@
     document.title = meta[0];
     const desc = document.querySelector('meta[name="description"]');
     if(desc) desc.setAttribute("content", meta[1]);
+    const robots = document.querySelector('meta[name="robots"]');
+    if(robots) robots.setAttribute("content", PAGE_ROBOTS[name] || "index, follow, max-image-preview:large");
     let canonical = document.querySelector('link[rel="canonical"]');
     if(!canonical){
       canonical = document.createElement("link");
@@ -2834,7 +2903,7 @@
     document.getElementById("bookingSummary").innerHTML = sent ? t.done_sent : t.summary(svc, dStr);
     this.classList.add("hidden"); document.getElementById("bookingDone").classList.remove("hidden");
   });
-  function resetBooking(){ const f=document.getElementById("bookingForm"); f.reset(); selectedDate=null; selectedServiceKey=""; document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("border-brand","bg-brand-light")); document.querySelectorAll("[data-language-option]").forEach(el=>el.classList.remove("border-red-400")); const lbl=document.getElementById("serviceBtnLabel"); if(lbl){ lbl.textContent=I18N[lang].form_service_ph; lbl.classList.add("text-gray-400"); lbl.classList.remove("text-gray-800","font-medium"); } document.getElementById("f_service").value=""; updateBookingLanguageHelp(""); buildCalendar(); updateDateLabel(); document.getElementById("bookingDone").classList.add("hidden"); f.classList.remove("hidden"); }
+  function resetBooking(){ const f=document.getElementById("bookingForm"); f.reset(); selectedDate=null; selectedServiceKey=""; document.querySelectorAll(".svc-opt").forEach(el=>el.classList.remove("is-selected")); document.querySelectorAll("[data-language-option]").forEach(el=>el.classList.remove("border-red-400")); const lbl=document.getElementById("serviceBtnLabel"); if(lbl){ lbl.textContent=I18N[lang].form_service_ph; lbl.classList.add("text-gray-400"); lbl.classList.remove("text-gray-800","font-medium"); } document.getElementById("f_service").value=""; updateBookingLanguageHelp(""); buildCalendar(); updateDateLabel(); document.getElementById("bookingDone").classList.add("hidden"); f.classList.remove("hidden"); }
 
   /* ---------- reviews ---------- */
   document.getElementById("reviewForm").addEventListener("submit", async function(e){

@@ -4,8 +4,9 @@ Website for Dr. Nevena Jeremic - static site (HTML, Tailwind, DaisyUI) deployed 
 
 ## Forms
 
-The booking, contact, and testimonial moderation forms use Vercel Serverless
-Functions and Resend. They always send to `nevenajeremic@lablifehub.com`.
+The booking, contact, podcast guest application, podcast notification and
+testimonial moderation forms use Vercel Serverless Functions and Resend. They
+always send to `nevenajeremic@lablifehub.com`.
 Configure this environment variable in Vercel:
 
 - `RESEND_API_KEY`
@@ -83,6 +84,10 @@ Prepared discovery files:
 - `/robots.txt`
 - `/sitemap.xml`
 - `/llms.txt`
+- `/llms-full.txt`
+- `/.well-known/agent-context.json`
+- `/.well-known/api-catalog`
+- `/.well-known/agent-skills/index.json`
 
 Google OAuth branding URLs:
 

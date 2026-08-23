@@ -1,0 +1,48 @@
+{
+  "name": "LabLifeHub public API catalog",
+  "canonical_url": "https://lablifehub.com/.well-known/api-catalog",
+  "site": "https://lablifehub.com/",
+  "owner": "Dr. Nevena Jeremić / LabLifeHub",
+  "public_read_endpoints": [
+    {
+      "path": "/api/episodes",
+      "method": "GET",
+      "description": "Returns recent LabLifePodcast YouTube videos from the public YouTube RSS feed.",
+      "query_parameters": {
+        "limit": "Optional integer from 1 to 50",
+        "debug": "Optional 1 for diagnostic details"
+      }
+    },
+    {
+      "path": "/api/instagram",
+      "method": "GET",
+      "description": "Returns recent LabLifeHub Instagram items when a token or public fallback is available.",
+      "query_parameters": {
+        "limit": "Optional integer"
+      }
+    }
+  ],
+  "form_workflows": [
+    {
+      "name": "LabLifeAcademy booking",
+      "page": "https://lablifehub.com/book/",
+      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
+    },
+    {
+      "name": "LabLifePodcast guest application",
+      "page": "https://lablifehub.com/be-guest/",
+      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
+    },
+    {
+      "name": "Contact",
+      "page": "https://lablifehub.com/contact/",
+      "guidance": "Use the visible website form or email nevenajeremic@lablifehub.com."
+    }
+  ],
+  "discovery": {
+    "sitemap": "https://lablifehub.com/sitemap.xml",
+    "llms": "https://lablifehub.com/llms.txt",
+    "llms_full": "https://lablifehub.com/llms-full.txt",
+    "agent_context": "https://lablifehub.com/.well-known/agent-context.json"
+  }
+}

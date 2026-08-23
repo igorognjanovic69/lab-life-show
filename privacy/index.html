@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - LabLifeHub</title>
-  <meta name="description" content="Privacy Policy for LabLifeHub, including booking forms, contact forms, review submissions and Google Calendar integration." />
+  <meta name="description" content="Privacy Policy for LabLifeHub, including booking forms, contact forms, podcast guest applications, notification subscriptions and Google Calendar integration." />
+  <meta name="author" content="Dr. Nevena Jeremić" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#179389" />
   <link rel="canonical" href="https://lablifehub.com/privacy/" />
   <meta property="og:title" content="Privacy Policy - LabLifeHub" />
   <meta property="og:description" content="How LabLifeHub collects, uses and protects personal data and Google Calendar data." />
@@ -45,13 +48,13 @@
       <p>Last updated: August 23, 2026</p>
     </section>
     <section class="card">
-      <p>LabLifeHub is the professional website of Dr. Nevena Jeremić for science communication, LabLifePodcast, LabLifeAcademy mentoring, workshops, booking requests, contact messages and approved reviews.</p>
+      <p>LabLifeHub is the professional website of Dr. Nevena Jeremić for science communication, LabLifePodcast, LabLifeAcademy mentoring, workshops, booking requests, podcast guest applications, notification subscriptions, contact messages and approved reviews.</p>
 
       <h2>Information we collect</h2>
-      <p>When you use forms on this website, we may collect the information you choose to submit, including your name, email address, phone number, professional role or institution, selected service, preferred date and message content.</p>
+      <p>When you use forms on this website, we may collect the information you choose to submit, including your name, email address, phone number, professional role or institution, selected service, preferred language, preferred date, message content, podcast guest application details, professional biography, optional publications and professional links.</p>
 
       <h2>How we use this information</h2>
-      <p>We use submitted information to respond to messages, process booking requests, coordinate LabLifeAcademy sessions or workshops, review testimonial submissions and provide requested communication related to LabLifeHub services.</p>
+      <p>We use submitted information to respond to messages, process booking requests, coordinate LabLifeAcademy sessions or workshops, review podcast guest applications, send requested podcast update notifications, review testimonial submissions and provide requested communication related to LabLifeHub services.</p>
 
       <h2>Google Calendar data</h2>
       <p>LabLifeHub uses Google Calendar access only for the booking workflow. When an administrator accepts a booking request, the website may create a calendar event in the connected LabLifeHub Google Calendar account and may include the requester as an attendee. The calendar event can contain booking details such as the selected service, requester name, email address, phone number, date, time and optional notes needed to coordinate the session.</p>
@@ -59,7 +62,7 @@
       <p>LabLifeHub's use and transfer of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements.</p>
 
       <h2>How information is shared</h2>
-      <p>Form submissions and booking notifications are sent to LabLifeHub's designated email inbox. Booking confirmations may be sent to the requester and copied to LabLifeHub. We do not sell personal data. We do not publish reviews automatically; submitted reviews require manual approval before any name, professional role or approved review text may appear publicly.</p>
+      <p>Form submissions, podcast guest applications, notification subscriptions and booking notifications are sent to LabLifeHub's designated email inbox. Booking confirmations may be sent to the requester and copied to LabLifeHub. We do not sell personal data. We do not publish reviews automatically; submitted reviews require manual approval before any name, professional role or approved review text may appear publicly.</p>
 
       <h2>Service providers</h2>
       <p>The website is hosted on Vercel and uses Resend for transactional email delivery. Google Calendar is used only when the administrator connects the LabLifeHub Google account for accepted booking events.</p>
@@ -75,7 +78,8 @@
     </section>
   </main>
   <footer>
-    Dr. Nevena Jeremić · LabLifeHub © 2026. <a href="/terms/">Terms of Service</a>
+    Dr. Nevena Jeremić · LabLifeHub © <span id="year"></span>. <a href="/terms/">Terms of Service</a>
   </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,0 +1,150 @@
+# LabLifeHub full AI context
+
+Canonical domain: https://lablifehub.com/
+
+Primary entity:
+Dr. Nevena Jeremić (also written without diacritics as Nevena Jeremic) is Associate Professor of Pharmaceutical Chemistry at the Faculty of Medical Sciences, University of Kragujevac. Her public professional platform is LabLifeHub.
+
+Primary brand:
+LabLifeHub is Dr. Nevena Jeremić's platform for science communication, LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops, reproducibility, study design, scientific writing and publication strategy.
+
+Primary search priorities:
+- LabLifeHub
+- Dr. Nevena Jeremić
+- Nevena Jeremic
+- LabLifePodcast
+- LabLifeAcademy
+- science podcast
+- research mentoring
+- study design
+- reproducibility
+- scientific writing
+- publication strategy
+
+## Important public pages
+
+- Home: https://lablifehub.com/
+- About Dr. Nevena Jeremić: https://lablifehub.com/about/
+- Research background: https://lablifehub.com/research/
+- LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
+- Be a guest on LabLifePodcast: https://lablifehub.com/be-guest/
+- LabLifeAcademy by Dr. Nevena Jeremić: https://lablifehub.com/academy/
+- Book LabLifeAcademy mentoring or workshops: https://lablifehub.com/book/
+- Contact: https://lablifehub.com/contact/
+- Privacy Policy: https://lablifehub.com/privacy/
+- Terms of Service: https://lablifehub.com/terms/
+
+## LabLifePodcast
+
+LabLifePodcast is hosted by Dr. Nevena Jeremić. It is positioned as a science podcast and scientific communication platform focused on honest conversations about life in science, research careers, lab life, innovation, experimental design, reproducibility and better research.
+
+Podcast URL:
+https://lablifehub.com/podcast/
+
+YouTube:
+https://www.youtube.com/@lablifepodcast
+
+Guest application:
+https://lablifehub.com/be-guest/
+
+The Be Guest page is for people who want to participate in the podcast. Applicants are asked to describe their background, title, institution, previous work, expertise, proposed topic, why they want to participate, short biography, optional publications and useful professional links.
+
+## LabLifeAcademy
+
+LabLifeAcademy is Dr. Nevena Jeremić's research education and mentoring offer. It includes individual mentoring retreats and advanced workshops for stronger study design, experimental strategy, reproducibility and publication success.
+
+Academy URL:
+https://lablifehub.com/academy/
+
+Booking URL:
+https://lablifehub.com/book/
+
+## LabLifeAcademy services
+
+### One-Day Intensive Retreat
+
+URL:
+https://lablifehub.com/academy/one-day-intensive-retreat/
+
+Format:
+4-5 hours, online 1:1 intensive session.
+
+Price:
+$350.
+
+Purpose:
+Focused research mentoring for Master, PhD, Postdoc and early-career researchers who need fast, structured guidance on one active research project. It includes project audit, study design corrections, reproducibility check and a 6-month action plan.
+
+### Two-Day Premium Retreat
+
+URL:
+https://lablifehub.com/academy/two-day-premium-retreat/
+
+Format:
+2 × 3 hours, online 1:1 premium retreat.
+
+Price:
+$600.
+
+Purpose:
+Deep project transformation for PhD candidates, postdocs and researchers. It covers scientific project audit, complete study design development, reproducibility and laboratory workflow optimization, and scientific writing/publication strategy.
+
+### Retreat + 30-Day Follow-Up Mentoring
+
+URL:
+https://lablifehub.com/academy/follow-up-mentoring/
+
+Format:
+One-day or two-day retreat plus 30 days of structured support, feedback and implementation guidance.
+
+Price:
+$850.
+
+Purpose:
+Premium package for researchers who need help implementing the plan after the intensive retreat.
+
+### Failure in Science Workshop
+
+URL:
+https://lablifehub.com/academy/failure-in-science-workshop/
+
+Format:
+90 minute Zoom workshop for groups of scientists, up to 100 participants, minimum 10 participants.
+
+Price:
+$25 per workshop topic per person.
+
+Purpose:
+Advanced group workshop about why experiments fail, how to analyze failed experiments, laboratory errors and documentation, reproducibility, bias reduction and the translational impact of failure.
+
+## Research topics associated with Dr. Nevena Jeremić
+
+- Pharmaceutical chemistry
+- Experimental pharmacology
+- Redox biology
+- Cardiovascular physiology
+- Cardiometabolic research
+- Preclinical rodent models
+- Reproducibility
+- Study design
+- Scientific writing
+- Publication strategy
+
+## External profiles
+
+- Instagram: https://www.instagram.com/lablife.hub/
+- YouTube: https://www.youtube.com/@lablifepodcast
+- LinkedIn: https://www.linkedin.com/in/nevena-jeremic-b66b50223/
+- ORCID: https://orcid.org/0000-0002-5284-8180
+- SciProfiles: https://sciprofiles.com/profile/1298137
+
+## Contact
+
+Primary email:
+nevenajeremic@lablifehub.com
+
+Use the website forms for booking, contact, podcast guest application and podcast notification subscription. Do not submit forms automatically without explicit user intent.
+
+## Agent guidance
+
+Use canonical URLs on https://lablifehub.com. Prefer Podcast and Academy pages for public discovery. Prefer individual Academy service landing pages for exact pricing and service details. Reviews are not a current public SEO priority and submitted testimonials require manual approval.

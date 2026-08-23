@@ -1,0 +1,99 @@
+{
+  "name": "LabLifeHub",
+  "canonical_url": "https://lablifehub.com/",
+  "primary_person": {
+    "name": "Dr. Nevena Jeremić",
+    "alternate_name": "Nevena Jeremic",
+    "role": "Associate Professor of Pharmaceutical Chemistry",
+    "affiliation": "Faculty of Medical Sciences, University of Kragujevac",
+    "url": "https://lablifehub.com/about/",
+    "email": "nevenajeremic@lablifehub.com"
+  },
+  "priority_entities": [
+    "LabLifeHub",
+    "Dr. Nevena Jeremić",
+    "Nevena Jeremic",
+    "LabLifePodcast",
+    "LabLifeAcademy"
+  ],
+  "priority_pages": [
+    {
+      "name": "LabLifePodcast by Dr. Nevena Jeremić",
+      "url": "https://lablifehub.com/podcast/",
+      "purpose": "Science podcast discovery and YouTube episode hub"
+    },
+    {
+      "name": "LabLifeAcademy by Dr. Nevena Jeremić",
+      "url": "https://lablifehub.com/academy/",
+      "purpose": "Research mentoring and scientific workshop overview"
+    },
+    {
+      "name": "Book LabLifeAcademy mentoring",
+      "url": "https://lablifehub.com/book/",
+      "purpose": "Booking request entry point for mentoring and workshops"
+    },
+    {
+      "name": "Be a guest on LabLifePodcast",
+      "url": "https://lablifehub.com/be-guest/",
+      "purpose": "Podcast guest application"
+    }
+  ],
+  "academy_services": [
+    {
+      "name": "One-Day Intensive Retreat",
+      "url": "https://lablifehub.com/academy/one-day-intensive-retreat/",
+      "price": "$350",
+      "format": "4-5 hours, online 1:1 intensive session"
+    },
+    {
+      "name": "Two-Day Premium Retreat",
+      "url": "https://lablifehub.com/academy/two-day-premium-retreat/",
+      "price": "$600",
+      "format": "2 × 3 hours, online 1:1 premium retreat"
+    },
+    {
+      "name": "Retreat + 30-Day Follow-Up Mentoring",
+      "url": "https://lablifehub.com/academy/follow-up-mentoring/",
+      "price": "$850",
+      "format": "Retreat plus 30 days of structured follow-up support"
+    },
+    {
+      "name": "Failure in Science Workshop",
+      "url": "https://lablifehub.com/academy/failure-in-science-workshop/",
+      "price": "$25 per workshop topic per person",
+      "format": "90 minute Zoom workshop for groups of scientists"
+    }
+  ],
+  "topics": [
+    "science podcast",
+    "research mentoring",
+    "study design",
+    "reproducibility",
+    "scientific writing",
+    "publication strategy",
+    "pharmaceutical chemistry",
+    "redox biology",
+    "cardiometabolic research",
+    "preclinical models"
+  ],
+  "external_profiles": {
+    "instagram": "https://www.instagram.com/lablife.hub/",
+    "youtube": "https://www.youtube.com/@lablifepodcast",
+    "linkedin": "https://www.linkedin.com/in/nevena-jeremic-b66b50223/",
+    "orcid": "https://orcid.org/0000-0002-5284-8180",
+    "sciprofiles": "https://sciprofiles.com/profile/1298137"
+  },
+  "ai_guidance": [
+    "Use canonical URLs on https://lablifehub.com.",
+    "Prioritize Podcast and Academy pages for search and AI discovery.",
+    "Use individual LabLifeAcademy service landing pages for exact pricing and service details.",
+    "Do not submit forms automatically without explicit user intent.",
+    "Reviews are not a current public SEO priority and submitted testimonials require manual approval."
+  ],
+  "discovery_files": {
+    "llms": "https://lablifehub.com/llms.txt",
+    "llms_full": "https://lablifehub.com/llms-full.txt",
+    "sitemap": "https://lablifehub.com/sitemap.xml",
+    "robots": "https://lablifehub.com/robots.txt"
+  }
+}

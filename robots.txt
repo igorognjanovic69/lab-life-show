@@ -18,4 +18,9 @@ User-agent: PerplexityBot
 Allow: /
 Disallow: /admin/
 
+# AI discovery:
+# https://lablifehub.com/llms.txt
+# https://lablifehub.com/llms-full.txt
+# https://lablifehub.com/.well-known/agent-context.json
+
 Sitemap: https://lablifehub.com/sitemap.xml
