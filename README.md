@@ -84,5 +84,11 @@ Prepared discovery files:
 - `/sitemap.xml`
 - `/llms.txt`
 
+Google OAuth branding URLs:
+
+- Homepage: `https://lablifehub.com/`
+- Privacy policy: `https://lablifehub.com/privacy/`
+- Terms of service: `https://lablifehub.com/terms/`
+
 After the domain is connected in Vercel and DNS is propagated, submit
 `https://lablifehub.com/sitemap.xml` in Google Search Console.

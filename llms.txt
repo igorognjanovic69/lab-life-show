@@ -16,6 +16,8 @@ Contact: nevenajeremic@lablifehub.com
 - Booking: https://lablifehub.com/book/
 - Reviews: https://lablifehub.com/reviews/
 - Contact: https://lablifehub.com/contact/
+- Privacy Policy: https://lablifehub.com/privacy/
+- Terms of Service: https://lablifehub.com/terms/
 
 ## LabLifeAcademy services
 
