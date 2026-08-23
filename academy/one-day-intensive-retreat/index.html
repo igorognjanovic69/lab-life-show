@@ -1001,17 +1001,17 @@
           </div>
           <h4 class="mt-6 font-bold" data-i18n="retreat_pricing_title">Retreat Formats & Pricing</h4>
           <div class="mt-3 space-y-2 text-sm">
-            <button type="button" onclick="bookRetreatOption('svc_retreat_a','retreat_option_a_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_a')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="font-bold" data-i18n="retreat_option_a_name">One-Day Intensive Retreat</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_a_d">4-5 hours · perfect for fast, focused guidance · $350</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
             </button>
-            <button type="button" onclick="bookRetreatOption('svc_retreat_b','retreat_option_b_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_b')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="font-bold" data-i18n="retreat_option_b_name">Two-Day Premium Retreat</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_b_d">2 × 3 hours · deep project transformation · $600</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
             </button>
-            <button type="button" onclick="bookRetreatOption('svc_retreat_c','retreat_option_c_msg')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
+            <button type="button" onclick="bookRetreatOption('svc_retreat_c')" class="w-full text-left rounded-2xl border border-gray-100 p-4 hover:border-brand hover:bg-lime-light focus:outline-none focus:ring-2 focus:ring-lime transition-all">
               <p class="font-bold" data-i18n="retreat_option_c_name">Retreat + 30-Day Follow-Up Mentoring</p>
               <p class="mt-1 text-gray-500" data-i18n="retreat_option_c_d">Structured support, feedback and implementation guidance · $850</p>
               <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand"><span data-i18n="retreat_book_option">Book this option</span> <i class="fa-solid fa-arrow-right"></i></span>
@@ -1102,7 +1102,7 @@
           <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="landing_a_title">One-Day Intensive Retreat</h2>
           <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="landing_a_intro">A focused 4-5 hour individual research retreat for researchers who need a fast, structured, expert review of their project and a clear action plan.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/book/" onclick="bookRetreatOption('svc_retreat_a','retreat_option_a_msg');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+            <a href="/book/" onclick="bookRetreatOption('svc_retreat_a');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
               <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="landing_a_cta">Book One-Day Retreat</span>
             </a>
             <a href="/academy/" onclick="goToPage(event,'academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
@@ -1159,7 +1159,7 @@
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_a_step2_t">2. Work through the project live</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_a_step2_d">The session focuses on the most important scientific risks, design choices and publication-relevant improvements.</p></div>
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_a_step3_t">3. Leave with a usable plan</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_a_step3_d">You finish with concrete next steps, stronger study logic and a clearer route for the following months.</p></div>
           </div>
-          <a href="/book/" onclick="bookRetreatOption('svc_retreat_a','retreat_option_a_msg');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+          <a href="/book/" onclick="bookRetreatOption('svc_retreat_a');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
             <i class="fa-regular fa-calendar-check"></i><span data-i18n="landing_a_cta">Book One-Day Retreat</span>
           </a>
         </div>
@@ -1174,7 +1174,7 @@
           <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="landing_b_title">Two-Day Premium Retreat</h2>
           <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="landing_b_intro">A deeper two-session research transformation for researchers who need time to redesign the project, strengthen reproducibility and shape a publication strategy.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/book/" onclick="bookRetreatOption('svc_retreat_b','retreat_option_b_msg');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+            <a href="/book/" onclick="bookRetreatOption('svc_retreat_b');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
               <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="landing_b_cta">Book Two-Day Retreat</span>
             </a>
             <a href="/academy/" onclick="goToPage(event,'academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
@@ -1231,7 +1231,7 @@
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_b_step2_t">2. Day two - workflow and publishing</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_b_step2_d">The second session turns the redesigned project into a practical workflow and publication-oriented plan.</p></div>
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_b_step3_t">3. Leave with a transformed project</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_b_step3_d">You finish with stronger scientific logic, clearer methodology and a practical roadmap for execution.</p></div>
           </div>
-          <a href="/book/" onclick="bookRetreatOption('svc_retreat_b','retreat_option_b_msg');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+          <a href="/book/" onclick="bookRetreatOption('svc_retreat_b');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
             <i class="fa-regular fa-calendar-check"></i><span data-i18n="landing_b_cta">Book Two-Day Retreat</span>
           </a>
         </div>
@@ -1246,7 +1246,7 @@
           <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="landing_c_title">Retreat + 30-Day Follow-Up Mentoring</h2>
           <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="landing_c_intro">A premium package for researchers who do not only need advice, but also structured support while they implement it.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/book/" onclick="bookRetreatOption('svc_retreat_c','retreat_option_c_msg');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+            <a href="/book/" onclick="bookRetreatOption('svc_retreat_c');return false;" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
               <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="landing_c_cta">Book Follow-Up Mentoring</span>
             </a>
             <a href="/academy/" onclick="goToPage(event,'academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
@@ -1303,7 +1303,7 @@
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_c_step2_t">2. Implement with support</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_c_step2_d">During the next 30 days, you use the plan and receive guidance on agreed project materials and questions.</p></div>
             <div class="rounded-2xl bg-white/10 p-4"><p class="font-bold" data-i18n="landing_c_step3_t">3. Finish with sharper direction</p><p class="mt-1 text-sm text-white/75" data-i18n="landing_c_step3_d">The goal is not just advice, but a stronger project that has moved forward in practice.</p></div>
           </div>
-          <a href="/book/" onclick="bookRetreatOption('svc_retreat_c','retreat_option_c_msg');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+          <a href="/book/" onclick="bookRetreatOption('svc_retreat_c');return false;" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
             <i class="fa-regular fa-calendar-check"></i><span data-i18n="landing_c_cta">Book Follow-Up Mentoring</span>
           </a>
         </div>
@@ -1943,10 +1943,6 @@
       retreat_option_c_label:"Follow-Up", retreat_option_c_name:"Retreat + 30-Day Follow-Up Mentoring",
       retreat_option_c_t:"Retreat + 30-Day Follow-Up Mentoring", retreat_option_c_d:"Structured support, feedback and implementation guidance · $850",
       retreat_book_option:"Book this option", retreat_cta:"Book a 1:1 Session",
-      retreat_general_msg:"Interested in 1:1 Research Retreat.",
-      retreat_option_a_msg:"Interested in One-Day Intensive Retreat ($350).",
-      retreat_option_b_msg:"Interested in Two-Day Premium Retreat ($600).",
-      retreat_option_c_msg:"Interested in Retreat + 30-Day Follow-Up Mentoring ($850).",
       workshop_kicker:"Advanced group workshop", workshop_title:"Failure in Science: “Why Experiments Fail” Workshop",
       workshop_subtitle:"Advanced workshop for group of scientists.",
       workshop_intro:"Failure is not a setback - it is data. This workshop teaches research teams how to analyze failed experiments, identify the true causes behind negative or inconsistent results, and transform failure into strategic improvement. It covers the core principles of reproducibility, bias reduction, proper documentation, and scientific reasoning that directly save time, money, and resources.",
@@ -1958,7 +1954,6 @@
       workshop_pricing_title:"Format & Premium Pricing", workshop_format:"Format: 90 minute Zoom workshop",
       workshop_group:"Group size: up to 100 participants (minimum 10 participants)", workshop_price:"Price: $25 per workshop topic per person",
       workshop_cta_book:"Book this workshop", workshop_contact:"Contact: nevenajeremic@lablifehub.com",
-      workshop_booking_msg:"Interested in Failure in Science: Why Experiments Fail Workshop.",
       academy_final_cta_title:"Ready to strengthen your research?", academy_final_cta_text:"Choose a retreat or workshop and send a request in one click.",
       academy_final_cta_retreat:"Book a retreat", academy_final_cta_workshop:"Book workshop",
       landing_eyebrow:"LabLifeAcademy service", landing_price_label:"Clear price", landing_cta_academy:"Back to Academy", landing_included:"What you get", landing_process:"How it works",
@@ -2190,10 +2185,6 @@
       retreat_option_c_label:"Prateće mentorstvo", retreat_option_c_name:"Program + 30 dana pratećeg mentorstva",
       retreat_option_c_t:"Program + 30 dana pratećeg mentorstva", retreat_option_c_d:"Strukturisana podrška, povratne informacije i vođenje kroz implementaciju · $850",
       retreat_book_option:"Zakaži ovu opciju", retreat_cta:"Zakaži 1:1 sesiju",
-      retreat_general_msg:"Zainteresovan/a sam za 1:1 istraživački program.",
-      retreat_option_a_msg:"Zainteresovan/a sam za jednodnevni intenzivni program ($350).",
-      retreat_option_b_msg:"Zainteresovan/a sam za dvodnevni premijum program ($600).",
-      retreat_option_c_msg:"Zainteresovan/a sam za program + 30 dana pratećeg mentorstva ($850).",
       workshop_kicker:"Napredna grupna radionica", workshop_title:"Neuspeh u nauci: “Zašto eksperimenti ne uspevaju” radionica",
       workshop_subtitle:"Napredna radionica za grupu naučnika.",
       workshop_intro:"Neuspeh nije poraz - on je podatak. Ova radionica uči istraživačke timove kako da analiziraju neuspele eksperimente, identifikuju stvarne uzroke negativnih ili nedoslednih rezultata i pretvore neuspeh u strateško poboljšanje. Pokriva ključne principe reproduktivnosti, smanjenja pristrasnosti, pravilne dokumentacije i naučnog rasuđivanja koji direktno štede vreme, novac i resurse.",
@@ -2205,7 +2196,6 @@
       workshop_pricing_title:"Format i premijum cena", workshop_format:"Format: 90 minuta Zoom radionica",
       workshop_group:"Veličina grupe: do 100 učesnika (minimum 10 učesnika)", workshop_price:"Cena: $25 po temi radionice po osobi",
       workshop_cta_book:"Zakaži ovu radionicu", workshop_contact:"Kontakt: nevenajeremic@lablifehub.com",
-      workshop_booking_msg:"Zainteresovan/a sam za radionicu Neuspeh u nauci: Zašto eksperimenti ne uspevaju.",
       academy_final_cta_title:"Spremni da ojačate istraživanje?", academy_final_cta_text:"Izaberite program ili radionicu i pošaljite zahtev jednim klikom.",
       academy_final_cta_retreat:"Zakaži 1:1 program", academy_final_cta_workshop:"Zakaži radionicu",
       landing_eyebrow:"LabLifeAcademy usluga", landing_price_label:"Jasna cena", landing_cta_academy:"Nazad na Akademiju", landing_included:"Šta dobijate", landing_process:"Kako izgleda",
@@ -2953,19 +2943,16 @@
   function updateDateLabel(){ const t=I18N[lang]; const lbl=document.getElementById("f_date_label"); if(!lbl) return; lbl.innerHTML = selectedDate ? `<i class="fa-regular fa-calendar-check mr-1"></i>${selectedDate.getDate()} ${t.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}` : ""; }
 
   /* ---------- booking ---------- */
-  function jumpToBooking(messageKey, serviceKey){
-    const t = I18N[lang];
+  function jumpToBooking(serviceKey){
     showPage("book");
     setTimeout(function(){
       if(serviceKey) pickService(serviceKey);
-      const msg = document.getElementById("f_msg");
-      if(msg && messageKey){ msg.value = t[messageKey] || messageKey; }
       document.getElementById("page-book")?.scrollIntoView({ behavior:"smooth", block:"start" });
     }, 120);
   }
-  function openBooking(){ jumpToBooking("", ""); }
-  function bookRetreatOption(serviceKey, messageKey){ jumpToBooking(messageKey, serviceKey); }
-  function bookWorkshop(){ jumpToBooking("workshop_booking_msg", "svc_workshop"); }
+  function openBooking(){ jumpToBooking(""); }
+  function bookRetreatOption(serviceKey){ jumpToBooking(serviceKey); }
+  function bookWorkshop(){ jumpToBooking("svc_workshop"); }
 
   document.getElementById("bookingForm").addEventListener("submit", async function(e){
     e.preventDefault();
