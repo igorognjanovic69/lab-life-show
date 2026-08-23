@@ -108,12 +108,16 @@
       dashboard.classList.remove("hidden");
       setStatus("emailStatus", Boolean(status.features?.email), status.features?.email ? "Connected" : "Missing RESEND_API_KEY");
       setStatus("calendarStatus", Boolean(status.features?.calendar), status.features?.calendar ? "Connected" : "Not connected yet");
-      document.getElementById("calendarAction").classList.add("hidden");
+      const action = document.getElementById("calendarAction");
+      action.classList.add("hidden");
       if(status.features?.calendar){
         document.getElementById("calendarHelp").textContent = "Accept creates events in " + (status.features.calendarAccount || "the connected Google Calendar") + ".";
+        if(status.features?.calendarOAuthClient){
+          action.innerHTML = '<a class="button" href="/api/google-oauth-start">Reconnect Google Calendar</a>';
+          action.classList.remove("hidden");
+        }
       } else if(status.features?.calendarOAuthClient){
         document.getElementById("calendarHelp").textContent = "Google OAuth client is ready. Connect the calendar account to generate the refresh token.";
-        const action = document.getElementById("calendarAction");
         action.innerHTML = '<a class="button" href="/api/google-oauth-start">Connect Google Calendar</a>';
         action.classList.remove("hidden");
       } else {
