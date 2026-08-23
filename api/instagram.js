@@ -9,6 +9,8 @@ const IG_APP_ID = "936619743392459";
 const PROFILE_URL = "https://www.instagram.com/" + USERNAME + "/";
 const API_HOSTS = ["https://www.instagram.com", "https://i.instagram.com"];
 const GRAPH_TOKEN = process.env.IG_ACCESS_TOKEN || process.env.INSTAGRAM_ACCESS_TOKEN;
+const FALLBACK_POST_URL = "https://www.instagram.com/p/Db7n5a3jXkd/";
+const FALLBACK_CAPTION = "Utišaj buku i počni da slušaš nauku.";
 
 function cleanCaption(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
@@ -60,6 +62,30 @@ function mapGraphMedia(item) {
     timestamp: item.timestamp || "",
     children: [],
   };
+}
+
+function fallbackPosts(limit) {
+  return [1, 2, 3].slice(0, limit).map((i) => ({
+    shortcode: "local-" + i,
+    url: FALLBACK_POST_URL,
+    image: "/media/instagram-lablifehub-" + String(i).padStart(2, "0") + ".jpg",
+    isVideo: false,
+    caption: FALLBACK_CAPTION,
+    children: [],
+  }));
+}
+
+function fallbackResponse(res, limit, extra) {
+  res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
+  return res.status(200).json({
+    ok: true,
+    configured: Boolean(GRAPH_TOKEN),
+    source: "local-fallback",
+    username: USERNAME,
+    profileUrl: PROFILE_URL,
+    posts: fallbackPosts(limit),
+    ...(extra || {}),
+  });
 }
 
 async function fetchGraphPosts(limit) {
@@ -139,13 +165,7 @@ module.exports = async (req, res) => {
       }
 
       res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
-      return res.status(200).json({
-        ok: false,
-        configured: true,
-        source: "graph",
-        upstream: graph,
-        posts: [],
-      });
+      return fallbackResponse(res, limit, { upstream: graph });
     }
 
     let result = null;
@@ -155,13 +175,7 @@ module.exports = async (req, res) => {
     }
 
     if (!result || !result.ok) {
-      res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
-      return res.status(200).json({
-        ok: false,
-        configured: false,
-        upstream: result || null,
-        posts: [],
-      });
+      return fallbackResponse(res, limit, { upstream: result || null });
     }
 
     const data = result.data;
@@ -184,7 +198,6 @@ module.exports = async (req, res) => {
       posts,
     });
   } catch (e) {
-    res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=1800");
-    return res.status(200).json({ ok: false, configured: false, error: String(e), posts: [] });
+    return fallbackResponse(res, limit, { error: String(e) });
   }
 };
