@@ -2,14 +2,20 @@ const crypto = require("crypto");
 const {
   SITE_EMAIL,
   DEFAULT_TIME_ZONE,
+  actionButton,
+  actionUrl,
   bookingDetailsHtml,
   bookingId,
   clean,
   esc,
   getBaseUrl,
   sendEmail,
+  signBooking,
   verifyBookingToken,
 } = require("../lib/booking-utils.cjs");
+
+const ADMIN_ACTIONS = ["accept", "propose", "decline"];
+const CLIENT_PROPOSAL_ACTIONS = ["accept-proposal", "request-change"];
 
 module.exports = async (req, res) => {
   try {
@@ -27,17 +33,33 @@ async function renderAction(req, res) {
   const url = new URL(req.url, getBaseUrl(req));
   const action = clean(url.searchParams.get("action"), 40);
   const token = url.searchParams.get("token") || "";
+
+  if (CLIENT_PROPOSAL_ACTIONS.includes(action)) {
+    const proposal = verifyProposalToken(token);
+    if (action === "accept-proposal") {
+      return sendHtml(res, 200, renderProposalAcceptForm(token, proposal));
+    }
+    return sendHtml(res, 200, renderProposalChangeForm(token, proposal));
+  }
+
   const booking = verifyBookingToken(token);
-  if (!["accept", "propose", "decline"].includes(action)) {
+  if (!ADMIN_ACTIONS.includes(action)) {
     return sendHtml(res, 400, page("Invalid action", errorBox("Unknown booking action.")));
   }
-  return sendHtml(res, 200, renderForm(action, token, booking));
+  return sendHtml(res, 200, renderForm(action, token, booking, "", queryPrefill(url)));
 }
 
 async function processAction(req, res) {
   const form = await readForm(req);
   const action = clean(form.action, 40);
   const token = form.token || "";
+
+  if (CLIENT_PROPOSAL_ACTIONS.includes(action)) {
+    const proposal = verifyProposalToken(token);
+    if (action === "accept-proposal") return acceptProposedTime(req, res, proposal, form);
+    return requestDifferentTime(req, res, proposal, form);
+  }
+
   const booking = verifyBookingToken(token);
 
   if (action === "accept") return acceptBooking(req, res, booking, form);
@@ -115,6 +137,9 @@ async function proposeTime(req, res, booking, form) {
   if (!slot.ok) return sendHtml(res, 400, renderForm("propose", form.token, booking, slot.error));
 
   const note = clean(form.note, 1200);
+  const proposalToken = signProposal(booking, slot, note);
+  const acceptProposalLink = actionUrl(req, "accept-proposal", proposalToken);
+  const requestChangeLink = actionUrl(req, "request-change", proposalToken);
   const html =
     "<h2>Alternative date and time proposal</h2>" +
     "<p>Dear " +
@@ -128,7 +153,13 @@ async function proposeTime(req, res, booking, form) {
     esc(humanSlot(slot)) +
     "</strong></p>" +
     (note ? "<p><strong>Note:</strong><br/>" + esc(note).replace(/\n/g, "<br/>") + "</p>" : "") +
-    "<p>Please reply to this email to confirm whether this works for you.</p>" +
+    "<div style=\"margin:28px 0 18px;padding:20px;border:1px solid #e5e7eb;border-radius:16px;background:#f8faf9;\">" +
+    "<p style=\"margin:0 0 14px;font-weight:700;color:#26302e;\">Does this time work for you?</p>" +
+    "<p style=\"margin:0 0 16px;color:#4b5563;font-size:14px;line-height:1.5;\">Please use one of the buttons below. If the proposed time works, your session will be confirmed. If it does not, you can request another date/time.</p>" +
+    actionButton("Accept proposed time", acceptProposalLink, "#179389", "#ffffff") +
+    actionButton("Request another date/time", requestChangeLink, "#b7d63d", "#26302e") +
+    "</div>" +
+    "<p style=\"font-size:13px;color:#6b7280;line-height:1.5;\">You can also reply to this email if you prefer.</p>" +
     footer();
 
   await sendEmail({
@@ -144,6 +175,136 @@ async function proposeTime(req, res, booking, form) {
     res,
     200,
     page("Alternative time sent", successBox("Alternative date/time proposal has been sent to " + esc(booking.email) + "."))
+  );
+}
+
+async function acceptProposedTime(req, res, proposal, form) {
+  const booking = proposal.booking;
+  const slot = proposal.slot;
+  const requesterNote = clean(form.note, 1200);
+  const note = [proposal.note, requesterNote ? "Requester note: " + requesterNote : ""].filter(Boolean).join("\n\n");
+  const eventId = calendarEventId(booking, slot);
+  const calendar = await createGoogleCalendarEvent({ booking, slot, note, eventId });
+
+  if (calendar.configured && !calendar.ok) {
+    return sendHtml(
+      res,
+      502,
+      page(
+        "Calendar error",
+        errorBox("Google Calendar could not create the event, so no confirmation email was sent.") +
+          "<pre>" +
+          esc(calendar.error || "Unknown calendar error") +
+          "</pre>"
+      )
+    );
+  }
+
+  const html =
+    "<h2>Your LabLifeAcademy booking is confirmed</h2>" +
+    "<p>Dear " +
+    esc(booking.name) +
+    ",</p>" +
+    "<p>Thank you for confirming the proposed date and time. Your session has been confirmed.</p>" +
+    bookingDetailsHtml({ ...booking, date: humanSlot(slot) }) +
+    (proposal.note ? "<p><strong>Note from Dr. Nevena Jeremić:</strong><br/>" + esc(proposal.note).replace(/\n/g, "<br/>") + "</p>" : "") +
+    (requesterNote ? "<p><strong>Your note:</strong><br/>" + esc(requesterNote).replace(/\n/g, "<br/>") + "</p>" : "") +
+    (calendar.ok && calendar.htmlLink
+      ? '<p><a href="' + esc(calendar.htmlLink) + '">Open calendar event</a></p>'
+      : "<p>A calendar invite is attached to this email.</p>") +
+    footer();
+
+  const ics = buildIcs({ booking, slot, note, eventId });
+  await sendEmail({
+    to: booking.email,
+    bcc: SITE_EMAIL,
+    replyTo: SITE_EMAIL,
+    subject: "Booking confirmed: " + booking.service,
+    html,
+    attachments: [
+      {
+        filename: "lablifeacademy-booking.ics",
+        content: Buffer.from(ics).toString("base64"),
+        contentType: "text/calendar; charset=utf-8; method=REQUEST",
+      },
+    ],
+    idempotencyKey: "booking-proposal-accept-" + eventId,
+  });
+
+  return sendHtml(
+    res,
+    200,
+    page(
+      "Booking confirmed",
+      successBox("Thank you - your booking has been confirmed.") +
+        successBox("Confirmation email has been sent to " + esc(booking.email) + ".") +
+        (calendar.ok
+          ? successBox("Google Calendar event created." + (calendar.htmlLink ? ' <a href="' + esc(calendar.htmlLink) + '">Open event</a>' : ""))
+          : infoBox("Google Calendar is not connected yet. You received an .ics invite, and Nevena received a copy by email."))
+    )
+  );
+}
+
+async function requestDifferentTime(req, res, proposal, form) {
+  const booking = proposal.booking;
+  const slot = parseSlot({ ...form, duration: proposal.slot.duration }, booking);
+  if (!slot.ok) return sendHtml(res, 400, renderProposalChangeForm(form.token, proposal, slot.error));
+
+  const note = clean(form.note, 1200);
+  const followUpBooking = {
+    ...booking,
+    date: slot.date,
+    message: [
+      booking.message,
+      "Requester asked for another date/time after the proposed slot: " + humanSlot(proposal.slot) + ".",
+      note ? "Requester note: " + note : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n"),
+    submittedAt: new Date().toISOString(),
+  };
+  const adminToken = signBooking(followUpBooking);
+  const acceptRequestedLink = withSlotPrefill(actionUrl(req, "accept", adminToken), slot);
+  const suggestAgainLink = withSlotPrefill(actionUrl(req, "propose", adminToken), slot);
+
+  const html =
+    "<h2>Requester asked for another date/time</h2>" +
+    "<p><strong>" +
+    esc(booking.name) +
+    "</strong> responded to the alternative time proposal for <strong>" +
+    esc(booking.service) +
+    "</strong>.</p>" +
+    bookingDetailsHtml(booking) +
+    "<p><strong>Previously proposed time:</strong><br/>" +
+    esc(humanSlot(proposal.slot)) +
+    "</p>" +
+    "<p><strong>Requester suggested:</strong><br/>" +
+    esc(humanSlot(slot)) +
+    "</p>" +
+    (note ? "<p><strong>Requester note:</strong><br/>" + esc(note).replace(/\n/g, "<br/>") + "</p>" : "") +
+    "<div style=\"margin:28px 0 18px;padding:20px;border:1px solid #e5e7eb;border-radius:16px;background:#f8faf9;\">" +
+    "<p style=\"margin:0 0 14px;font-weight:700;color:#26302e;\">Next step</p>" +
+    "<p style=\"margin:0 0 16px;color:#4b5563;font-size:14px;line-height:1.5;\">Accept the requested time, or suggest another date/time. The fields will be prefilled with the requester's suggestion.</p>" +
+    actionButton("Accept requested time", acceptRequestedLink, "#179389", "#ffffff") +
+    actionButton("Suggest another time", suggestAgainLink, "#b7d63d", "#26302e") +
+    "</div>";
+
+  await sendEmail({
+    to: SITE_EMAIL,
+    replyTo: booking.email,
+    subject: "Requester asked for another time: " + booking.service,
+    html,
+    idempotencyKey: "booking-client-change-" + bookingId(followUpBooking) + "-" + hash(slot.startDateTime + note),
+  });
+
+  return sendHtml(
+    res,
+    200,
+    page(
+      "Request sent",
+      successBox("Thank you - your date/time request has been sent to Dr. Nevena Jeremić.") +
+        infoBox("You will receive a confirmation or another proposal by email.")
+    )
   );
 }
 
@@ -173,12 +334,25 @@ async function declineBooking(req, res, booking, form) {
   return sendHtml(res, 200, page("Booking declined", successBox("Decline email has been sent to " + esc(booking.email) + ".")));
 }
 
-function renderForm(action, token, booking, error) {
+function renderForm(action, token, booking, error, prefill) {
   const title =
     action === "accept" ? "Accept booking" : action === "propose" ? "Propose new date & time" : "Decline booking";
   const submit =
     action === "accept" ? "Confirm and send" : action === "propose" ? "Send proposal" : "Send decline";
-  const preferredDate = /^\d{4}-\d{2}-\d{2}$/.test(booking.date || "") ? booking.date : "";
+  const preferredDate =
+    prefill && /^\d{4}-\d{2}-\d{2}$/.test(prefill.date || "")
+      ? prefill.date
+      : /^\d{4}-\d{2}-\d{2}$/.test(booking.date || "")
+        ? booking.date
+        : "";
+  const preferredTime =
+    prefill && /^\d{2}:\d{2}$/.test(prefill.time || "")
+      ? prefill.time
+      : process.env.BOOKING_DEFAULT_TIME || "10:00";
+  const preferredDuration =
+    prefill && /^\d+$/.test(prefill.duration || "")
+      ? Math.min(Math.max(parseInt(prefill.duration, 10) || defaultDuration(booking.service), 15), 600)
+      : defaultDuration(booking.service);
   const dateTimeFields =
     action === "decline"
       ? ""
@@ -187,10 +361,10 @@ function renderForm(action, token, booking, error) {
         esc(preferredDate) +
         '"></label>' +
         '<label>Time<input required type="time" name="time" value="' +
-        esc(process.env.BOOKING_DEFAULT_TIME || "10:00") +
+        esc(preferredTime) +
         '"></label>' +
         '<label>Duration (minutes)<input required type="number" min="15" max="600" step="15" name="duration" value="' +
-        String(defaultDuration(booking.service)) +
+        String(preferredDuration) +
         '"></label>' +
         "</div>";
 
@@ -216,6 +390,69 @@ function renderForm(action, token, booking, error) {
       '<button type="submit">' +
       esc(submit) +
       "</button>" +
+      "</form>" +
+      "</div>"
+  );
+}
+
+function renderProposalAcceptForm(token, proposal, error) {
+  const booking = proposal.booking;
+  const slot = proposal.slot;
+  return page(
+    "Accept proposed time",
+    (error ? errorBox(error) : "") +
+      '<div class="card">' +
+      "<h1>Accept proposed time</h1>" +
+      "<p>Please confirm that this proposed date and time works for you.</p>" +
+      '<div class="details">' +
+      bookingDetailsHtml({ ...booking, date: humanSlot(slot) }) +
+      (proposal.note ? "<p><strong>Note from Dr. Nevena Jeremić:</strong><br/>" + esc(proposal.note).replace(/\n/g, "<br/>") + "</p>" : "") +
+      "</div>" +
+      '<form method="POST" action="/api/booking-action">' +
+      '<input type="hidden" name="token" value="' +
+      esc(token) +
+      '">' +
+      '<input type="hidden" name="action" value="accept-proposal">' +
+      '<label>Optional note<textarea name="note" rows="4" placeholder="Add a short note if needed..."></textarea></label>' +
+      '<button type="submit">Confirm proposed time</button>' +
+      "</form>" +
+      "</div>"
+  );
+}
+
+function renderProposalChangeForm(token, proposal, error) {
+  const booking = proposal.booking;
+  const slot = proposal.slot;
+  return page(
+    "Request another date/time",
+    (error ? errorBox(error) : "") +
+      '<div class="card">' +
+      "<h1>Request another date/time</h1>" +
+      "<p>Please suggest a date and time that would work better for you.</p>" +
+      '<div class="details">' +
+      "<p><strong>Current proposed time:</strong><br/>" +
+      esc(humanSlot(slot)) +
+      "</p>" +
+      bookingDetailsHtml(booking) +
+      "</div>" +
+      '<form method="POST" action="/api/booking-action">' +
+      '<input type="hidden" name="token" value="' +
+      esc(token) +
+      '">' +
+      '<input type="hidden" name="action" value="request-change">' +
+      '<input type="hidden" name="duration" value="' +
+      String(Math.min(Math.max(parseInt(slot.duration, 10) || defaultDuration(booking.service), 15), 600)) +
+      '">' +
+      '<div class="grid">' +
+      '<label>Preferred date<input required type="date" name="date" value="' +
+      esc(slot.date) +
+      '"></label>' +
+      '<label>Preferred time<input required type="time" name="time" value="' +
+      esc(slot.time) +
+      '"></label>' +
+      "</div>" +
+      '<label>Optional message<textarea name="note" rows="5" placeholder="Add a note for Dr. Nevena Jeremić..."></textarea></label>' +
+      '<button type="submit">Send preferred time</button>' +
       "</form>" +
       "</div>"
   );
@@ -419,6 +656,40 @@ function foldLine(line) {
 
 function footer() {
   return '<p style="margin-top:24px;">Best regards,<br/>Dr. Nevena Jeremić<br/>LabLifeHub</p>';
+}
+
+function signProposal(booking, slot, note) {
+  return signBooking({
+    __type: "proposal",
+    booking,
+    slot,
+    note,
+    proposedAt: new Date().toISOString(),
+  });
+}
+
+function verifyProposalToken(token) {
+  const proposal = verifyBookingToken(token);
+  if (!proposal || proposal.__type !== "proposal" || !proposal.booking || !proposal.slot) {
+    throw new Error("Invalid proposal token");
+  }
+  return proposal;
+}
+
+function queryPrefill(url) {
+  return {
+    date: clean(url.searchParams.get("date"), 20),
+    time: clean(url.searchParams.get("time"), 20),
+    duration: clean(url.searchParams.get("duration"), 20),
+  };
+}
+
+function withSlotPrefill(href, slot) {
+  const url = new URL(href);
+  url.searchParams.set("date", slot.date);
+  url.searchParams.set("time", slot.time);
+  url.searchParams.set("duration", String(slot.duration));
+  return url.href;
 }
 
 function page(title, content) {
