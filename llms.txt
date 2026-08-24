@@ -43,6 +43,28 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 - Retreat + 30-Day Follow-Up Mentoring: https://lablifehub.com/academy/follow-up-mentoring/
 - Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/
 
+## LabLifeAcademy Serbian services
+
+- Jednodnevni intenzivni istraživački program: https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+- Dvodnevni premijum istraživački program: https://lablifehub.com/sr/academy/two-day-premium-retreat/
+- Program + 30 dana pratećeg mentorstva: https://lablifehub.com/sr/academy/follow-up-mentoring/
+- Neuspeh u nauci radionica: https://lablifehub.com/sr/academy/failure-in-science-workshop/
+
+## Localized alternates
+
+- Home: https://lablifehub.com/ ↔ https://lablifehub.com/sr/
+- About: https://lablifehub.com/about/ ↔ https://lablifehub.com/sr/about/
+- Research: https://lablifehub.com/research/ ↔ https://lablifehub.com/sr/research/
+- Podcast: https://lablifehub.com/podcast/ ↔ https://lablifehub.com/sr/podcast/
+- Be Guest: https://lablifehub.com/be-guest/ ↔ https://lablifehub.com/sr/be-guest/
+- Academy: https://lablifehub.com/academy/ ↔ https://lablifehub.com/sr/academy/
+- One-Day Intensive Retreat: https://lablifehub.com/academy/one-day-intensive-retreat/ ↔ https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+- Two-Day Premium Retreat: https://lablifehub.com/academy/two-day-premium-retreat/ ↔ https://lablifehub.com/sr/academy/two-day-premium-retreat/
+- Follow-Up Mentoring: https://lablifehub.com/academy/follow-up-mentoring/ ↔ https://lablifehub.com/sr/academy/follow-up-mentoring/
+- Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/ ↔ https://lablifehub.com/sr/academy/failure-in-science-workshop/
+- Book: https://lablifehub.com/book/ ↔ https://lablifehub.com/sr/book/
+- Contact: https://lablifehub.com/contact/ ↔ https://lablifehub.com/sr/contact/
+
 ## Indexing priority
 
 The most important public pages for search and AI discovery are:
@@ -54,6 +76,13 @@ The most important public pages for search and AI discovery are:
 5. https://lablifehub.com/academy/follow-up-mentoring/
 6. https://lablifehub.com/academy/failure-in-science-workshop/
 7. https://lablifehub.com/be-guest/ - podcast guest application
+8. https://lablifehub.com/sr/podcast/ - LabLifePodcast dr Nevene Jeremić
+9. https://lablifehub.com/sr/academy/ - LabLifeAcademy dr Nevene Jeremić
+10. https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+11. https://lablifehub.com/sr/academy/two-day-premium-retreat/
+12. https://lablifehub.com/sr/academy/follow-up-mentoring/
+13. https://lablifehub.com/sr/academy/failure-in-science-workshop/
+14. https://lablifehub.com/sr/be-guest/ - prijava gosta u podkastu
 
 ## Key topics
 

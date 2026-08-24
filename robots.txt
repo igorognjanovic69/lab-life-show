@@ -22,5 +22,22 @@ Disallow: /admin/
 # https://lablifehub.com/llms.txt
 # https://lablifehub.com/llms-full.txt
 # https://lablifehub.com/.well-known/agent-context.json
+# https://lablifehub.com/.well-known/api-catalog
+# https://lablifehub.com/.well-known/agent-skills/index.json
+# English canonical section: https://lablifehub.com/
+# Serbian canonical section: https://lablifehub.com/sr/
+# Serbian public pages:
+# https://lablifehub.com/sr/
+# https://lablifehub.com/sr/about/
+# https://lablifehub.com/sr/research/
+# https://lablifehub.com/sr/podcast/
+# https://lablifehub.com/sr/be-guest/
+# https://lablifehub.com/sr/academy/
+# https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+# https://lablifehub.com/sr/academy/two-day-premium-retreat/
+# https://lablifehub.com/sr/academy/follow-up-mentoring/
+# https://lablifehub.com/sr/academy/failure-in-science-workshop/
+# https://lablifehub.com/sr/book/
+# https://lablifehub.com/sr/contact/
 
 Sitemap: https://lablifehub.com/sitemap.xml

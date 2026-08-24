@@ -3,6 +3,66 @@
   "canonical_url": "https://lablifehub.com/.well-known/api-catalog",
   "site": "https://lablifehub.com/",
   "owner": "Dr. Nevena Jeremić / LabLifeHub",
+  "languages": {
+    "en": "https://lablifehub.com/",
+    "sr": "https://lablifehub.com/sr/"
+  },
+  "localized_pages": {
+    "home": {
+      "en": "https://lablifehub.com/",
+      "sr": "https://lablifehub.com/sr/"
+    },
+    "podcast": {
+      "en": "https://lablifehub.com/podcast/",
+      "sr": "https://lablifehub.com/sr/podcast/"
+    },
+    "academy": {
+      "en": "https://lablifehub.com/academy/",
+      "sr": "https://lablifehub.com/sr/academy/"
+    },
+    "book": {
+      "en": "https://lablifehub.com/book/",
+      "sr": "https://lablifehub.com/sr/book/"
+    },
+    "be_guest": {
+      "en": "https://lablifehub.com/be-guest/",
+      "sr": "https://lablifehub.com/sr/be-guest/"
+    },
+    "contact": {
+      "en": "https://lablifehub.com/contact/",
+      "sr": "https://lablifehub.com/sr/contact/"
+    }
+  },
+  "academy_services": [
+    {
+      "name": "One-Day Intensive Retreat",
+      "localized_name": "Jednodnevni intenzivni istraživački program",
+      "en": "https://lablifehub.com/academy/one-day-intensive-retreat/",
+      "sr": "https://lablifehub.com/sr/academy/one-day-intensive-retreat/",
+      "price": "$350"
+    },
+    {
+      "name": "Two-Day Premium Retreat",
+      "localized_name": "Dvodnevni premijum istraživački program",
+      "en": "https://lablifehub.com/academy/two-day-premium-retreat/",
+      "sr": "https://lablifehub.com/sr/academy/two-day-premium-retreat/",
+      "price": "$600"
+    },
+    {
+      "name": "Retreat + 30-Day Follow-Up Mentoring",
+      "localized_name": "Program + 30 dana pratećeg mentorstva",
+      "en": "https://lablifehub.com/academy/follow-up-mentoring/",
+      "sr": "https://lablifehub.com/sr/academy/follow-up-mentoring/",
+      "price": "$850"
+    },
+    {
+      "name": "Failure in Science Workshop",
+      "localized_name": "Neuspeh u nauci radionica",
+      "en": "https://lablifehub.com/academy/failure-in-science-workshop/",
+      "sr": "https://lablifehub.com/sr/academy/failure-in-science-workshop/",
+      "price": "$25 per workshop topic per person"
+    }
+  ],
   "public_read_endpoints": [
     {
       "path": "/api/episodes",
@@ -26,16 +86,19 @@
     {
       "name": "LabLifeAcademy booking",
       "page": "https://lablifehub.com/book/",
+      "localized_page": "https://lablifehub.com/sr/book/",
       "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
     },
     {
       "name": "LabLifePodcast guest application",
       "page": "https://lablifehub.com/be-guest/",
+      "localized_page": "https://lablifehub.com/sr/be-guest/",
       "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
     },
     {
       "name": "Contact",
       "page": "https://lablifehub.com/contact/",
+      "localized_page": "https://lablifehub.com/sr/contact/",
       "guidance": "Use the visible website form or email nevenajeremic@lablifehub.com."
     }
   ],

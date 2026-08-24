@@ -55,6 +55,21 @@ Primary search priorities:
 - Zakazivanje LabLifeAcademy mentorstva: https://lablifehub.com/sr/book/
 - Kontakt: https://lablifehub.com/sr/contact/
 
+## Localized alternates
+
+- Home: https://lablifehub.com/ ↔ https://lablifehub.com/sr/
+- About: https://lablifehub.com/about/ ↔ https://lablifehub.com/sr/about/
+- Research: https://lablifehub.com/research/ ↔ https://lablifehub.com/sr/research/
+- Podcast: https://lablifehub.com/podcast/ ↔ https://lablifehub.com/sr/podcast/
+- Be Guest: https://lablifehub.com/be-guest/ ↔ https://lablifehub.com/sr/be-guest/
+- Academy: https://lablifehub.com/academy/ ↔ https://lablifehub.com/sr/academy/
+- One-Day Intensive Retreat: https://lablifehub.com/academy/one-day-intensive-retreat/ ↔ https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+- Two-Day Premium Retreat: https://lablifehub.com/academy/two-day-premium-retreat/ ↔ https://lablifehub.com/sr/academy/two-day-premium-retreat/
+- Follow-Up Mentoring: https://lablifehub.com/academy/follow-up-mentoring/ ↔ https://lablifehub.com/sr/academy/follow-up-mentoring/
+- Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/ ↔ https://lablifehub.com/sr/academy/failure-in-science-workshop/
+- Book: https://lablifehub.com/book/ ↔ https://lablifehub.com/sr/book/
+- Contact: https://lablifehub.com/contact/ ↔ https://lablifehub.com/sr/contact/
+
 ## LabLifePodcast
 
 LabLifePodcast is hosted by Dr. Nevena Jeremić. It is positioned as a science podcast and scientific communication platform focused on honest conversations about life in science, research careers, lab life, innovation, experimental design, reproducibility and better research.
@@ -62,11 +77,17 @@ LabLifePodcast is hosted by Dr. Nevena Jeremić. It is positioned as a science p
 Podcast URL:
 https://lablifehub.com/podcast/
 
+Serbian podcast URL:
+https://lablifehub.com/sr/podcast/
+
 YouTube:
 https://www.youtube.com/@lablifepodcast
 
 Guest application:
 https://lablifehub.com/be-guest/
+
+Serbian guest application:
+https://lablifehub.com/sr/be-guest/
 
 The Be Guest page is for people who want to participate in the podcast. Applicants are asked to describe their background, title, institution, previous work, expertise, proposed topic, why they want to participate, short biography, optional publications and useful professional links.
 
@@ -77,8 +98,14 @@ LabLifeAcademy is Dr. Nevena Jeremić's research education and mentoring offer. 
 Academy URL:
 https://lablifehub.com/academy/
 
+Serbian academy URL:
+https://lablifehub.com/sr/academy/
+
 Booking URL:
 https://lablifehub.com/book/
+
+Serbian booking URL:
+https://lablifehub.com/sr/book/
 
 ## LabLifeAcademy services
 
@@ -86,6 +113,9 @@ https://lablifehub.com/book/
 
 URL:
 https://lablifehub.com/academy/one-day-intensive-retreat/
+
+Serbian URL:
+https://lablifehub.com/sr/academy/one-day-intensive-retreat/
 
 Format:
 4-5 hours, online 1:1 intensive session.
@@ -101,6 +131,9 @@ Focused research mentoring for Master, PhD, Postdoc and early-career researchers
 URL:
 https://lablifehub.com/academy/two-day-premium-retreat/
 
+Serbian URL:
+https://lablifehub.com/sr/academy/two-day-premium-retreat/
+
 Format:
 2 × 3 hours, online 1:1 premium retreat.
 
@@ -115,6 +148,9 @@ Deep project transformation for PhD candidates, postdocs and researchers. It cov
 URL:
 https://lablifehub.com/academy/follow-up-mentoring/
 
+Serbian URL:
+https://lablifehub.com/sr/academy/follow-up-mentoring/
+
 Format:
 One-day or two-day retreat plus 30 days of structured support, feedback and implementation guidance.
 
@@ -128,6 +164,9 @@ Premium package for researchers who need help implementing the plan after the in
 
 URL:
 https://lablifehub.com/academy/failure-in-science-workshop/
+
+Serbian URL:
+https://lablifehub.com/sr/academy/failure-in-science-workshop/
 
 Format:
 90 minute Zoom workshop for groups of scientists, up to 100 participants, minimum 10 participants.

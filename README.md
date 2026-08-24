@@ -79,6 +79,15 @@ Optional Vercel environment variables:
 
 The final canonical domain is `https://lablifehub.com`.
 
+Language-specific canonical sections:
+
+- English: `https://lablifehub.com/`
+- Serbian: `https://lablifehub.com/sr/`
+
+The sitemap includes English and Serbian page pairs with `hreflang` alternates
+for Podcast, Academy, Academy service landing pages, Be Guest, Book, Contact,
+Research and About.
+
 Prepared discovery files:
 
 - `/robots.txt`

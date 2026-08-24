@@ -5,6 +5,56 @@
     "en": "https://lablifehub.com/",
     "sr": "https://lablifehub.com/sr/"
   },
+  "localized_alternates": [
+    {
+      "en": "https://lablifehub.com/",
+      "sr": "https://lablifehub.com/sr/"
+    },
+    {
+      "en": "https://lablifehub.com/about/",
+      "sr": "https://lablifehub.com/sr/about/"
+    },
+    {
+      "en": "https://lablifehub.com/research/",
+      "sr": "https://lablifehub.com/sr/research/"
+    },
+    {
+      "en": "https://lablifehub.com/podcast/",
+      "sr": "https://lablifehub.com/sr/podcast/"
+    },
+    {
+      "en": "https://lablifehub.com/be-guest/",
+      "sr": "https://lablifehub.com/sr/be-guest/"
+    },
+    {
+      "en": "https://lablifehub.com/academy/",
+      "sr": "https://lablifehub.com/sr/academy/"
+    },
+    {
+      "en": "https://lablifehub.com/academy/one-day-intensive-retreat/",
+      "sr": "https://lablifehub.com/sr/academy/one-day-intensive-retreat/"
+    },
+    {
+      "en": "https://lablifehub.com/academy/two-day-premium-retreat/",
+      "sr": "https://lablifehub.com/sr/academy/two-day-premium-retreat/"
+    },
+    {
+      "en": "https://lablifehub.com/academy/follow-up-mentoring/",
+      "sr": "https://lablifehub.com/sr/academy/follow-up-mentoring/"
+    },
+    {
+      "en": "https://lablifehub.com/academy/failure-in-science-workshop/",
+      "sr": "https://lablifehub.com/sr/academy/failure-in-science-workshop/"
+    },
+    {
+      "en": "https://lablifehub.com/book/",
+      "sr": "https://lablifehub.com/sr/book/"
+    },
+    {
+      "en": "https://lablifehub.com/contact/",
+      "sr": "https://lablifehub.com/sr/contact/"
+    }
+  ],
   "primary_person": {
     "name": "Dr. Nevena Jeremić",
     "alternate_name": "Nevena Jeremic",
@@ -88,6 +138,32 @@
       "url": "https://lablifehub.com/academy/failure-in-science-workshop/",
       "price": "$25 per workshop topic per person",
       "format": "90 minute Zoom workshop for groups of scientists"
+    }
+  ],
+  "serbian_academy_services": [
+    {
+      "name": "Jednodnevni intenzivni istraživački program",
+      "url": "https://lablifehub.com/sr/academy/one-day-intensive-retreat/",
+      "price": "$350",
+      "format": "4-5 sati, online 1:1 intenzivna sesija"
+    },
+    {
+      "name": "Dvodnevni premijum istraživački program",
+      "url": "https://lablifehub.com/sr/academy/two-day-premium-retreat/",
+      "price": "$600",
+      "format": "2 × 3 sata, online 1:1 premijum program"
+    },
+    {
+      "name": "Program + 30 dana pratećeg mentorstva",
+      "url": "https://lablifehub.com/sr/academy/follow-up-mentoring/",
+      "price": "$850",
+      "format": "Program plus 30 dana strukturisane prateće podrške"
+    },
+    {
+      "name": "Neuspeh u nauci radionica",
+      "url": "https://lablifehub.com/sr/academy/failure-in-science-workshop/",
+      "price": "$25 po temi radionice po osobi",
+      "format": "90 minuta Zoom radionica za grupe naučnika"
     }
   ],
   "topics": [
