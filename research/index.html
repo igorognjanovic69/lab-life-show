@@ -12,6 +12,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://lablifehub.com/research/" />
+  <link rel="alternate" hreflang="en" href="https://lablifehub.com/research/" />
+  <link rel="alternate" hreflang="sr" href="https://lablifehub.com/sr/research/" />
+  <link rel="alternate" hreflang="x-default" href="https://lablifehub.com/research/" />
   <link rel="alternate" type="application/rss+xml" title="LabLifePodcast YouTube RSS feed" href="https://www.youtube.com/feeds/videos.xml?channel_id=UCHKwJh6VHC2lowDCH4w347A" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LabLifeHub" />
@@ -323,10 +326,7 @@
         "width": 1664,
         "height": 1800
       },
-      "inLanguage": [
-        "en",
-        "sr"
-      ]
+      "inLanguage": "en"
     },
     {
       "@type": "BreadcrumbList",
@@ -2322,7 +2322,7 @@
     }
   };
 
-  let lang = "en";
+  let lang = window.location.pathname.toLowerCase() === "/sr" || window.location.pathname.toLowerCase().startsWith("/sr/") ? "sr" : "en";
 
   const YT_CHANNEL_URL = "https://www.youtube.com/@lablifepodcast";
   const IG_PROFILE_URL = "https://www.instagram.com/lablife.hub/";
@@ -2714,7 +2714,12 @@
     else updateBookingLanguageHelp("");
     updatePageMeta(pageFromLocation());
   }
-  function toggleLang(){ lang = lang==="en" ? "sr" : "en"; applyLang(); }
+  function toggleLang(){
+    const currentPage = pageFromLocation();
+    lang = lang==="en" ? "sr" : "en";
+    applyLang();
+    updatePageUrl(currentPage, false);
+  }
   const SITE_ORIGIN = "https://lablifehub.com";
   const DEFAULT_SOCIAL_IMAGE = SITE_ORIGIN + "/media/nevena-main.jpg";
   const PAGE_PATHS = {
@@ -2789,6 +2794,17 @@
   const PAGE_ROBOTS = {
     reviews: "noindex, follow, max-image-preview:large"
   };
+  function stripLangPrefix(path){
+    const normalized = normalizePath(path);
+    if(normalized === "/sr") return "/";
+    if(normalized.toLowerCase().startsWith("/sr/")) return normalized.slice(3) || "/";
+    return normalized;
+  }
+  function pathForLang(path, targetLang){
+    const base = normalizePath(stripLangPrefix(path || "/"));
+    if(targetLang === "sr") return base === "/" ? "/sr/" : `/sr${base}/`.replace(/\/+/g, "/");
+    return base === "/" ? "/" : `${base}/`.replace(/\/+/g, "/");
+  }
   const PATH_PAGES = Object.entries(PAGE_PATHS).reduce((acc, item)=>{
     const name = item[0], path = item[1];
     acc[(path.replace(/\/+$/,"") || "/").toLowerCase()] = name;
@@ -2800,11 +2816,11 @@
   function pageFromLocation(){
     const hash = decodeURIComponent((window.location.hash || "").replace(/^#\/?/, "")).trim();
     if(hash) return normalizePageName(hash);
-    const path = normalizePath(window.location.pathname).toLowerCase();
+    const path = stripLangPrefix(window.location.pathname).toLowerCase();
     return normalizePageName(PATH_PAGES[path] || "home");
   }
   function updatePageUrl(name, replace){
-    const target = PAGE_PATHS[name] || "/";
+    const target = pathForLang(PAGE_PATHS[name] || "/", lang);
     const current = normalizePath(window.location.pathname);
     const targetPath = normalizePath(target);
     if(current === targetPath && !window.location.hash) return;
@@ -2843,10 +2859,26 @@
     }
     el.setAttribute("content", content);
   }
+  function setHeadLink(selector, attrs){
+    let el = document.querySelector(selector);
+    if(!el){
+      el = document.createElement("link");
+      document.head.appendChild(el);
+    }
+    Object.keys(attrs).forEach(function(key){ el.setAttribute(key, attrs[key]); });
+  }
+  function updateHreflangLinks(name){
+    const basePath = PAGE_PATHS[name] || "/";
+    const enUrl = new URL(pathForLang(basePath, "en"), SITE_ORIGIN).href;
+    const srUrl = new URL(pathForLang(basePath, "sr"), SITE_ORIGIN).href;
+    setHeadLink('link[rel="alternate"][hreflang="en"]', { rel:"alternate", hreflang:"en", href:enUrl });
+    setHeadLink('link[rel="alternate"][hreflang="sr"]', { rel:"alternate", hreflang:"sr", href:srUrl });
+    setHeadLink('link[rel="alternate"][hreflang="x-default"]', { rel:"alternate", hreflang:"x-default", href:enUrl });
+  }
   function updatePageMeta(name){
     const meta = PAGE_META[name] && (PAGE_META[name][lang] || PAGE_META[name].en);
     if(!meta) return;
-    const pageUrl = new URL(PAGE_PATHS[name] || "/", SITE_ORIGIN).href;
+    const pageUrl = new URL(pathForLang(PAGE_PATHS[name] || "/", lang), SITE_ORIGIN).href;
     document.title = meta[0];
     const desc = document.querySelector('meta[name="description"]');
     if(desc) desc.setAttribute("content", meta[1]);
@@ -2859,9 +2891,12 @@
       document.head.appendChild(canonical);
     }
     canonical.setAttribute("href", pageUrl);
+    updateHreflangLinks(name);
     setHeadMeta('meta[property="og:title"]', "property", "og:title", meta[0]);
     setHeadMeta('meta[property="og:description"]', "property", "og:description", meta[1]);
     setHeadMeta('meta[property="og:url"]', "property", "og:url", pageUrl);
+    setHeadMeta('meta[property="og:locale"]', "property", "og:locale", lang==="sr" ? "sr_RS" : "en_US");
+    setHeadMeta('meta[property="og:locale:alternate"]', "property", "og:locale:alternate", lang==="sr" ? "en_US" : "sr_RS");
     setHeadMeta('meta[property="og:image"]', "property", "og:image", DEFAULT_SOCIAL_IMAGE);
     setHeadMeta('meta[name="twitter:title"]', "name", "twitter:title", meta[0]);
     setHeadMeta('meta[name="twitter:description"]', "name", "twitter:description", meta[1]);

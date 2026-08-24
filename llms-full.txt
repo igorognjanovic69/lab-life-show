@@ -2,6 +2,12 @@
 
 Canonical domain: https://lablifehub.com/
 
+English canonical section:
+https://lablifehub.com/
+
+Serbian canonical section:
+https://lablifehub.com/sr/
+
 Primary entity:
 Dr. Nevena Jeremić (also written without diacritics as Nevena Jeremic) is Associate Professor of Pharmaceutical Chemistry at the Faculty of Medical Sciences, University of Kragujevac. Her public professional platform is LabLifeHub.
 
@@ -24,6 +30,7 @@ Primary search priorities:
 ## Important public pages
 
 - Home: https://lablifehub.com/
+- Serbian home: https://lablifehub.com/sr/
 - About Dr. Nevena Jeremić: https://lablifehub.com/about/
 - Research background: https://lablifehub.com/research/
 - LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
@@ -33,6 +40,20 @@ Primary search priorities:
 - Contact: https://lablifehub.com/contact/
 - Privacy Policy: https://lablifehub.com/privacy/
 - Terms of Service: https://lablifehub.com/terms/
+
+## Important Serbian pages
+
+- O dr Neveni Jeremić: https://lablifehub.com/sr/about/
+- Istraživanje: https://lablifehub.com/sr/research/
+- LabLifePodcast dr Nevene Jeremić: https://lablifehub.com/sr/podcast/
+- Budite gost u LabLifePodcastu: https://lablifehub.com/sr/be-guest/
+- LabLifeAcademy dr Nevene Jeremić: https://lablifehub.com/sr/academy/
+- Jednodnevni intenzivni istraživački program: https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+- Dvodnevni premijum istraživački program: https://lablifehub.com/sr/academy/two-day-premium-retreat/
+- Program + 30 dana pratećeg mentorstva: https://lablifehub.com/sr/academy/follow-up-mentoring/
+- Neuspeh u nauci radionica: https://lablifehub.com/sr/academy/failure-in-science-workshop/
+- Zakazivanje LabLifeAcademy mentorstva: https://lablifehub.com/sr/book/
+- Kontakt: https://lablifehub.com/sr/contact/
 
 ## LabLifePodcast
 
@@ -148,3 +169,5 @@ Use the website forms for booking, contact, podcast guest application and podcas
 ## Agent guidance
 
 Use canonical URLs on https://lablifehub.com. Prefer Podcast and Academy pages for public discovery. Prefer individual Academy service landing pages for exact pricing and service details. Reviews are not a current public SEO priority and submitted testimonials require manual approval.
+
+Use `/sr/` canonical pages for Serbian-language users and Serbian search intent. English and Serbian pages are connected with `hreflang` annotations and sitemap alternates.

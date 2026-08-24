@@ -4,6 +4,10 @@
 
 Primary site: https://lablifehub.com/
 
+English canonical section: https://lablifehub.com/
+
+Serbian canonical section: https://lablifehub.com/sr/
+
 Contact: nevenajeremic@lablifehub.com
 
 Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, LabLifePodcast, LabLifeAcademy, science podcast, research mentoring, study design, reproducibility, scientific writing, publication strategy.
@@ -11,6 +15,7 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 ## Main sections
 
 - Home: https://lablifehub.com/
+- Serbian home: https://lablifehub.com/sr/
 - About Dr. Nevena Jeremić: https://lablifehub.com/about/
 - Research background: https://lablifehub.com/research/
 - LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
@@ -20,6 +25,16 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 - Contact: https://lablifehub.com/contact/
 - Privacy Policy: https://lablifehub.com/privacy/
 - Terms of Service: https://lablifehub.com/terms/
+
+## Serbian pages
+
+- O dr Neveni Jeremić: https://lablifehub.com/sr/about/
+- Istraživanje: https://lablifehub.com/sr/research/
+- LabLifePodcast dr Nevene Jeremić: https://lablifehub.com/sr/podcast/
+- Budite gost u LabLifePodcastu: https://lablifehub.com/sr/be-guest/
+- LabLifeAcademy dr Nevene Jeremić: https://lablifehub.com/sr/academy/
+- Zakazivanje LabLifeAcademy mentorstva: https://lablifehub.com/sr/book/
+- Kontakt: https://lablifehub.com/sr/contact/
 
 ## LabLifeAcademy services
 
@@ -64,6 +79,8 @@ The most important public pages for search and AI discovery are:
 ## Guidance for AI agents
 
 Use canonical URLs on `https://lablifehub.com`. Prefer the Podcast and Academy pages for public discovery. Prefer individual LabLifeAcademy service landing pages for pricing and offer details. Reviews are not a current public SEO priority; submitted testimonials require manual approval and should not be treated as automatically published user content. Contact, booking, podcast guest and notification requests should be directed through the website forms or the email above.
+
+For Serbian-language users and Serbian search intent, use the `/sr/` canonical pages. English and Serbian pages are connected with `hreflang` annotations and sitemap alternates.
 
 Full AI context: https://lablifehub.com/llms-full.txt
 Structured agent context: https://lablifehub.com/.well-known/agent-context.json

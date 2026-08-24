@@ -13,6 +13,12 @@
       ]
     },
     {
+      "source": "/sr/reviews/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
@@ -106,6 +112,71 @@
     {
       "source": "/contact",
       "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/sr",
+      "destination": "/sr/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/about",
+      "destination": "/sr/about/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/research",
+      "destination": "/sr/research/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/podcast",
+      "destination": "/sr/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/be-guest",
+      "destination": "/sr/be-guest/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/academy",
+      "destination": "/sr/academy/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/academy/one-day-intensive-retreat",
+      "destination": "/sr/academy/one-day-intensive-retreat/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/academy/two-day-premium-retreat",
+      "destination": "/sr/academy/two-day-premium-retreat/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/academy/follow-up-mentoring",
+      "destination": "/sr/academy/follow-up-mentoring/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/academy/failure-in-science-workshop",
+      "destination": "/sr/academy/failure-in-science-workshop/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/book",
+      "destination": "/sr/book/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/reviews",
+      "destination": "/sr/reviews/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/contact",
+      "destination": "/sr/contact/",
       "permanent": true
     }
   ]

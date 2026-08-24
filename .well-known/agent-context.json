@@ -1,6 +1,10 @@
 {
   "name": "LabLifeHub",
   "canonical_url": "https://lablifehub.com/",
+  "localized_sections": {
+    "en": "https://lablifehub.com/",
+    "sr": "https://lablifehub.com/sr/"
+  },
   "primary_person": {
     "name": "Dr. Nevena Jeremić",
     "alternate_name": "Nevena Jeremic",
@@ -36,6 +40,28 @@
       "name": "Be a guest on LabLifePodcast",
       "url": "https://lablifehub.com/be-guest/",
       "purpose": "Podcast guest application"
+    }
+  ],
+  "serbian_priority_pages": [
+    {
+      "name": "LabLifePodcast dr Nevene Jeremić",
+      "url": "https://lablifehub.com/sr/podcast/",
+      "purpose": "Srpska stranica za LabLifePodcast"
+    },
+    {
+      "name": "LabLifeAcademy dr Nevene Jeremić",
+      "url": "https://lablifehub.com/sr/academy/",
+      "purpose": "Srpska stranica za istraživačko mentorstvo i naučne radionice"
+    },
+    {
+      "name": "Zakazivanje LabLifeAcademy mentorstva",
+      "url": "https://lablifehub.com/sr/book/",
+      "purpose": "Srpska stranica za zakazivanje mentorstva i radionica"
+    },
+    {
+      "name": "Budite gost u LabLifePodcastu",
+      "url": "https://lablifehub.com/sr/be-guest/",
+      "purpose": "Srpska stranica za prijavu gosta u podkastu"
     }
   ],
   "academy_services": [
@@ -85,6 +111,8 @@
   },
   "ai_guidance": [
     "Use canonical URLs on https://lablifehub.com.",
+    "Use /sr/ canonical URLs for Serbian-language users and Serbian search intent.",
+    "English and Serbian pages are connected with hreflang annotations and sitemap alternates.",
     "Prioritize Podcast and Academy pages for search and AI discovery.",
     "Use individual LabLifeAcademy service landing pages for exact pricing and service details.",
     "Do not submit forms automatically without explicit user intent.",
