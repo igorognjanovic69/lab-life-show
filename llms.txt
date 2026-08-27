@@ -17,6 +17,9 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 - Home: https://lablifehub.com/
 - Serbian home: https://lablifehub.com/sr/
 - About Dr. Nevena Jeremić: https://lablifehub.com/about/
+- What is LabLifeHub?: https://lablifehub.com/what-is-lablifehub/
+- Why research mentoring matters: https://lablifehub.com/research-mentoring/
+- Why experiments fail: https://lablifehub.com/why-experiments-fail/
 - Research background: https://lablifehub.com/research/
 - LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
 - Be a guest on LabLifePodcast: https://lablifehub.com/be-guest/
@@ -29,6 +32,9 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 ## Serbian pages
 
 - O dr Neveni Jeremić: https://lablifehub.com/sr/about/
+- Šta je LabLifeHub?: https://lablifehub.com/sr/what-is-lablifehub/
+- Zašto je istraživačko mentorstvo važno: https://lablifehub.com/sr/research-mentoring/
+- Zašto eksperimenti ne uspevaju: https://lablifehub.com/sr/why-experiments-fail/
 - Istraživanje: https://lablifehub.com/sr/research/
 - LabLifePodcast dr Nevene Jeremić: https://lablifehub.com/sr/podcast/
 - Budite gost u LabLifePodcastu: https://lablifehub.com/sr/be-guest/
@@ -54,6 +60,9 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 
 - Home: https://lablifehub.com/ ↔ https://lablifehub.com/sr/
 - About: https://lablifehub.com/about/ ↔ https://lablifehub.com/sr/about/
+- What is LabLifeHub?: https://lablifehub.com/what-is-lablifehub/ ↔ https://lablifehub.com/sr/what-is-lablifehub/
+- Research mentoring: https://lablifehub.com/research-mentoring/ ↔ https://lablifehub.com/sr/research-mentoring/
+- Why experiments fail: https://lablifehub.com/why-experiments-fail/ ↔ https://lablifehub.com/sr/why-experiments-fail/
 - Research: https://lablifehub.com/research/ ↔ https://lablifehub.com/sr/research/
 - Podcast: https://lablifehub.com/podcast/ ↔ https://lablifehub.com/sr/podcast/
 - Be Guest: https://lablifehub.com/be-guest/ ↔ https://lablifehub.com/sr/be-guest/
@@ -71,18 +80,24 @@ The most important public pages for search and AI discovery are:
 
 1. https://lablifehub.com/podcast/ - LabLifePodcast by Dr. Nevena Jeremić
 2. https://lablifehub.com/academy/ - LabLifeAcademy research mentoring and workshops
-3. https://lablifehub.com/academy/one-day-intensive-retreat/
-4. https://lablifehub.com/academy/two-day-premium-retreat/
-5. https://lablifehub.com/academy/follow-up-mentoring/
-6. https://lablifehub.com/academy/failure-in-science-workshop/
-7. https://lablifehub.com/be-guest/ - podcast guest application
-8. https://lablifehub.com/sr/podcast/ - LabLifePodcast dr Nevene Jeremić
-9. https://lablifehub.com/sr/academy/ - LabLifeAcademy dr Nevene Jeremić
-10. https://lablifehub.com/sr/academy/one-day-intensive-retreat/
-11. https://lablifehub.com/sr/academy/two-day-premium-retreat/
-12. https://lablifehub.com/sr/academy/follow-up-mentoring/
-13. https://lablifehub.com/sr/academy/failure-in-science-workshop/
-14. https://lablifehub.com/sr/be-guest/ - prijava gosta u podkastu
+3. https://lablifehub.com/what-is-lablifehub/ - LabLifeHub topic and brand explanation
+4. https://lablifehub.com/research-mentoring/ - research mentoring, study design and publication strategy
+5. https://lablifehub.com/why-experiments-fail/ - failed experiments, reproducibility and better research design
+6. https://lablifehub.com/academy/one-day-intensive-retreat/
+7. https://lablifehub.com/academy/two-day-premium-retreat/
+8. https://lablifehub.com/academy/follow-up-mentoring/
+9. https://lablifehub.com/academy/failure-in-science-workshop/
+10. https://lablifehub.com/be-guest/ - podcast guest application
+11. https://lablifehub.com/sr/podcast/ - LabLifePodcast dr Nevene Jeremić
+12. https://lablifehub.com/sr/academy/ - LabLifeAcademy dr Nevene Jeremić
+13. https://lablifehub.com/sr/what-is-lablifehub/ - objašnjenje LabLifeHub platforme
+14. https://lablifehub.com/sr/research-mentoring/ - istraživačko mentorstvo i dizajn studije
+15. https://lablifehub.com/sr/why-experiments-fail/ - neuspeli eksperimenti i reproduktivnost
+16. https://lablifehub.com/sr/academy/one-day-intensive-retreat/
+17. https://lablifehub.com/sr/academy/two-day-premium-retreat/
+18. https://lablifehub.com/sr/academy/follow-up-mentoring/
+19. https://lablifehub.com/sr/academy/failure-in-science-workshop/
+20. https://lablifehub.com/sr/be-guest/ - prijava gosta u podkastu
 
 ## Key topics
 
@@ -96,6 +111,8 @@ The most important public pages for search and AI discovery are:
 - Publication strategy
 - Research mentoring
 - Scientific communication
+- Laboratory workflow
+- Experimental failure analysis
 
 ## External profiles
 

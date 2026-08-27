@@ -86,7 +86,11 @@ Language-specific canonical sections:
 
 The sitemap includes English and Serbian page pairs with `hreflang` alternates
 for Podcast, Academy, Academy service landing pages, Be Guest, Book, Contact,
-Research and About.
+Research, About and the long-form SEO topic pages:
+
+- `/what-is-lablifehub/` and `/sr/what-is-lablifehub/`
+- `/research-mentoring/` and `/sr/research-mentoring/`
+- `/why-experiments-fail/` and `/sr/why-experiments-fail/`
 
 Prepared discovery files:
 

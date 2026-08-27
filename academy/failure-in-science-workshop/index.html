@@ -382,7 +382,7 @@
 <body class="antialiased text-ink">
 
   <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 relative">
+  <header id="siteHeader" class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 relative">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" onclick="goToPage(event,'home')" class="flex items-center gap-2 shrink-0" aria-label="LabLifeHub home">
         <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white font-black text-sm">LH</span>
@@ -390,7 +390,28 @@
       </a>
       <div class="hidden md:flex items-center gap-5 text-sm font-medium">
         <a href="/" class="nav-link cursor-pointer transition-colors" data-nav="home" onclick="goToPage(event,'home')" data-i18n="nav_home">Home</a>
-        <a href="/about/" class="nav-link cursor-pointer transition-colors" data-nav="about" onclick="goToPage(event,'about')" data-i18n="nav_about">About</a>
+        <div id="aboutNavWrap" class="relative flex items-center" onmouseenter="setAboutMenu(true)" onmouseleave="closeAboutMenu()">
+          <button type="button" id="aboutNavBtn" class="nav-link cursor-pointer transition-colors inline-flex items-center gap-1 bg-transparent border-0 p-0 font-medium" data-nav="about" onclick="toggleAboutMenu(event)" aria-expanded="false" aria-controls="aboutDropdown">
+            <span data-i18n="nav_about">About</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div id="aboutDropdown" class="absolute left-0 top-full hidden pt-3 z-50">
+            <div class="w-72 rounded-2xl border border-gray-100 bg-white p-2 shadow-2xl">
+              <a href="/about/" onclick="goToPageFromAbout(event,'about')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+                <i class="fa-solid fa-user-doctor w-4 text-center"></i><span data-i18n="about_menu_nevena">About Dr. Nevena</span>
+              </a>
+              <div class="my-1 border-t border-gray-100"></div>
+              <a href="/what-is-lablifehub/" onclick="goToPageFromAbout(event,'about-lablifehub')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+                <i class="fa-solid fa-circle-nodes w-4 text-center"></i><span data-i18n="about_menu_lablifehub">What is LabLifeHub?</span>
+              </a>
+              <a href="/research-mentoring/" onclick="goToPageFromAbout(event,'about-research-mentoring')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+                <i class="fa-solid fa-chalkboard-user w-4 text-center"></i><span data-i18n="about_menu_research_mentoring">Research mentoring</span>
+              </a>
+              <a href="/why-experiments-fail/" onclick="goToPageFromAbout(event,'about-why-experiments-fail')" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-lime-light hover:text-brand transition-colors">
+                <i class="fa-solid fa-flask-vial w-4 text-center"></i><span data-i18n="about_menu_why_fail">Why experiments fail</span>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="/research/" class="nav-link cursor-pointer transition-colors" data-nav="research" onclick="goToPage(event,'research')" data-i18n="nav_research">Research</a>
         <a href="/podcast/" class="nav-link cursor-pointer transition-colors" data-nav="podcast" onclick="goToPage(event,'podcast')" data-i18n="nav_podcast">Podcast</a>
         <div id="academyNavWrap" class="relative flex items-center" onmouseenter="setAcademyMenu(true)" onmouseleave="closeAcademyMenu()">
@@ -440,12 +461,24 @@
     <div id="mobileMenu" class="md:hidden hidden absolute right-4 top-16 w-[58vw] max-w-72 min-w-48 rounded-2xl border border-gray-100 bg-white shadow-2xl overflow-hidden">
       <div class="flex flex-col px-4 py-2 text-sm font-medium text-right">
         <a href="/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'home')" data-i18n="nav_home">Home</a>
-        <a href="/about/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'about')" data-i18n="nav_about">About</a>
+        <div class="py-3 border-b border-gray-50">
+          <button type="button" onclick="toggleMobileSubmenu(event,'mobileAboutMenu')" class="w-full flex items-center justify-end gap-2 hover:text-brand transition-colors">
+            <span data-i18n="nav_about">About</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div id="mobileAboutMenu" class="hidden mt-2 space-y-2 text-xs text-gray-500">
+            <a href="/about/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'about')" data-i18n="about_menu_nevena">About Dr. Nevena</a>
+            <a href="/what-is-lablifehub/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'about-lablifehub')" data-i18n="about_menu_lablifehub">What is LabLifeHub?</a>
+            <a href="/research-mentoring/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'about-research-mentoring')" data-i18n="about_menu_research_mentoring">Research mentoring</a>
+            <a href="/why-experiments-fail/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'about-why-experiments-fail')" data-i18n="about_menu_why_fail">Why experiments fail</a>
+          </div>
+        </div>
         <a href="/research/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'research')" data-i18n="nav_research">Research</a>
         <a href="/podcast/" class="py-3 border-b border-gray-50 cursor-pointer hover:text-brand transition-colors" onclick="goToPage(event,'podcast')" data-i18n="nav_podcast">Podcast</a>
         <div class="py-3 border-b border-gray-50">
-          <a href="/academy/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'academy')" data-i18n="nav_academy">Academy</a>
-          <div class="mt-2 space-y-2 text-xs text-gray-500">
+          <button type="button" onclick="toggleMobileSubmenu(event,'mobileAcademyMenu')" class="w-full flex items-center justify-end gap-2 hover:text-brand transition-colors">
+            <span data-i18n="nav_academy">Academy</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div id="mobileAcademyMenu" class="hidden mt-2 space-y-2 text-xs text-gray-500">
             <a href="/academy/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'academy')" data-i18n="academy_menu_about">About the Academy</a>
             <a href="/academy/one-day-intensive-retreat/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'academy-one-day')" data-i18n="svc_retreat_a_t">One-Day Intensive Retreat</a>
             <a href="/academy/two-day-premium-retreat/" class="block hover:text-brand transition-colors" onclick="goToPage(event,'academy-two-day')" data-i18n="svc_retreat_b_t">Two-Day Premium Retreat</a>
@@ -771,6 +804,309 @@
             <span class="section-marker lime-pop text-[11px] font-bold uppercase tracking-wide">iKragujevac</span>
             <p class="mt-1 font-semibold leading-snug" data-i18n="media_path">The academic path from Kragujevac to international universities</p>
             <span class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand group-hover:gap-2 transition-all"><span data-i18n="media_read">Read article</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: WHAT IS LABLIFEHUB -->
+    <section id="page-about-lablifehub" class="page py-12 sm:py-16">
+      <div class="grid lg:grid-cols-[1fr_.86fr] gap-8 items-start">
+        <div>
+          <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="hub_eyebrow">About LabLifeHub</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="hub_title">What is LabLifeHub?</h2>
+          <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="hub_intro">LabLifeHub is a science communication and education platform built by Dr. Nevena Jeremić to connect research, podcast conversations, academic mentoring and practical scientific training in one place.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/podcast/" onclick="goToPage(event,'podcast')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+              <i class="fa-solid fa-podcast mr-2"></i><span data-i18n="hub_cta_podcast">Explore LabLifePodcast</span>
+            </a>
+            <a href="/academy/" onclick="goToPage(event,'academy')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+              <i class="fa-solid fa-graduation-cap mr-2"></i><span data-i18n="hub_cta_academy">Explore LabLifeAcademy</span>
+            </a>
+          </div>
+        </div>
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-main.jpg" alt="Dr. Nevena Jeremić and LabLifeHub" loading="lazy" width="1664" height="1800" class="w-full aspect-[4/5] object-cover object-[center_18%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="hub_photo_main">LabLifeHub connects scientific identity, communication and education.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-[.82fr_1fr] gap-6 items-start">
+        <aside class="rounded-3xl bg-brand text-white p-6 sm:p-7">
+          <h3 class="text-2xl font-black" data-i18n="hub_why_title">Why this kind of platform matters</h3>
+          <div class="mt-5 space-y-4 text-sm text-white/85 leading-relaxed">
+            <p data-i18n="hub_why_p1">Science is often presented only through final results: papers, lectures, citations, conference slides and polished conclusions. But real science is also made of choices, uncertainty, troubleshooting, mentoring, failed attempts, repeated experiments and careful interpretation.</p>
+            <p data-i18n="hub_why_p2">LabLifeHub exists because researchers, students, teams and science-curious audiences need a place where the process is explained with clarity. When the process becomes visible, science becomes easier to trust, easier to learn from and easier to improve.</p>
+            <p data-i18n="hub_why_p3">The platform brings together Dr. Nevena Jeremić's research background, teaching experience and international academic work with a practical mission: to make better scientific thinking more accessible to people who work in or around research.</p>
+          </div>
+          <a href="/book/" onclick="goToPage(event,'book')" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+            <i class="fa-regular fa-calendar-check"></i><span data-i18n="hub_cta_book">Book research support</span>
+          </a>
+        </aside>
+        <div class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+          <h3 class="text-2xl font-black" data-i18n="hub_platform_title">A hub for people who want science to be stronger</h3>
+          <div class="mt-5 space-y-4 text-gray-700 leading-relaxed">
+            <p data-i18n="hub_platform_p1">LabLifeHub is not only a personal website and not only a podcast page. It is structured as a scientific home base where different parts of the research ecosystem can meet: academic biography, research focus, podcast conversations, mentoring, workshops, guest applications and contact for collaboration.</p>
+            <p data-i18n="hub_platform_p2">For researchers, it creates a route toward better study design, reproducibility, scientific writing and publication strategy. For companies, founders and innovators, it offers a scientific voice that can connect evidence, products, decisions and responsible communication. For students and early-career scientists, it shows that a career in science is not built from talent alone, but from structure, feedback, discipline and a community of thinking.</p>
+            <p data-i18n="hub_platform_p3">The name LabLifeHub matters because the platform is about the life around the laboratory as much as the laboratory itself. It recognizes the human side of research while keeping the content grounded in academic standards, experimental logic and scientific responsibility.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-gray-100 bg-white p-5 hover:border-brand hover:shadow-md transition-all">
+          <i class="fa-solid fa-microphone-lines text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="hub_card_podcast_t">LabLifePodcast</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="hub_card_podcast_d">A space for clear, human and expert conversations about research, careers, innovation, lab life and the decisions behind better science.</p>
+          <button onclick="showPage('podcast')" class="mt-4 text-sm font-medium text-brand" data-i18n="hub_card_podcast_cta">Go to podcast</button>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5 hover:border-brand hover:shadow-md transition-all">
+          <i class="fa-solid fa-chalkboard-user text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="hub_card_academy_t">LabLifeAcademy</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="hub_card_academy_d">A practical education and mentoring area focused on study design, reproducibility, laboratory workflow, writing and publication strategy.</p>
+          <button onclick="showPage('academy')" class="mt-4 text-sm font-medium text-brand" data-i18n="hub_card_academy_cta">Go to Academy</button>
+        </div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-5 hover:border-brand hover:shadow-md transition-all">
+          <i class="fa-solid fa-flask-vial text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="hub_card_research_t">Research identity</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="hub_card_research_d">The platform is anchored in pharmaceutical chemistry, redox biology, cardiometabolic research and preclinical scientific practice.</p>
+          <button onclick="showPage('research')" class="mt-4 text-sm font-medium text-brand" data-i18n="hub_card_research_cta">View research</button>
+        </div>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-2 gap-6">
+        <div class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+          <h3 class="text-2xl font-black" data-i18n="hub_audience_title">Who LabLifeHub is for</h3>
+          <div class="mt-5 space-y-4">
+            <div class="flex gap-3"><i class="fa-solid fa-check text-lime mt-1"></i><p class="text-sm text-gray-600 leading-relaxed" data-i18n="hub_audience_1">Master students, PhD candidates, postdocs and early-career researchers who need structure, feedback and a clearer research plan.</p></div>
+            <div class="flex gap-3"><i class="fa-solid fa-check text-lime mt-1"></i><p class="text-sm text-gray-600 leading-relaxed" data-i18n="hub_audience_2">Research teams that want to understand why experiments fail, how reproducibility can be improved and how documentation can prevent expensive mistakes.</p></div>
+            <div class="flex gap-3"><i class="fa-solid fa-check text-lime mt-1"></i><p class="text-sm text-gray-600 leading-relaxed" data-i18n="hub_audience_3">Scientists, clinicians, innovators and founders who want to share evidence-based stories through LabLifePodcast.</p></div>
+            <div class="flex gap-3"><i class="fa-solid fa-check text-lime mt-1"></i><p class="text-sm text-gray-600 leading-relaxed" data-i18n="hub_audience_4">Institutions, laboratories and organizations looking for lectures, workshops or collaboration with a researcher who understands both academic rigor and communication.</p></div>
+          </div>
+        </div>
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-reading.jpg" alt="Scientific reading and knowledge exchange" loading="lazy" width="900" height="1200" class="w-full h-full min-h-96 object-cover object-[center_28%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="hub_photo_reading">Science communication starts with reading, thinking and careful interpretation.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-ink text-white p-6 sm:p-8 text-center">
+        <h3 class="text-2xl sm:text-3xl font-black" data-i18n="hub_final_title">LabLifeHub turns scientific experience into useful direction</h3>
+        <p class="mt-3 max-w-3xl mx-auto text-white/80 leading-relaxed" data-i18n="hub_final_text">The platform gives one clear place for learning about Dr. Nevena Jeremić, discovering LabLifePodcast, exploring LabLifeAcademy offers and starting a serious conversation about better research, stronger teams and more responsible science communication.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/be-guest/" onclick="goToPage(event,'guest')" class="px-5 py-3 rounded-full bg-white text-ink font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+            <i class="fa-solid fa-microphone mr-2"></i><span data-i18n="hub_final_guest">Be a podcast guest</span>
+          </a>
+          <a href="/contact/" onclick="goToPage(event,'contact')" class="px-5 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors inline-flex items-center">
+            <i class="fa-regular fa-handshake mr-2"></i><span data-i18n="hub_final_contact">Start a collaboration</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: RESEARCH MENTORING -->
+    <section id="page-about-research-mentoring" class="page py-12 sm:py-16">
+      <div class="grid lg:grid-cols-[1fr_.86fr] gap-8 items-start">
+        <div>
+          <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="mentoring_eyebrow">Research mentoring</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="mentoring_title">Why research mentoring matters</h2>
+          <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="mentoring_intro">Research mentoring helps scientists move from scattered effort to structured scientific progress. It brings hypothesis, study design, reproducibility, workflow and publication strategy into one coherent plan.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/academy/" onclick="goToPage(event,'academy')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+              <i class="fa-solid fa-graduation-cap mr-2"></i><span data-i18n="mentoring_cta_academy">Explore mentoring offers</span>
+            </a>
+            <a href="/book/" onclick="goToPage(event,'book')" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+              <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="mentoring_cta_book">Book a session</span>
+            </a>
+          </div>
+        </div>
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-lab-work.jpg" alt="Dr. Nevena Jeremić in scientific work" loading="lazy" width="1200" height="1800" class="w-full aspect-[4/5] object-cover object-[center_18%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="mentoring_photo_main">Mentoring connects scientific thinking with practical laboratory decisions.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+        <h3 class="text-2xl font-black" data-i18n="mentoring_problem_title">The problem is rarely effort - it is often structure</h3>
+        <div class="mt-5 grid lg:grid-cols-2 gap-6 text-gray-700 leading-relaxed">
+          <div class="space-y-4">
+            <p data-i18n="mentoring_problem_p1">Many researchers work extremely hard, but hard work alone does not guarantee a strong study. A project can lose months because the hypothesis is not sharp enough, the aims do not follow logically, the control groups are incomplete, the sample size is weak, or the workflow cannot be reproduced by another person in the same lab.</p>
+            <p data-i18n="mentoring_problem_p2">This is why research mentoring is not a luxury. It is a way to protect time, resources and scientific credibility. A good mentor helps the researcher see the whole project from above: what the project is trying to prove, where the logic is fragile, where bias can enter, where methods may fail and how results can eventually become a publishable scientific story.</p>
+          </div>
+          <div class="space-y-4">
+            <p data-i18n="mentoring_problem_p3">For Master students, PhD candidates, postdocs and early-career scientists, this kind of guidance can change the rhythm of a project. Instead of reacting to problems only after they appear, mentoring creates a proactive structure: clarify the hypothesis, redesign the study, standardize documentation, plan statistics earlier and connect the experiment with publication from the beginning.</p>
+            <p data-i18n="mentoring_problem_p4">LabLifeAcademy mentoring is built around that practical need. It is not abstract motivation. It is project audit, study design development, reproducibility review, laboratory workflow optimization, scientific writing and publication strategy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-magnifying-glass-chart text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="mentoring_pillar_1_t">Project audit</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="mentoring_pillar_1_d">Hypothesis, aims, logical flow, methodology, weaknesses, redesign recommendations and risk assessment.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-diagram-project text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="mentoring_pillar_2_t">Study design</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="mentoring_pillar_2_d">Model selection, control groups, randomization, blinding, statistical plan and bias prevention.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-repeat text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="mentoring_pillar_3_t">Reproducibility</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="mentoring_pillar_3_d">Protocols, lab notebooks, reagent tracking, error-prevention systems and negative-result analysis.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-pen-nib text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="mentoring_pillar_4_t">Publication strategy</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="mentoring_pillar_4_d">Manuscript structure, figure storytelling, journal selection and planning how a project becomes a paper.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-[.9fr_1fr] gap-6 items-start">
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/research-presentation.webp" alt="Scientific presentation and research discussion" loading="lazy" width="1800" height="1200" class="w-full h-full min-h-96 object-cover object-[center_30%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="mentoring_photo_presentation">Strong research needs clear design before it becomes a clear presentation.</figcaption>
+        </figure>
+        <div class="rounded-3xl bg-brand text-white p-6 sm:p-7">
+          <h3 class="text-2xl font-black" data-i18n="mentoring_importance_title">Why this work is important</h3>
+          <div class="mt-5 space-y-4 text-sm text-white/85 leading-relaxed">
+            <p data-i18n="mentoring_importance_p1">A weak design can make even a promising idea difficult to interpret. If controls are not clear, if bias is not reduced, if the workflow is not documented, the final result may be scientifically fragile even when the researcher has invested serious effort.</p>
+            <p data-i18n="mentoring_importance_p2">Better mentoring improves more than one project. It teaches a way of thinking that a researcher carries into the next experiment, the next paper, the next collaboration and the next team. It strengthens scientific independence because the researcher learns how to ask better questions and defend better decisions.</p>
+            <p data-i18n="mentoring_importance_p3">This is especially important in early-career science, where one project can shape confidence, publication trajectory and professional identity. Structured support can turn confusion into direction and make the difference between simply collecting data and building a coherent scientific contribution.</p>
+          </div>
+          <a href="/book/" onclick="goToPage(event,'book')" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+            <i class="fa-regular fa-calendar-check"></i><span data-i18n="mentoring_importance_cta">Start with a booking request</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+        <h3 class="text-2xl font-black" data-i18n="mentoring_nevena_title">Why Dr. Nevena Jeremić's background fits this work</h3>
+        <div class="mt-5 grid lg:grid-cols-2 gap-6 text-gray-700 leading-relaxed">
+          <p data-i18n="mentoring_nevena_p1">Dr. Nevena Jeremić's work sits at the intersection of pharmaceutical chemistry, redox biology, cardiometabolic research and preclinical models. That combination is valuable for mentoring because it connects molecular reasoning with experimental design, laboratory practice and translational thinking.</p>
+          <p data-i18n="mentoring_nevena_p2">Her academic path includes research, teaching, mentorship, international collaboration and scientific publishing. LabLifeAcademy uses that experience in a practical way: to help researchers inspect their projects honestly, improve weak points, document work better and plan the next 6 months with more scientific confidence.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-ink text-white p-6 sm:p-8 text-center">
+        <h3 class="text-2xl sm:text-3xl font-black" data-i18n="mentoring_final_title">Research mentoring turns scattered work into a stronger scientific plan</h3>
+        <p class="mt-3 max-w-3xl mx-auto text-white/80 leading-relaxed" data-i18n="mentoring_final_text">If your project needs clearer logic, better design, stronger reproducibility or a more realistic publication route, LabLifeAcademy offers focused formats that start from your real research problem.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/academy/one-day-intensive-retreat/" onclick="goToPage(event,'academy-one-day')" class="px-5 py-3 rounded-full bg-white text-ink font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+            <i class="fa-solid fa-user-graduate mr-2"></i><span data-i18n="mentoring_final_one_day">One-Day Retreat</span>
+          </a>
+          <a href="/academy/two-day-premium-retreat/" onclick="goToPage(event,'academy-two-day')" class="px-5 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors inline-flex items-center">
+            <i class="fa-solid fa-user-graduate mr-2"></i><span data-i18n="mentoring_final_two_day">Two-Day Retreat</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: WHY EXPERIMENTS FAIL -->
+    <section id="page-about-why-experiments-fail" class="page py-12 sm:py-16">
+      <div class="grid lg:grid-cols-[1fr_.86fr] gap-8 items-start">
+        <div>
+          <p class="section-marker lime-pop text-sm font-bold uppercase tracking-wider" data-i18n="fail_eyebrow">Failure in science</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl font-black" data-i18n="fail_title">Why experiments fail</h2>
+          <p class="mt-4 text-lg text-gray-600 leading-relaxed" data-i18n="fail_intro">Failed experiments are not only setbacks. When they are analyzed correctly, they become data that can reveal bias, weak design, documentation gaps, technical variability and opportunities to build better science.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/academy/failure-in-science-workshop/" onclick="goToPage(event,'academy-workshop')" class="px-5 py-3 rounded-full bg-brand text-white font-medium text-sm hover:bg-brand-dark transition-colors inline-flex items-center">
+              <i class="fa-solid fa-flask-vial mr-2"></i><span data-i18n="fail_cta_workshop">Explore the workshop</span>
+            </a>
+            <a href="/book/" onclick="bookWorkshop();return false;" class="px-5 py-3 rounded-full border border-brand text-brand font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+              <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="fail_cta_book">Book Science Workshop</span>
+            </a>
+          </div>
+        </div>
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-lab-01.jpg" alt="Laboratory context and experimental science" loading="lazy" width="1200" height="1800" class="w-full aspect-[4/5] object-cover object-[center_24%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="fail_photo_main">Understanding failure is part of building a stronger experimental culture.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+        <h3 class="text-2xl font-black" data-i18n="fail_reframe_title">Failure is not the end of an experiment - it is the beginning of analysis</h3>
+        <div class="mt-5 grid lg:grid-cols-2 gap-6 text-gray-700 leading-relaxed">
+          <div class="space-y-4">
+            <p data-i18n="fail_reframe_p1">In research, an experiment can fail for many reasons. Sometimes the hypothesis is wrong. Sometimes the hypothesis is promising, but the design is not strong enough to test it. Sometimes the result is genuinely negative. Sometimes the result is shaped by technical error, reagent variability, insufficient statistical power, environmental conditions, animal model limitations or documentation gaps.</p>
+            <p data-i18n="fail_reframe_p2">The danger is not failure itself. The danger is moving on without understanding what the failure means. When a team does not reconstruct the workflow, identify confounders, examine controls and distinguish true negative results from technical failure, the same problem can repeat across experiments, students, reagents and projects.</p>
+          </div>
+          <div class="space-y-4">
+            <p data-i18n="fail_reframe_p3">This is why the LabLifeAcademy workshop begins from a simple scientific principle: failure is data. A failed experiment contains information about the design, the workflow, the assumptions, the documentation and the system in which the experiment was performed.</p>
+            <p data-i18n="fail_reframe_p4">When that information is treated seriously, failure becomes a tool for better design. It can refine a hypothesis, reveal a missing control, expose bias, show where randomization or blinding is needed, improve laboratory notebooks and save future time, money and resources.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-circle-question text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="fail_reason_1_t">Weak experimental design</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="fail_reason_1_d">Experiments fail when the design cannot answer the question clearly: missing controls, weak model selection, unclear aims, lack of randomization, lack of blinding or underpowered statistics.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-vial-circle-check text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="fail_reason_2_t">Reagent and technical variability</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="fail_reason_2_d">Batch differences, reagent tracking problems, environmental variability and technical inconsistency can turn a good idea into results that are difficult to interpret.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-clipboard-list text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="fail_reason_3_t">Poor documentation</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="fail_reason_3_d">Small undocumented changes can create large scientific problems. Lab notebook structure, protocol versioning and workflow records are part of reproducibility.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 p-5">
+          <i class="fa-solid fa-scale-balanced text-brand text-xl"></i>
+          <h3 class="mt-3 font-bold" data-i18n="fail_reason_4_t">Bias and interpretation errors</h3>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed" data-i18n="fail_reason_4_d">Bias can enter through selection, measurement, analysis and expectation. Teams need structure to separate what the data show from what they hoped to see.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-[.9fr_1fr] gap-6 items-start">
+        <figure class="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+          <img src="/media/nevena-lab-03.jpg" alt="Scientific work and laboratory methods" loading="lazy" width="1800" height="1200" class="w-full h-full min-h-96 object-cover object-[center_30%]" />
+          <figcaption class="px-4 py-3 text-xs text-gray-500" data-i18n="fail_photo_lab">Laboratory workflow is part of scientific reasoning, not only technical execution.</figcaption>
+        </figure>
+        <div class="rounded-3xl bg-brand text-white p-6 sm:p-7">
+          <h3 class="text-2xl font-black" data-i18n="fail_workshop_title">What the workshop teaches</h3>
+          <div class="mt-5 space-y-4 text-sm text-white/85 leading-relaxed">
+            <p data-i18n="fail_workshop_p1">The workshop teaches research teams how to analyze failed experiments through a structured approach. Participants learn to examine root causes, reconstruct the workflow, identify confounders, analyze negative results and understand the difference between a true negative outcome and a technical failure.</p>
+            <p data-i18n="fail_workshop_p2">It also covers laboratory errors and documentation: common mistakes, reagent tracking, batch variability, lab notebook structure, systems that prevent data loss and standardized workflow as a condition for reproducibility.</p>
+            <p data-i18n="fail_workshop_p3">Finally, the workshop connects failure to translational thinking. Failed experiments can guide clinical relevance, improve bench-to-bedside logic and help researchers refine hypotheses rather than abandon them too early.</p>
+          </div>
+          <a href="/academy/failure-in-science-workshop/" onclick="goToPage(event,'academy-workshop')" class="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-brand px-5 py-3 text-sm font-medium hover:bg-brand-light transition-colors">
+            <i class="fa-solid fa-chalkboard-user"></i><span data-i18n="fail_workshop_cta">View workshop details</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-white border border-gray-100 shadow-sm p-6 sm:p-7">
+        <h3 class="text-2xl font-black" data-i18n="fail_importance_title">Why this matters for better science</h3>
+        <div class="mt-5 grid lg:grid-cols-3 gap-4 text-sm text-gray-600 leading-relaxed">
+          <div class="rounded-2xl bg-gray-50 p-4">
+            <p class="font-bold text-ink" data-i18n="fail_importance_1_t">It saves resources</p>
+            <p class="mt-1" data-i18n="fail_importance_1_d">A structured failure analysis can prevent the same mistake from consuming more reagents, animals, samples, time and funding.</p>
+          </div>
+          <div class="rounded-2xl bg-gray-50 p-4">
+            <p class="font-bold text-ink" data-i18n="fail_importance_2_t">It protects scientific credibility</p>
+            <p class="mt-1" data-i18n="fail_importance_2_d">When documentation, bias reduction and reproducibility are taken seriously, the research team can defend its decisions with more confidence.</p>
+          </div>
+          <div class="rounded-2xl bg-gray-50 p-4">
+            <p class="font-bold text-ink" data-i18n="fail_importance_3_t">It trains better researchers</p>
+            <p class="mt-1" data-i18n="fail_importance_3_d">A scientist who understands failure learns how to design better experiments, ask better questions and interpret unexpected results more carefully.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl bg-ink text-white p-6 sm:p-8 text-center">
+        <h3 class="text-2xl sm:text-3xl font-black" data-i18n="fail_final_title">The goal is not to avoid every failed experiment. The goal is to learn from failure correctly.</h3>
+        <p class="mt-3 max-w-3xl mx-auto text-white/80 leading-relaxed" data-i18n="fail_final_text">LabLifeAcademy helps research teams treat failed experiments as structured information that can improve design, workflow, documentation, reproducibility and scientific reasoning.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/academy/failure-in-science-workshop/" onclick="goToPage(event,'academy-workshop')" class="px-5 py-3 rounded-full bg-white text-ink font-medium text-sm hover:bg-brand-light transition-colors inline-flex items-center">
+            <i class="fa-solid fa-flask-vial mr-2"></i><span data-i18n="fail_final_workshop">Science Workshop</span>
+          </a>
+          <a href="/book/" onclick="bookWorkshop();return false;" class="px-5 py-3 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors inline-flex items-center">
+            <i class="fa-regular fa-calendar-check mr-2"></i><span data-i18n="fail_final_book">Book workshop</span>
           </a>
         </div>
       </div>
@@ -1827,6 +2163,9 @@
         <div class="mt-3 grid gap-2 text-sm text-gray-500">
           <a href="/" onclick="goToPage(event,'home')" class="hover:text-brand transition-colors" data-i18n="nav_home">Home</a>
           <a href="/about/" onclick="goToPage(event,'about')" class="hover:text-brand transition-colors" data-i18n="nav_about">About</a>
+          <a href="/what-is-lablifehub/" onclick="goToPage(event,'about-lablifehub')" class="hover:text-brand transition-colors" data-i18n="about_menu_lablifehub">What is LabLifeHub?</a>
+          <a href="/research-mentoring/" onclick="goToPage(event,'about-research-mentoring')" class="hover:text-brand transition-colors" data-i18n="about_menu_research_mentoring">Research mentoring</a>
+          <a href="/why-experiments-fail/" onclick="goToPage(event,'about-why-experiments-fail')" class="hover:text-brand transition-colors" data-i18n="about_menu_why_fail">Why experiments fail</a>
           <a href="/research/" onclick="goToPage(event,'research')" class="hover:text-brand transition-colors" data-i18n="nav_research">Research</a>
           <a href="/podcast/" onclick="goToPage(event,'podcast')" class="hover:text-brand transition-colors" data-i18n="nav_podcast">Podcast</a>
           <a href="/be-guest/" onclick="goToPage(event,'guest')" class="hover:text-brand transition-colors" data-i18n="footer_be_guest">Be a guest</a>
@@ -1867,6 +2206,82 @@
     en: {
       nav_home:"Home", nav_about:"About", nav_research:"Research", nav_podcast:"Podcast", nav_academy:"Academy", nav_book:"Book", nav_reviews:"Reviews", nav_be_guest:"Be Guest", nav_contact:"Contact",
       academy_menu_about:"About the Academy",
+      about_menu_nevena:"About Dr. Nevena", about_menu_lablifehub:"What is LabLifeHub?", about_menu_research_mentoring:"Research mentoring", about_menu_why_fail:"Why experiments fail",
+      hub_eyebrow:"About LabLifeHub", hub_title:"What is LabLifeHub?",
+      hub_intro:"LabLifeHub is a science communication and education platform built by Dr. Nevena Jeremić to connect research, podcast conversations, academic mentoring and practical scientific training in one place.",
+      hub_cta_podcast:"Explore LabLifePodcast", hub_cta_academy:"Explore LabLifeAcademy", hub_cta_book:"Book research support",
+      hub_photo_main:"LabLifeHub connects scientific identity, communication and education.",
+      hub_why_title:"Why this kind of platform matters",
+      hub_why_p1:"Science is often presented only through final results: papers, lectures, citations, conference slides and polished conclusions. But real science is also made of choices, uncertainty, troubleshooting, mentoring, failed attempts, repeated experiments and careful interpretation.",
+      hub_why_p2:"LabLifeHub exists because researchers, students, teams and science-curious audiences need a place where the process is explained with clarity. When the process becomes visible, science becomes easier to trust, easier to learn from and easier to improve.",
+      hub_why_p3:"The platform brings together Dr. Nevena Jeremić's research background, teaching experience and international academic work with a practical mission: to make better scientific thinking more accessible to people who work in or around research.",
+      hub_platform_title:"A hub for people who want science to be stronger",
+      hub_platform_p1:"LabLifeHub is not only a personal website and not only a podcast page. It is structured as a scientific home base where different parts of the research ecosystem can meet: academic biography, research focus, podcast conversations, mentoring, workshops, guest applications and contact for collaboration.",
+      hub_platform_p2:"For researchers, it creates a route toward better study design, reproducibility, scientific writing and publication strategy. For companies, founders and innovators, it offers a scientific voice that can connect evidence, products, decisions and responsible communication. For students and early-career scientists, it shows that a career in science is not built from talent alone, but from structure, feedback, discipline and a community of thinking.",
+      hub_platform_p3:"The name LabLifeHub matters because the platform is about the life around the laboratory as much as the laboratory itself. It recognizes the human side of research while keeping the content grounded in academic standards, experimental logic and scientific responsibility.",
+      hub_card_podcast_t:"LabLifePodcast", hub_card_podcast_d:"A space for clear, human and expert conversations about research, careers, innovation, lab life and the decisions behind better science.", hub_card_podcast_cta:"Go to podcast",
+      hub_card_academy_t:"LabLifeAcademy", hub_card_academy_d:"A practical education and mentoring area focused on study design, reproducibility, laboratory workflow, writing and publication strategy.", hub_card_academy_cta:"Go to Academy",
+      hub_card_research_t:"Research identity", hub_card_research_d:"The platform is anchored in pharmaceutical chemistry, redox biology, cardiometabolic research and preclinical scientific practice.", hub_card_research_cta:"View research",
+      hub_audience_title:"Who LabLifeHub is for",
+      hub_audience_1:"Master students, PhD candidates, postdocs and early-career researchers who need structure, feedback and a clearer research plan.",
+      hub_audience_2:"Research teams that want to understand why experiments fail, how reproducibility can be improved and how documentation can prevent expensive mistakes.",
+      hub_audience_3:"Scientists, clinicians, innovators and founders who want to share evidence-based stories through LabLifePodcast.",
+      hub_audience_4:"Institutions, laboratories and organizations looking for lectures, workshops or collaboration with a researcher who understands both academic rigor and communication.",
+      hub_photo_reading:"Science communication starts with reading, thinking and careful interpretation.",
+      hub_final_title:"LabLifeHub turns scientific experience into useful direction",
+      hub_final_text:"The platform gives one clear place for learning about Dr. Nevena Jeremić, discovering LabLifePodcast, exploring LabLifeAcademy offers and starting a serious conversation about better research, stronger teams and more responsible science communication.",
+      hub_final_guest:"Be a podcast guest", hub_final_contact:"Start a collaboration",
+      mentoring_eyebrow:"Research mentoring", mentoring_title:"Why research mentoring matters",
+      mentoring_intro:"Research mentoring helps scientists move from scattered effort to structured scientific progress. It brings hypothesis, study design, reproducibility, workflow and publication strategy into one coherent plan.",
+      mentoring_cta_academy:"Explore mentoring offers", mentoring_cta_book:"Book a session",
+      mentoring_photo_main:"Mentoring connects scientific thinking with practical laboratory decisions.",
+      mentoring_problem_title:"The problem is rarely effort - it is often structure",
+      mentoring_problem_p1:"Many researchers work extremely hard, but hard work alone does not guarantee a strong study. A project can lose months because the hypothesis is not sharp enough, the aims do not follow logically, the control groups are incomplete, the sample size is weak, or the workflow cannot be reproduced by another person in the same lab.",
+      mentoring_problem_p2:"This is why research mentoring is not a luxury. It is a way to protect time, resources and scientific credibility. A good mentor helps the researcher see the whole project from above: what the project is trying to prove, where the logic is fragile, where bias can enter, where methods may fail and how results can eventually become a publishable scientific story.",
+      mentoring_problem_p3:"For Master students, PhD candidates, postdocs and early-career scientists, this kind of guidance can change the rhythm of a project. Instead of reacting to problems only after they appear, mentoring creates a proactive structure: clarify the hypothesis, redesign the study, standardize documentation, plan statistics earlier and connect the experiment with publication from the beginning.",
+      mentoring_problem_p4:"LabLifeAcademy mentoring is built around that practical need. It is not abstract motivation. It is project audit, study design development, reproducibility review, laboratory workflow optimization, scientific writing and publication strategy.",
+      mentoring_pillar_1_t:"Project audit", mentoring_pillar_1_d:"Hypothesis, aims, logical flow, methodology, weaknesses, redesign recommendations and risk assessment.",
+      mentoring_pillar_2_t:"Study design", mentoring_pillar_2_d:"Model selection, control groups, randomization, blinding, statistical plan and bias prevention.",
+      mentoring_pillar_3_t:"Reproducibility", mentoring_pillar_3_d:"Protocols, lab notebooks, reagent tracking, error-prevention systems and negative-result analysis.",
+      mentoring_pillar_4_t:"Publication strategy", mentoring_pillar_4_d:"Manuscript structure, figure storytelling, journal selection and planning how a project becomes a paper.",
+      mentoring_photo_presentation:"Strong research needs clear design before it becomes a clear presentation.",
+      mentoring_importance_title:"Why this work is important",
+      mentoring_importance_p1:"A weak design can make even a promising idea difficult to interpret. If controls are not clear, if bias is not reduced, if the workflow is not documented, the final result may be scientifically fragile even when the researcher has invested serious effort.",
+      mentoring_importance_p2:"Better mentoring improves more than one project. It teaches a way of thinking that a researcher carries into the next experiment, the next paper, the next collaboration and the next team. It strengthens scientific independence because the researcher learns how to ask better questions and defend better decisions.",
+      mentoring_importance_p3:"This is especially important in early-career science, where one project can shape confidence, publication trajectory and professional identity. Structured support can turn confusion into direction and make the difference between simply collecting data and building a coherent scientific contribution.",
+      mentoring_importance_cta:"Start with a booking request",
+      mentoring_nevena_title:"Why Dr. Nevena Jeremić's background fits this work",
+      mentoring_nevena_p1:"Dr. Nevena Jeremić's work sits at the intersection of pharmaceutical chemistry, redox biology, cardiometabolic research and preclinical models. That combination is valuable for mentoring because it connects molecular reasoning with experimental design, laboratory practice and translational thinking.",
+      mentoring_nevena_p2:"Her academic path includes research, teaching, mentorship, international collaboration and scientific publishing. LabLifeAcademy uses that experience in a practical way: to help researchers inspect their projects honestly, improve weak points, document work better and plan the next 6 months with more scientific confidence.",
+      mentoring_final_title:"Research mentoring turns scattered work into a stronger scientific plan",
+      mentoring_final_text:"If your project needs clearer logic, better design, stronger reproducibility or a more realistic publication route, LabLifeAcademy offers focused formats that start from your real research problem.",
+      mentoring_final_one_day:"One-Day Retreat", mentoring_final_two_day:"Two-Day Retreat",
+      fail_eyebrow:"Failure in science", fail_title:"Why experiments fail",
+      fail_intro:"Failed experiments are not only setbacks. When they are analyzed correctly, they become data that can reveal bias, weak design, documentation gaps, technical variability and opportunities to build better science.",
+      fail_cta_workshop:"Explore the workshop", fail_cta_book:"Book Science Workshop",
+      fail_photo_main:"Understanding failure is part of building a stronger experimental culture.",
+      fail_reframe_title:"Failure is not the end of an experiment - it is the beginning of analysis",
+      fail_reframe_p1:"In research, an experiment can fail for many reasons. Sometimes the hypothesis is wrong. Sometimes the hypothesis is promising, but the design is not strong enough to test it. Sometimes the result is genuinely negative. Sometimes the result is shaped by technical error, reagent variability, insufficient statistical power, environmental conditions, animal model limitations or documentation gaps.",
+      fail_reframe_p2:"The danger is not failure itself. The danger is moving on without understanding what the failure means. When a team does not reconstruct the workflow, identify confounders, examine controls and distinguish true negative results from technical failure, the same problem can repeat across experiments, students, reagents and projects.",
+      fail_reframe_p3:"This is why the LabLifeAcademy workshop begins from a simple scientific principle: failure is data. A failed experiment contains information about the design, the workflow, the assumptions, the documentation and the system in which the experiment was performed.",
+      fail_reframe_p4:"When that information is treated seriously, failure becomes a tool for better design. It can refine a hypothesis, reveal a missing control, expose bias, show where randomization or blinding is needed, improve laboratory notebooks and save future time, money and resources.",
+      fail_reason_1_t:"Weak experimental design", fail_reason_1_d:"Experiments fail when the design cannot answer the question clearly: missing controls, weak model selection, unclear aims, lack of randomization, lack of blinding or underpowered statistics.",
+      fail_reason_2_t:"Reagent and technical variability", fail_reason_2_d:"Batch differences, reagent tracking problems, environmental variability and technical inconsistency can turn a good idea into results that are difficult to interpret.",
+      fail_reason_3_t:"Poor documentation", fail_reason_3_d:"Small undocumented changes can create large scientific problems. Lab notebook structure, protocol versioning and workflow records are part of reproducibility.",
+      fail_reason_4_t:"Bias and interpretation errors", fail_reason_4_d:"Bias can enter through selection, measurement, analysis and expectation. Teams need structure to separate what the data show from what they hoped to see.",
+      fail_photo_lab:"Laboratory workflow is part of scientific reasoning, not only technical execution.",
+      fail_workshop_title:"What the workshop teaches",
+      fail_workshop_p1:"The workshop teaches research teams how to analyze failed experiments through a structured approach. Participants learn to examine root causes, reconstruct the workflow, identify confounders, analyze negative results and understand the difference between a true negative outcome and a technical failure.",
+      fail_workshop_p2:"It also covers laboratory errors and documentation: common mistakes, reagent tracking, batch variability, lab notebook structure, systems that prevent data loss and standardized workflow as a condition for reproducibility.",
+      fail_workshop_p3:"Finally, the workshop connects failure to translational thinking. Failed experiments can guide clinical relevance, improve bench-to-bedside logic and help researchers refine hypotheses rather than abandon them too early.",
+      fail_workshop_cta:"View workshop details",
+      fail_importance_title:"Why this matters for better science",
+      fail_importance_1_t:"It saves resources", fail_importance_1_d:"A structured failure analysis can prevent the same mistake from consuming more reagents, animals, samples, time and funding.",
+      fail_importance_2_t:"It protects scientific credibility", fail_importance_2_d:"When documentation, bias reduction and reproducibility are taken seriously, the research team can defend its decisions with more confidence.",
+      fail_importance_3_t:"It trains better researchers", fail_importance_3_d:"A scientist who understands failure learns how to design better experiments, ask better questions and interpret unexpected results more carefully.",
+      fail_final_title:"The goal is not to avoid every failed experiment. The goal is to learn from failure correctly.",
+      fail_final_text:"LabLifeAcademy helps research teams treat failed experiments as structured information that can improve design, workflow, documentation, reproducibility and scientific reasoning.",
+      fail_final_workshop:"Science Workshop", fail_final_book:"Book workshop",
       footer_about:"Science communication, research education, mentoring and advanced workshops by Dr. Nevena Jeremić.",
       footer_site:"Site", footer_academy:"LabLifeAcademy", footer_follow:"Follow", footer_privacy:"Privacy Policy", footer_terms:"Terms of Service", footer_be_guest:"Be a guest",
       hero_badge:"Podcast + Academy", hero_title_1:"Where Researchers Grow, Teams Improve, and Science Gets Stronger",
@@ -2109,6 +2524,82 @@
     sr: {
       nav_home:"Naslovna", nav_about:"O meni", nav_research:"Istraživanje", nav_podcast:"Podkast", nav_academy:"Akademija", nav_book:"Zakazivanje", nav_reviews:"Recenzije", nav_be_guest:"Budite gost", nav_contact:"Kontakt",
       academy_menu_about:"O akademiji",
+      about_menu_nevena:"O dr Neveni", about_menu_lablifehub:"Šta je LabLifeHub?", about_menu_research_mentoring:"Istraživačko mentorstvo", about_menu_why_fail:"Zašto eksperimenti ne uspevaju",
+      hub_eyebrow:"O LabLifeHubu", hub_title:"Šta je LabLifeHub?",
+      hub_intro:"LabLifeHub je platforma za naučnu komunikaciju i edukaciju koju je razvila dr Nevena Jeremić kako bi na jednom mestu povezala istraživanje, podkast razgovore, akademsko mentorstvo i praktičnu naučnu obuku.",
+      hub_cta_podcast:"Pogledaj LabLifePodcast", hub_cta_academy:"Pogledaj LabLifeAcademy", hub_cta_book:"Zakaži istraživačku podršku",
+      hub_photo_main:"LabLifeHub povezuje naučni identitet, komunikaciju i edukaciju.",
+      hub_why_title:"Zašto je ovakva platforma važna",
+      hub_why_p1:"Nauka se često prikazuje samo kroz završne rezultate: radove, predavanja, citate, konferencijske slajdove i uglađene zaključke. Ali stvarna nauka se sastoji i od odluka, nesigurnosti, rešavanja problema, mentorstva, neuspelih pokušaja, ponavljanja eksperimenata i pažljivog tumačenja.",
+      hub_why_p2:"LabLifeHub postoji zato što istraživačima, studentima, timovima i publici koju zanima nauka treba mesto na kome se proces objašnjava jasno. Kada proces postane vidljiv, nauka postaje lakša za razumevanje, lakša za poverenje i lakša za unapređenje.",
+      hub_why_p3:"Platforma povezuje istraživačko iskustvo, nastavu i međunarodni akademski rad dr Nevene Jeremić sa praktičnom misijom: da kvalitetnije naučno razmišljanje bude dostupnije ljudima koji rade u istraživanju ili oko njega.",
+      hub_platform_title:"Mesto za ljude koji žele snažniju nauku",
+      hub_platform_p1:"LabLifeHub nije samo lični sajt i nije samo stranica podkasta. Strukturisan je kao naučna baza u kojoj se susreću različiti delovi istraživačkog ekosistema: akademska biografija, oblasti istraživanja, podkast razgovori, mentorstvo, radionice, prijave za gostovanje i kontakt za saradnju.",
+      hub_platform_p2:"Za istraživače, platforma otvara put ka boljem dizajnu studije, reproduktivnosti, naučnom pisanju i strategiji publikovanja. Za kompanije, osnivače i inovatore, nudi naučni glas koji može da poveže dokaze, proizvode, odluke i odgovornu komunikaciju. Za studente i mlade istraživače, pokazuje da se karijera u nauci ne gradi samo talentom, već strukturom, povratnom informacijom, disciplinom i zajednicom mišljenja.",
+      hub_platform_p3:"Naziv LabLifeHub je važan jer platforma govori o životu oko laboratorije jednako koliko i o samoj laboratoriji. Prepoznaje ljudsku stranu istraživanja, ali sadržaj ostaje zasnovan na akademskim standardima, eksperimentalnoj logici i naučnoj odgovornosti.",
+      hub_card_podcast_t:"LabLifePodcast", hub_card_podcast_d:"Prostor za jasne, ljudske i stručne razgovore o istraživanju, karijeri, inovacijama, laboratorijskom životu i odlukama koje stoje iza bolje nauke.", hub_card_podcast_cta:"Idi na podkast",
+      hub_card_academy_t:"LabLifeAcademy", hub_card_academy_d:"Praktičan edukativni i mentorski deo fokusiran na dizajn studije, reproduktivnost, laboratorijski workflow, pisanje i strategiju publikovanja.", hub_card_academy_cta:"Idi na Akademiju",
+      hub_card_research_t:"Istraživački identitet", hub_card_research_d:"Platforma je zasnovana na farmaceutskoj hemiji, redoks biologiji, kardiometaboličkim istraživanjima i pretkliničkoj naučnoj praksi.", hub_card_research_cta:"Pogledaj istraživanje",
+      hub_audience_title:"Za koga je LabLifeHub",
+      hub_audience_1:"Za master studente, doktorande, postdoktorande i mlade istraživače kojima trebaju struktura, povratna informacija i jasniji istraživački plan.",
+      hub_audience_2:"Za istraživačke timove koji žele da razumeju zašto eksperimenti ne uspevaju, kako se reproduktivnost unapređuje i kako dokumentacija sprečava skupe greške.",
+      hub_audience_3:"Za naučnike, kliničare, inovatore i osnivače koji žele da kroz LabLifePodcast podele priče zasnovane na dokazima.",
+      hub_audience_4:"Za institucije, laboratorije i organizacije koje traže predavanja, radionice ili saradnju sa istraživačem koji razume i akademsku rigoroznost i komunikaciju.",
+      hub_photo_reading:"Naučna komunikacija počinje čitanjem, razmišljanjem i pažljivim tumačenjem.",
+      hub_final_title:"LabLifeHub pretvara naučno iskustvo u koristan pravac",
+      hub_final_text:"Platforma daje jedno jasno mesto za upoznavanje rada dr Nevene Jeremić, otkrivanje LabLifePodcasta, istraživanje LabLifeAcademy ponuda i započinjanje ozbiljnog razgovora o boljem istraživanju, snažnijim timovima i odgovornijoj naučnoj komunikaciji.",
+      hub_final_guest:"Budite gost podkasta", hub_final_contact:"Pokrenite saradnju",
+      mentoring_eyebrow:"Istraživačko mentorstvo", mentoring_title:"Zašto je istraživačko mentorstvo važno",
+      mentoring_intro:"Istraživačko mentorstvo pomaže naučnicima da od rasutog rada dođu do strukturisanog naučnog napretka. Ono povezuje hipotezu, dizajn studije, reproduktivnost, workflow i strategiju publikovanja u jedan jasan plan.",
+      mentoring_cta_academy:"Pogledaj mentorske ponude", mentoring_cta_book:"Zakaži sesiju",
+      mentoring_photo_main:"Mentorstvo povezuje naučno razmišljanje sa praktičnim laboratorijskim odlukama.",
+      mentoring_problem_title:"Problem retko bude trud - često je struktura",
+      mentoring_problem_p1:"Mnogi istraživači rade izuzetno mnogo, ali sam trud ne garantuje snažnu studiju. Projekat može izgubiti mesece zato što hipoteza nije dovoljno oštra, ciljevi ne slede logično, kontrolne grupe nisu potpune, uzorak je slab ili workflow ne može da ponovi druga osoba u istoj laboratoriji.",
+      mentoring_problem_p2:"Zato istraživačko mentorstvo nije luksuz. Ono je način da se zaštite vreme, resursi i naučni kredibilitet. Dobar mentor pomaže istraživaču da vidi ceo projekat odozgo: šta projekat pokušava da pokaže, gde je logika krhka, gde može ući pristrasnost, gde metode mogu zakazati i kako rezultati mogu postati objavljiva naučna priča.",
+      mentoring_problem_p3:"Za master studente, doktorande, postdoktorande i mlade istraživače, ovakvo vođenje može promeniti ritam projekta. Umesto da se problemi rešavaju tek kada nastanu, mentorstvo pravi proaktivnu strukturu: razjasniti hipotezu, redizajnirati studiju, standardizovati dokumentaciju, ranije planirati statistiku i povezati eksperiment sa publikovanjem od početka.",
+      mentoring_problem_p4:"LabLifeAcademy mentorstvo je izgrađeno oko te praktične potrebe. To nije apstraktna motivacija. To je procena projekta, razvoj dizajna studije, pregled reproduktivnosti, optimizacija laboratorijskog workflow-a, naučno pisanje i strategija publikovanja.",
+      mentoring_pillar_1_t:"Procena projekta", mentoring_pillar_1_d:"Hipoteza, ciljevi, logički tok, metodologija, slabosti, preporuke za redizajn i procena rizika.",
+      mentoring_pillar_2_t:"Dizajn studije", mentoring_pillar_2_d:"Izbor modela, kontrolne grupe, randomizacija, zaslepljivanje, statistički plan i prevencija pristrasnosti.",
+      mentoring_pillar_3_t:"Reproduktivnost", mentoring_pillar_3_d:"Protokoli, laboratorijski dnevnici, praćenje reagenasa, sistemi za prevenciju grešaka i analiza negativnih rezultata.",
+      mentoring_pillar_4_t:"Strategija publikovanja", mentoring_pillar_4_d:"Struktura rukopisa, građenje priče kroz figure, izbor časopisa i planiranje kako projekat postaje rad.",
+      mentoring_photo_presentation:"Snažno istraživanje traži jasan dizajn pre nego što postane jasna prezentacija.",
+      mentoring_importance_title:"Zašto je ovaj rad važan",
+      mentoring_importance_p1:"Slab dizajn može učiniti i obećavajuću ideju teškom za tumačenje. Ako kontrole nisu jasne, ako se pristrasnost ne smanji, ako workflow nije dokumentovan, konačan rezultat može biti naučno krhak čak i kada je istraživač uložio ozbiljan trud.",
+      mentoring_importance_p2:"Bolje mentorstvo unapređuje više od jednog projekta. Ono uči način razmišljanja koji istraživač nosi u sledeći eksperiment, sledeći rad, sledeću saradnju i sledeći tim. Jača naučnu samostalnost jer istraživač uči da postavlja bolja pitanja i brani bolje odluke.",
+      mentoring_importance_p3:"To je posebno važno u ranoj naučnoj karijeri, gde jedan projekat može oblikovati samopouzdanje, publikacioni pravac i profesionalni identitet. Strukturisana podrška može pretvoriti zbunjenost u pravac i napraviti razliku između pukog prikupljanja podataka i izgradnje koherentnog naučnog doprinosa.",
+      mentoring_importance_cta:"Počnite zahtevom za zakazivanje",
+      mentoring_nevena_title:"Zašto iskustvo dr Nevene Jeremić odgovara ovom radu",
+      mentoring_nevena_p1:"Rad dr Nevene Jeremić nalazi se na preseku farmaceutske hemije, redoks biologije, kardiometaboličkih istraživanja i pretkliničkih modela. Ta kombinacija je dragocena za mentorstvo jer povezuje molekularno razmišljanje sa eksperimentalnim dizajnom, laboratorijskom praksom i translacionom logikom.",
+      mentoring_nevena_p2:"Njen akademski put obuhvata istraživanje, nastavu, mentorstvo, međunarodnu saradnju i naučno publikovanje. LabLifeAcademy to iskustvo koristi praktično: da pomogne istraživačima da iskreno sagledaju projekte, ojačaju slabe tačke, bolje dokumentuju rad i planiraju narednih 6 meseci sa više naučnog samopouzdanja.",
+      mentoring_final_title:"Istraživačko mentorstvo pretvara rasut rad u snažniji naučni plan",
+      mentoring_final_text:"Ako vašem projektu treba jasnija logika, bolji dizajn, jača reproduktivnost ili realniji put ka publikovanju, LabLifeAcademy nudi fokusirane formate koji polaze od vašeg stvarnog istraživačkog problema.",
+      mentoring_final_one_day:"Jednodnevni program", mentoring_final_two_day:"Dvodnevni program",
+      fail_eyebrow:"Neuspeh u nauci", fail_title:"Zašto eksperimenti ne uspevaju",
+      fail_intro:"Neuspeli eksperimenti nisu samo prepreke. Kada se pravilno analiziraju, oni postaju podaci koji mogu otkriti pristrasnost, slab dizajn, praznine u dokumentaciji, tehničku varijabilnost i prilike za izgradnju bolje nauke.",
+      fail_cta_workshop:"Pogledaj radionicu", fail_cta_book:"Zakaži naučnu radionicu",
+      fail_photo_main:"Razumevanje neuspeha je deo izgradnje snažnije eksperimentalne kulture.",
+      fail_reframe_title:"Neuspeh nije kraj eksperimenta - već početak analize",
+      fail_reframe_p1:"U istraživanju eksperiment može neuspeti iz mnogo razloga. Nekada je hipoteza pogrešna. Nekada je hipoteza obećavajuća, ali dizajn nije dovoljno snažan da je testira. Nekada je rezultat zaista negativan. Nekada rezultat oblikuju tehnička greška, varijabilnost reagenasa, nedovoljna statistička snaga, uslovi okoline, ograničenja životinjskog modela ili praznine u dokumentaciji.",
+      fail_reframe_p2:"Opasnost nije sam neuspeh. Opasnost je nastaviti dalje bez razumevanja šta neuspeh znači. Kada tim ne rekonstruiše workflow, ne identifikuje ometajuće faktore, ne pregleda kontrole i ne razlikuje stvarno negativan rezultat od tehničke greške, isti problem se može ponavljati kroz eksperimente, studente, reagense i projekte.",
+      fail_reframe_p3:"Zato LabLifeAcademy radionica polazi od jednostavnog naučnog principa: neuspeh je podatak. Neuspeo eksperiment sadrži informaciju o dizajnu, workflow-u, pretpostavkama, dokumentaciji i sistemu u kome je eksperiment urađen.",
+      fail_reframe_p4:"Kada se ta informacija ozbiljno analizira, neuspeh postaje alat za bolji dizajn. Može precizirati hipotezu, otkriti kontrolu koja nedostaje, pokazati pristrasnost, ukazati gde su potrebni randomizacija ili zaslepljivanje, unaprediti laboratorijske dnevnike i sačuvati buduće vreme, novac i resurse.",
+      fail_reason_1_t:"Slab eksperimentalni dizajn", fail_reason_1_d:"Eksperimenti ne uspevaju kada dizajn ne može jasno da odgovori na pitanje: nedostaju kontrole, izbor modela je slab, ciljevi su nejasni, nema randomizacije, nema zaslepljivanja ili je statistička snaga nedovoljna.",
+      fail_reason_2_t:"Varijabilnost reagenasa i tehnike", fail_reason_2_d:"Razlike između serija, problemi u praćenju reagenasa, uslovi okoline i tehnička nedoslednost mogu pretvoriti dobru ideju u rezultate koje je teško tumačiti.",
+      fail_reason_3_t:"Loša dokumentacija", fail_reason_3_d:"Male nedokumentovane promene mogu stvoriti velike naučne probleme. Struktura laboratorijskog dnevnika, verzije protokola i zapisi workflow-a deo su reproduktivnosti.",
+      fail_reason_4_t:"Pristrasnost i greške tumačenja", fail_reason_4_d:"Pristrasnost može ući kroz izbor, merenje, analizu i očekivanja. Timovima treba struktura da odvoje ono što podaci pokazuju od onoga što su se nadali da će videti.",
+      fail_photo_lab:"Laboratorijski workflow je deo naučnog rasuđivanja, ne samo tehničkog izvođenja.",
+      fail_workshop_title:"Šta radionica uči",
+      fail_workshop_p1:"Radionica uči istraživačke timove kako da analiziraju neuspele eksperimente kroz strukturisan pristup. Učesnici uče da sagledaju uzroke, rekonstruišu workflow, identifikuju ometajuće faktore, analiziraju negativne rezultate i razumeju razliku između stvarno negativnog ishoda i tehničke greške.",
+      fail_workshop_p2:"Takođe obrađuje laboratorijske greške i dokumentaciju: česte propuste, praćenje reagenasa, varijabilnost serija, strukturu laboratorijskog dnevnika, sisteme koji sprečavaju gubitak podataka i standardizovan workflow kao uslov reproduktivnosti.",
+      fail_workshop_p3:"Na kraju, radionica povezuje neuspeh sa translacionim razmišljanjem. Neuspeli eksperimenti mogu usmeriti kliničku relevantnost, unaprediti logiku od laboratorije do klinike i pomoći istraživačima da preciziraju hipoteze umesto da ih prerano napuste.",
+      fail_workshop_cta:"Pogledaj detalje radionice",
+      fail_importance_title:"Zašto je ovo važno za bolju nauku",
+      fail_importance_1_t:"Štedi resurse", fail_importance_1_d:"Strukturisana analiza neuspeha može sprečiti da ista greška ponovo troši reagense, životinje, uzorke, vreme i finansiranje.",
+      fail_importance_2_t:"Čuva naučni kredibilitet", fail_importance_2_d:"Kada se dokumentacija, smanjenje pristrasnosti i reproduktivnost shvate ozbiljno, istraživački tim može sigurnije da brani svoje odluke.",
+      fail_importance_3_t:"Obučava bolje istraživače", fail_importance_3_d:"Naučnik koji razume neuspeh uči da dizajnira bolje eksperimente, postavlja bolja pitanja i pažljivije tumači neočekivane rezultate.",
+      fail_final_title:"Cilj nije izbeći svaki neuspeo eksperiment. Cilj je pravilno učiti iz neuspeha.",
+      fail_final_text:"LabLifeAcademy pomaže istraživačkim timovima da neuspele eksperimente tretiraju kao strukturisanu informaciju koja može unaprediti dizajn, workflow, dokumentaciju, reproduktivnost i naučno rasuđivanje.",
+      fail_final_workshop:"Naučna radionica", fail_final_book:"Zakaži radionicu",
       footer_about:"Naučna komunikacija, istraživačka edukacija, mentorstvo i napredne radionice dr Nevene Jeremić.",
       footer_site:"Sajt", footer_academy:"LabLifeAcademy", footer_follow:"Mreže", footer_privacy:"Politika privatnosti", footer_terms:"Uslovi korišćenja", footer_be_guest:"Budite gost",
       hero_badge:"Podkast + Akademija", hero_title_1:"Mesto gde istraživači rastu, timovi napreduju, a nauka postaje snažnija",
@@ -2753,6 +3244,9 @@
   const PAGE_PATHS = {
     home:"/",
     about:"/about/",
+    "about-lablifehub":"/what-is-lablifehub/",
+    "about-research-mentoring":"/research-mentoring/",
+    "about-why-experiments-fail":"/why-experiments-fail/",
     research:"/research/",
     podcast:"/podcast/",
     guest:"/be-guest/",
@@ -2773,6 +3267,18 @@
     about:{
       en:["About Dr. Nevena Jeremić - LabLifeHub","Academic profile, research path, awards, expertise and collaborations of Dr. Nevena Jeremić."],
       sr:["O dr Neveni Jeremić - LabLifeHub","Akademski profil, istraživački put, priznanja, ekspertiza i saradnje dr Nevene Jeremić."]
+    },
+    "about-lablifehub":{
+      en:["What is LabLifeHub? - Science Communication, Podcast & Academy","LabLifeHub by Dr. Nevena Jeremić is a science communication, LabLifePodcast and LabLifeAcademy platform for research mentoring, study design, reproducibility and better science."],
+      sr:["Šta je LabLifeHub? - naučna komunikacija, podkast i akademija","LabLifeHub dr Nevene Jeremić je platforma za naučnu komunikaciju, LabLifePodcast i LabLifeAcademy, istraživačko mentorstvo, dizajn studije, reproduktivnost i bolju nauku."]
+    },
+    "about-research-mentoring":{
+      en:["Why Research Mentoring Matters - LabLifeAcademy by Dr. Nevena Jeremić","Learn why research mentoring matters for PhD students, postdocs and early-career scientists: project audit, study design, reproducibility, workflow and publication strategy."],
+      sr:["Zašto je istraživačko mentorstvo važno - LabLifeAcademy dr Nevene Jeremić","Saznajte zašto je istraživačko mentorstvo važno za doktorande, postdoktorande i mlade istraživače: procena projekta, dizajn studije, reproduktivnost, workflow i publikovanje."]
+    },
+    "about-why-experiments-fail":{
+      en:["Why Experiments Fail - Reproducibility & Better Research Design","A LabLifeAcademy guide to why experiments fail, how failed experiments become data, and how reproducibility, documentation and bias reduction strengthen research."],
+      sr:["Zašto eksperimenti ne uspevaju - reproduktivnost i bolji dizajn istraživanja","LabLifeAcademy vodič o tome zašto eksperimenti ne uspevaju, kako neuspeh postaje podatak i kako reproduktivnost, dokumentacija i smanjenje pristrasnosti jačaju istraživanje."]
     },
     research:{
       en:["Research - LabLifeHub","Research focus in pharmaceutical chemistry, redox biology, cardiometabolic science and preclinical models."],
@@ -2855,8 +3361,33 @@
     if(replace) window.history.replaceState({ page:name }, "", target);
     else window.history.pushState({ page:name }, "", target);
   }
-  function navTargetForPage(name){ return name && name.indexOf("academy-") === 0 ? "academy" : name; }
+  function navTargetForPage(name){
+    if(name && name.indexOf("academy-") === 0) return "academy";
+    if(name && name.indexOf("about-") === 0) return "about";
+    return name;
+  }
   function goToPage(e, name){ if(e) e.preventDefault(); showPage(name); }
+  function setAboutMenu(open){
+    const menu = document.getElementById("aboutDropdown");
+    const btn = document.getElementById("aboutNavBtn");
+    if(!menu) return;
+    menu.classList.toggle("hidden", !open);
+    if(btn){
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      const icon = btn.querySelector(".fa-chevron-down");
+      if(icon) icon.style.transform = open ? "rotate(180deg)" : "";
+    }
+  }
+  function toggleAboutMenu(e){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    const menu = document.getElementById("aboutDropdown");
+    setAboutMenu(menu ? menu.classList.contains("hidden") : false);
+  }
+  function closeAboutMenu(){ setAboutMenu(false); }
+  function goToPageFromAbout(e, name){
+    closeAboutMenu();
+    goToPage(e, name);
+  }
   function setAcademyMenu(open){
     const menu = document.getElementById("academyDropdown");
     const btn = document.getElementById("academyNavBtn");
@@ -2939,6 +3470,8 @@
     document.querySelectorAll("[data-nav]").forEach(n=>n.classList.toggle("active-link", n.dataset.nav===activeNav));
     document.getElementById("mobileMenu").classList.add("hidden");
     document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg";
+    closeMobileSubmenus();
+    closeAboutMenu();
     closeAcademyMenu();
     updatePageMeta(name);
     if(opts.updateUrl !== false) updatePageUrl(name, opts.replaceUrl === true);
@@ -2947,11 +3480,39 @@
   window.addEventListener("popstate", function(){ showPage(pageFromLocation(), { updateUrl:false }); });
   window.addEventListener("hashchange", function(){ showPage(pageFromLocation(), { replaceUrl:true }); });
   document.addEventListener("click", function(e){
+    const header = document.getElementById("siteHeader");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if(header && !header.contains(e.target)){
+      closeAboutMenu();
+      closeAcademyMenu();
+      if(mobileMenu){
+        mobileMenu.classList.add("hidden");
+        document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg";
+        closeMobileSubmenus();
+      }
+      return;
+    }
+    const aboutWrap = document.getElementById("aboutNavWrap");
+    if(aboutWrap && !aboutWrap.contains(e.target)) closeAboutMenu();
     const wrap = document.getElementById("academyNavWrap");
     if(wrap && !wrap.contains(e.target)) closeAcademyMenu();
   });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeAcademyMenu(); closeNotifyModal(); } });
-  function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeAboutMenu(); closeAcademyMenu(); closeNotifyModal(); closeMobileSubmenus(); document.getElementById("mobileMenu").classList.add("hidden"); document.getElementById("menuIcon").className = "fa-solid fa-bars text-lg"; } });
+  function closeMobileSubmenus(){
+    ["mobileAboutMenu","mobileAcademyMenu"].forEach(function(id){
+      const el = document.getElementById(id);
+      if(el) el.classList.add("hidden");
+    });
+  }
+  function toggleMobileSubmenu(e, id){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    const target = document.getElementById(id);
+    if(!target) return;
+    const shouldOpen = target.classList.contains("hidden");
+    closeMobileSubmenus();
+    target.classList.toggle("hidden", !shouldOpen);
+  }
+  function toggleMenu(){ const m=document.getElementById("mobileMenu"); const open=m.classList.contains("hidden"); m.classList.toggle("hidden"); if(!open) closeMobileSubmenus(); document.getElementById("menuIcon").className = open ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg"; }
 
   /* ---------- calendar ---------- */
   let calDate = new Date(); calDate.setDate(1);

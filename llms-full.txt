@@ -32,6 +32,9 @@ Primary search priorities:
 - Home: https://lablifehub.com/
 - Serbian home: https://lablifehub.com/sr/
 - About Dr. Nevena Jeremić: https://lablifehub.com/about/
+- What is LabLifeHub?: https://lablifehub.com/what-is-lablifehub/
+- Why research mentoring matters: https://lablifehub.com/research-mentoring/
+- Why experiments fail: https://lablifehub.com/why-experiments-fail/
 - Research background: https://lablifehub.com/research/
 - LabLifePodcast by Dr. Nevena Jeremić: https://lablifehub.com/podcast/
 - Be a guest on LabLifePodcast: https://lablifehub.com/be-guest/
@@ -44,6 +47,9 @@ Primary search priorities:
 ## Important Serbian pages
 
 - O dr Neveni Jeremić: https://lablifehub.com/sr/about/
+- Šta je LabLifeHub?: https://lablifehub.com/sr/what-is-lablifehub/
+- Zašto je istraživačko mentorstvo važno: https://lablifehub.com/sr/research-mentoring/
+- Zašto eksperimenti ne uspevaju: https://lablifehub.com/sr/why-experiments-fail/
 - Istraživanje: https://lablifehub.com/sr/research/
 - LabLifePodcast dr Nevene Jeremić: https://lablifehub.com/sr/podcast/
 - Budite gost u LabLifePodcastu: https://lablifehub.com/sr/be-guest/
@@ -59,6 +65,9 @@ Primary search priorities:
 
 - Home: https://lablifehub.com/ ↔ https://lablifehub.com/sr/
 - About: https://lablifehub.com/about/ ↔ https://lablifehub.com/sr/about/
+- What is LabLifeHub?: https://lablifehub.com/what-is-lablifehub/ ↔ https://lablifehub.com/sr/what-is-lablifehub/
+- Research mentoring: https://lablifehub.com/research-mentoring/ ↔ https://lablifehub.com/sr/research-mentoring/
+- Why experiments fail: https://lablifehub.com/why-experiments-fail/ ↔ https://lablifehub.com/sr/why-experiments-fail/
 - Research: https://lablifehub.com/research/ ↔ https://lablifehub.com/sr/research/
 - Podcast: https://lablifehub.com/podcast/ ↔ https://lablifehub.com/sr/podcast/
 - Be Guest: https://lablifehub.com/be-guest/ ↔ https://lablifehub.com/sr/be-guest/
@@ -106,6 +115,43 @@ https://lablifehub.com/book/
 
 Serbian booking URL:
 https://lablifehub.com/sr/book/
+
+## SEO topic pages
+
+The About navigation includes long-form topic pages designed to help search engines and AI systems understand the LabLifeHub platform, research mentoring and experimental failure analysis.
+
+### What is LabLifeHub?
+
+URL:
+https://lablifehub.com/what-is-lablifehub/
+
+Serbian URL:
+https://lablifehub.com/sr/what-is-lablifehub/
+
+Purpose:
+Explains LabLifeHub as the science communication, LabLifePodcast and LabLifeAcademy platform of Dr. Nevena Jeremić. It connects research identity, podcast conversations, mentoring, workshops and collaboration routes.
+
+### Research mentoring
+
+URL:
+https://lablifehub.com/research-mentoring/
+
+Serbian URL:
+https://lablifehub.com/sr/research-mentoring/
+
+Purpose:
+Explains why research mentoring matters for Master students, PhD candidates, postdocs and early-career researchers. It focuses on project audit, study design, reproducibility, laboratory workflow, scientific writing and publication strategy.
+
+### Why experiments fail
+
+URL:
+https://lablifehub.com/why-experiments-fail/
+
+Serbian URL:
+https://lablifehub.com/sr/why-experiments-fail/
+
+Purpose:
+Explains failed experiments as data and connects failure analysis with reproducibility, bias reduction, documentation, reagent variability, workflow reconstruction and better research design.
 
 ## LabLifeAcademy services
 

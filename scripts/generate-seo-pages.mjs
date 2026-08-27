@@ -42,6 +42,54 @@ const pages = [
     priority: "0.8",
   },
   {
+    id: "about-lablifehub",
+    path: "/what-is-lablifehub/",
+    title: {
+      en: "What is LabLifeHub? - Science Communication, Podcast & Academy",
+      sr: "Šta je LabLifeHub? - naučna komunikacija, podkast i akademija",
+    },
+    description: {
+      en: "LabLifeHub by Dr. Nevena Jeremić is a science communication, LabLifePodcast and LabLifeAcademy platform for research mentoring, study design, reproducibility and better science.",
+      sr: "LabLifeHub dr Nevene Jeremić je platforma za naučnu komunikaciju, LabLifePodcast i LabLifeAcademy, istraživačko mentorstvo, dizajn studije, reproduktivnost i bolju nauku.",
+    },
+    breadcrumb: { en: ["About", "What is LabLifeHub?"], sr: ["O meni", "Šta je LabLifeHub?"] },
+    parentPath: "/about/",
+    about: "https://lablifehub.com/#organization",
+    priority: "0.9",
+  },
+  {
+    id: "about-research-mentoring",
+    path: "/research-mentoring/",
+    title: {
+      en: "Why Research Mentoring Matters - LabLifeAcademy by Dr. Nevena Jeremić",
+      sr: "Zašto je istraživačko mentorstvo važno - LabLifeAcademy dr Nevene Jeremić",
+    },
+    description: {
+      en: "Learn why research mentoring matters for PhD students, postdocs and early-career scientists: project audit, study design, reproducibility, workflow and publication strategy.",
+      sr: "Saznajte zašto je istraživačko mentorstvo važno za doktorande, postdoktorande i mlade istraživače: procena projekta, dizajn studije, reproduktivnost, workflow i publikovanje.",
+    },
+    breadcrumb: { en: ["About", "Research mentoring"], sr: ["O meni", "Istraživačko mentorstvo"] },
+    parentPath: "/about/",
+    about: "https://lablifehub.com/academy/#offers",
+    priority: "0.9",
+  },
+  {
+    id: "about-why-experiments-fail",
+    path: "/why-experiments-fail/",
+    title: {
+      en: "Why Experiments Fail - Reproducibility & Better Research Design",
+      sr: "Zašto eksperimenti ne uspevaju - reproduktivnost i bolji dizajn istraživanja",
+    },
+    description: {
+      en: "A LabLifeAcademy guide to why experiments fail, how failed experiments become data, and how reproducibility, documentation and bias reduction strengthen research.",
+      sr: "LabLifeAcademy vodič o tome zašto eksperimenti ne uspevaju, kako neuspeh postaje podatak i kako reproduktivnost, dokumentacija i smanjenje pristrasnosti jačaju istraživanje.",
+    },
+    breadcrumb: { en: ["About", "Why experiments fail"], sr: ["O meni", "Zašto eksperimenti ne uspevaju"] },
+    parentPath: "/about/",
+    about: "https://lablifehub.com/academy/failure-in-science-workshop/#service",
+    priority: "0.9",
+  },
+  {
     id: "research",
     path: "/research/",
     title: {
@@ -351,7 +399,7 @@ function localizeInternalLinks(html) {
 function breadcrumbItemUrl(page, index, breadcrumbs, lang) {
   if (index === 0) return new URL(localizedPath("/", lang), origin).href;
   if (index === breadcrumbs.length - 1) return localizedUrl(page, lang);
-  return new URL(localizedPath("/academy/", lang), origin).href;
+  return new URL(localizedPath(page.parentPath || "/academy/", lang), origin).href;
 }
 
 function pageSchema(page, lang) {

@@ -60,6 +60,21 @@
       "permanent": true
     },
     {
+      "source": "/what-is-lablifehub",
+      "destination": "/what-is-lablifehub/",
+      "permanent": true
+    },
+    {
+      "source": "/research-mentoring",
+      "destination": "/research-mentoring/",
+      "permanent": true
+    },
+    {
+      "source": "/why-experiments-fail",
+      "destination": "/why-experiments-fail/",
+      "permanent": true
+    },
+    {
       "source": "/research",
       "destination": "/research/",
       "permanent": true
@@ -122,6 +137,21 @@
     {
       "source": "/sr/about",
       "destination": "/sr/about/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/what-is-lablifehub",
+      "destination": "/sr/what-is-lablifehub/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/research-mentoring",
+      "destination": "/sr/research-mentoring/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/why-experiments-fail",
+      "destination": "/sr/why-experiments-fail/",
       "permanent": true
     },
     {

@@ -15,6 +15,18 @@
       "sr": "https://lablifehub.com/sr/about/"
     },
     {
+      "en": "https://lablifehub.com/what-is-lablifehub/",
+      "sr": "https://lablifehub.com/sr/what-is-lablifehub/"
+    },
+    {
+      "en": "https://lablifehub.com/research-mentoring/",
+      "sr": "https://lablifehub.com/sr/research-mentoring/"
+    },
+    {
+      "en": "https://lablifehub.com/why-experiments-fail/",
+      "sr": "https://lablifehub.com/sr/why-experiments-fail/"
+    },
+    {
       "en": "https://lablifehub.com/research/",
       "sr": "https://lablifehub.com/sr/research/"
     },
@@ -90,6 +102,21 @@
       "name": "Be a guest on LabLifePodcast",
       "url": "https://lablifehub.com/be-guest/",
       "purpose": "Podcast guest application"
+    },
+    {
+      "name": "What is LabLifeHub?",
+      "url": "https://lablifehub.com/what-is-lablifehub/",
+      "purpose": "Long-form explanation of the LabLifeHub brand, platform, podcast, academy and scientific mission"
+    },
+    {
+      "name": "Why research mentoring matters",
+      "url": "https://lablifehub.com/research-mentoring/",
+      "purpose": "Long-form explanation of research mentoring, study design, reproducibility, workflow and publication strategy"
+    },
+    {
+      "name": "Why experiments fail",
+      "url": "https://lablifehub.com/why-experiments-fail/",
+      "purpose": "Long-form explanation of experimental failure, reproducibility, bias reduction and better research design"
     }
   ],
   "serbian_priority_pages": [
@@ -112,6 +139,21 @@
       "name": "Budite gost u LabLifePodcastu",
       "url": "https://lablifehub.com/sr/be-guest/",
       "purpose": "Srpska stranica za prijavu gosta u podkastu"
+    },
+    {
+      "name": "Šta je LabLifeHub?",
+      "url": "https://lablifehub.com/sr/what-is-lablifehub/",
+      "purpose": "Srpska duga strana o LabLifeHub platformi, podkastu, akademiji i naučnoj misiji"
+    },
+    {
+      "name": "Zašto je istraživačko mentorstvo važno",
+      "url": "https://lablifehub.com/sr/research-mentoring/",
+      "purpose": "Srpska duga strana o istraživačkom mentorstvu, dizajnu studije, reproduktivnosti, workflow-u i publikovanju"
+    },
+    {
+      "name": "Zašto eksperimenti ne uspevaju",
+      "url": "https://lablifehub.com/sr/why-experiments-fail/",
+      "purpose": "Srpska duga strana o neuspelim eksperimentima, reproduktivnosti, smanjenju pristrasnosti i boljem dizajnu istraživanja"
     }
   ],
   "academy_services": [
@@ -173,6 +215,9 @@
     "reproducibility",
     "scientific writing",
     "publication strategy",
+    "science communication",
+    "laboratory workflow",
+    "experimental failure analysis",
     "pharmaceutical chemistry",
     "redox biology",
     "cardiometabolic research",
