@@ -7,6 +7,13 @@
 	.st1{filter:url(#Adobe_OpacityMaskFilter);}
 	.st2{mask:url(#_x30_91ffe35cf_00000158022687894071779950000014657472499949997476_);}
 </style>
+<defs>
+	<clipPath id="faviconRoundedCorners">
+		<rect x="0" y="0" width="2000" height="2000" rx="220" ry="220"/>
+	</clipPath>
+</defs>
+<g clip-path="url(#faviconRoundedCorners)">
+<rect x="0" y="0" width="2000" height="2000" rx="220" ry="220" fill="#FFFFFF"/>
 <g>
 	<defs>
 		<rect id="SVGID_1_" x="-643.9" y="-317.4" width="3287.81" height="2174.8"/>
@@ -5222,5 +5229,6 @@ AAAAAbefBP8A2qz4NX8wBk3/AJ3WHAD/2Q==" transform="matrix(2.1919 0 0 2.1919 -538.3
 			</g>
 		</g>
 	</g>
+</g>
 </g>
 </svg>
