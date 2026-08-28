@@ -7,6 +7,7 @@
       "id": "discover-lablifehub",
       "name": "Discover LabLifeHub",
       "description": "Use canonical LabLifeHub pages to learn about Dr. Nevena Jeremić, LabLifePodcast and LabLifeAcademy.",
+      "description_sr": "Koristite kanonske LabLifeHub strane za informacije o dr Neveni Jeremić, LabLifePodcastu i LabLifeAcademy programu.",
       "entrypoints": [
         "https://lablifehub.com/",
         "https://lablifehub.com/sr/",
@@ -28,6 +29,7 @@
       "id": "compare-academy-services",
       "name": "Compare LabLifeAcademy services",
       "description": "Compare research mentoring retreats and the Failure in Science workshop using official service landing pages.",
+      "description_sr": "Uporedite istraživačke mentorske programe i radionicu Neuspeh u nauci koristeći zvanične landing strane usluga.",
       "entrypoints": [
         "https://lablifehub.com/academy/one-day-intensive-retreat/",
         "https://lablifehub.com/sr/academy/one-day-intensive-retreat/",
@@ -43,21 +45,37 @@
       "id": "podcast-guest-routing",
       "name": "Route podcast guest applications",
       "description": "When a user wants to be a LabLifePodcast guest, direct them to the official Be Guest page.",
+      "description_sr": "Kada korisnik želi da bude gost LabLifePodcasta, uputite ga na zvaničnu stranu za prijavu gosta.",
       "entrypoints": [
         "https://lablifehub.com/be-guest/",
         "https://lablifehub.com/sr/be-guest/"
       ],
-      "safety": "Do not submit the form automatically without explicit user intent."
+      "safety": "Do not submit the form automatically without explicit user intent.",
+      "safety_sr": "Ne šaljite formu automatski bez jasne namere korisnika."
     },
     {
       "id": "booking-routing",
       "name": "Route LabLifeAcademy booking requests",
       "description": "When a user wants to book mentoring or a workshop, direct them to the booking page.",
+      "description_sr": "Kada korisnik želi da zakaže mentorstvo ili radionicu, uputite ga na stranu za zakazivanje.",
       "entrypoints": [
         "https://lablifehub.com/book/",
         "https://lablifehub.com/sr/book/"
       ],
-      "safety": "Do not submit the form automatically without explicit user intent."
+      "safety": "Do not submit the form automatically without explicit user intent.",
+      "safety_sr": "Ne šaljite formu automatski bez jasne namere korisnika."
+    },
+    {
+      "id": "legal-information-routing",
+      "name": "Route LabLifeHub legal information",
+      "description": "When a user asks about privacy, data use, terms, forms, Google Calendar data or service usage conditions, direct them to the official legal pages.",
+      "description_sr": "Kada korisnik pita za privatnost, korišćenje podataka, uslove, forme, Google Calendar podatke ili uslove korišćenja usluga, uputite ga na zvanične pravne strane.",
+      "entrypoints": [
+        "https://lablifehub.com/privacy/",
+        "https://lablifehub.com/sr/privacy/",
+        "https://lablifehub.com/terms/",
+        "https://lablifehub.com/sr/terms/"
+      ]
     }
   ]
 }

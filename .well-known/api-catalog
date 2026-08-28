@@ -51,6 +51,14 @@
     "contact": {
       "en": "https://lablifehub.com/contact/",
       "sr": "https://lablifehub.com/sr/contact/"
+    },
+    "privacy": {
+      "en": "https://lablifehub.com/privacy/",
+      "sr": "https://lablifehub.com/sr/privacy/"
+    },
+    "terms": {
+      "en": "https://lablifehub.com/terms/",
+      "sr": "https://lablifehub.com/sr/terms/"
     }
   },
   "academy_services": [
@@ -88,6 +96,7 @@
       "path": "/api/episodes",
       "method": "GET",
       "description": "Returns recent LabLifePodcast YouTube videos from the public YouTube RSS feed.",
+      "description_sr": "Vraća najnovije LabLifePodcast YouTube video sadržaje iz javnog YouTube RSS feed-a.",
       "query_parameters": {
         "limit": "Optional integer from 1 to 50",
         "debug": "Optional 1 for diagnostic details"
@@ -97,6 +106,7 @@
       "path": "/api/instagram",
       "method": "GET",
       "description": "Returns recent LabLifeHub Instagram items when a token or public fallback is available.",
+      "description_sr": "Vraća najnovije LabLifeHub Instagram objave kada je dostupan token ili javni fallback sadržaj.",
       "query_parameters": {
         "limit": "Optional integer"
       }
@@ -107,19 +117,36 @@
       "name": "LabLifeAcademy booking",
       "page": "https://lablifehub.com/book/",
       "localized_page": "https://lablifehub.com/sr/book/",
-      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
+      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent.",
+      "guidance_sr": "Koristite vidljivu formu na sajtu. Ne šaljite formu automatski bez jasne namere korisnika."
     },
     {
       "name": "LabLifePodcast guest application",
       "page": "https://lablifehub.com/be-guest/",
       "localized_page": "https://lablifehub.com/sr/be-guest/",
-      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent."
+      "guidance": "Use the visible website form. Do not submit automatically without explicit user intent.",
+      "guidance_sr": "Koristite vidljivu formu na sajtu. Ne šaljite prijavu automatski bez jasne namere korisnika."
     },
     {
       "name": "Contact",
       "page": "https://lablifehub.com/contact/",
       "localized_page": "https://lablifehub.com/sr/contact/",
-      "guidance": "Use the visible website form or email nevenajeremic@lablifehub.com."
+      "guidance": "Use the visible website form or email nevenajeremic@lablifehub.com.",
+      "guidance_sr": "Koristite vidljivu kontakt formu ili e-mail nevenajeremic@lablifehub.com."
+    }
+  ],
+  "legal_pages": [
+    {
+      "name": "Privacy Policy",
+      "localized_name": "Politika privatnosti",
+      "page": "https://lablifehub.com/privacy/",
+      "localized_page": "https://lablifehub.com/sr/privacy/"
+    },
+    {
+      "name": "Terms of Service",
+      "localized_name": "Uslovi korišćenja",
+      "page": "https://lablifehub.com/terms/",
+      "localized_page": "https://lablifehub.com/sr/terms/"
     }
   ],
   "discovery": {

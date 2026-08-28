@@ -135,6 +135,16 @@
       "permanent": true
     },
     {
+      "source": "/sr/privacy",
+      "destination": "/sr/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/sr/terms",
+      "destination": "/sr/terms/",
+      "permanent": true
+    },
+    {
       "source": "/sr/about",
       "destination": "/sr/about/",
       "permanent": true

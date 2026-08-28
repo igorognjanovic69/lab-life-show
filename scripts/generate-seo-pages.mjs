@@ -66,7 +66,7 @@ const pages = [
     },
     description: {
       en: "Learn why research mentoring matters for PhD students, postdocs and early-career scientists: project audit, study design, reproducibility, workflow and publication strategy.",
-      sr: "Saznajte zašto je istraživačko mentorstvo važno za doktorande, postdoktorande i mlade istraživače: procena projekta, dizajn studije, reproduktivnost, workflow i publikovanje.",
+      sr: "Saznajte zašto je istraživačko mentorstvo važno za doktorande, postdoktorande i mlade istraživače: procena projekta, dizajn studije, reproduktivnost, tok rada i publikovanje.",
     },
     breadcrumb: { en: ["About", "Research mentoring"], sr: ["O meni", "Istraživačko mentorstvo"] },
     parentPath: "/about/",
@@ -280,8 +280,8 @@ const pages = [
 ];
 
 const standalonePages = [
-  { loc: `${origin}/privacy/`, changefreq: "yearly", priority: "0.3" },
-  { loc: `${origin}/terms/`, changefreq: "yearly", priority: "0.3" },
+  { path: "/privacy/", changefreq: "yearly", priority: "0.3" },
+  { path: "/terms/", changefreq: "yearly", priority: "0.3" },
 ];
 
 function valueFor(value, lang) {
@@ -321,6 +321,10 @@ function localizedPath(path, lang) {
 }
 
 function localizedUrl(page, lang) {
+  return new URL(localizedPath(page.path, lang), origin).href;
+}
+
+function localizedStandaloneUrl(page, lang) {
   return new URL(localizedPath(page.path, lang), origin).href;
 }
 
@@ -388,7 +392,10 @@ function localizeStaticHtml(html, lang) {
 }
 
 function localizeInternalLinks(html) {
-  const paths = pages.map((page) => page.path).filter((path) => path !== "/");
+  const paths = [
+    ...pages.map((page) => page.path).filter((path) => path !== "/"),
+    ...standalonePages.map((page) => page.path).filter((path) => path !== "/"),
+  ];
   for (const path of paths) {
     const escaped = path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     html = html.replace(new RegExp(`(<a\\b[^>]*\\shref=")${escaped}(")`, "g"), `$1/sr${path}$2`);
@@ -522,6 +529,16 @@ function sitemapAlternateLinks(page) {
   ].join("\n");
 }
 
+function standaloneSitemapAlternateLinks(page) {
+  const enUrl = localizedStandaloneUrl(page, "en");
+  const srUrl = localizedStandaloneUrl(page, "sr");
+  return [
+    `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />`,
+    `    <xhtml:link rel="alternate" hreflang="sr" href="${srUrl}" />`,
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+  ].join("\n");
+}
+
 function sitemapUrl(loc, changefreq, priority, alternates = "") {
   return [
     "  <url>",
@@ -544,7 +561,9 @@ function writeSitemap() {
     entries.push(sitemapUrl(localizedUrl(page, "sr"), changefreq, priority, alternates));
   }
   for (const page of standalonePages) {
-    entries.push(sitemapUrl(page.loc, page.changefreq, page.priority));
+    const alternates = standaloneSitemapAlternateLinks(page);
+    entries.push(sitemapUrl(localizedStandaloneUrl(page, "en"), page.changefreq, page.priority, alternates));
+    entries.push(sitemapUrl(localizedStandaloneUrl(page, "sr"), page.changefreq, page.priority, alternates));
   }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n  xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>\n`;

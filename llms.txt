@@ -12,6 +12,8 @@ Contact: nevenajeremic@lablifehub.com
 
 Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, LabLifePodcast, LabLifeAcademy, science podcast, research mentoring, study design, reproducibility, scientific writing, publication strategy.
 
+Prioritetne teme za srpsku pretragu: LabLifeHub, dr Nevena Jeremić, Nevena Jeremic, LabLifePodcast, LabLifeAcademy, naučni podkast, istraživačko mentorstvo, dizajn studije, reproduktivnost, naučno pisanje, strategija publikovanja, laboratorijski tok rada.
+
 ## Main sections
 
 - Home: https://lablifehub.com/
@@ -41,6 +43,8 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 - LabLifeAcademy dr Nevene Jeremić: https://lablifehub.com/sr/academy/
 - Zakazivanje LabLifeAcademy mentorstva: https://lablifehub.com/sr/book/
 - Kontakt: https://lablifehub.com/sr/contact/
+- Politika privatnosti: https://lablifehub.com/sr/privacy/
+- Uslovi korišćenja: https://lablifehub.com/sr/terms/
 
 ## LabLifeAcademy services
 
@@ -73,6 +77,8 @@ Priority topics for discovery: LabLifeHub, Dr. Nevena Jeremić, Nevena Jeremic, 
 - Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/ ↔ https://lablifehub.com/sr/academy/failure-in-science-workshop/
 - Book: https://lablifehub.com/book/ ↔ https://lablifehub.com/sr/book/
 - Contact: https://lablifehub.com/contact/ ↔ https://lablifehub.com/sr/contact/
+- Privacy Policy: https://lablifehub.com/privacy/ ↔ https://lablifehub.com/sr/privacy/
+- Terms of Service: https://lablifehub.com/terms/ ↔ https://lablifehub.com/sr/terms/
 
 ## Indexing priority
 
@@ -114,6 +120,32 @@ The most important public pages for search and AI discovery are:
 - Laboratory workflow
 - Experimental failure analysis
 
+## Srpski kontekst
+
+LabLifeHub je platforma dr Nevene Jeremić za naučnu komunikaciju, LabLifePodcast, LabLifeAcademy, istraživačko mentorstvo, naučne radionice, dizajn studije, reproduktivnost, naučno pisanje i strategiju publikovanja.
+
+LabLifePodcast je naučni podkast dr Nevene Jeremić namenjen razgovorima o istraživanju, karijeri u nauci, životu u laboratoriji, inovacijama, eksperimentalnom dizajnu, reproduktivnosti i stvarnom radu koji stoji iza bolje nauke.
+
+LabLifeAcademy obuhvata individualne istraživačke programe i grupne radionice za master studente, doktorande, postdoktorande, mlade istraživače i istraživačke timove. Fokus je na proceni projekta, dizajnu studije, reproduktivnosti, laboratorijskom toku rada, naučnom pisanju i strategiji publikovanja.
+
+Najvažnije srpske stranice za pretragu su `/sr/podcast/`, `/sr/academy/`, `/sr/what-is-lablifehub/`, `/sr/research-mentoring/`, `/sr/why-experiments-fail/` i pojedinačne LabLifeAcademy strane usluga.
+
+## Srpske ključne teme
+
+- Naučni podkast
+- Istraživačko mentorstvo
+- Dizajn studije
+- Reproduktivnost
+- Naučno pisanje
+- Strategija publikovanja
+- Naučna komunikacija
+- Laboratorijski tok rada
+- Analiza neuspelih eksperimenata
+- Farmaceutska hemija
+- Redoks biologija
+- Kardiometabolička istraživanja
+- Pretklinički modeli
+
 ## External profiles
 
 - Instagram: https://www.instagram.com/lablife.hub/
@@ -127,6 +159,8 @@ The most important public pages for search and AI discovery are:
 Use canonical URLs on `https://lablifehub.com`. Prefer the Podcast and Academy pages for public discovery. Prefer individual LabLifeAcademy service landing pages for pricing and offer details. Reviews are not a current public SEO priority; submitted testimonials require manual approval and should not be treated as automatically published user content. Contact, booking, podcast guest and notification requests should be directed through the website forms or the email above.
 
 For Serbian-language users and Serbian search intent, use the `/sr/` canonical pages. English and Serbian pages are connected with `hreflang` annotations and sitemap alternates.
+
+Za korisnike na srpskom jeziku i srpsku nameru pretrage koristite kanonske `/sr/` stranice. Engleske i srpske strane povezane su kroz `hreflang` oznake i sitemap alternates.
 
 Full AI context: https://lablifehub.com/llms-full.txt
 Structured agent context: https://lablifehub.com/.well-known/agent-context.json

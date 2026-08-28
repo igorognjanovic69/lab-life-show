@@ -14,6 +14,9 @@ Dr. Nevena Jeremić (also written without diacritics as Nevena Jeremic) is Assoc
 Primary brand:
 LabLifeHub is Dr. Nevena Jeremić's platform for science communication, LabLifePodcast, LabLifeAcademy, research mentoring, scientific workshops, reproducibility, study design, scientific writing and publication strategy.
 
+Primarni brend na srpskom:
+LabLifeHub je platforma dr Nevene Jeremić za naučnu komunikaciju, LabLifePodcast, LabLifeAcademy, istraživačko mentorstvo, naučne radionice, reproduktivnost, dizajn studije, naučno pisanje i strategiju publikovanja.
+
 Primary search priorities:
 - LabLifeHub
 - Dr. Nevena Jeremić
@@ -26,6 +29,20 @@ Primary search priorities:
 - reproducibility
 - scientific writing
 - publication strategy
+
+Prioriteti za srpsku pretragu:
+- LabLifeHub
+- dr Nevena Jeremić
+- Nevena Jeremic
+- LabLifePodcast
+- LabLifeAcademy
+- naučni podkast
+- istraživačko mentorstvo
+- dizajn studije
+- reproduktivnost
+- naučno pisanje
+- strategija publikovanja
+- laboratorijski tok rada
 
 ## Important public pages
 
@@ -60,6 +77,8 @@ Primary search priorities:
 - Neuspeh u nauci radionica: https://lablifehub.com/sr/academy/failure-in-science-workshop/
 - Zakazivanje LabLifeAcademy mentorstva: https://lablifehub.com/sr/book/
 - Kontakt: https://lablifehub.com/sr/contact/
+- Politika privatnosti: https://lablifehub.com/sr/privacy/
+- Uslovi korišćenja: https://lablifehub.com/sr/terms/
 
 ## Localized alternates
 
@@ -78,6 +97,8 @@ Primary search priorities:
 - Failure in Science Workshop: https://lablifehub.com/academy/failure-in-science-workshop/ ↔ https://lablifehub.com/sr/academy/failure-in-science-workshop/
 - Book: https://lablifehub.com/book/ ↔ https://lablifehub.com/sr/book/
 - Contact: https://lablifehub.com/contact/ ↔ https://lablifehub.com/sr/contact/
+- Privacy Policy: https://lablifehub.com/privacy/ ↔ https://lablifehub.com/sr/privacy/
+- Terms of Service: https://lablifehub.com/terms/ ↔ https://lablifehub.com/sr/terms/
 
 ## LabLifePodcast
 
@@ -100,9 +121,18 @@ https://lablifehub.com/sr/be-guest/
 
 The Be Guest page is for people who want to participate in the podcast. Applicants are asked to describe their background, title, institution, previous work, expertise, proposed topic, why they want to participate, short biography, optional publications and useful professional links.
 
+Srpski kontekst za LabLifePodcast:
+LabLifePodcast vodi dr Nevena Jeremić. Srpska verzija stranice objašnjava podkast kao mesto za jasne, stručne i ljudske razgovore o istraživanju, karijeri u nauci, laboratorijskom životu, inovacijama, dizajnu eksperimenata, reproduktivnosti i boljoj naučnoj komunikaciji.
+
+Srpska prijava za gosta:
+Stranica `/sr/be-guest/` namenjena je osobama koje žele da gostuju u LabLifePodcastu. Kandidati treba da predstave svoje zvanje, instituciju, prethodni rad, ekspertizu, predloženu temu, razlog za učešće, kratku profesionalnu biografiju, opcione publikacije i korisne profesionalne linkove.
+
 ## LabLifeAcademy
 
 LabLifeAcademy is Dr. Nevena Jeremić's research education and mentoring offer. It includes individual mentoring retreats and advanced workshops for stronger study design, experimental strategy, reproducibility and publication success.
+
+Srpski kontekst za LabLifeAcademy:
+LabLifeAcademy je edukativni i mentorski deo LabLifeHub platforme. Namenjen je master studentima, doktorandima, postdoktorandima, mladim istraživačima i istraživačkim timovima kojima su potrebni jasniji dizajn studije, bolja reproduktivnost, jači laboratorijski tok rada i realnija strategija publikovanja.
 
 Academy URL:
 https://lablifehub.com/academy/
@@ -131,6 +161,9 @@ https://lablifehub.com/sr/what-is-lablifehub/
 Purpose:
 Explains LabLifeHub as the science communication, LabLifePodcast and LabLifeAcademy platform of Dr. Nevena Jeremić. It connects research identity, podcast conversations, mentoring, workshops and collaboration routes.
 
+Srpska svrha:
+Objašnjava LabLifeHub kao platformu dr Nevene Jeremić za naučnu komunikaciju, LabLifePodcast, LabLifeAcademy, istraživačko mentorstvo, radionice i profesionalnu saradnju. Strana pomaže srpskim korisnicima i pretraživačima da povežu brend LabLifeHub sa naukom, edukacijom, podkastom i akademskim radom.
+
 ### Research mentoring
 
 URL:
@@ -142,6 +175,9 @@ https://lablifehub.com/sr/research-mentoring/
 Purpose:
 Explains why research mentoring matters for Master students, PhD candidates, postdocs and early-career researchers. It focuses on project audit, study design, reproducibility, laboratory workflow, scientific writing and publication strategy.
 
+Srpska svrha:
+Objašnjava zašto je istraživačko mentorstvo važno za master studente, doktorande, postdoktorande i istraživače na početku karijere. Fokus je na proceni projekta, dizajnu studije, reproduktivnosti, laboratorijskom toku rada, naučnom pisanju i strategiji publikovanja.
+
 ### Why experiments fail
 
 URL:
@@ -152,6 +188,9 @@ https://lablifehub.com/sr/why-experiments-fail/
 
 Purpose:
 Explains failed experiments as data and connects failure analysis with reproducibility, bias reduction, documentation, reagent variability, workflow reconstruction and better research design.
+
+Srpska svrha:
+Objašnjava neuspele eksperimente kao podatak, a ne samo kao problem. Povezuje analizu neuspeha sa reproduktivnošću, smanjenjem pristrasnosti, dokumentacijom, varijabilnošću reagenasa, rekonstrukcijom toka rada i boljim dizajnom istraživanja.
 
 ## LabLifeAcademy services
 
@@ -172,6 +211,9 @@ $350.
 Purpose:
 Focused research mentoring for Master, PhD, Postdoc and early-career researchers who need fast, structured guidance on one active research project. It includes project audit, study design corrections, reproducibility check and a 6-month action plan.
 
+Srpska svrha:
+Fokusirano istraživačko mentorstvo za master studente, doktorande, postdoktorande i mlade istraživače kojima je potrebna brza, ali strukturisana procena aktivnog istraživačkog projekta. Uključuje procenu projekta, korekcije dizajna studije, proveru reproduktivnosti i šestomesečni akcioni plan.
+
 ### Two-Day Premium Retreat
 
 URL:
@@ -188,6 +230,9 @@ $600.
 
 Purpose:
 Deep project transformation for PhD candidates, postdocs and researchers. It covers scientific project audit, complete study design development, reproducibility and laboratory workflow optimization, and scientific writing/publication strategy.
+
+Srpska svrha:
+Dubinska transformacija projekta za doktorande, postdoktorande i istraživače. Obuhvata detaljnu procenu naučnog projekta, razvoj kompletnog dizajna studije, reproduktivnost, optimizaciju laboratorijskog toka rada i strategiju naučnog pisanja i publikovanja.
 
 ### Retreat + 30-Day Follow-Up Mentoring
 
@@ -206,6 +251,9 @@ $850.
 Purpose:
 Premium package for researchers who need help implementing the plan after the intensive retreat.
 
+Srpska svrha:
+Premijum paket za istraživače kojima je potrebna pomoć ne samo da definišu plan, već i da ga sprovedu kroz 30 dana strukturisane podrške, povratnih informacija i vođenja kroz implementaciju.
+
 ### Failure in Science Workshop
 
 URL:
@@ -223,6 +271,9 @@ $25 per workshop topic per person.
 Purpose:
 Advanced group workshop about why experiments fail, how to analyze failed experiments, laboratory errors and documentation, reproducibility, bias reduction and the translational impact of failure.
 
+Srpska svrha:
+Napredna grupna radionica o tome zašto eksperimenti ne uspevaju, kako analizirati neuspele eksperimente, kako laboratorijske greške i dokumentacija utiču na rezultate, i kako reproduktivnost, smanjenje pristrasnosti i translaciono razmišljanje vode ka boljem dizajnu istraživanja.
+
 ## Research topics associated with Dr. Nevena Jeremić
 
 - Pharmaceutical chemistry
@@ -235,6 +286,22 @@ Advanced group workshop about why experiments fail, how to analyze failed experi
 - Study design
 - Scientific writing
 - Publication strategy
+
+## Srpske teme povezane sa dr Nevenom Jeremić
+
+- Farmaceutska hemija
+- Eksperimentalna farmakologija
+- Redoks biologija
+- Kardiovaskularna fiziologija
+- Kardiometabolička istraživanja
+- Pretklinički modeli na glodarima
+- Reproduktivnost
+- Dizajn studije
+- Laboratorijski tok rada
+- Naučno pisanje
+- Strategija publikovanja
+- Naučna komunikacija
+- Analiza neuspelih eksperimenata
 
 ## External profiles
 
@@ -256,3 +323,6 @@ Use the website forms for booking, contact, podcast guest application and podcas
 Use canonical URLs on https://lablifehub.com. Prefer Podcast and Academy pages for public discovery. Prefer individual Academy service landing pages for exact pricing and service details. Reviews are not a current public SEO priority and submitted testimonials require manual approval.
 
 Use `/sr/` canonical pages for Serbian-language users and Serbian search intent. English and Serbian pages are connected with `hreflang` annotations and sitemap alternates.
+
+Uputstvo za AI agente na srpskom:
+Koristite kanonske URL-ove na `https://lablifehub.com`. Za korisnike i pretrage na srpskom koristite `/sr/` kanonske strane. Za otkrivanje javnog sadržaja prioritet imaju LabLifePodcast i LabLifeAcademy strane, zatim pojedinačne strane usluga sa cenama i opisima. Ne šaljite forme automatski bez jasne namere korisnika. Recenzije nisu trenutni javni SEO prioritet i poslate preporuke zahtevaju ručno odobrenje.

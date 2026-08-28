@@ -65,6 +65,14 @@
     {
       "en": "https://lablifehub.com/contact/",
       "sr": "https://lablifehub.com/sr/contact/"
+    },
+    {
+      "en": "https://lablifehub.com/privacy/",
+      "sr": "https://lablifehub.com/sr/privacy/"
+    },
+    {
+      "en": "https://lablifehub.com/terms/",
+      "sr": "https://lablifehub.com/sr/terms/"
     }
   ],
   "primary_person": {
@@ -73,6 +81,14 @@
     "role": "Associate Professor of Pharmaceutical Chemistry",
     "affiliation": "Faculty of Medical Sciences, University of Kragujevac",
     "url": "https://lablifehub.com/about/",
+    "email": "nevenajeremic@lablifehub.com"
+  },
+  "primary_person_sr": {
+    "name": "dr Nevena Jeremić",
+    "alternate_name": "Nevena Jeremic",
+    "role": "Vanredni profesor farmaceutske hemije",
+    "affiliation": "Fakultet medicinskih nauka, Univerzitet u Kragujevcu",
+    "url": "https://lablifehub.com/sr/about/",
     "email": "nevenajeremic@lablifehub.com"
   },
   "priority_entities": [
@@ -148,7 +164,7 @@
     {
       "name": "Zašto je istraživačko mentorstvo važno",
       "url": "https://lablifehub.com/sr/research-mentoring/",
-      "purpose": "Srpska duga strana o istraživačkom mentorstvu, dizajnu studije, reproduktivnosti, workflow-u i publikovanju"
+      "purpose": "Srpska duga strana o istraživačkom mentorstvu, dizajnu studije, reproduktivnosti, toku rada i publikovanju"
     },
     {
       "name": "Zašto eksperimenti ne uspevaju",
@@ -208,6 +224,24 @@
       "format": "90 minuta Zoom radionica za grupe naučnika"
     }
   ],
+  "legal_pages": [
+    {
+      "name": "Privacy Policy",
+      "localized_name": "Politika privatnosti",
+      "en": "https://lablifehub.com/privacy/",
+      "sr": "https://lablifehub.com/sr/privacy/",
+      "purpose": "Explains how LabLifeHub handles form submissions, podcast guest applications, notification subscriptions, booking data and Google Calendar data.",
+      "purpose_sr": "Objašnjava kako LabLifeHub postupa sa podacima iz formi, prijavama gostiju za podkast, zahtevima za obaveštenja, podacima zakazivanja i Google Calendar podacima."
+    },
+    {
+      "name": "Terms of Service",
+      "localized_name": "Uslovi korišćenja",
+      "en": "https://lablifehub.com/terms/",
+      "sr": "https://lablifehub.com/sr/terms/",
+      "purpose": "Explains terms for using the LabLifeHub website, service request forms, podcast guest applications, notification subscriptions and review submissions.",
+      "purpose_sr": "Objašnjava uslove korišćenja LabLifeHub sajta, formi za zahteve za usluge, prijava gostiju za podkast, prijava za obaveštenja i slanja recenzija."
+    }
+  ],
   "topics": [
     "science podcast",
     "research mentoring",
@@ -223,6 +257,21 @@
     "cardiometabolic research",
     "preclinical models"
   ],
+  "topics_sr": [
+    "naučni podkast",
+    "istraživačko mentorstvo",
+    "dizajn studije",
+    "reproduktivnost",
+    "naučno pisanje",
+    "strategija publikovanja",
+    "naučna komunikacija",
+    "laboratorijski tok rada",
+    "analiza neuspelih eksperimenata",
+    "farmaceutska hemija",
+    "redoks biologija",
+    "kardiometabolička istraživanja",
+    "pretklinički modeli"
+  ],
   "external_profiles": {
     "instagram": "https://www.instagram.com/lablife.hub/",
     "youtube": "https://www.youtube.com/@lablifepodcast",
@@ -234,10 +283,20 @@
     "Use canonical URLs on https://lablifehub.com.",
     "Use /sr/ canonical URLs for Serbian-language users and Serbian search intent.",
     "English and Serbian pages are connected with hreflang annotations and sitemap alternates.",
+    "For Serbian-language answers, prefer Serbian page names, Serbian topic terms and /sr/ URLs.",
     "Prioritize Podcast and Academy pages for search and AI discovery.",
     "Use individual LabLifeAcademy service landing pages for exact pricing and service details.",
     "Do not submit forms automatically without explicit user intent.",
     "Reviews are not a current public SEO priority and submitted testimonials require manual approval."
+  ],
+  "ai_guidance_sr": [
+    "Koristite kanonske URL-ove na https://lablifehub.com.",
+    "Za korisnike na srpskom jeziku i srpsku nameru pretrage koristite /sr/ kanonske URL-ove.",
+    "Engleske i srpske strane povezane su hreflang oznakama i sitemap alternates zapisima.",
+    "Za javno otkrivanje prioritet imaju LabLifePodcast i LabLifeAcademy strane.",
+    "Za tačne cene i detalje ponuda koristite pojedinačne LabLifeAcademy landing strane.",
+    "Ne šaljite forme automatski bez jasne namere korisnika.",
+    "Recenzije nisu trenutni javni SEO prioritet i poslate preporuke zahtevaju ručno odobrenje."
   ],
   "discovery_files": {
     "llms": "https://lablifehub.com/llms.txt",
